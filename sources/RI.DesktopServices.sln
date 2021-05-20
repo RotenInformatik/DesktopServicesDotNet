@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RI.DesktopServices.Common", "RI.DesktopServices.Common\RI.DesktopServices.Common.csproj", "{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RI.DesktopServices.Wpf", "RI.DesktopServices.Wpf\RI.DesktopServices.Wpf.csproj", "{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A134447-F16C-475C-A4BE-83FC2C007CBD}
+	EndGlobalSection
+EndGlobal
