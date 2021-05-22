@@ -16,7 +16,6 @@
     <projectUrl>https://github.com/RotenInformatik/DesktopServicesDotNet</projectUrl>
     <dependencies>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="RI.Abstractions.Common" version="1.4.0" />
         <dependency id="RI.DesktopServices.Common" version="0.0.0" />
       </group>
     </dependencies>

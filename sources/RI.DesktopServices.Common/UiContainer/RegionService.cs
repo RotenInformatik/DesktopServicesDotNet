@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using RI.DesktopServices.UiContainer;
 
 
 
-
-namespace RI.Framework.Services.Regions
+namespace RI.DesktopServices.UiContainer
 {
     /// <summary>
     ///     Default implementation of <see cref="IRegionService" /> suitable for most scenarios.
@@ -22,7 +20,7 @@ namespace RI.Framework.Services.Regions
         /// <value>
         ///     The used string comparer used to compare region names for equality.
         /// </value>
-        public static readonly StringComparerEx RegionNameComparer = StringComparerEx.InvariantCultureIgnoreCase;
+        public static readonly StringComparer RegionNameComparer = StringComparer.InvariantCultureIgnoreCase;
 
         #endregion
 
@@ -36,9 +34,7 @@ namespace RI.Framework.Services.Regions
         /// </summary>
         public RegionService ()
         {
-            this.AdaptersUpdated = new List<IRegionAdapter>();
-            this.AdaptersManual = new List<IRegionAdapter>();
-
+            this.Adapters = new List<IRegionAdapter>();
             this.RegionDictionary = new Dictionary<string, Tuple<object, IRegionAdapter>>(RegionService.RegionNameComparer);
         }
 
@@ -49,66 +45,9 @@ namespace RI.Framework.Services.Regions
 
         #region Instance Properties/Indexer
 
-        [Import(typeof(IRegionAdapter), Recomposable = true)]
-        private Import AdaptersImported { get; set; }
+        private List<IRegionAdapter> Adapters { get; }
 
-        private List<IRegionAdapter> AdaptersManual { get; set; }
-
-        private List<IRegionAdapter> AdaptersUpdated { get; set; }
-
-        private Dictionary<string, Tuple<object, IRegionAdapter>> RegionDictionary { get; set; }
-
-        #endregion
-
-
-
-
-        #region Instance Methods
-
-        private void UpdateAdapters ()
-        {
-            this.Log(LogLevel.Debug, "Updating adapters");
-
-            HashSet<IRegionAdapter> currentAdapters = new HashSet<IRegionAdapter>(this.Adapters);
-            HashSet<IRegionAdapter> lastAdapters = new HashSet<IRegionAdapter>(this.AdaptersUpdated);
-
-            HashSet<IRegionAdapter> newAdapters = currentAdapters.Except(lastAdapters);
-            HashSet<IRegionAdapter> oldAdapters = lastAdapters.Except(currentAdapters);
-
-            this.AdaptersUpdated.Clear();
-            this.AdaptersUpdated.AddRange(currentAdapters);
-
-            foreach (IRegionAdapter adapter in newAdapters)
-            {
-                this.Log(LogLevel.Debug, "Receiver added: {0}", adapter.GetType().Name);
-            }
-
-            foreach (IRegionAdapter adapter in oldAdapters)
-            {
-                this.Log(LogLevel.Debug, "Receiver removed: {0}", adapter.GetType().Name);
-            }
-        }
-
-        #endregion
-
-
-
-
-        #region Interface: IImporting
-
-        /// <inheritdoc />
-        void IImporting.ImportsResolved (CompositionFlags composition, bool updated)
-        {
-            if (updated)
-            {
-                this.UpdateAdapters();
-            }
-        }
-
-        /// <inheritdoc />
-        void IImporting.ImportsResolving (CompositionFlags composition)
-        {
-        }
+        private Dictionary<string, Tuple<object, IRegionAdapter>> RegionDictionary { get; }
 
         #endregion
 
@@ -118,23 +57,6 @@ namespace RI.Framework.Services.Regions
         #region Interface: IRegionService
 
         /// <inheritdoc />
-        public IEnumerable<IRegionAdapter> Adapters
-        {
-            get
-            {
-                foreach (IRegionAdapter adapter in this.AdaptersManual)
-                {
-                    yield return adapter;
-                }
-
-                foreach (IRegionAdapter adapter in this.AdaptersImported.Values<IRegionAdapter>())
-                {
-                    yield return adapter;
-                }
-            }
-        }
-
-        /// <inheritdoc />
         public void ActivateAllElements (string region)
         {
             if (region == null)
@@ -142,9 +64,9 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -172,14 +94,14 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
             if (element == null)
             {
                 throw new ArgumentNullException(nameof(element));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -204,14 +126,12 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(regionAdapter));
             }
 
-            if (this.AdaptersManual.Contains(regionAdapter))
+            if (this.Adapters.Contains(regionAdapter))
             {
                 return;
             }
 
-            this.AdaptersManual.Add(regionAdapter);
-
-            this.UpdateAdapters();
+            this.Adapters.Add(regionAdapter);
         }
 
         /// <inheritdoc />
@@ -222,14 +142,14 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
             if (element == null)
             {
                 throw new ArgumentNullException(nameof(element));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -250,6 +170,12 @@ namespace RI.Framework.Services.Regions
         }
 
         /// <inheritdoc />
+        public List<IRegionAdapter> GetAdapters ()
+        {
+            return new List<IRegionAdapter>(this.Adapters);
+        }
+
+        /// <inheritdoc />
         public void AddRegion (string region, object container)
         {
             if (region == null)
@@ -257,31 +183,34 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
             if (container == null)
             {
                 throw new ArgumentNullException(nameof(container));
             }
 
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
+            }
+
             List<Tuple<int, IRegionAdapter>> adapters = new List<Tuple<int, IRegionAdapter>>();
             Type containerType = container.GetType();
+
             foreach (IRegionAdapter currentAdapter in this.Adapters)
             {
-                int inheritanceDepth;
-                if (currentAdapter.IsCompatibleContainer(containerType, out inheritanceDepth))
+                if (currentAdapter.IsCompatibleContainer(containerType, out int inheritanceDepth))
                 {
                     adapters.Add(new Tuple<int, IRegionAdapter>(inheritanceDepth, currentAdapter));
                 }
             }
+
             adapters.Sort((x, y) => x.Item1.CompareTo(y.Item1));
+
             if (adapters.Count == 0)
             {
-                throw new InvalidTypeArgumentException(nameof(container));
+                throw new NotSupportedException($"No region adapter supports the container type {containerType.Name}");
             }
+
             IRegionAdapter adapter = adapters[0].Item2;
 
             if (this.RegionDictionary.ContainsKey(region))
@@ -290,10 +219,9 @@ namespace RI.Framework.Services.Regions
                 {
                     return;
                 }
+
                 this.RegionDictionary.Remove(region);
             }
-
-            this.Log(LogLevel.Debug, "Region added: {0} -> {1} @ {2}", region, container.GetType().Name, adapter.GetType().Name);
 
             this.RegionDictionary.Add(region, new Tuple<object, IRegionAdapter>(container, adapter));
         }
@@ -306,9 +234,9 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -330,9 +258,9 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -355,9 +283,9 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -385,14 +313,14 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
             if (element == null)
             {
                 throw new ArgumentNullException(nameof(element));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -407,51 +335,6 @@ namespace RI.Framework.Services.Regions
 
             adapter.Deactivate(container, element);
             adapter.Sort(container);
-        }
-
-        /// <inheritdoc />
-        public List<object> GetElements (string region)
-        {
-            if (region == null)
-            {
-                throw new ArgumentNullException(nameof(region));
-            }
-
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
-            if (!this.RegionDictionary.ContainsKey(region))
-            {
-                throw new RegionNotFoundException(region);
-            }
-
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
-
-            return adapter.Get(container);
-        }
-
-        /// <inheritdoc />
-        public object GetRegionContainer (string region)
-        {
-            if (region == null)
-            {
-                throw new ArgumentNullException(nameof(region));
-            }
-
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
-            if (!this.RegionDictionary.ContainsKey(region))
-            {
-                return null;
-            }
-
-            return this.RegionDictionary[region].Item1;
         }
 
         /// <inheritdoc />
@@ -482,6 +365,7 @@ namespace RI.Framework.Services.Regions
             }
 
             HashSet<string> names = new HashSet<string>(this.RegionDictionary.Comparer);
+
             foreach (KeyValuePair<string, Tuple<object, IRegionAdapter>> region in this.RegionDictionary)
             {
                 if (object.ReferenceEquals(region.Value.Item1, container))
@@ -489,7 +373,32 @@ namespace RI.Framework.Services.Regions
                     names.Add(region.Key);
                 }
             }
+
             return names;
+        }
+
+        /// <inheritdoc />
+        public List<object> GetElementsOfRegion (string region)
+        {
+            if (region == null)
+            {
+                throw new ArgumentNullException(nameof(region));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
+            }
+
+            if (!this.RegionDictionary.ContainsKey(region))
+            {
+                throw new RegionNotFoundException(region);
+            }
+
+            object container = this.RegionDictionary[region].Item1;
+            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+
+            return adapter.Get(container);
         }
 
         /// <inheritdoc />
@@ -506,14 +415,14 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
             if (element == null)
             {
                 throw new ArgumentNullException(nameof(element));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -535,12 +444,33 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             return this.RegionDictionary.ContainsKey(region);
+        }
+
+        /// <inheritdoc />
+        public object GetContainerOfRegion (string region)
+        {
+            if (region == null)
+            {
+                throw new ArgumentNullException(nameof(region));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
+            }
+
+            if (!this.RegionDictionary.ContainsKey(region))
+            {
+                return null;
+            }
+
+            return this.RegionDictionary[region].Item1;
         }
 
         /// <inheritdoc />
@@ -551,9 +481,9 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -580,20 +510,13 @@ namespace RI.Framework.Services.Regions
 
             foreach (KeyValuePair<string, Tuple<object, IRegionAdapter>> region in this.RegionDictionary)
             {
-                if (regionAdapter.Equals(region.Value.Item2))
+                if (object.ReferenceEquals(regionAdapter, region.Value.Item2))
                 {
                     throw new InvalidOperationException("The specified region adapter is still in use.");
                 }
             }
 
-            if (!this.AdaptersManual.Contains(regionAdapter))
-            {
-                return;
-            }
-
-            this.AdaptersManual.RemoveAll(regionAdapter);
-
-            this.UpdateAdapters();
+            this.Adapters.Remove(regionAdapter);
         }
 
         /// <inheritdoc />
@@ -604,14 +527,14 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(region));
-            }
-
             if (element == null)
             {
                 throw new ArgumentNullException(nameof(element));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
             if (!this.RegionDictionary.ContainsKey(region))
@@ -639,17 +562,10 @@ namespace RI.Framework.Services.Regions
                 throw new ArgumentNullException(nameof(region));
             }
 
-            if (region.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(region))
             {
-                throw new EmptyStringArgumentException(nameof(region));
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
-
-            if (!this.RegionDictionary.ContainsKey(region))
-            {
-                return;
-            }
-
-            this.Log(LogLevel.Debug, "Region removed: {0}", region);
 
             this.RegionDictionary.Remove(region);
         }
