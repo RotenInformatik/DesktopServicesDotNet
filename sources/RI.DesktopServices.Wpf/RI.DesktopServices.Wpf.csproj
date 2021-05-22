@@ -30,10 +30,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RI.DesktopServices.Common\RI.DesktopServices.Common.csproj" />
+    <ProjectReference Include="..\RI.DesktopServices.Windows\RI.DesktopServices.Windows.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="UiContainer\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Windows.Extensions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

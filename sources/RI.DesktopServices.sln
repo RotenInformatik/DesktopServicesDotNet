@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RI.DesktopServices.Common", "RI.DesktopServices.Common\RI.DesktopServices.Common.csproj", "{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RI.DesktopServices.Common", "RI.DesktopServices.Common\RI.DesktopServices.Common.csproj", "{FC32F8DA-8855-45EA-8BFD-660F5E3042AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RI.DesktopServices.Wpf", "RI.DesktopServices.Wpf\RI.DesktopServices.Wpf.csproj", "{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RI.DesktopServices.Wpf", "RI.DesktopServices.Wpf\RI.DesktopServices.Wpf.csproj", "{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RI.DesktopServices.Windows", "RI.DesktopServices.Windows\RI.DesktopServices.Windows.csproj", "{B9344B17-9534-4324-A735-899DE3245638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95D5FDCA-CDB4-4282-9CC6-9997E3611D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9344B17-9534-4324-A735-899DE3245638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9344B17-9534-4324-A735-899DE3245638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9344B17-9534-4324-A735-899DE3245638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9344B17-9534-4324-A735-899DE3245638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
