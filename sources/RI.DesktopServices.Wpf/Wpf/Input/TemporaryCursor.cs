@@ -11,22 +11,24 @@ namespace RI.DesktopServices.Wpf
     /// </summary>
     /// <remarks>
     ///     <para>
-    ///<see cref="TemporaryCursor" /> can be used to temporarily show a specific mouse cursor for an application while a certain section of code is running.
-    ///     To achieve this, <see cref="TemporaryCursor" /> implements <see cref="IDisposable" /> which allows the using directive and therefore ensures that the mouse cursor will be reset to its original state.
-    /// </para>
+    ///         <see cref="TemporaryCursor" /> can be used to temporarily show a specific mouse cursor for an application while
+    ///         a certain section of code is running.
+    ///         To achieve this, <see cref="TemporaryCursor" /> implements <see cref="IDisposable" /> which allows the using
+    ///         directive and therefore ensures that the mouse cursor will be reset to its original state.
+    ///     </para>
     /// </remarks>
     /// <example>
     ///     <para>
     ///         The following example shows how <see cref="TemporaryCursor" /> can be used:
     ///     </para>
     ///     <code language="cs">
-    ///  <![CDATA[
-    ///  using (TemporaryCursor.Wait())
-    ///  {
-    /// 		//The hourglass cursor is shown while this section of code is running.
-    ///  }
-    ///  ]]>
-    ///  </code>
+    ///   <![CDATA[
+    ///   using (TemporaryCursor.Wait())
+    ///   {
+    ///  		//The hourglass cursor is shown while this section of code is running.
+    ///   }
+    ///   ]]>
+    ///   </code>
     /// </example>
     public sealed class TemporaryCursor : IDisposable
     {
@@ -63,14 +65,6 @@ namespace RI.DesktopServices.Wpf
             Mouse.OverrideCursor = cursor;
         }
 
-        /// <summary>
-        ///     Garbage collects this instance of <see cref="TemporaryCursor" />.
-        /// </summary>
-        ~TemporaryCursor ()
-        {
-            this.Restore();
-        }
-
         #endregion
 
 
@@ -78,9 +72,9 @@ namespace RI.DesktopServices.Wpf
 
         #region Instance Properties/Indexer
 
-        private Cursor PreviousCursor { get; set; }
-
         private bool IsRestored { get; set; }
+
+        private Cursor PreviousCursor { get; set; }
 
         #endregion
 
@@ -104,6 +98,21 @@ namespace RI.DesktopServices.Wpf
             this.IsRestored = true;
 
             GC.SuppressFinalize(this);
+        }
+
+        #endregion
+
+
+
+
+        #region Overrides
+
+        /// <summary>
+        ///     Garbage collects this instance of <see cref="TemporaryCursor" />.
+        /// </summary>
+        ~TemporaryCursor ()
+        {
+            this.Restore();
         }
 
         #endregion

@@ -5,11 +5,9 @@
 
 namespace RI.DesktopServices.Wpf.Markup
 {
-	/// <summary>
-	///     Contains XAML markup extensions for WPF.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains XAML markup extensions for WPF.
+    /// </summary>
+    [CompilerGenerated]
+    public sealed class NamespaceDoc { }
 }

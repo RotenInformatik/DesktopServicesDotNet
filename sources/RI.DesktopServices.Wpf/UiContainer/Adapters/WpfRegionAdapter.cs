@@ -39,9 +39,12 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (container is ContentControl)
             {
                 ContentControl contentControl = (ContentControl)container;
+
                 if (contentControl.Content != null)
                 {
-                    throw new NotSupportedException("The container of type" + container.GetType().Name + " already has an element and does not support multiple elements.");
+                    throw new NotSupportedException("The container of type" + container.GetType()
+                                                        .Name +
+                                                    " already has an element and does not support multiple elements.");
                 }
 
                 contentControl.Content = element;
@@ -58,40 +61,6 @@ namespace RI.DesktopServices.UiContainer.Adapters
                 UIElement uiElement = (UIElement)element;
                 panel.Children.Remove(uiElement);
                 panel.Children.Add(uiElement);
-            }
-        }
-
-        /// <inheritdoc />
-        public override void Remove(object container, object element)
-        {
-            if (container == null)
-            {
-                throw new ArgumentNullException(nameof(container));
-            }
-
-            if (element == null)
-            {
-                throw new ArgumentNullException(nameof(element));
-            }
-
-            if (container is ContentControl)
-            {
-                ContentControl contentControl = (ContentControl)container;
-                if (object.ReferenceEquals(contentControl.Content, element))
-                {
-                    contentControl.Content = null;
-                }
-            }
-            else if (container is ItemsControl)
-            {
-                ItemsControl itemsControl = (ItemsControl)container;
-                itemsControl.Items.Remove(element);
-            }
-            else if ((container is Panel) && (element is UIElement))
-            {
-                Panel panel = (Panel)container;
-                UIElement uiElement = (UIElement)element;
-                panel.Children.Remove(uiElement);
             }
         }
 
@@ -138,7 +107,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (container is ContentControl)
             {
                 ContentControl contentControl = (ContentControl)container;
-                contains = object.ReferenceEquals(contentControl.Content, element);
+                contains = ReferenceEquals(contentControl.Content, element);
             }
             else if (container is ItemsControl)
             {
@@ -173,6 +142,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             else if (container is ItemsControl)
             {
                 ItemsControl itemsControl = (ItemsControl)container;
+
                 foreach (object element in itemsControl.Items)
                 {
                     elements.Add(element);
@@ -181,6 +151,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             else if (container is Panel)
             {
                 Panel panel = (Panel)container;
+
                 foreach (object element in panel.Children)
                 {
                     elements.Add(element);
@@ -188,6 +159,41 @@ namespace RI.DesktopServices.UiContainer.Adapters
             }
 
             return elements;
+        }
+
+        /// <inheritdoc />
+        public override void Remove (object container, object element)
+        {
+            if (container == null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
+            if (element == null)
+            {
+                throw new ArgumentNullException(nameof(element));
+            }
+
+            if (container is ContentControl)
+            {
+                ContentControl contentControl = (ContentControl)container;
+
+                if (ReferenceEquals(contentControl.Content, element))
+                {
+                    contentControl.Content = null;
+                }
+            }
+            else if (container is ItemsControl)
+            {
+                ItemsControl itemsControl = (ItemsControl)container;
+                itemsControl.Items.Remove(element);
+            }
+            else if ((container is Panel) && (element is UIElement))
+            {
+                Panel panel = (Panel)container;
+                UIElement uiElement = (UIElement)element;
+                panel.Children.Remove(uiElement);
+            }
         }
 
         /// <inheritdoc />

@@ -5,8 +5,9 @@
     /// </summary>
     /// <remarks>
     ///     <para>
-    /// <see cref="IRegionElement" /> can be implemented by elements which are used with regions to make them aware of certain region operations being performed on them.
-    /// </para>
+    ///         <see cref="IRegionElement" /> can be implemented by elements which are used with regions to make them aware of
+    ///         certain region operations being performed on them.
+    ///     </para>
     /// </remarks>
     public interface IRegionElement
     {
@@ -23,20 +24,11 @@
         /// </summary>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         void Activated ();
-
-        /// <summary>
-        ///     The element was deactivated.
-        /// </summary>
-        /// <remarks>
-        ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" /> implementation.
-        ///     </note>
-        /// </remarks>
-        void Deactivated ();
 
         /// <summary>
         ///     Determines whether the element allows being navigated away.
@@ -46,7 +38,8 @@
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         bool CanNavigateFrom ();
@@ -59,17 +52,30 @@
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         bool CanNavigateTo ();
+
+        /// <summary>
+        ///     The element was deactivated.
+        /// </summary>
+        /// <remarks>
+        ///     <note type="note">
+        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" />
+        ///         implementation.
+        ///     </note>
+        /// </remarks>
+        void Deactivated ();
 
         /// <summary>
         ///     The element was navigated away from.
         /// </summary>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         void NavigatedFrom ();
@@ -79,7 +85,8 @@
         /// </summary>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="IRegionAdapter" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         void NavigatedTo ();

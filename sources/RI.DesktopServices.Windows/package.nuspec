@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>RI.DesktopServices.Windows</id>
+    <version>0.0.0.0</version>
+    <authors>RotenInformatik</authors>
+    <owners>RotenInformatik</owners>
+    <title>RI.DesktopServices.Windows</title>
+    <copyright>Copyright (c) 2017-2021 Roten Informatik</copyright>
+    <description>Desktop application services for .NET</description>
+    <tags>dotnet desktop windows WPF boilerplate infrastructure</tags>
+    <icon>images\ICON.png</icon>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/RotenInformatik/DesktopServicesDotNet</projectUrl>
+    <dependencies>
+      <group targetFramework="netcoreapp3.1">
+        <dependency id="RI.DesktopServices.Common" version="0.0.0" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Debug\netstandard2.0\RI.DesktopServices.Windows.dll"
+          target="lib\netstandard2.0\RI.DesktopServices.Windows.dll" />
+    <file src="bin\Debug\netstandard2.0\RI.DesktopServices.Windows.xml"
+          target="lib\netstandard2.0\RI.DesktopServices.Windows.xml" />
+    <file src="..\..\ICON.png" target="images\ICON.png" />
+  </files>
+</package>

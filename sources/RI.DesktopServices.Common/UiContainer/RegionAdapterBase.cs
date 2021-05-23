@@ -16,19 +16,6 @@ namespace RI.DesktopServices.UiContainer
     /// <threadsafety static="false" instance="false" />
     public abstract class RegionAdapterBase : IRegionAdapter
     {
-        #region Abstracts
-
-        /// <summary>
-        ///     Fills a list of types which are supported by this region adapter.
-        /// </summary>
-        /// <param name="types"> The list which is filled with the supported types by this region adapter. </param>
-        protected abstract void GetSupportedTypes (List<Type> types);
-
-        #endregion
-
-
-
-
         #region Virtuals
 
         /// <summary>
@@ -46,6 +33,7 @@ namespace RI.DesktopServices.UiContainer
                 IRegionElement regionElement = (IRegionElement)element;
                 return regionElement.CanNavigateFrom();
             }
+
             return true;
         }
 
@@ -64,6 +52,7 @@ namespace RI.DesktopServices.UiContainer
                 IRegionElement regionElement = (IRegionElement)element;
                 return regionElement.CanNavigateTo();
             }
+
             return true;
         }
 
@@ -80,22 +69,27 @@ namespace RI.DesktopServices.UiContainer
         ///         <see cref="GetSortIndex" /> is used to retrieve the sort indices used to sort the elements.
         ///     </para>
         ///     <para>
-        ///         <paramref name="elements"/> is only enumerated once.
+        ///         <paramref name="elements" /> is only enumerated once.
         ///     </para>
         /// </remarks>
         protected virtual List<object> GetSortedElements (IEnumerable elements)
         {
             List<object> sorted = new List<object>();
+
             foreach (object element in elements)
             {
                 sorted.Add(element);
             }
+
             sorted.Sort((x, y) =>
             {
                 int xIndex = sorted.IndexOf(x);
                 int yIndex = sorted.IndexOf(y);
-                return this.GetSortIndex(x, xIndex == -1 ? null : xIndex).CompareTo(this.GetSortIndex(y, yIndex == -1 ? null : yIndex));
+
+                return this.GetSortIndex(x, xIndex == -1 ? null : xIndex)
+                           .CompareTo(this.GetSortIndex(y, yIndex == -1 ? null : yIndex));
             });
+
             return sorted;
         }
 
@@ -110,7 +104,9 @@ namespace RI.DesktopServices.UiContainer
         /// </returns>
         /// <remarks>
         ///     <para>
-        ///         The sort index of an element is retrieved using <see cref="IRegionElement.SortIndex" /> (high priority), <see cref="RegionElementSortHintAttribute" /> (medium priority), and the index of the element in the container (if available, low priority).
+        ///         The sort index of an element is retrieved using <see cref="IRegionElement.SortIndex" /> (high priority),
+        ///         <see cref="RegionElementSortHintAttribute" /> (medium priority), and the index of the element in the container
+        ///         (if available, low priority).
         ///     </para>
         /// </remarks>
         protected virtual int GetSortIndex (object element, int? indexInContainer)
@@ -118,13 +114,16 @@ namespace RI.DesktopServices.UiContainer
             if (element is IRegionElement)
             {
                 IRegionElement regionElement = (IRegionElement)element;
+
                 if (regionElement.SortIndex.HasValue)
                 {
                     return regionElement.SortIndex.Value;
                 }
             }
 
-            object[] attributes = element.GetType().GetCustomAttributes(typeof(RegionElementSortHintAttribute), true);
+            object[] attributes = element.GetType()
+                                         .GetCustomAttributes(typeof(RegionElementSortHintAttribute), true);
+
             if (attributes.Length != 0)
             {
                 return ((RegionElementSortHintAttribute)attributes[0]).Index;
@@ -171,43 +170,20 @@ namespace RI.DesktopServices.UiContainer
 
 
 
+        #region Abstracts
+
+        /// <summary>
+        ///     Fills a list of types which are supported by this region adapter.
+        /// </summary>
+        /// <param name="types"> The list which is filled with the supported types by this region adapter. </param>
+        protected abstract void GetSupportedTypes (List<Type> types);
+
+        #endregion
+
+
+
+
         #region Interface: IRegionAdapter
-
-        /// <inheritdoc />
-        public abstract void Add(object container, object element);
-
-        /// <inheritdoc />
-        public abstract void Remove(object container, object element);
-
-        /// <inheritdoc />
-        public abstract void Clear(object container);
-
-        /// <inheritdoc />
-        public abstract bool Contains(object container, object element);
-
-        /// <inheritdoc />
-        public abstract List<object> Get (object container);
-
-        /// <inheritdoc />
-        public virtual void Sort(object container)
-        {
-            if (container == null)
-            {
-                throw new ArgumentNullException(nameof(container));
-            }
-
-            List<object> existingElements = this.Get(container);
-            List<object> sortedElements = this.GetSortedElements(existingElements);
-
-            if (!sortedElements.SequenceEqual(existingElements))
-            {
-                this.Clear(container);
-                foreach (object sortedElement in sortedElements)
-                {
-                    this.Add(container, sortedElement);
-                }
-            }
-        }
 
         /// <inheritdoc />
         public virtual void Activate (object container, object element)
@@ -230,6 +206,36 @@ namespace RI.DesktopServices.UiContainer
         }
 
         /// <inheritdoc />
+        public abstract void Add (object container, object element);
+
+        /// <inheritdoc />
+        public virtual bool CanNavigate (object container, object element)
+        {
+            if (container == null)
+            {
+                throw new ArgumentNullException(nameof(container));
+            }
+
+            List<object> currentElements = this.Get(container);
+
+            foreach (object currentElement in currentElements)
+            {
+                if (!this.CanNavigateFrom(container, currentElement))
+                {
+                    return false;
+                }
+            }
+
+            return this.CanNavigateTo(container, element);
+        }
+
+        /// <inheritdoc />
+        public abstract void Clear (object container);
+
+        /// <inheritdoc />
+        public abstract bool Contains (object container, object element);
+
+        /// <inheritdoc />
         public virtual void Deactivate (object container, object element)
         {
             if (container == null)
@@ -250,23 +256,20 @@ namespace RI.DesktopServices.UiContainer
         }
 
         /// <inheritdoc />
-        public virtual bool CanNavigate (object container, object element)
+        public abstract List<object> Get (object container);
+
+        /// <inheritdoc />
+        public virtual bool IsCompatibleContainer (Type type, out int inheritanceDepth)
         {
-            if (container == null)
+            if (type == null)
             {
-                throw new ArgumentNullException(nameof(container));
+                throw new ArgumentNullException(nameof(type));
             }
 
-            List<object> currentElements = this.Get(container);
-            foreach (object currentElement in currentElements)
-            {
-                if (!this.CanNavigateFrom(container, currentElement))
-                {
-                    return false;
-                }
-            }
+            List<Type> supportedTypes = new List<Type>();
+            this.GetSupportedTypes(supportedTypes);
 
-            return this.CanNavigateTo(container, element);
+            return type.GetBestMatchingType(out _, out inheritanceDepth, supportedTypes.ToArray());
         }
 
         /// <inheritdoc />
@@ -312,17 +315,28 @@ namespace RI.DesktopServices.UiContainer
         }
 
         /// <inheritdoc />
-        public virtual bool IsCompatibleContainer (Type type, out int inheritanceDepth)
+        public abstract void Remove (object container, object element);
+
+        /// <inheritdoc />
+        public virtual void Sort (object container)
         {
-            if (type == null)
+            if (container == null)
             {
-                throw new ArgumentNullException(nameof(type));
+                throw new ArgumentNullException(nameof(container));
             }
 
-            List<Type> supportedTypes = new List<Type>();
-            this.GetSupportedTypes(supportedTypes);
+            List<object> existingElements = this.Get(container);
+            List<object> sortedElements = this.GetSortedElements(existingElements);
 
-            return type.GetBestMatchingType(out _, out inheritanceDepth, supportedTypes.ToArray());
+            if (!sortedElements.SequenceEqual(existingElements))
+            {
+                this.Clear(container);
+
+                foreach (object sortedElement in sortedElements)
+                {
+                    this.Add(container, sortedElement);
+                }
+            }
         }
 
         #endregion

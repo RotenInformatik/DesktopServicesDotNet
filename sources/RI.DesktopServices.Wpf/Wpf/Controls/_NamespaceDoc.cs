@@ -5,11 +5,9 @@
 
 namespace RI.DesktopServices.Wpf.Controls
 {
-	/// <summary>
-	///     Contains WPF controls.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains WPF controls.
+    /// </summary>
+    [CompilerGenerated]
+    public sealed class NamespaceDoc { }
 }

@@ -5,11 +5,9 @@
 
 namespace RI.DesktopServices.UiContainer
 {
-	/// <summary>
-	///     Contains the region service.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains the region service.
+    /// </summary>
+    [CompilerGenerated]
+    public sealed class NamespaceDoc { }
 }

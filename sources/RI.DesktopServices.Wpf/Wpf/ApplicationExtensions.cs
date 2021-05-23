@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
-using RI.Framework.Windows.Wpf;
-
 
 
 
@@ -88,7 +86,8 @@ namespace RI.DesktopServices.Wpf
         /// <param name="application"> The application. </param>
         /// <param name="priority"> The priority up to and including all operations are to be processed. </param>
         /// <returns>
-        ///     The task which can be used to await the end of processing all ist queued operations up to and including the specified priority.
+        ///     The task which can be used to await the end of processing all ist queued operations up to and including the
+        ///     specified priority.
         /// </returns>
         /// <remarks>
         ///     <para>

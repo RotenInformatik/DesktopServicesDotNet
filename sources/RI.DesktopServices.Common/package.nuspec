@@ -9,7 +9,7 @@
     <title>RI.DesktopServices.Common</title>
     <copyright>Copyright (c) 2017-2021 Roten Informatik</copyright>
     <description>Desktop application services for .NET</description>
-    <tags>dotnet desktop WPF</tags>
+    <tags>dotnet desktop windows WPF boilerplate infrastructure</tags>
     <icon>images\ICON.png</icon>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">Apache-2.0</license>

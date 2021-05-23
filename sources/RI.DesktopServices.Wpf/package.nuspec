@@ -9,14 +9,15 @@
     <title>RI.DesktopServices.Wpf</title>
     <copyright>Copyright (c) 2017-2021 Roten Informatik</copyright>
     <description>Desktop application services for .NET</description>
-    <tags>dotnet desktop WPF</tags>
+    <tags>dotnet desktop windows WPF boilerplate infrastructure</tags>
     <icon>images\ICON.png</icon>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/RotenInformatik/DesktopServicesDotNet</projectUrl>
     <dependencies>
-      <group targetFramework=".NETStandard2.0">
+      <group targetFramework="netcoreapp3.1">
         <dependency id="RI.DesktopServices.Common" version="0.0.0" />
+        <dependency id="RI.DesktopServices.Windows" version="0.0.0" />
       </group>
     </dependencies>
   </metadata>

@@ -8,7 +8,10 @@ namespace RI.DesktopServices.Utilities
 {
     internal static class TypeExtensions
     {
-        public static bool GetBestMatchingType(this Type type, out Type matchingType, out int inheritanceDepth, params Type[] types)
+        #region Static Methods
+
+        public static bool GetBestMatchingType (this Type type, out Type matchingType, out int inheritanceDepth,
+                                                params Type[] types)
         {
             if (type == null)
             {
@@ -73,7 +76,7 @@ namespace RI.DesktopServices.Utilities
             return true;
         }
 
-        public static List<Type> GetInheritance(this Type type, bool includeSelf)
+        public static List<Type> GetInheritance (this Type type, bool includeSelf)
         {
             if (type == null)
             {
@@ -97,5 +100,7 @@ namespace RI.DesktopServices.Utilities
 
             return types;
         }
+
+        #endregion
     }
 }

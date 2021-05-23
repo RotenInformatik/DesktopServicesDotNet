@@ -32,6 +32,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (element is FrameworkElement)
             {
                 FrameworkElement frameworkElement = (FrameworkElement)element;
+
                 if (frameworkElement.DataContext is IRegionElement)
                 {
                     IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
@@ -58,6 +59,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (element is FrameworkElement)
             {
                 FrameworkElement frameworkElement = (FrameworkElement)element;
+
                 if (frameworkElement.DataContext is IRegionElement)
                 {
                     IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
@@ -75,6 +77,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (element is FrameworkElement)
             {
                 FrameworkElement frameworkElement = (FrameworkElement)element;
+
                 if (frameworkElement.DataContext is IRegionElement)
                 {
                     IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
@@ -94,6 +97,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (element is FrameworkElement)
             {
                 FrameworkElement frameworkElement = (FrameworkElement)element;
+
                 if (frameworkElement.DataContext is IRegionElement)
                 {
                     IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
@@ -112,6 +116,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (element is FrameworkElement)
             {
                 FrameworkElement frameworkElement = (FrameworkElement)element;
+
                 if (frameworkElement.DataContext is IRegionElement)
                 {
                     IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
@@ -128,6 +133,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (element is FrameworkElement)
             {
                 FrameworkElement frameworkElement = (FrameworkElement)element;
+
                 if (frameworkElement.DataContext is IRegionElement)
                 {
                     IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;

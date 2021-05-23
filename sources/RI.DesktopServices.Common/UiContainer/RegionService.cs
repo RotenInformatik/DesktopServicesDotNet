@@ -12,7 +12,7 @@ namespace RI.DesktopServices.UiContainer
     /// <threadsafety static="false" instance="false" />
     public sealed class RegionService : IRegionService
     {
-        #region Constants
+        #region Static Fields
 
         /// <summary>
         ///     Gets the used string comparer used to compare region names for equality.
@@ -35,7 +35,9 @@ namespace RI.DesktopServices.UiContainer
         public RegionService ()
         {
             this.Adapters = new List<IRegionAdapter>();
-            this.RegionDictionary = new Dictionary<string, Tuple<object, IRegionAdapter>>(RegionService.RegionNameComparer);
+
+            this.RegionDictionary =
+                new Dictionary<string, Tuple<object, IRegionAdapter>>(RegionService.RegionNameComparer);
         }
 
         #endregion
@@ -74,8 +76,12 @@ namespace RI.DesktopServices.UiContainer
                 throw new RegionNotFoundException(region);
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
+
             List<object> elements = adapter.Get(container);
 
             foreach (object element in elements)
@@ -111,8 +117,11 @@ namespace RI.DesktopServices.UiContainer
 
             this.AddElement(region, element);
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             adapter.Activate(container, element);
             adapter.Sort(container);
@@ -162,17 +171,14 @@ namespace RI.DesktopServices.UiContainer
                 return;
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             adapter.Add(container, element);
             adapter.Sort(container);
-        }
-
-        /// <inheritdoc />
-        public List<IRegionAdapter> GetAdapters ()
-        {
-            return new List<IRegionAdapter>(this.Adapters);
         }
 
         /// <inheritdoc />
@@ -211,11 +217,14 @@ namespace RI.DesktopServices.UiContainer
                 throw new NotSupportedException($"No region adapter supports the container type {containerType.Name}");
             }
 
-            IRegionAdapter adapter = adapters[0].Item2;
+            IRegionAdapter adapter = adapters[0]
+                .Item2;
 
             if (this.RegionDictionary.ContainsKey(region))
             {
-                if (object.ReferenceEquals(container, this.RegionDictionary[region].Item1) && adapter.Equals(this.RegionDictionary[region].Item2))
+                if (object.ReferenceEquals(container, this.RegionDictionary[region]
+                                                          .Item1) && adapter.Equals(this.RegionDictionary[region]
+                        .Item2))
                 {
                     return;
                 }
@@ -244,8 +253,11 @@ namespace RI.DesktopServices.UiContainer
                 throw new RegionNotFoundException(region);
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             return adapter.CanNavigate(container, element);
         }
@@ -268,8 +280,11 @@ namespace RI.DesktopServices.UiContainer
                 throw new RegionNotFoundException(region);
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             adapter.Clear(container);
             adapter.Sort(container);
@@ -293,8 +308,12 @@ namespace RI.DesktopServices.UiContainer
                 throw new RegionNotFoundException(region);
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
+
             List<object> elements = adapter.Get(container);
 
             foreach (object element in elements)
@@ -330,11 +349,69 @@ namespace RI.DesktopServices.UiContainer
 
             this.AddElement(region, element);
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             adapter.Deactivate(container, element);
             adapter.Sort(container);
+        }
+
+        /// <inheritdoc />
+        public List<IRegionAdapter> GetAdapters ()
+        {
+            return new List<IRegionAdapter>(this.Adapters);
+        }
+
+        /// <inheritdoc />
+        public object GetContainerOfRegion (string region)
+        {
+            if (region == null)
+            {
+                throw new ArgumentNullException(nameof(region));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
+            }
+
+            if (!this.RegionDictionary.ContainsKey(region))
+            {
+                return null;
+            }
+
+            return this.RegionDictionary[region]
+                       .Item1;
+        }
+
+        /// <inheritdoc />
+        public List<object> GetElementsOfRegion (string region)
+        {
+            if (region == null)
+            {
+                throw new ArgumentNullException(nameof(region));
+            }
+
+            if (string.IsNullOrWhiteSpace(region))
+            {
+                throw new ArgumentException("Parameter is an empty string.", nameof(region));
+            }
+
+            if (!this.RegionDictionary.ContainsKey(region))
+            {
+                throw new RegionNotFoundException(region);
+            }
+
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
+
+            return adapter.Get(container);
         }
 
         /// <inheritdoc />
@@ -378,30 +455,6 @@ namespace RI.DesktopServices.UiContainer
         }
 
         /// <inheritdoc />
-        public List<object> GetElementsOfRegion (string region)
-        {
-            if (region == null)
-            {
-                throw new ArgumentNullException(nameof(region));
-            }
-
-            if (string.IsNullOrWhiteSpace(region))
-            {
-                throw new ArgumentException("Parameter is an empty string.", nameof(region));
-            }
-
-            if (!this.RegionDictionary.ContainsKey(region))
-            {
-                throw new RegionNotFoundException(region);
-            }
-
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
-
-            return adapter.Get(container);
-        }
-
-        /// <inheritdoc />
         public HashSet<string> GetRegionNames ()
         {
             return new HashSet<string>(this.RegionDictionary.Keys, this.RegionDictionary.Comparer);
@@ -430,8 +483,11 @@ namespace RI.DesktopServices.UiContainer
                 throw new RegionNotFoundException(region);
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             return adapter.Contains(container, element);
         }
@@ -453,27 +509,6 @@ namespace RI.DesktopServices.UiContainer
         }
 
         /// <inheritdoc />
-        public object GetContainerOfRegion (string region)
-        {
-            if (region == null)
-            {
-                throw new ArgumentNullException(nameof(region));
-            }
-
-            if (string.IsNullOrWhiteSpace(region))
-            {
-                throw new ArgumentException("Parameter is an empty string.", nameof(region));
-            }
-
-            if (!this.RegionDictionary.ContainsKey(region))
-            {
-                return null;
-            }
-
-            return this.RegionDictionary[region].Item1;
-        }
-
-        /// <inheritdoc />
         public bool Navigate (string region, object element)
         {
             if (region == null)
@@ -491,8 +526,11 @@ namespace RI.DesktopServices.UiContainer
                 throw new RegionNotFoundException(region);
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             bool result = adapter.Navigate(container, element);
             adapter.Sort(container);
@@ -547,8 +585,11 @@ namespace RI.DesktopServices.UiContainer
                 return;
             }
 
-            object container = this.RegionDictionary[region].Item1;
-            IRegionAdapter adapter = this.RegionDictionary[region].Item2;
+            object container = this.RegionDictionary[region]
+                                   .Item1;
+
+            IRegionAdapter adapter = this.RegionDictionary[region]
+                                         .Item2;
 
             adapter.Remove(container, element);
             adapter.Sort(container);
