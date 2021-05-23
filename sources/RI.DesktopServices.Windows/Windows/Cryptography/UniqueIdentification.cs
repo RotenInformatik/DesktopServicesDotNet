@@ -2,17 +2,17 @@
 using System.Security.Cryptography;
 using System.Text;
 
-using RI.Framework.Windows.Users;
+using RI.DesktopServices.Windows.Users;
 
 
 
 
-namespace RI.Framework.Windows.Cryptography
+namespace RI.DesktopServices.Windows.Cryptography
 {
     /// <summary>
     ///     Provides functionality to obtain various unique IDs.
     /// </summary>
-    /// TODO: Add additional entropy option
+    /// <threadsafety static="false" instance="false" />
     public static class UniqueIdentification
     {
         #region Constants
@@ -47,7 +47,7 @@ namespace RI.Framework.Windows.Cryptography
         /// </returns>
         public static Guid GetMachineId ()
         {
-            string cipher = Environment.MachineName + "\\" + UniqueIdentification.InnerGuid;
+            string cipher = WindowsUser.GetNetworkDomain() + "\\" + Environment.MachineName + "\\" + UniqueIdentification.InnerGuid;
             Guid guid = UniqueIdentification.CreateGuidFromString(cipher);
             return guid;
         }

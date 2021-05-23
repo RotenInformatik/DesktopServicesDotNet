@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 
 
-namespace RI.DesktopServices.Wpf
+namespace RI.DesktopServices.Wpf.Input
 {
     /// <summary>
     ///     Provides temporary global mouse cursor overrides.

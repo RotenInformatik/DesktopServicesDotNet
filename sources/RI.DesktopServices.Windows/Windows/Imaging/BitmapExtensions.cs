@@ -7,11 +7,12 @@ using System.Runtime.InteropServices;
 
 
 
-namespace RI.Framework.Windows.Imaging
+namespace RI.DesktopServices.Windows.Imaging
 {
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Bitmap" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class BitmapExtensions
     {
         #region Static Methods

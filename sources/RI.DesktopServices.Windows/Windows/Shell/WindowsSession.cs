@@ -1,16 +1,17 @@
 using System;
 using System.Runtime.InteropServices;
 
-using RI.Framework.Windows.Interop;
+using RI.DesktopServices.Windows.Interop;
 
 
 
 
-namespace RI.Framework.Windows.Shell
+namespace RI.DesktopServices.Windows.Shell
 {
     /// <summary>
     ///     Provides utilities for controlling the current Windows session.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class WindowsSession
     {
         #region Constants

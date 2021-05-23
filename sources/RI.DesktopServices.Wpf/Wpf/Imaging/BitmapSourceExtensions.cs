@@ -5,12 +5,14 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
+using RI.DesktopServices.Windows.Imaging;
+
 using Point = System.Drawing.Point;
 
 
 
 
-namespace RI.Framework.Windows.Imaging
+namespace RI.DesktopServices.Wpf.Imaging
 {
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="BitmapSource" /> type.

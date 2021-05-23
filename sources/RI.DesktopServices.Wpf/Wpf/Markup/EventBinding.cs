@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 
 
-namespace RI.Framework.Windows.Wpf.Markup
+namespace RI.DesktopServices.Wpf.Markup
 {
     /// <summary>
     ///     Defines a single event-to-command binding used with <see cref="EventToCommandBinder" />.

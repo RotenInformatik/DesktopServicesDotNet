@@ -7,7 +7,7 @@ using System.Windows.Controls.Primitives;
 
 
 
-namespace RI.Framework.Windows.Wpf.Controls
+namespace RI.DesktopServices.Wpf.Controls
 {
     /// <summary>
     ///     A specialized <see cref="CheckBox" /> which is connected to a <see cref="ComboBox" /> in order to set its

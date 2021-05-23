@@ -3,7 +3,7 @@ using System;
 
 
 
-namespace RI.Framework.Windows.Interop
+namespace RI.DesktopServices.Windows.Interop
 {
     [Serializable]
     internal enum SecurityEntity

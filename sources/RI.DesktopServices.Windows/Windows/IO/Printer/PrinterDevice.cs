@@ -4,13 +4,13 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-using RI.Framework.Windows;
-using RI.Framework.Windows.Interop;
+using RI.DesktopServices.Windows.Interop;
+using RI.DesktopServices.Windows.Runtime;
 
 
 
 
-namespace RI.Framework.IO.Printer
+namespace RI.DesktopServices.Windows.IO.Printer
 {
     /// <summary>
     ///     Provides information about printer devices.
@@ -35,6 +35,7 @@ namespace RI.Framework.IO.Printer
         ///     An empty array is returned if no printers are currently available.
         /// </returns>
         /// <exception cref="Win32Exception"> A system error ocurred during enumeration of the printer devices. </exception>
+        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
         public static PrinterDevice[] GetPrinters (PrinterTypes printerTypes)
         {
             PrinterEnumFlags flags = 0;
@@ -132,9 +133,9 @@ namespace RI.Framework.IO.Printer
         ///     Gets the comment of the printer.
         /// </summary>
         /// <value>
-        ///     The comment of the printer (a brief description) or null if no comment is available.
+        ///     The comment of the printer (a brief description).
         /// </value>
-        public string Comment => this.NativePrinterInfo.pComment.ToNullIfNullOrEmptyOrWhitespace();
+        public string Comment => this.NativePrinterInfo.pComment;
 
         /// <summary>
         ///     Gets the name of the printer driver.
@@ -148,9 +149,9 @@ namespace RI.Framework.IO.Printer
         ///     Gets the physical location of the printer.
         /// </summary>
         /// <value>
-        ///     The physical location of the printer or null if no location is available.
+        ///     The physical location of the printer.
         /// </value>
-        public string Location => this.NativePrinterInfo.pLocation.ToNullIfNullOrEmptyOrWhitespace();
+        public string Location => this.NativePrinterInfo.pLocation;
 
         /// <summary>
         ///     Gets the name of the port used by the printer.
@@ -192,7 +193,7 @@ namespace RI.Framework.IO.Printer
         /// </value>
         public string ShareName => this.NativePrinterInfo.pShareName;
 
-        private PRINTER_INFO_2 NativePrinterInfo { get; set; }
+        private PRINTER_INFO_2 NativePrinterInfo { get; }
 
         #endregion
 

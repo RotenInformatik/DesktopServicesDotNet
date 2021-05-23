@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Interop
+namespace RI.DesktopServices.Windows.Interop
 {
     /// <summary>
     ///     Contains types used for interop functionality and PInvoke.

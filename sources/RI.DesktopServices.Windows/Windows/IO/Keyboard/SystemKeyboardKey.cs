@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 
 
 
-namespace RI.Framework.IO.Keyboard
+namespace RI.DesktopServices.Windows.IO.Keyboard
 {
     /// <summary>
     ///     Describes the keyboard keys recognizable by <see cref="SystemKeyboard" />.

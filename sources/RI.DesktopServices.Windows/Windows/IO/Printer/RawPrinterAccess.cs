@@ -4,12 +4,12 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Text;
 
-using RI.Framework.Windows;
+using RI.DesktopServices.Windows.Runtime;
 
 
 
 
-namespace RI.Framework.IO.Printer
+namespace RI.DesktopServices.Windows.IO.Printer
 {
     /// <summary>
     ///     Provides raw access to a printer device.
@@ -152,7 +152,7 @@ namespace RI.Framework.IO.Printer
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="documentName" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="documentName" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="documentName" /> is an empty string. </exception>
         /// <exception cref="InvalidOperationException"> The printer is already open. </exception>
         /// <exception cref="Win32Exception"> A system error ocurred while opening the printer or starting a new document. </exception>
         public void Open (string documentName)
@@ -162,9 +162,9 @@ namespace RI.Framework.IO.Printer
                 throw new ArgumentNullException(nameof(documentName));
             }
 
-            if (documentName.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(documentName))
             {
-                throw new EmptyStringArgumentException(nameof(documentName));
+                throw new ArgumentException("The string is empty.", nameof(documentName));
             }
 
             if (this.IsOpen)

@@ -6,11 +6,12 @@ using System.Runtime.InteropServices;
 
 
 
-namespace RI.Framework.Windows
+namespace RI.DesktopServices.Windows.Runtime
 {
     /// <summary>
     ///     Provides utilities for working with the native Windows API (WIN32).
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class WindowsApi
     {
         #region Constants
@@ -41,10 +42,7 @@ namespace RI.Framework.Windows
         ///     </para>
         /// </remarks>
         /// <exception cref="Win32Exception"> The error message could not be retrieved. </exception>
-        public static string GetErrorMessage (int errorCode)
-        {
-            return WindowsApi.GetErrorMessage(errorCode, null);
-        }
+        public static string GetErrorMessage (int errorCode) => WindowsApi.GetErrorMessage(errorCode, null);
 
         /// <summary>
         /// </summary>

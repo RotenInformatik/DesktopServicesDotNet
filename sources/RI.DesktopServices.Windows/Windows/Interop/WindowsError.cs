@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Interop
+namespace RI.DesktopServices.Windows.Interop
 {
     [Serializable]
     internal enum WindowsError

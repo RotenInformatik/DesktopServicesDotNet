@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Users
+namespace RI.DesktopServices.Windows.Users
 {
     /// <summary>
     ///     Contains Windows-specific user management utilities.

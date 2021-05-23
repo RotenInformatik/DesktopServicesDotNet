@@ -3,16 +3,18 @@ using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 
-using RI.Framework.Windows.Interop;
+using RI.DesktopServices.Windows.Interop;
+using RI.DesktopServices.Windows.Runtime;
 
 
 
 
-namespace RI.Framework.Windows.Network
+namespace RI.DesktopServices.Windows.Network
 {
     /// <summary>
     ///     Provides utilities for managing Windows network resources.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class WindowsNetwork
     {
         #region Constants
@@ -47,11 +49,17 @@ namespace RI.Framework.Windows.Network
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="resource" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="resource" /> is an empty string. </exception>
         public static void CloseConnection (string resource, bool force)
         {
             if (resource == null)
             {
                 throw new ArgumentNullException(nameof(resource));
+            }
+
+            if (string.IsNullOrWhiteSpace(resource))
+            {
+                throw new ArgumentException("The string is empty", nameof(resource));
             }
 
             WindowsNetwork.WNetCancelConnection2(resource, 0, force);
@@ -79,6 +87,7 @@ namespace RI.Framework.Windows.Network
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="resource" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="resource" /> is an empty string. </exception>
         /// <exception cref="Win32Exception">
         ///     An unknown error occurred which could not be translated to
         ///     <see cref="WindowsNetworkError" />.
@@ -89,6 +98,11 @@ namespace RI.Framework.Windows.Network
             if (resource == null)
             {
                 throw new ArgumentNullException(nameof(resource));
+            }
+
+            if (string.IsNullOrWhiteSpace(resource))
+            {
+                throw new ArgumentException("The string is empty", nameof(resource));
             }
 
             NETRESOURCE connection = new NETRESOURCE();

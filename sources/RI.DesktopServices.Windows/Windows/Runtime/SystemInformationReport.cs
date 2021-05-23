@@ -9,20 +9,24 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
+using System.Windows.Forms;
 
-using RI.Framework.IO.Serial;
-using RI.Framework.Windows.Cryptography;
-using RI.Framework.Windows.Users;
+using RI.DesktopServices.Windows.Cryptography;
+using RI.DesktopServices.Windows.IO.Serial;
+using RI.DesktopServices.Windows.UI;
+using RI.DesktopServices.Windows.Users;
 
 
 
 
-namespace RI.Framework.Windows
+namespace RI.DesktopServices.Windows.Runtime
 {
     /// <summary>
     ///     Implements a detailed system information report creator.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     [SuppressMessage("ReSharper", "EmptyGeneralCatchClause")]
     [SuppressMessage("ReSharper", "ConditionIsAlwaysTrueOrFalse")]
     [SuppressMessage("ReSharper", "ConstantNullCoalescingCondition")]

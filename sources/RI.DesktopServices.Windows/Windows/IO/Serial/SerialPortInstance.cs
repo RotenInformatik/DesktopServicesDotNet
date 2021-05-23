@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO.Ports;
 
 
 
 
-namespace RI.Framework.IO.Serial
+namespace RI.DesktopServices.Windows.IO.Serial
 {
     /// <summary>
     ///     Represents an instance of a serial port on the current machine.
@@ -22,7 +23,6 @@ namespace RI.Framework.IO.Serial
     ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Create Linux equivalent
     /// TODO: Create SerialPortStream
     public sealed class SerialPortInstance : IEquatable<SerialPortInstance>, IComparable<SerialPortInstance>,
                                              IComparable
@@ -102,7 +102,7 @@ namespace RI.Framework.IO.Serial
         ///     The serial port instance.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="str" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="str" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="str" /> is an empty string. </exception>
         /// <exception cref="FormatException"> <paramref name="str" /> is not a valid serial port name. </exception>
         public static SerialPortInstance Parse (string str)
         {
@@ -111,9 +111,9 @@ namespace RI.Framework.IO.Serial
                 throw new ArgumentNullException(nameof(str));
             }
 
-            if (str.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(str))
             {
-                throw new EmptyStringArgumentException(nameof(str));
+                throw new ArgumentException("The string is empty", nameof(str));
             }
 
             SerialPortInstance candidate;
@@ -151,7 +151,7 @@ namespace RI.Framework.IO.Serial
                 return false;
             }
 
-            if (str.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(str))
             {
                 instance = null;
                 return false;
@@ -215,7 +215,7 @@ namespace RI.Framework.IO.Serial
         /// </summary>
         /// <param name="portName"> </param>
         /// <exception cref="ArgumentNullException"> <paramref name="portName" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="portName" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="portName" /> is an empty string. </exception>
         /// <exception cref="ArgumentOutOfRangeException"> <paramref name="portName" /> is not a valid COM port name. </exception>
         public SerialPortInstance (string portName)
         {
@@ -224,9 +224,9 @@ namespace RI.Framework.IO.Serial
                 throw new ArgumentNullException(nameof(portName));
             }
 
-            if (portName.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(portName))
             {
-                throw new EmptyStringArgumentException(nameof(portName));
+                throw new ArgumentException("The string is empty", nameof(portName));
             }
 
             this.PortName = portName.ToUpperInvariant();

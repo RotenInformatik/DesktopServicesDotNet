@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 
 
-namespace RI.Framework.Utilities.Windows
+namespace RI.DesktopServices.Windows.Messages
 {
     //TODO: Win32Exceptions based on PInvoke results
     //TODO: Attribute parameters for PInvoke functions

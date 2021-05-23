@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.IO.Printer
+namespace RI.DesktopServices.Windows.IO.Printer
 {
     /// <summary>
     ///     Defines the printer types which are to be retrieved using <see cref="PrinterDevice.GetPrinters" />

@@ -4,7 +4,7 @@ using System.Windows;
 
 
 
-namespace RI.Framework.Windows.Wpf.Markup
+namespace RI.DesktopServices.Wpf.Markup
 {
     /// <summary>
     ///     Provides attached properties to associate a WPF control with a region of a <see cref="IRegionService" />.

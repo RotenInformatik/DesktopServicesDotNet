@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 
 
 
-namespace RI.Framework.IO.Keyboard
+namespace RI.DesktopServices.Windows.IO.Keyboard
 {
     /// <summary>
     ///     Provides access to the system keyboard.

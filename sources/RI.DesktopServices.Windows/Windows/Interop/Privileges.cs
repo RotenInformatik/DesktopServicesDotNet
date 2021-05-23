@@ -4,10 +4,12 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
+using RI.DesktopServices.Windows.Runtime;
 
 
 
-namespace RI.Framework.Windows.Interop
+
+namespace RI.DesktopServices.Windows.Interop
 {
     internal static class Privileges
     {

@@ -5,7 +5,7 @@ using System.Text;
 
 
 
-namespace RI.Framework.Utilities.Cryptography
+namespace RI.DesktopServices.Windows.Cryptography
 {
     /// <summary>
     ///     Provides transparent encryption functionality with a machine or user local scope.
@@ -45,7 +45,7 @@ namespace RI.Framework.Utilities.Cryptography
         /// </returns>
         /// <exception cref="CryptographicException"> The decryption failed. </exception>
         /// <exception cref="ArgumentException"> <paramref name="cipherText" /> is not in BASE64 format. </exception>
-        public static string Decrypt (bool userScope, string cipherText, string additionalEntropy)
+        public static string Decrypt (bool userScope, string cipherText, string additionalEntropy = null)
         {
             if (cipherText == null)
             {
@@ -87,7 +87,7 @@ namespace RI.Framework.Utilities.Cryptography
         ///     The encrypted string (binary data in BASE64 format) or null if <paramref name="plainText" /> is null.
         /// </returns>
         /// <exception cref="CryptographicException"> The encryption failed. </exception>
-        public static string Encrypt (bool userScope, string plainText, string additionalEntropy)
+        public static string Encrypt (bool userScope, string plainText, string additionalEntropy = null)
         {
             if (plainText == null)
             {

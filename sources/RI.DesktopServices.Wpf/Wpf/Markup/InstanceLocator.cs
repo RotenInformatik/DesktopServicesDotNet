@@ -5,7 +5,7 @@ using System.Windows.Markup;
 
 
 
-namespace RI.Framework.Windows.Wpf.Markup
+namespace RI.DesktopServices.Wpf.Markup
 {
     /// <summary>
     ///     Implements a WPF XAML markup extension to obtain instances.

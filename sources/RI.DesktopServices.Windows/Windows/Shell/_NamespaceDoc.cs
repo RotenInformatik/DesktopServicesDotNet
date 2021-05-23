@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Shell
+namespace RI.DesktopServices.Windows.Shell
 {
     /// <summary>
     ///     Contains Windows-specific shell utilities.

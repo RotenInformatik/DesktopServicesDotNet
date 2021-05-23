@@ -5,11 +5,12 @@ using System.IO;
 
 
 
-namespace RI.Framework.Windows.Imaging
+namespace RI.DesktopServices.Windows.Imaging
 {
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Icon" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class IconExtensions
     {
         #region Static Methods

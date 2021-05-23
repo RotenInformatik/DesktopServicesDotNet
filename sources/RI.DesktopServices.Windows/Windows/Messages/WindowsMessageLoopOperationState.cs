@@ -3,7 +3,7 @@ using System;
 
 
 
-namespace RI.Framework.Utilities.Windows
+namespace RI.DesktopServices.Windows.Messages
 {
     [Serializable]
     public enum WindowsMessageLoopOperationState

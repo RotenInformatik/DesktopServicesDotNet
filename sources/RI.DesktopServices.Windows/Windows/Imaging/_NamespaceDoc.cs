@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Imaging
+namespace RI.DesktopServices.Windows.Imaging
 {
     /// <summary>
     ///     Contains Windows-specific imaging utilities.

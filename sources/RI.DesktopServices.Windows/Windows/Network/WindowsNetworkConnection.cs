@@ -5,11 +5,12 @@ using System.Diagnostics.CodeAnalysis;
 
 
 
-namespace RI.Framework.Windows.Network
+namespace RI.DesktopServices.Windows.Network
 {
     /// <summary>
     ///     Implements a connection to a Windows network resource.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public sealed class WindowsNetworkConnection : IDisposable
     {
         #region Instance Constructor/Destructor
@@ -30,6 +31,7 @@ namespace RI.Framework.Windows.Network
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="resource" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="resource" /> is an empty string. </exception>
         /// <exception cref="Win32Exception">
         ///     An unknown error occurred which could not be translated to
         ///     <see cref="WindowsNetworkError" />.
@@ -39,6 +41,11 @@ namespace RI.Framework.Windows.Network
             if (resource == null)
             {
                 throw new ArgumentNullException(nameof(resource));
+            }
+
+            if (string.IsNullOrWhiteSpace(resource))
+            {
+                throw new ArgumentException("The string is empty", nameof(resource));
             }
 
             this.Resource = resource;
@@ -72,7 +79,7 @@ namespace RI.Framework.Windows.Network
         /// <value>
         ///     true if an interactive logon can be performed, false otherwise.
         /// </value>
-        public bool Interactive { get; private set; }
+        public bool Interactive { get; }
 
         /// <summary>
         ///     Gets whether the connection to the resource is open.
@@ -88,7 +95,7 @@ namespace RI.Framework.Windows.Network
         /// <value>
         ///     The password for the logon.
         /// </value>
-        public string Password { get; private set; }
+        public string Password { get; }
 
         /// <summary>
         ///     Gets the path of the resource.
@@ -96,7 +103,7 @@ namespace RI.Framework.Windows.Network
         /// <value>
         ///     The path of the resource.
         /// </value>
-        public string Resource { get; private set; }
+        public string Resource { get; }
 
         /// <summary>
         ///     Gets the logon name under which the connection is to be established.
@@ -104,7 +111,7 @@ namespace RI.Framework.Windows.Network
         /// <value>
         ///     The logon name under which the connection is to be established.
         /// </value>
-        public string Username { get; private set; }
+        public string Username { get; }
 
         #endregion
 
@@ -124,6 +131,7 @@ namespace RI.Framework.Windows.Network
 
         private void Connect ()
         {
+            GC.ReRegisterForFinalize(this);
             this.IsOpen = false;
             this.Error = WindowsNetwork.OpenConnection(this.Resource, this.Username, this.Password, this.Interactive);
             this.IsOpen = true;

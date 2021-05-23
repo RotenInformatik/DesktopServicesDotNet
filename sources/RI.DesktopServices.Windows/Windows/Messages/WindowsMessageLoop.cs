@@ -5,7 +5,7 @@ using System.Threading;
 
 
 
-namespace RI.Framework.Utilities.Windows
+namespace RI.DesktopServices.Windows.Messages
 {
     //TODO: IThreadDispatcher
 

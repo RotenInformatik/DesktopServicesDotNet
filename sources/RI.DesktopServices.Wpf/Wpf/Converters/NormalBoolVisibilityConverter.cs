@@ -6,7 +6,7 @@ using System.Windows.Data;
 
 
 
-namespace RI.Framework.Windows.Wpf.Converters
+namespace RI.DesktopServices.Wpf.Converters
 {
     /// <summary>
     ///     Implements a converter between <see cref="bool" /> and <see cref="Visibility" />.

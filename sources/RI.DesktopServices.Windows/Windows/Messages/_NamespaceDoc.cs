@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Messages
+namespace RI.DesktopServices.Windows.Messages
 {
     /// <summary>
     ///     Contains a wrapper implementation around Windows messages.

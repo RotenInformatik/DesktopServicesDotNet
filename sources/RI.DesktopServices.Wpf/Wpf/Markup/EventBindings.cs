@@ -5,7 +5,7 @@ using System.Windows;
 
 
 
-namespace RI.Framework.Windows.Wpf.Markup
+namespace RI.DesktopServices.Wpf.Markup
 {
     /// <summary>
     ///     The collection which holds all event-to-command bindings (<see cref="EventBinding" />) used with

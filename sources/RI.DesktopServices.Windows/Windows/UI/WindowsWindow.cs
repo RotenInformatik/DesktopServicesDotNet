@@ -5,11 +5,12 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 
 
 
 
-namespace RI.Framework.Windows
+namespace RI.DesktopServices.Windows.UI
 {
     /// <summary>
     ///     Provides utilities for working with native windows.
@@ -19,6 +20,7 @@ namespace RI.Framework.Windows
     ///         Native windows are represented using their window handle (HWND).
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     public static class WindowsWindow
     {
         #region Constants

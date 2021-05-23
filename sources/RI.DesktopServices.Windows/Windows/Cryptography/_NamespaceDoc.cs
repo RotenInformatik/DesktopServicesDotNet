@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Cryptography
+namespace RI.DesktopServices.Windows.Cryptography
 {
     /// <summary>
     ///     Contains Windows-specific cryptography utilities.

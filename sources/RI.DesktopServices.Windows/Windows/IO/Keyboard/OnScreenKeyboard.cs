@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
 
 
 
 
-namespace RI.Framework.IO.Keyboard
+namespace RI.DesktopServices.Windows.IO.Keyboard
 {
     /// <summary>
     ///     Provides access to the Windows on-screen keyboard.
     /// </summary>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Test if this still works
     public static class OnScreenKeyboard
     {
         #region Constants
@@ -49,29 +49,24 @@ namespace RI.Framework.IO.Keyboard
         /// <summary>
         ///     Gets whether the on-screen keyboard is available or not.
         /// </summary>
-        /// <value>
+        /// <returns>
         ///     true if the on-screen keyboard is available, false otherwise.
-        /// </value>
-        public static bool IsAvailable => OnScreenKeyboard.ExecutablePath != null;
+        /// </returns>
+        public static bool IsAvailable() => OnScreenKeyboard.GetExecutablePath() != null;
 
-        private static FilePath ExecutablePath
+        private static string GetExecutablePath ()
         {
-            get
+            foreach (Environment.SpecialFolder folder in OnScreenKeyboard.TabTipFolders)
             {
-                FilePath filePath = new FilePath(OnScreenKeyboard.TabTipExecutablePath);
+                string path = Path.Join(Environment.GetFolderPath(folder), TabTipExecutablePath);
 
-                foreach (Environment.SpecialFolder folder in OnScreenKeyboard.TabTipFolders)
+                if (File.Exists(path))
                 {
-                    FilePath path = new DirectoryPath(Environment.GetFolderPath(folder)).AppendFile(filePath);
-
-                    if (path.Exists)
-                    {
-                        return path;
-                    }
+                    return path;
                 }
-
-                return null;
             }
+
+            return null;
         }
 
         #endregion
@@ -86,7 +81,7 @@ namespace RI.Framework.IO.Keyboard
         /// </summary>
         public static void Hide ()
         {
-            if (!OnScreenKeyboard.IsAvailable)
+            if (!OnScreenKeyboard.IsAvailable())
             {
                 return;
             }
@@ -109,12 +104,12 @@ namespace RI.Framework.IO.Keyboard
         /// </returns>
         public static bool Show ()
         {
-            if (!OnScreenKeyboard.IsAvailable)
+            if (!OnScreenKeyboard.IsAvailable())
             {
                 return false;
             }
 
-            FilePath executablePath = OnScreenKeyboard.ExecutablePath;
+            string executablePath = OnScreenKeyboard.GetExecutablePath();
 
             ProcessStartInfo startInfo = new ProcessStartInfo(executablePath);
             startInfo.ErrorDialog = false;

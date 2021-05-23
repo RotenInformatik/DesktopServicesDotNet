@@ -1,9 +1,10 @@
 ﻿using System;
+using System.IO.Ports;
 
 
 
 
-namespace RI.Framework.IO.Serial
+namespace RI.DesktopServices.Windows.IO.Serial
 {
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="SerialPort" /> type.

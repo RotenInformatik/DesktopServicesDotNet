@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Network
+namespace RI.DesktopServices.Windows.Network
 {
     /// <summary>
     ///     Contains Windows-specific network utilities.

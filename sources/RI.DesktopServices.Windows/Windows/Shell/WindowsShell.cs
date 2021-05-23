@@ -2,33 +2,33 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Text;
 
 
 
 
-namespace RI.Framework.Windows.Shell
+namespace RI.DesktopServices.Windows.Shell
 {
     /// <summary>
     ///     Provides utilities for working with the Windows shell environment.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class WindowsShell
     {
-        #region Static Fields
+        #region Constants
 
-        private static readonly string BatchFileExtension = ".bat";
+        private const string BatchFileExtension = ".bat";
 
-        private static readonly string CommandPromptArguments = "/k \"cd /d {0}\"";
+        private const string CommandPromptArguments = "/k \"cd /d {0}\"";
 
-        private static readonly FilePath CommandPromptExecutable = new FilePath("cmd.exe");
+        private const string CommandPromptExecutable = "cmd.exe";
 
-        private static readonly string ElevatedVerb = new FilePath("runas");
+        private const string ElevatedVerb = "runas";
 
-        private static readonly FilePath ExplorerExecutable = new FilePath("explorer.exe");
+        private const string ExplorerExecutable = "explorer.exe";
 
-        private static readonly FilePath SystemInfoExecutable = new FilePath("msinfo32.exe");
+        private const string SystemInfoExecutable = "msinfo32.exe";
 
-        private static readonly FilePath TaskManagerExecutable = new FilePath("taskmgr.exe");
+        private const string TaskManagerExecutable = "taskmgr.exe";
 
         #endregion
 
@@ -38,286 +38,12 @@ namespace RI.Framework.Windows.Shell
         #region Static Methods
 
         /// <summary>
-        ///     Executes batch commands.
-        /// </summary>
-        /// <param name="commands"> The batch commands. </param>
-        /// <param name="workingDirectory"> The used working directory. Can be null to use the current directory. </param>
-        /// <returns>
-        ///     The <see cref="Process" /> if the commands could be started successfully, null otherwise.
-        /// </returns>
-        /// <remarks>
-        ///     <note type="important">
-        ///         The standard output is redirected.
-        ///         Therefore, you must read the <see cref="Process.StandardOutput" /> reader.
-        ///     </note>
-        /// </remarks>
-        /// <exception cref="ArgumentNullException"> <paramref name="commands" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="commands" /> is an empty string. </exception>
-        public static Process ExecuteBatchCommands (string commands, DirectoryPath workingDirectory)
-        {
-            if (commands == null)
-            {
-                throw new ArgumentNullException(nameof(commands));
-            }
-
-            if (commands.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(commands));
-            }
-
-            workingDirectory = workingDirectory ?? DirectoryPath.GetCurrentDirectory();
-            string directory = Environment.ExpandEnvironmentVariables(workingDirectory);
-
-            TemporaryFile tempFile = new TemporaryFile(WindowsShell.BatchFileExtension);
-            tempFile.File.WriteText(commands, Encoding.Default);
-
-            ProcessStartInfo startInfo =
-                new ProcessStartInfo(WindowsShell.CommandPromptExecutable, "/c call \"" + tempFile.File + "\"");
-
-            startInfo.CreateNoWindow = true;
-            startInfo.ErrorDialog = false;
-            startInfo.UseShellExecute = false;
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.WorkingDirectory = directory;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.StandardOutputEncoding = Encoding.UTF8;
-
-            Process process;
-
-            try
-            {
-                process = Process.Start(startInfo);
-            }
-            catch
-            {
-                return null;
-            }
-
-            if (process == null)
-            {
-                return null;
-            }
-
-            process.EnableRaisingEvents = true;
-
-            EventHandler exitHandler = null;
-
-            exitHandler = (sender, args) =>
-            {
-                process.Exited -= exitHandler;
-                tempFile.Delete();
-            };
-
-            process.Exited += exitHandler;
-
-            if (process.HasExited)
-            {
-                process.Exited -= exitHandler;
-                tempFile.Delete();
-            }
-
-            return process;
-        }
-
-        /// <summary>
-        ///     Executes a batch script file.
-        /// </summary>
-        /// <param name="scriptFile"> The batch script file. </param>
-        /// <param name="scriptArguments"> The batch script arguments or null if no arguments are used. </param>
-        /// <param name="workingDirectory"> The used working directory. Can be null to use the current directory. </param>
-        /// <returns>
-        ///     The <see cref="Process" /> if the script file could be started successfully, null otherwise.
-        /// </returns>
-        /// <remarks>
-        ///     <note type="important">
-        ///         The standard output is redirected.
-        ///         Therefore, you must read the <see cref="Process.StandardOutput" /> reader.
-        ///     </note>
-        /// </remarks>
-        /// <exception cref="ArgumentNullException"> <paramref name="scriptFile" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="scriptFile" /> is not a valid path. </exception>
-        /// <exception cref="FileNotFoundException"> <paramref name="scriptFile" /> does not exist. </exception>
-        public static Process ExecuteBatchScript (FilePath scriptFile, string scriptArguments,
-                                                  DirectoryPath workingDirectory)
-        {
-            if (scriptFile == null)
-            {
-                throw new ArgumentNullException(nameof(scriptFile));
-            }
-
-            if (!scriptFile.IsRealFile)
-            {
-                throw new InvalidPathArgumentException(nameof(scriptFile));
-            }
-
-            if (!scriptFile.Exists)
-            {
-                throw new FileNotFoundException("Script file not found.", scriptFile);
-            }
-
-            workingDirectory = workingDirectory ?? DirectoryPath.GetCurrentDirectory();
-            string directory = Environment.ExpandEnvironmentVariables(workingDirectory);
-
-            StringBuilder arguments = new StringBuilder();
-            arguments.Append("/c call \"" + scriptFile + "\"");
-
-            if (!scriptArguments.IsNullOrEmptyOrWhitespace())
-            {
-                arguments.Append(" ");
-                arguments.Append(Environment.ExpandEnvironmentVariables(scriptArguments));
-            }
-
-            ProcessStartInfo startInfo =
-                new ProcessStartInfo(WindowsShell.CommandPromptExecutable, arguments.ToString());
-
-            startInfo.CreateNoWindow = true;
-            startInfo.ErrorDialog = false;
-            startInfo.UseShellExecute = false;
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.WorkingDirectory = directory;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.StandardOutputEncoding = Encoding.UTF8;
-
-            try
-            {
-                return Process.Start(startInfo);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        ///     Executes a console command.
-        /// </summary>
-        /// <param name="command"> The command to execute. </param>
-        /// <param name="arguments"> The arguments. Can be null or an empty string if not used. </param>
-        /// <param name="workingDirectory"> The used working directory. Can be null to use the current directory. </param>
-        /// <returns>
-        ///     The <see cref="Process" /> if the command could be started successfully, null otherwise.
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Environment variables will be resolved for <paramref name="command" />, <paramref name="arguments" />, and
-        ///         <paramref name="workingDirectory" />.
-        ///     </para>
-        ///     <note type="important">
-        ///         The standard output is redirected.
-        ///         Therefore, you must read the <see cref="Process.StandardOutput" /> reader.
-        ///     </note>
-        /// </remarks>
-        /// <exception cref="ArgumentNullException"> <paramref name="command" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="command" /> is an empty string. </exception>
-        public static Process ExecuteConsoleCommand (string command, string arguments, DirectoryPath workingDirectory)
-        {
-            if (command == null)
-            {
-                throw new ArgumentNullException(nameof(command));
-            }
-
-            if (command.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(command));
-            }
-
-            arguments = arguments ?? string.Empty;
-            workingDirectory = workingDirectory ?? DirectoryPath.GetCurrentDirectory();
-
-            command = Environment.ExpandEnvironmentVariables(command);
-            arguments = Environment.ExpandEnvironmentVariables(arguments);
-
-            string directory = Environment.ExpandEnvironmentVariables(workingDirectory);
-
-            ProcessStartInfo startInfo = new ProcessStartInfo(command, arguments);
-            startInfo.CreateNoWindow = true;
-            startInfo.ErrorDialog = false;
-            startInfo.UseShellExecute = false;
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            startInfo.WorkingDirectory = directory;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.StandardOutputEncoding = Encoding.UTF8;
-
-            try
-            {
-                return Process.Start(startInfo);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        ///     Executes a shell command.
-        /// </summary>
-        /// <param name="command"> The command, program, file, or folder to execute. </param>
-        /// <param name="arguments"> The arguments. Can be null or an empty string if not used. </param>
-        /// <param name="verb"> The verb. Can be null or an empty string if not used. </param>
-        /// <param name="workingDirectory"> The used working directory. Can be null to use the current directory. </param>
-        /// <param name="windowStyle"> The window style of the opened program window (if any). </param>
-        /// <returns>
-        ///     The <see cref="Process" /> if the command could be started successfully, null otherwise.
-        /// </returns>
-        /// <remarks>
-        ///     <para>
-        ///         Environment variables will be resolved for <paramref name="command" />, <paramref name="arguments" />,
-        ///         <paramref name="verb" />, and <paramref name="workingDirectory" />.
-        ///     </para>
-        /// </remarks>
-        /// <exception cref="ArgumentNullException"> <paramref name="command" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="command" /> is an empty string. </exception>
-        public static Process ExecuteShellCommand (string command, string arguments, string verb,
-                                                   DirectoryPath workingDirectory, ProcessWindowStyle windowStyle)
-        {
-            if (command == null)
-            {
-                throw new ArgumentNullException(nameof(command));
-            }
-
-            if (command.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(command));
-            }
-
-            arguments = arguments ?? string.Empty;
-            verb = verb ?? string.Empty;
-            workingDirectory = workingDirectory ?? DirectoryPath.GetCurrentDirectory();
-
-            command = Environment.ExpandEnvironmentVariables(command);
-            arguments = Environment.ExpandEnvironmentVariables(arguments);
-            verb = Environment.ExpandEnvironmentVariables(verb);
-
-            string directory = Environment.ExpandEnvironmentVariables(workingDirectory);
-
-            ProcessStartInfo startInfo = new ProcessStartInfo(command, arguments);
-            startInfo.CreateNoWindow = false;
-            startInfo.ErrorDialog = false;
-            startInfo.UseShellExecute = true;
-            startInfo.WindowStyle = windowStyle;
-            startInfo.WorkingDirectory = directory;
-            startInfo.Verb = verb;
-
-            try
-            {
-                return Process.Start(startInfo);
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
         ///     Opens a command prompt.
         /// </summary>
         /// <returns>
         ///     true if the command prompt could be opened, false otherwise.
         /// </returns>
-        public static bool OpenCommandPrompt ()
-        {
-            return WindowsShell.OpenCommandPrompt(null, false);
-        }
+        public static bool OpenCommandPrompt () => WindowsShell.OpenCommandPrompt(null, false);
 
         /// <summary>
         ///     Opens a command prompt.
@@ -332,9 +58,18 @@ namespace RI.Framework.Windows.Shell
         ///         Environment variables will be resolved for <paramref name="workingDirectory" />.
         ///     </para>
         /// </remarks>
-        public static bool OpenCommandPrompt (DirectoryPath workingDirectory, bool elevated)
+        /// <exception cref="ArgumentException"> <paramref name="workingDirectory" /> is an empty string. </exception>
+        public static bool OpenCommandPrompt (string workingDirectory, bool elevated)
         {
-            workingDirectory = workingDirectory ?? DirectoryPath.GetCurrentDirectory();
+            if (workingDirectory != null)
+            {
+                if (string.IsNullOrWhiteSpace(workingDirectory))
+                {
+                    throw new ArgumentException("The string is empty.", nameof(workingDirectory));
+                }
+            }
+
+            workingDirectory ??= Environment.CurrentDirectory;
 
             string directory = Environment.ExpandEnvironmentVariables(workingDirectory);
 
@@ -371,10 +106,7 @@ namespace RI.Framework.Windows.Shell
         /// <returns>
         ///     true if the Windows Explorer could be opened, false otherwise.
         /// </returns>
-        public static bool OpenExplorer ()
-        {
-            return WindowsShell.OpenExplorer(ProcessWindowStyle.Normal, false);
-        }
+        public static bool OpenExplorer () => WindowsShell.OpenExplorer(ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens the Windows Explorer.
@@ -424,11 +156,9 @@ namespace RI.Framework.Windows.Shell
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="filePath" /> has wildcards. </exception>
-        public static bool OpenFile (FilePath filePath)
-        {
-            return WindowsShell.OpenFile(filePath, ProcessWindowStyle.Normal, false);
-        }
+        /// <exception cref="ArgumentException"> <paramref name="filePath" /> is an empty string. </exception>
+        public static bool OpenFile (string filePath) =>
+            WindowsShell.OpenFile(filePath, ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens a file with its associated program.
@@ -445,21 +175,21 @@ namespace RI.Framework.Windows.Shell
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="filePath" /> has wildcards. </exception>
-        public static bool OpenFile (FilePath filePath, ProcessWindowStyle windowStyle, bool elevated)
+        /// <exception cref="ArgumentException"> <paramref name="filePath" /> is an empty string. </exception>
+        public static bool OpenFile (string filePath, ProcessWindowStyle windowStyle, bool elevated)
         {
             if (filePath == null)
             {
                 throw new ArgumentNullException(nameof(filePath));
             }
 
-            if (filePath.HasWildcards)
+            if (string.IsNullOrWhiteSpace(filePath))
             {
-                throw new InvalidPathArgumentException(nameof(filePath));
+                throw new ArgumentException("The string is empty.", nameof(filePath));
             }
 
             string file = Environment.ExpandEnvironmentVariables(filePath);
-            string directory = Environment.ExpandEnvironmentVariables(filePath.Directory);
+            string directory = Environment.ExpandEnvironmentVariables(Path.GetDirectoryName(filePath));
 
             ProcessStartInfo startInfo = new ProcessStartInfo(file);
 
@@ -499,11 +229,9 @@ namespace RI.Framework.Windows.Shell
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="folderPath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="folderPath" /> has wildcards. </exception>
-        public static bool OpenFolder (DirectoryPath folderPath)
-        {
-            return WindowsShell.OpenFolder(folderPath, ProcessWindowStyle.Normal, false);
-        }
+        /// <exception cref="ArgumentException"> <paramref name="folderPath" /> is an empty string. </exception>
+        public static bool OpenFolder (string folderPath) =>
+            WindowsShell.OpenFolder(folderPath, ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens a folder in Windows Explorer.
@@ -520,17 +248,17 @@ namespace RI.Framework.Windows.Shell
         ///     </para>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="folderPath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="folderPath" /> has wildcards. </exception>
-        public static bool OpenFolder (DirectoryPath folderPath, ProcessWindowStyle windowStyle, bool elevated)
+        /// <exception cref="ArgumentException"> <paramref name="folderPath" /> is an empty string. </exception>
+        public static bool OpenFolder (string folderPath, ProcessWindowStyle windowStyle, bool elevated)
         {
             if (folderPath == null)
             {
                 throw new ArgumentNullException(nameof(folderPath));
             }
 
-            if (folderPath.HasWildcards)
+            if (string.IsNullOrWhiteSpace(folderPath))
             {
-                throw new InvalidPathArgumentException(nameof(folderPath));
+                throw new ArgumentException("The string is empty.", nameof(folderPath));
             }
 
             string directory = Environment.ExpandEnvironmentVariables(folderPath);
@@ -566,10 +294,7 @@ namespace RI.Framework.Windows.Shell
         /// <returns>
         ///     true if the System Info could be opened, false otherwise.
         /// </returns>
-        public static bool OpenSystemInfo ()
-        {
-            return WindowsShell.OpenSystemInfo(ProcessWindowStyle.Normal, false);
-        }
+        public static bool OpenSystemInfo () => WindowsShell.OpenSystemInfo(ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens the System Info.
@@ -612,10 +337,7 @@ namespace RI.Framework.Windows.Shell
         /// <returns>
         ///     true if the Task Manager could be opened, false otherwise.
         /// </returns>
-        public static bool OpenTaskManager ()
-        {
-            return WindowsShell.OpenTaskManager(ProcessWindowStyle.Normal, false);
-        }
+        public static bool OpenTaskManager () => WindowsShell.OpenTaskManager(ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens the Task Manager.
@@ -660,12 +382,9 @@ namespace RI.Framework.Windows.Shell
         ///     true if the URL could be opened, false otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="url" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="url" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="url" /> is an empty string. </exception>
         /// <exception cref="UriFormatException"> <paramref name="url" /> is not a valid URI. </exception>
-        public static bool OpenUrl (string url)
-        {
-            return WindowsShell.OpenUrl(url, ProcessWindowStyle.Normal, false);
-        }
+        public static bool OpenUrl (string url) => WindowsShell.OpenUrl(url, ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens an URL.
@@ -677,7 +396,7 @@ namespace RI.Framework.Windows.Shell
         ///     true if the URL could be opened, false otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="url" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="url" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="url" /> is an empty string. </exception>
         /// <exception cref="UriFormatException"> <paramref name="url" /> is not a valid URI. </exception>
         public static bool OpenUrl (string url, ProcessWindowStyle windowStyle, bool elevated)
         {
@@ -686,9 +405,9 @@ namespace RI.Framework.Windows.Shell
                 throw new ArgumentNullException(nameof(url));
             }
 
-            if (url.IsEmptyOrWhitespace())
+            if (string.IsNullOrWhiteSpace(url))
             {
-                throw new EmptyStringArgumentException(nameof(url));
+                throw new ArgumentException("The string is empty.", nameof(url));
             }
 
             Uri uri;
@@ -713,10 +432,7 @@ namespace RI.Framework.Windows.Shell
         ///     true if the URL could be opened, false otherwise.
         /// </returns>
         /// <exception cref="ArgumentNullException"> <paramref name="url" /> is null. </exception>
-        public static bool OpenUrl (Uri url)
-        {
-            return WindowsShell.OpenUrl(url, ProcessWindowStyle.Normal, false);
-        }
+        public static bool OpenUrl (Uri url) => WindowsShell.OpenUrl(url, ProcessWindowStyle.Normal, false);
 
         /// <summary>
         ///     Opens an URL.

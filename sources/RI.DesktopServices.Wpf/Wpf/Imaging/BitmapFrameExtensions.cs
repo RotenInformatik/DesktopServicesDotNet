@@ -5,7 +5,7 @@ using System.Windows.Media.Imaging;
 
 
 
-namespace RI.Framework.Windows.Imaging
+namespace RI.DesktopServices.Wpf.Imaging
 {
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="BitmapFrame" /> type.

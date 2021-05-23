@@ -3,7 +3,7 @@
 
 
 
-namespace RI.Framework.Windows.Network
+namespace RI.DesktopServices.Windows.Network
 {
     /// <summary>
     ///     Describes the result of a network resource operation performed by <see cref="WindowsNetwork" />.
