@@ -88,8 +88,8 @@ namespace RI.DesktopServices.Windows.Users
         /// </summary>
         /// <param name="logon"> The logon information (either user or domain\user). </param>
         /// <param name="resolve"> Specifies whether the extracted domain and user should be resolved. </param>
-        /// <param name="domain"> The extracted domain. Null if no domain information is available.</param>
-        /// <param name="user"> The extracted user name. Null if no user information is available.</param>
+        /// <param name="domain"> The extracted domain. Null if no domain information is available. </param>
+        /// <param name="user"> The extracted user name. Null if no user information is available. </param>
         /// <remarks>
         ///     <para>
         ///         If <paramref name="resolve" /> is true, <paramref name="domain" /> and <paramref name="user" /> are first
@@ -314,224 +314,6 @@ namespace RI.DesktopServices.Windows.Users
         }
 
         /// <summary>
-        ///     Performs a user impersonation based on a logon token.
-        /// </summary>
-        /// <param name="token"> The logon token. </param>
-        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
-        /// <param name="action"> The code to run under the impersonated user. </param>
-        /// <exception cref="ArgumentNullException"><paramref name="action"/> is null.</exception>
-        /// <exception cref="ArgumentException"><paramref name="token"/> is zero.</exception>
-        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
-        /// <exception cref="Win32Exception">
-        ///     The current user does not have sufficient permissions or the impersonation could not
-        ///     be completed.
-        /// </exception>
-        public static void RunImpersonated (IntPtr token, bool loadUserProfile,
-                                                        ImpersonatedAction action)
-        {
-            if (action == null)
-            {
-                throw new ArgumentNullException(nameof(action));
-            }
-
-            if (token == IntPtr.Zero)
-            {
-                throw new ArgumentException("The token is zero.", nameof(token));
-            }
-
-            RunImpersonated<object>(token, loadUserProfile, (ptr, identity, profile) =>
-            {
-                action(ptr, identity, profile);
-                return null;
-            });
-        }
-
-        /// <summary>
-        ///     Performs a user impersonation based on a logon token.
-        /// </summary>
-        /// <param name="token"> The logon token. </param>
-        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
-        /// <param name="func"> The code to run under the impersonated user. </param>
-        /// <returns>
-        /// The return value from <paramref name="func"/>.
-        /// </returns>
-        /// <exception cref="ArgumentNullException"><paramref name="func"/> is null.</exception>
-        /// <exception cref="ArgumentException"><paramref name="token"/> is zero.</exception>
-        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
-        /// <exception cref="Win32Exception">
-        ///     The current user does not have sufficient permissions or the impersonation could not
-        ///     be completed.
-        /// </exception>
-        public static TResult RunImpersonated <TResult> (IntPtr token, bool loadUserProfile,
-                                                         ImpersonatedFunc<TResult> func)
-        {
-            if (func == null)
-            {
-                throw new ArgumentNullException(nameof(func));
-            }
-
-            if (token == IntPtr.Zero)
-            {
-                throw new ArgumentException("The token is zero.", nameof(token));
-            }
-
-            TResult result = WindowsIdentity.RunImpersonated(new SafeAccessTokenHandle(token), () =>
-            {
-                WindowsIdentity identity = null;
-                WindowsUserProfile profile = null;
-
-                try
-                {
-                    identity = new WindowsIdentity(token);
-
-                    if (loadUserProfile)
-                    {
-                        USERPROFILE profileInfo = new USERPROFILE();
-                        profileInfo.dwSize = Marshal.SizeOf(profileInfo);
-                        profileInfo.lpUserName = identity.Name;
-                        profileInfo.dwFlags = 1;
-
-                        bool loadSuccess = WindowsUser.LoadUserProfile(token, ref profileInfo);
-
-                        if (!loadSuccess)
-                        {
-                            int errorCode = WindowsApi.GetLastErrorCode();
-                            string errorMessage = WindowsApi.GetErrorMessage(errorCode);
-                            throw new Win32Exception(errorCode, errorMessage);
-                        }
-
-                        profile = new WindowsUserProfile(profileInfo);
-                    }
-
-                    return func(token, identity, profile);
-                }
-                finally
-                {
-                    if (profile != null)
-                    {
-                        WindowsUser.UnloadUserProfile(token, profile.NativeUserProfile.hProfile);
-                    }
-
-                    if (identity != null)
-                    {
-                        identity.Dispose();
-                    }
-                }
-            });
-
-            return result;
-        }
-
-        /// <summary>
-        ///     Performs a user impersonation based on a logon token.
-        /// </summary>
-        /// <param name="token"> The logon token. </param>
-        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
-        /// <param name="action"> The code to run under the impersonated user. </param>
-        /// <exception cref="ArgumentNullException"><paramref name="action"/> is null.</exception>
-        /// <exception cref="ArgumentException"><paramref name="token"/> is zero.</exception>
-        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
-        /// <exception cref="Win32Exception">
-        ///     The current user does not have sufficient permissions or the impersonation could not
-        ///     be completed.
-        /// </exception>
-        public static Task RunImpersonatedAsync (IntPtr token, bool loadUserProfile,
-                                                        ImpersonatedActionAsync action)
-        {
-            if (action == null)
-            {
-                throw new ArgumentNullException(nameof(action));
-            }
-
-            if (token == IntPtr.Zero)
-            {
-                throw new ArgumentException("The token is zero.", nameof(token));
-            }
-
-            return RunImpersonatedAsync<object>(token, loadUserProfile, async (ptr, identity, profile) =>
-            {
-                await action(ptr, identity, profile);
-                return null;
-            });
-        }
-
-        /// <summary>
-        ///     Performs a user impersonation based on a logon token.
-        /// </summary>
-        /// <param name="token"> The logon token. </param>
-        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
-        /// <param name="func"> The code to run under the impersonated user. </param>
-        /// <returns>
-        /// The return value from <paramref name="func"/>.
-        /// </returns>
-        /// <exception cref="ArgumentNullException"><paramref name="func"/> is null.</exception>
-        /// <exception cref="ArgumentException"><paramref name="token"/> is zero.</exception>
-        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
-        /// <exception cref="Win32Exception">
-        ///     The current user does not have sufficient permissions or the impersonation could not
-        ///     be completed.
-        /// </exception>
-        public static Task<TResult> RunImpersonatedAsync<TResult> (IntPtr token, bool loadUserProfile,
-                                                              ImpersonatedFuncAsync<TResult> func)
-        {
-            if (func == null)
-            {
-                throw new ArgumentNullException(nameof(func));
-            }
-
-            if (token == IntPtr.Zero)
-            {
-                throw new ArgumentException("The token is zero.", nameof(token));
-            }
-
-            Task<TResult> result = WindowsIdentity.RunImpersonatedAsync(new SafeAccessTokenHandle(token), new Func<Task<TResult>>(async () =>
-            {
-                WindowsIdentity identity = null;
-                WindowsUserProfile profile = null;
-
-                try
-                {
-                    identity = new WindowsIdentity(token);
-
-                    if (loadUserProfile)
-                    {
-                        USERPROFILE profileInfo = new USERPROFILE();
-                        profileInfo.dwSize = Marshal.SizeOf(profileInfo);
-                        profileInfo.lpUserName = identity.Name;
-                        profileInfo.dwFlags = 1;
-
-                        bool loadSuccess = WindowsUser.LoadUserProfile(token, ref profileInfo);
-
-                        if (!loadSuccess)
-                        {
-                            int errorCode = WindowsApi.GetLastErrorCode();
-                            string errorMessage = WindowsApi.GetErrorMessage(errorCode);
-                            throw new Win32Exception(errorCode, errorMessage);
-                        }
-
-                        profile = new WindowsUserProfile(profileInfo);
-                    }
-
-                    return await func(token, identity, profile);
-                }
-                finally
-                {
-                    if (profile != null)
-                    {
-                        WindowsUser.UnloadUserProfile(token, profile.NativeUserProfile.hProfile);
-                    }
-
-                    if (identity != null)
-                    {
-                        identity.Dispose();
-                    }
-                }
-            }));
-
-            return result;
-        }
-
-        /// <summary>
         ///     Determines whether the current user has administrator privileges.
         /// </summary>
         /// <returns>
@@ -609,6 +391,224 @@ namespace RI.DesktopServices.Windows.Users
             }
 
             return user;
+        }
+
+        /// <summary>
+        ///     Performs a user impersonation based on a logon token.
+        /// </summary>
+        /// <param name="token"> The logon token. </param>
+        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
+        /// <param name="action"> The code to run under the impersonated user. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="action" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="token" /> is zero. </exception>
+        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
+        /// <exception cref="Win32Exception">
+        ///     The current user does not have sufficient permissions or the impersonation could not
+        ///     be completed.
+        /// </exception>
+        public static void RunImpersonated (IntPtr token, bool loadUserProfile,
+                                            ImpersonatedAction action)
+        {
+            if (action == null)
+            {
+                throw new ArgumentNullException(nameof(action));
+            }
+
+            if (token == IntPtr.Zero)
+            {
+                throw new ArgumentException("The token is zero.", nameof(token));
+            }
+
+            WindowsUser.RunImpersonated<object>(token, loadUserProfile, (ptr, identity, profile) =>
+            {
+                action(ptr, identity, profile);
+                return null;
+            });
+        }
+
+        /// <summary>
+        ///     Performs a user impersonation based on a logon token.
+        /// </summary>
+        /// <param name="token"> The logon token. </param>
+        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
+        /// <param name="func"> The code to run under the impersonated user. </param>
+        /// <returns>
+        ///     The return value from <paramref name="func" />.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="func" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="token" /> is zero. </exception>
+        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
+        /// <exception cref="Win32Exception">
+        ///     The current user does not have sufficient permissions or the impersonation could not
+        ///     be completed.
+        /// </exception>
+        public static TResult RunImpersonated <TResult> (IntPtr token, bool loadUserProfile,
+                                                         ImpersonatedFunc<TResult> func)
+        {
+            if (func == null)
+            {
+                throw new ArgumentNullException(nameof(func));
+            }
+
+            if (token == IntPtr.Zero)
+            {
+                throw new ArgumentException("The token is zero.", nameof(token));
+            }
+
+            TResult result = WindowsIdentity.RunImpersonated(new SafeAccessTokenHandle(token), () =>
+            {
+                WindowsIdentity identity = null;
+                WindowsUserProfile profile = null;
+
+                try
+                {
+                    identity = new WindowsIdentity(token);
+
+                    if (loadUserProfile)
+                    {
+                        USERPROFILE profileInfo = new USERPROFILE();
+                        profileInfo.dwSize = Marshal.SizeOf(profileInfo);
+                        profileInfo.lpUserName = identity.Name;
+                        profileInfo.dwFlags = 1;
+
+                        bool loadSuccess = WindowsUser.LoadUserProfile(token, ref profileInfo);
+
+                        if (!loadSuccess)
+                        {
+                            int errorCode = WindowsApi.GetLastErrorCode();
+                            string errorMessage = WindowsApi.GetErrorMessage(errorCode);
+                            throw new Win32Exception(errorCode, errorMessage);
+                        }
+
+                        profile = new WindowsUserProfile(profileInfo);
+                    }
+
+                    return func(token, identity, profile);
+                }
+                finally
+                {
+                    if (profile != null)
+                    {
+                        WindowsUser.UnloadUserProfile(token, profile.NativeUserProfile.hProfile);
+                    }
+
+                    if (identity != null)
+                    {
+                        identity.Dispose();
+                    }
+                }
+            });
+
+            return result;
+        }
+
+        /// <summary>
+        ///     Performs a user impersonation based on a logon token.
+        /// </summary>
+        /// <param name="token"> The logon token. </param>
+        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
+        /// <param name="action"> The code to run under the impersonated user. </param>
+        /// <exception cref="ArgumentNullException"> <paramref name="action" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="token" /> is zero. </exception>
+        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
+        /// <exception cref="Win32Exception">
+        ///     The current user does not have sufficient permissions or the impersonation could not
+        ///     be completed.
+        /// </exception>
+        public static Task RunImpersonatedAsync (IntPtr token, bool loadUserProfile,
+                                                 ImpersonatedActionAsync action)
+        {
+            if (action == null)
+            {
+                throw new ArgumentNullException(nameof(action));
+            }
+
+            if (token == IntPtr.Zero)
+            {
+                throw new ArgumentException("The token is zero.", nameof(token));
+            }
+
+            return WindowsUser.RunImpersonatedAsync<object>(token, loadUserProfile, async (ptr, identity, profile) =>
+            {
+                await action(ptr, identity, profile);
+                return null;
+            });
+        }
+
+        /// <summary>
+        ///     Performs a user impersonation based on a logon token.
+        /// </summary>
+        /// <param name="token"> The logon token. </param>
+        /// <param name="loadUserProfile"> Specifies whether the users profile is to be loaded. </param>
+        /// <param name="func"> The code to run under the impersonated user. </param>
+        /// <returns>
+        ///     The return value from <paramref name="func" />.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="func" /> is null. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="token" /> is zero. </exception>
+        /// <exception cref="SecurityException"> The current user does not have sufficient permissions. </exception>
+        /// <exception cref="Win32Exception">
+        ///     The current user does not have sufficient permissions or the impersonation could not
+        ///     be completed.
+        /// </exception>
+        public static Task<TResult> RunImpersonatedAsync <TResult> (IntPtr token, bool loadUserProfile,
+                                                                    ImpersonatedFuncAsync<TResult> func)
+        {
+            if (func == null)
+            {
+                throw new ArgumentNullException(nameof(func));
+            }
+
+            if (token == IntPtr.Zero)
+            {
+                throw new ArgumentException("The token is zero.", nameof(token));
+            }
+
+            Task<TResult> result = WindowsIdentity.RunImpersonatedAsync(new SafeAccessTokenHandle(token), async () =>
+            {
+                WindowsIdentity identity = null;
+                WindowsUserProfile profile = null;
+
+                try
+                {
+                    identity = new WindowsIdentity(token);
+
+                    if (loadUserProfile)
+                    {
+                        USERPROFILE profileInfo = new USERPROFILE();
+                        profileInfo.dwSize = Marshal.SizeOf(profileInfo);
+                        profileInfo.lpUserName = identity.Name;
+                        profileInfo.dwFlags = 1;
+
+                        bool loadSuccess = WindowsUser.LoadUserProfile(token, ref profileInfo);
+
+                        if (!loadSuccess)
+                        {
+                            int errorCode = WindowsApi.GetLastErrorCode();
+                            string errorMessage = WindowsApi.GetErrorMessage(errorCode);
+                            throw new Win32Exception(errorCode, errorMessage);
+                        }
+
+                        profile = new WindowsUserProfile(profileInfo);
+                    }
+
+                    return await func(token, identity, profile);
+                }
+                finally
+                {
+                    if (profile != null)
+                    {
+                        WindowsUser.UnloadUserProfile(token, profile.NativeUserProfile.hProfile);
+                    }
+
+                    if (identity != null)
+                    {
+                        identity.Dispose();
+                    }
+                }
+            });
+
+            return result;
         }
 
         [DllImport("kernel32.dll", SetLastError = false)]

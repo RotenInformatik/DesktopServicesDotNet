@@ -23,6 +23,7 @@ namespace RI.DesktopServices.Wpf.Controls
     ///         <see cref="Selector.SelectedItem" /> property is set to null.
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     public class ComboBoxChecker : CheckBox
     {
         #region Static Fields
@@ -46,8 +47,9 @@ namespace RI.DesktopServices.Wpf.Controls
 
         private static void OnComboBoxChanged (DependencyObject obj, DependencyPropertyChangedEventArgs args)
         {
-            ((ComboBoxChecker)obj).UnbindEvents();
-            ((ComboBoxChecker)obj).BindEvents();
+            ((ComboBoxChecker)obj).UnbindEvents((ComboBox)args.OldValue);
+            ((ComboBoxChecker)obj).BindEvents((ComboBox)args.NewValue);
+            ((ComboBoxChecker)obj).UpdateChecked();
         }
 
         #endregion
@@ -99,14 +101,12 @@ namespace RI.DesktopServices.Wpf.Controls
 
         #region Instance Methods
 
-        private void BindEvents ()
+        private void BindEvents (ComboBox newValue)
         {
-            if (this.ComboBox != null)
+            if (newValue != null)
             {
-                this.ComboBox.SelectionChanged += this.SelectionChangedHandler;
+                newValue.SelectionChanged += this.SelectionChangedHandler;
             }
-
-            this.UpdateChecked();
         }
 
         private void SelectionChangedMethod (object sender, SelectionChangedEventArgs e)
@@ -114,14 +114,12 @@ namespace RI.DesktopServices.Wpf.Controls
             this.UpdateChecked();
         }
 
-        private void UnbindEvents ()
+        private void UnbindEvents (ComboBox oldValue)
         {
-            if (this.ComboBox != null)
+            if (oldValue != null)
             {
-                this.ComboBox.SelectionChanged -= this.SelectionChangedHandler;
+                oldValue.SelectionChanged -= this.SelectionChangedHandler;
             }
-
-            this.UpdateChecked();
         }
 
         private void UpdateChecked ()

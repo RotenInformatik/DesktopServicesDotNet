@@ -13,6 +13,7 @@ namespace RI.DesktopServices.Wpf
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="Window" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class WindowExtensions
     {
         #region Static Methods
@@ -33,6 +34,25 @@ namespace RI.DesktopServices.Wpf
             IntPtr hWnd = window.GetWindowHandle();
 
             WindowsWindow.EnableWindow(hWnd, enable);
+        }
+
+        /// <summary>
+        ///     Gets the native window handle (HWND) for the owner of a window.
+        /// </summary>
+        /// <param name="window"> The window. </param>
+        /// <returns>
+        ///     The window handle for the owner of the window.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="window" /> is null. </exception>
+        public static IntPtr GetOwnerHandle (this Window window)
+        {
+            if (window == null)
+            {
+                throw new ArgumentNullException(nameof(window));
+            }
+
+            WindowInteropHelper helper = new WindowInteropHelper(window);
+            return helper.Owner;
         }
 
         /// <summary>
@@ -78,7 +98,7 @@ namespace RI.DesktopServices.Wpf
             for (int i1 = 0; i1 < allScreens.Length; i1++)
             {
                 if (allScreens[i1]
-                    .DeviceName.Equals(screen.DeviceName, StringComparison.Ordinal))
+                    .DeviceName.Equals(screen.DeviceName, StringComparison.InvariantCultureIgnoreCase))
                 {
                     return i1;
                 }
@@ -103,7 +123,7 @@ namespace RI.DesktopServices.Wpf
             }
 
             WindowInteropHelper helper = new WindowInteropHelper(window);
-            return helper.Handle;
+            return helper.EnsureHandle();
         }
 
         /// <summary>
@@ -213,12 +233,17 @@ namespace RI.DesktopServices.Wpf
         /// </summary>
         /// <param name="window"> The window to move. </param>
         /// <param name="screen"> The screen or null to move to the primary screen. </param>
-        /// <exception cref="ArgumentNullException"> <paramref name="window" /> is null. </exception>
+        /// <exception cref="ArgumentNullException"> <paramref name="window" /> or <paramref name="screen" /> is null. </exception>
         public static void MoveWindowToScreen (this Window window, Screen screen)
         {
             if (window == null)
             {
                 throw new ArgumentNullException(nameof(window));
+            }
+
+            if (screen == null)
+            {
+                throw new ArgumentNullException(nameof(screen));
             }
 
             IntPtr hWnd = window.GetWindowHandle();
@@ -232,11 +257,17 @@ namespace RI.DesktopServices.Wpf
         /// <param name="window"> The window to move. </param>
         /// <param name="screenIndex"> The screen index or -1 to move to the primary screen. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="window" /> is null. </exception>
+        /// <exception cref="ArgumentOutOfRangeException"> <paramref name="screenIndex" /> is below zero. </exception>
         public static void MoveWindowToScreen (this Window window, int screenIndex)
         {
             if (window == null)
             {
                 throw new ArgumentNullException(nameof(window));
+            }
+
+            if (screenIndex < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(screenIndex));
             }
 
             IntPtr hWnd = window.GetWindowHandle();

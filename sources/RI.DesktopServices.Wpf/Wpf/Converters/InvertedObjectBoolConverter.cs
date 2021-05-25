@@ -30,6 +30,7 @@ namespace RI.DesktopServices.Wpf.Converters
     ///         If the value is true, the converter returns null.
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     [ValueConversion(typeof(object), typeof(bool), ParameterType = typeof(object))]
     public sealed class InvertedObjectBoolConverter : IValueConverter
     {

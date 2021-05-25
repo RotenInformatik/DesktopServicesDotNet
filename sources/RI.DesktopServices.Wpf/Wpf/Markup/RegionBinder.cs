@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Windows;
 
+using RI.DesktopServices.UiContainer;
+
 
 
 
@@ -22,10 +24,10 @@ namespace RI.DesktopServices.Wpf.Markup
     ///         The used <see cref="IRegionService" /> is determined in the following order:
     ///         If <see cref="RegionServiceProperty" /> is not null, that instance is used.
     ///         If <see cref="DefaultRegionService" /> is not null, that instance is used.
-    ///         <see cref="RegionLocator" /> is used if neither <see cref="RegionServiceProperty" /> nor
-    ///         <see cref="DefaultRegionService" /> is set.
+    ///         <see cref="InstanceLocator" /> is used to obtain an instance of <see cref="IRegionService" />.
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     public static class RegionBinder
     {
         #region Static Fields
@@ -93,8 +95,7 @@ namespace RI.DesktopServices.Wpf.Markup
         /// </summary>
         /// <param name="obj"> The container. </param>
         /// <returns>
-        ///     The region service associated with the container or null if <see cref="DefaultRegionService" /> or
-        ///     <see cref="RegionLocator" /> is used.
+        ///     The region service associated with the container or null if <see cref="DefaultRegionService" /> is used.
         /// </returns>
         /// <remarks>
         ///     <note type="note">
@@ -130,7 +131,7 @@ namespace RI.DesktopServices.Wpf.Markup
         /// <param name="obj"> The container. </param>
         /// <param name="value">
         ///     The region service to associate with the container. Can be null to use
-        ///     <see cref="DefaultRegionService" /> or <see cref="RegionLocator" />.
+        ///     <see cref="DefaultRegionService" />.
         /// </param>
         /// <remarks>
         ///     <note type="note">
@@ -153,7 +154,8 @@ namespace RI.DesktopServices.Wpf.Markup
             }
 
             IRegionService regionService = RegionBinder.GetRegionService(obj) ??
-                                           RegionBinder.DefaultRegionService ?? RegionLocator.Service;
+                                           RegionBinder.DefaultRegionService ??
+                                           InstanceLocator.GetInstanceForRegionBinder();
 
             if (regionService == null)
             {
@@ -187,12 +189,12 @@ namespace RI.DesktopServices.Wpf.Markup
             IRegionService newService = e.NewValue as IRegionService;
 
             IRegionService oldServiceResolved =
-                oldService ?? RegionBinder.DefaultRegionService ?? RegionLocator.Service;
+                oldService ?? RegionBinder.DefaultRegionService ?? InstanceLocator.GetInstanceForRegionBinder();
 
             IRegionService newServiceResolved =
-                newService ?? RegionBinder.DefaultRegionService ?? RegionLocator.Service;
+                newService ?? RegionBinder.DefaultRegionService ?? InstanceLocator.GetInstanceForRegionBinder();
 
-            if (object.ReferenceEquals(oldServiceResolved, newServiceResolved))
+            if (ReferenceEquals(oldServiceResolved, newServiceResolved))
             {
                 return;
             }

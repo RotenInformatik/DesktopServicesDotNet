@@ -282,7 +282,7 @@ namespace RI.DesktopServices.UiContainer
 
             List<object> currentElements = this.Get(container);
 
-            if (currentElements.Any(x => object.ReferenceEquals(x, element)))
+            if (currentElements.Any(x => ReferenceEquals(x, element)))
             {
                 return true;
             }

@@ -22,10 +22,25 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Windows\Messages\WindowsMessage.cs" />
+    <Compile Remove="Windows\Messages\WindowsMessageLoop.cs" />
+    <Compile Remove="Windows\Messages\WindowsMessageLoopOperation.cs" />
+    <Compile Remove="Windows\Messages\WindowsMessageLoopOperationState.cs" />
+    <Compile Remove="Windows\Messages\WindowsMessageLoopShutdownMode.cs" />
+    <Compile Remove="Windows\Messages\_NamespaceDoc.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\ICON.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="Windows\Messages\WindowsMessage.cs" />
+    <None Include="Windows\Messages\WindowsMessageLoop.cs" />
+    <None Include="Windows\Messages\WindowsMessageLoopOperation.cs" />
+    <None Include="Windows\Messages\WindowsMessageLoopOperationState.cs" />
+    <None Include="Windows\Messages\WindowsMessageLoopShutdownMode.cs" />
+    <None Include="Windows\Messages\_NamespaceDoc.cs" />
   </ItemGroup>
 
   <ItemGroup>

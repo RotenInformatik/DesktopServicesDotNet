@@ -17,6 +17,7 @@ namespace RI.DesktopServices.Wpf.Imaging
     /// <summary>
     ///     Provides utility/extension methods for the <see cref="BitmapSource" /> type.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class BitmapSourceExtensions
     {
         #region Static Methods
@@ -229,7 +230,7 @@ namespace RI.DesktopServices.Wpf.Imaging
                 throw new ArgumentNullException(nameof(image));
             }
 
-            if (quality.IsNanOrInfinity())
+            if (double.IsInfinity(quality) || double.IsNaN(quality))
             {
                 throw new ArgumentOutOfRangeException(nameof(quality));
             }

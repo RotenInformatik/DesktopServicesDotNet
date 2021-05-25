@@ -47,7 +47,9 @@ namespace RI.DesktopServices.Windows.Cryptography
         /// </returns>
         public static Guid GetMachineId ()
         {
-            string cipher = WindowsUser.GetNetworkDomain() + "\\" + Environment.MachineName + "\\" + UniqueIdentification.InnerGuid;
+            string cipher = WindowsUser.GetNetworkDomain() + "\\" + Environment.MachineName + "\\" +
+                            UniqueIdentification.InnerGuid;
+
             Guid guid = UniqueIdentification.CreateGuidFromString(cipher);
             return guid;
         }

@@ -44,36 +44,6 @@ namespace RI.DesktopServices.Windows.IO.Keyboard
 
 
 
-        #region Static Properties/Indexer
-
-        /// <summary>
-        ///     Gets whether the on-screen keyboard is available or not.
-        /// </summary>
-        /// <returns>
-        ///     true if the on-screen keyboard is available, false otherwise.
-        /// </returns>
-        public static bool IsAvailable() => OnScreenKeyboard.GetExecutablePath() != null;
-
-        private static string GetExecutablePath ()
-        {
-            foreach (Environment.SpecialFolder folder in OnScreenKeyboard.TabTipFolders)
-            {
-                string path = Path.Join(Environment.GetFolderPath(folder), TabTipExecutablePath);
-
-                if (File.Exists(path))
-                {
-                    return path;
-                }
-            }
-
-            return null;
-        }
-
-        #endregion
-
-
-
-
         #region Static Methods
 
         /// <summary>
@@ -95,6 +65,14 @@ namespace RI.DesktopServices.Windows.IO.Keyboard
                                              new IntPtr(OnScreenKeyboard.ScClose), IntPtr.Zero);
             }
         }
+
+        /// <summary>
+        ///     Gets whether the on-screen keyboard is available or not.
+        /// </summary>
+        /// <returns>
+        ///     true if the on-screen keyboard is available, false otherwise.
+        /// </returns>
+        public static bool IsAvailable () => OnScreenKeyboard.GetExecutablePath() != null;
 
         /// <summary>
         ///     Activates the on-screen keyboard.
@@ -123,6 +101,21 @@ namespace RI.DesktopServices.Windows.IO.Keyboard
 
         [DllImport("user32.dll", SetLastError = false, CharSet = CharSet.Unicode)]
         private static extern IntPtr FindWindow (string lpClassName, string lpWindowName);
+
+        private static string GetExecutablePath ()
+        {
+            foreach (Environment.SpecialFolder folder in OnScreenKeyboard.TabTipFolders)
+            {
+                string path = Path.Join(Environment.GetFolderPath(folder), OnScreenKeyboard.TabTipExecutablePath);
+
+                if (File.Exists(path))
+                {
+                    return path;
+                }
+            }
+
+            return null;
+        }
 
         [DllImport("user32.dll", SetLastError = false)]
         private static extern IntPtr SendMessage (IntPtr hWnd, uint msg, IntPtr wParam, IntPtr lParam);

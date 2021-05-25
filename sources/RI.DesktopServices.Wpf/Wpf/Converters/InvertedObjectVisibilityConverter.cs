@@ -25,6 +25,7 @@ namespace RI.DesktopServices.Wpf.Converters
     ///         (the target).
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     [ValueConversion(typeof(object), typeof(Visibility), ParameterType = typeof(Visibility))]
     public sealed class InvertedObjectVisibilityConverter : IValueConverter
     {
@@ -35,7 +36,7 @@ namespace RI.DesktopServices.Wpf.Converters
         {
             if (!(parameter is Visibility))
             {
-                throw new InvalidTypeArgumentException(nameof(parameter));
+                throw new ArgumentException($"The parameter must be of type {nameof(Visibility)}", nameof(parameter));
             }
 
             return (value == null) ? Visibility.Visible : (Visibility)parameter;

@@ -222,9 +222,9 @@ namespace RI.DesktopServices.UiContainer
 
             if (this.RegionDictionary.ContainsKey(region))
             {
-                if (object.ReferenceEquals(container, this.RegionDictionary[region]
-                                                          .Item1) && adapter.Equals(this.RegionDictionary[region]
-                        .Item2))
+                if (ReferenceEquals(container, this.RegionDictionary[region]
+                                                   .Item1) && adapter.Equals(this.RegionDictionary[region]
+                                                                                 .Item2))
                 {
                     return;
                 }
@@ -424,7 +424,7 @@ namespace RI.DesktopServices.UiContainer
 
             foreach (KeyValuePair<string, Tuple<object, IRegionAdapter>> region in this.RegionDictionary)
             {
-                if (object.ReferenceEquals(region.Value.Item1, container))
+                if (ReferenceEquals(region.Value.Item1, container))
                 {
                     return region.Key;
                 }
@@ -445,7 +445,7 @@ namespace RI.DesktopServices.UiContainer
 
             foreach (KeyValuePair<string, Tuple<object, IRegionAdapter>> region in this.RegionDictionary)
             {
-                if (object.ReferenceEquals(region.Value.Item1, container))
+                if (ReferenceEquals(region.Value.Item1, container))
                 {
                     names.Add(region.Key);
                 }
@@ -548,7 +548,7 @@ namespace RI.DesktopServices.UiContainer
 
             foreach (KeyValuePair<string, Tuple<object, IRegionAdapter>> region in this.RegionDictionary)
             {
-                if (object.ReferenceEquals(regionAdapter, region.Value.Item2))
+                if (ReferenceEquals(regionAdapter, region.Value.Item2))
                 {
                     throw new InvalidOperationException("The specified region adapter is still in use.");
                 }

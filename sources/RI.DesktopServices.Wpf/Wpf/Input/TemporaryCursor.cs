@@ -30,6 +30,7 @@ namespace RI.DesktopServices.Wpf.Input
     ///   ]]>
     ///   </code>
     /// </example>
+    /// <threadsafety static="false" instance="false" />
     public sealed class TemporaryCursor : IDisposable
     {
         #region Static Methods

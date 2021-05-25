@@ -2,52 +2,79 @@
 using System.Windows;
 using System.Windows.Markup;
 
+using RI.DesktopServices.UiContainer;
+
 
 
 
 namespace RI.DesktopServices.Wpf.Markup
 {
     /// <summary>
-    ///     Implements a WPF XAML markup extension to obtain instances.
+    ///     Implements a WPF XAML markup extension to obtain instances and assigns them to data contexts.
     /// </summary>
     /// <remarks>
     ///     <para>
-    ///         The <see cref="InstanceLocator" /> is used in XAML to get instances from <see cref="IDependencyResolver" /> and
+    ///         The <see cref="InstanceLocator" /> is used in XAML to get instances from either an
+    ///         <see cref="IServiceProvider" /> (<see cref="ServiceProvider" />) or a resolver function (
+    ///         <see cref="Resolver" />) and
     ///         assign them to properties in XAML.
     ///         For example, this can be used to retrieve and attach a view model to a
     ///         <see cref="FrameworkElement.DataContext" /> in MVVM scenarios.
     ///     </para>
     ///     <para>
     ///         The instance to obtain can be either specified by its name, using the <see cref="Name" /> property, or its
-    ///         type, using the <see cref="Type" /> property.
-    ///         The used <see cref="IDependencyResolver" /> can also explicitly defined through the <see cref="Resolver" />
-    ///         property.
+    ///         type, using the <see cref="Type" /> property. <see cref="Name" /> is treated as the string representation of
+    ///         the <see cref="Type" /> to use.
     ///     </para>
     ///     <para>
-    ///         The used <see cref="IDependencyResolver" /> is determined in the following order:
-    ///         If <see cref="Resolver" /> is not null, that instance is used.
-    ///         If <see cref="DefaultResolver" /> is not null, that instance is used.
-    ///         <see cref="ServiceLocator" /> is used if neither <see cref="Resolver" /> nor <see cref="DefaultResolver" /> is
+    ///         Instance resolving is done in the following order:
+    ///         If <see cref="Resolver" /> is not null, that function is used.
+    ///         If <see cref="Resolver" /> is null or returns null, <see cref="ServiceProvider" /> is used.
     ///         set.
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     [MarkupExtensionReturnType(typeof(object))]
     public sealed class InstanceLocator : MarkupExtension
     {
         #region Static Properties/Indexer
 
         /// <summary>
-        ///     Gets or sets the default dependency resolver to use.
+        ///     Gets or sets the resolver function to use.
         /// </summary>
         /// <value>
-        ///     The default dependency resolver to use.
+        ///     The resolver function to use.
         /// </value>
         /// <remarks>
         ///     <para>
         ///         The default value is null.
         ///     </para>
         /// </remarks>
-        public static IDependencyResolver DefaultResolver { get; set; }
+        public static Func<Type, object> Resolver { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the service provider to use.
+        /// </summary>
+        /// <value>
+        ///     The service provider to use.
+        /// </value>
+        /// <remarks>
+        ///     <para>
+        ///         The default value is null.
+        ///     </para>
+        /// </remarks>
+        public static IServiceProvider ServiceProvider { get; set; }
+
+        #endregion
+
+
+
+
+        #region Static Methods
+
+        internal static IRegionService GetInstanceForRegionBinder () =>
+            (InstanceLocator.Resolver?.Invoke(typeof(IRegionService)) ??
+             InstanceLocator.ServiceProvider.GetService(typeof(IRegionService))) as IRegionService;
 
         #endregion
 
@@ -61,7 +88,6 @@ namespace RI.DesktopServices.Wpf.Markup
         /// </summary>
         public InstanceLocator ()
         {
-            this.Resolver = null;
             this.Name = null;
             this.Type = null;
         }
@@ -79,15 +105,12 @@ namespace RI.DesktopServices.Wpf.Markup
         /// <value>
         ///     The name of the instance to obtain.
         /// </value>
+        /// <remarks>
+        ///     <para>
+        ///         The default value is null.
+        ///     </para>
+        /// </remarks>
         public string Name { get; set; }
-
-        /// <summary>
-        ///     Gets or sets the dependency resolver to use.
-        /// </summary>
-        /// <value>
-        ///     The dependency resolver to use.
-        /// </value>
-        public IDependencyResolver Resolver { get; set; }
 
         /// <summary>
         ///     Gets or sets the type of the instance to obtain.
@@ -95,10 +118,12 @@ namespace RI.DesktopServices.Wpf.Markup
         /// <value>
         ///     The type of the instance to obtain.
         /// </value>
+        /// <remarks>
+        ///     <para>
+        ///         The default value is null.
+        ///     </para>
+        /// </remarks>
         public Type Type { get; set; }
-
-        private IDependencyResolver UsedResolver =>
-            this.Resolver ?? InstanceLocator.DefaultResolver ?? ServiceLocator.Resolver;
 
         #endregion
 
@@ -107,92 +132,76 @@ namespace RI.DesktopServices.Wpf.Markup
 
         #region Instance Methods
 
-        private object GetValue (string name)
-        {
-            if (name.IsNullOrEmptyOrWhitespace())
-            {
-                return null;
-            }
-
-            return this.UsedResolver.GetInstance(name);
-        }
-
-        private object GetValue (Type type)
+        /// <summary>
+        ///     Gets the instance of a specified type.
+        /// </summary>
+        /// <param name="type"> The type an instance is to used. </param>
+        /// <returns>
+        ///     The instance or null if no instance of that type is available.
+        /// </returns>
+        public object GetInstance (Type type)
         {
             if (type == null)
             {
                 return null;
             }
 
-            return this.UsedResolver.GetInstance(type);
+            return InstanceLocator.Resolver?.Invoke(type) ?? InstanceLocator.ServiceProvider.GetService(type);
         }
 
-        private void ProcessValue (object value)
+        /// <summary>
+        ///     Gets the instance of a specified type.
+        /// </summary>
+        /// <typeparam name="T"> The type an instance is to used. </typeparam>
+        /// <returns>
+        ///     The instance or null if no instance of that type is available.
+        /// </returns>
+        public T GetInstance <T> ()
+            where T : class =>
+            this.GetInstance(typeof(T)) as T;
+
+        /// <summary>
+        ///     Gets the instance of a specified type (as its string representation).
+        /// </summary>
+        /// <param name="name"> The type name an instance is to used. </param>
+        /// <returns>
+        ///     The instance or null if no instance of that type is available.
+        /// </returns>
+        public object GetInstance (string name)
         {
-            if (value == null)
+            if (name == null)
             {
-                return;
+                return null;
             }
 
-            CompositionContainer container = this.UsedResolver.GetInstance<CompositionContainer>();
-
-            if (container != null)
+            if (string.IsNullOrWhiteSpace(name))
             {
-                container.ResolveImports(value, CompositionFlags.Normal);
+                throw new ArgumentException("The string is empty.", nameof(name));
             }
 
-            if (value is IViewModel)
-            {
-                IViewModel viewModel = (IViewModel)value;
+            return this.GetInstance(this.ResolveTypeFromName(name));
+        }
 
-                if (!viewModel.IsInitialized)
-                {
-                    viewModel.Initialize();
-                }
+        /// <summary>
+        ///     Gets the instance of a specified type (as its string representation).
+        /// </summary>
+        /// <typeparam name="T"> The type an instance is to used. </typeparam>
+        /// <param name="name"> The type name an instance is to used. </param>
+        /// <returns>
+        ///     The instance or null if no instance of that type is available.
+        /// </returns>
+        public T GetInstance <T> (string name)
+            where T : class =>
+            this.GetInstance(name) as T;
+
+        private Type ResolveTypeFromName (string name)
+        {
+            if (name == null)
+            {
+                return null;
             }
 
-            if (value is IView)
-            {
-                IView view = (IView)value;
-
-                if (!view.IsInitialized)
-                {
-                    view.Initialize();
-                }
-            }
-
-            if (value is FrameworkElement)
-            {
-                FrameworkElement frameworkElement = (FrameworkElement)value;
-
-                if (frameworkElement.DataContext != null)
-                {
-                    if (container != null)
-                    {
-                        container.ResolveImports(frameworkElement.DataContext, CompositionFlags.Normal);
-                    }
-
-                    if (frameworkElement.DataContext is IViewModel)
-                    {
-                        IViewModel viewModel = (IViewModel)frameworkElement.DataContext;
-
-                        if (!viewModel.IsInitialized)
-                        {
-                            viewModel.Initialize();
-                        }
-                    }
-
-                    if (frameworkElement.DataContext is IView)
-                    {
-                        IView view = (IView)frameworkElement.DataContext;
-
-                        if (!view.IsInitialized)
-                        {
-                            view.Initialize();
-                        }
-                    }
-                }
-            }
+            return Type.GetType(name, false, true);
         }
 
         #endregion
@@ -205,19 +214,9 @@ namespace RI.DesktopServices.Wpf.Markup
         /// <inheritdoc />
         public override object ProvideValue (IServiceProvider serviceProvider)
         {
-            IProvideValueTarget targetProvider =
-                serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+            serviceProvider.GetService(typeof(IProvideValueTarget));
 
-            if (targetProvider != null)
-            {
-                object target = targetProvider.TargetObject;
-                this.ProcessValue(target);
-            }
-
-            object value = this.GetValue(this.Name) ?? this.GetValue(this.Type);
-            this.ProcessValue(value);
-
-            return value;
+            return this.GetInstance(this.Name) ?? this.GetInstance(this.Type);
         }
 
         #endregion

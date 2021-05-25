@@ -12,6 +12,7 @@ namespace RI.DesktopServices.Wpf.Markup
     /// <summary>
     ///     Defines a single event-to-command binding used with <see cref="EventToCommandBinder" />.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public sealed class EventBinding : Freezable
     {
         #region Static Fields
@@ -127,6 +128,7 @@ namespace RI.DesktopServices.Wpf.Markup
 
         #region Instance Methods
 
+        [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
         internal void Attach (DependencyObject attachedTo)
         {
             this.Detach();
@@ -136,9 +138,14 @@ namespace RI.DesktopServices.Wpf.Markup
                 return;
             }
 
-            if (this.EventName.IsNullOrEmptyOrWhitespace())
+            if (this.EventName == null)
             {
                 return;
+            }
+
+            if (string.IsNullOrWhiteSpace(this.EventName))
+            {
+                throw new InvalidOperationException("The event name is empty");
             }
 
             this.AttachedTo = attachedTo;

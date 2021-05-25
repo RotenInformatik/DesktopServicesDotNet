@@ -107,7 +107,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             if (container is ContentControl)
             {
                 ContentControl contentControl = (ContentControl)container;
-                contains = ReferenceEquals(contentControl.Content, element);
+                contains = object.ReferenceEquals(contentControl.Content, element);
             }
             else if (container is ItemsControl)
             {
@@ -178,7 +178,7 @@ namespace RI.DesktopServices.UiContainer.Adapters
             {
                 ContentControl contentControl = (ContentControl)container;
 
-                if (ReferenceEquals(contentControl.Content, element))
+                if (object.ReferenceEquals(contentControl.Content, element))
                 {
                     contentControl.Content = null;
                 }

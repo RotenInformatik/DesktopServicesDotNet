@@ -25,6 +25,7 @@ namespace RI.DesktopServices.Wpf.Converters
     ///         target).
     ///     </para>
     /// </remarks>
+    /// <threadsafety static="false" instance="false" />
     [ValueConversion(typeof(bool), typeof(Visibility), ParameterType = typeof(Visibility))]
     public sealed class NormalBoolVisibilityConverter : IValueConverter
     {
@@ -35,12 +36,12 @@ namespace RI.DesktopServices.Wpf.Converters
         {
             if (!(value is bool))
             {
-                throw new InvalidTypeArgumentException(nameof(value));
+                throw new ArgumentException($"The parameter must be of type {nameof(Boolean)}", nameof(value));
             }
 
             if (!(parameter is Visibility))
             {
-                throw new InvalidTypeArgumentException(nameof(parameter));
+                throw new ArgumentException($"The parameter must be of type {nameof(Visibility)}", nameof(parameter));
             }
 
             return ((bool)value) ? Visibility.Visible : (Visibility)parameter;

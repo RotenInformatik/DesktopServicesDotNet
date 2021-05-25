@@ -11,6 +11,7 @@ namespace RI.DesktopServices.Wpf.Markup
     ///     The collection which holds all event-to-command bindings (<see cref="EventBinding" />) used with
     ///     <see cref="EventToCommandBinder" />.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public sealed class EventBindings : FreezableCollection<EventBinding>
     {
         #region Instance Constructor/Destructor
@@ -24,7 +25,7 @@ namespace RI.DesktopServices.Wpf.Markup
 
             this.AttachedTo = attachedTo;
 
-            ((INotifyCollectionChanged)this).CollectionChanged += (sender, args) =>
+            ((INotifyCollectionChanged)this).CollectionChanged += (_, args) =>
             {
                 if (args.OldItems != null)
                 {

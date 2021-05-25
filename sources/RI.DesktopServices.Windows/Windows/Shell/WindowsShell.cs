@@ -189,7 +189,12 @@ namespace RI.DesktopServices.Windows.Shell
             }
 
             string file = Environment.ExpandEnvironmentVariables(filePath);
-            string directory = Environment.ExpandEnvironmentVariables(Path.GetDirectoryName(filePath));
+            string directory = Environment.ExpandEnvironmentVariables(Path.GetDirectoryName(filePath) ?? string.Empty);
+
+            if (string.IsNullOrWhiteSpace(directory))
+            {
+                directory = Environment.CurrentDirectory;
+            }
 
             ProcessStartInfo startInfo = new ProcessStartInfo(file);
 

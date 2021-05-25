@@ -9,6 +9,7 @@ namespace RI.DesktopServices.Wpf.Markup
     /// <summary>
     ///     Provides attached properties to bind events to commands.
     /// </summary>
+    /// <threadsafety static="false" instance="false" />
     public static class EventToCommandBinder
     {
         #region Static Fields
@@ -44,6 +45,7 @@ namespace RI.DesktopServices.Wpf.Markup
         ///         is created and attached.
         ///     </para>
         /// </remarks>
+        /// <exception cref="ArgumentNullException"> <paramref name="item" /> is null. </exception>
         public static EventBindings GetEventBindings (DependencyObject item)
         {
             if (item == null)
