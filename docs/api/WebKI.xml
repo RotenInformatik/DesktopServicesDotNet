@@ -1,0 +1,1173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpKI>
+  <HelpKINode Title="Accept enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Activate method">
+    <HelpKINode Title="IRegionAdapter.Activate Method " Url="html/A5F9A100.htm" />
+    <HelpKINode Title="RegionAdapterBase.Activate Method " Url="html/9ED5220A.htm" />
+    <HelpKINode Title="WpfRegionAdapterBase.Activate Method " Url="html/8BA520B7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ActivateAllElements method">
+    <HelpKINode Title="IRegionService.ActivateAllElements Method " Url="html/8EEBA09E.htm" />
+    <HelpKINode Title="RegionService.ActivateAllElements Method " Url="html/BB2D7693.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Activated method" Url="html/36A0C309.htm" />
+  <HelpKINode Title="ActivateElement method">
+    <HelpKINode Title="IRegionService.ActivateElement Method " Url="html/F411DD97.htm" />
+    <HelpKINode Title="RegionService.ActivateElement Method " Url="html/DEEDAD6A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Add enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Add method">
+    <HelpKINode Title="IRegionAdapter.Add Method " Url="html/53C44AFC.htm" />
+    <HelpKINode Title="RegionAdapterBase.Add Method " Url="html/CB084E8F.htm" />
+    <HelpKINode Title="WpfRegionAdapter.Add Method " Url="html/4D40EA28.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddAdapter method">
+    <HelpKINode Title="IRegionService.AddAdapter Method " Url="html/793F11D6.htm" />
+    <HelpKINode Title="RegionService.AddAdapter Method " Url="html/8F9D2CC1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddElement method">
+    <HelpKINode Title="IRegionService.AddElement Method " Url="html/8050A18E.htm" />
+    <HelpKINode Title="RegionService.AddElement Method " Url="html/B73F3C90.htm" />
+  </HelpKINode>
+  <HelpKINode Title="AddRegion method">
+    <HelpKINode Title="IRegionService.AddRegion Method " Url="html/F4C37515.htm" />
+    <HelpKINode Title="RegionService.AddRegion Method " Url="html/66E099CF.htm" />
+  </HelpKINode>
+  <HelpKINode Title="All enumeration member" Url="html/219EAA9A.htm" />
+  <HelpKINode Title="ApplicationExtensions class">
+    <HelpKINode Title="ApplicationExtensions Class" Url="html/2FC379DF.htm" />
+    <HelpKINode Title="methods" Url="html/E6266761.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ApplicationExtensions.DoAllEvents method" Url="html/EE066089.htm" />
+  <HelpKINode Title="ApplicationExtensions.DoAllEventsAsync method" Url="html/ED37F450.htm" />
+  <HelpKINode Title="ApplicationExtensions.DoEvents method" Url="html/18271FB7.htm" />
+  <HelpKINode Title="ApplicationExtensions.DoEventsAsync method" Url="html/78D80E2.htm" />
+  <HelpKINode Title="Apps enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AppStarting method" Url="html/B360C53D.htm" />
+  <HelpKINode Title="Ascii0 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii1 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii2 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii3 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii4 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii5 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii6 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii7 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii8 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Ascii9 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiA enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiB enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiC enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiD enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiE enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiF enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiG enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiH enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiI enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiJ enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiK enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiL enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiM enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiN enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiO enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiP enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiQ enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiR enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiS enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiT enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiU enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiV enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiW enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiX enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiY enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="AsciiZ enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Back enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BitmapExtensions class">
+    <HelpKINode Title="BitmapExtensions Class" Url="html/2D148D8B.htm" />
+    <HelpKINode Title="methods" Url="html/C5BEAA9A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BitmapExtensions.ToBitmap method" Url="html/E36FA0A5.htm" />
+  <HelpKINode Title="BitmapExtensions.ToBmpByteArray method" Url="html/5989BF1.htm" />
+  <HelpKINode Title="BitmapExtensions.ToByteArray method" Url="html/7D8A80A2.htm" />
+  <HelpKINode Title="BitmapExtensions.ToIcon method" Url="html/66677197.htm" />
+  <HelpKINode Title="BitmapExtensions.ToJpegByteArray method" Url="html/F4650207.htm" />
+  <HelpKINode Title="BitmapExtensions.ToPngByteArray method" Url="html/C14A42DC.htm" />
+  <HelpKINode Title="BitmapFrameExtensions class">
+    <HelpKINode Title="BitmapFrameExtensions Class" Url="html/5218900.htm" />
+    <HelpKINode Title="methods" Url="html/1F7DE34C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BitmapFrameExtensions.ToBitmapFrame method" Url="html/BADAFE22.htm" />
+  <HelpKINode Title="BitmapSourceExtensions class">
+    <HelpKINode Title="BitmapSourceExtensions Class" Url="html/ED1F4D89.htm" />
+    <HelpKINode Title="methods" Url="html/A26DC889.htm" />
+  </HelpKINode>
+  <HelpKINode Title="BitmapSourceExtensions.ToBitmap method" Url="html/531B3FB1.htm" />
+  <HelpKINode Title="BitmapSourceExtensions.ToBitmapSource method" Url="html/5F425AA0.htm" />
+  <HelpKINode Title="BitmapSourceExtensions.ToBmpByteArray method" Url="html/7860D0C6.htm" />
+  <HelpKINode Title="BitmapSourceExtensions.ToByteArray method" Url="html/9F766B32.htm" />
+  <HelpKINode Title="BitmapSourceExtensions.ToIcon method" Url="html/999BFFC7.htm" />
+  <HelpKINode Title="BitmapSourceExtensions.ToJpegByteArray method" Url="html/F58E128.htm" />
+  <HelpKINode Title="BitmapSourceExtensions.ToPngByteArray method" Url="html/1DEE9D52.htm" />
+  <HelpKINode Title="BrowserBack enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BrowserFavorites enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BrowserForward enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BrowserHome enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BrowserRefresh enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BrowserSearch enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="BrowserStop enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Busy enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="Cancel enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="CanceledByUser enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="CanNavigate method">
+    <HelpKINode Title="IRegionAdapter.CanNavigate Method " Url="html/C8235466.htm" />
+    <HelpKINode Title="IRegionService.CanNavigate Method " Url="html/4A370674.htm" />
+    <HelpKINode Title="RegionAdapterBase.CanNavigate Method " Url="html/89C31FA8.htm" />
+    <HelpKINode Title="RegionService.CanNavigate Method " Url="html/B5C3FA6B.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CanNavigateFrom method">
+    <HelpKINode Title="IRegionElement.CanNavigateFrom Method " Url="html/BFB1161.htm" />
+    <HelpKINode Title="RegionAdapterBase.CanNavigateFrom Method " Url="html/1DAC40.htm" />
+    <HelpKINode Title="WpfRegionAdapterBase.CanNavigateFrom Method " Url="html/4A18805.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CanNavigateTo method">
+    <HelpKINode Title="IRegionElement.CanNavigateTo Method " Url="html/350FACAA.htm" />
+    <HelpKINode Title="RegionAdapterBase.CanNavigateTo Method " Url="html/788E1BF9.htm" />
+    <HelpKINode Title="WpfRegionAdapterBase.CanNavigateTo Method " Url="html/1DB0723.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Capital enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Clear enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Clear method">
+    <HelpKINode Title="IRegionAdapter.Clear Method " Url="html/A8BFD795.htm" />
+    <HelpKINode Title="RegionAdapterBase.Clear Method " Url="html/8C0F48A4.htm" />
+    <HelpKINode Title="WpfRegionAdapter.Clear Method " Url="html/8AE3D481.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ClearElements method">
+    <HelpKINode Title="IRegionService.ClearElements Method " Url="html/106E984B.htm" />
+    <HelpKINode Title="RegionService.ClearElements Method " Url="html/81E8A1DA.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Close method">
+    <HelpKINode Title="RawPrinterAccess.Close Method " Url="html/EBE6B0DE.htm" />
+    <HelpKINode Title="WindowsNetworkConnection.Close Method " Url="html/A5EC5781.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CloseConnection method" Url="html/7AC67905.htm" />
+  <HelpKINode Title="CloseLogonToken method" Url="html/5649C0DC.htm" />
+  <HelpKINode Title="ComboBox property" Url="html/616A9EE6.htm" />
+  <HelpKINode Title="ComboBoxChecker class">
+    <HelpKINode Title="ComboBoxChecker Class" Url="html/6ACC58C9.htm" />
+    <HelpKINode Title="constructor" Url="html/33A9B0C7.htm" />
+    <HelpKINode Title="events" Url="html/47C62045.htm" />
+    <HelpKINode Title="fields" Url="html/34FBB8E5.htm" />
+    <HelpKINode Title="methods" Url="html/EA4A3D64.htm" />
+    <HelpKINode Title="properties" Url="html/DA18AD8C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ComboBoxChecker.ComboBox property" Url="html/616A9EE6.htm" />
+  <HelpKINode Title="ComboBoxChecker.ComboBoxChecker constructor" Url="html/33A9B0C7.htm" />
+  <HelpKINode Title="ComboBoxChecker.ComboBoxProperty field" Url="html/A2273163.htm" />
+  <HelpKINode Title="ComboBoxChecker.OnChecked method" Url="html/47367D3.htm" />
+  <HelpKINode Title="ComboBoxChecker.OnUnchecked method" Url="html/1CF17C99.htm" />
+  <HelpKINode Title="ComboBoxProperty field" Url="html/A2273163.htm" />
+  <HelpKINode Title="Command property" Url="html/BD17F787.htm" />
+  <HelpKINode Title="CommandProperty field" Url="html/859799D2.htm" />
+  <HelpKINode Title="Comment property" Url="html/B0628FB9.htm" />
+  <HelpKINode Title="CompareTo method" Url="html/F278CA24.htm" />
+  <HelpKINode Title="Contains method">
+    <HelpKINode Title="IRegionAdapter.Contains Method " Url="html/F4C5031.htm" />
+    <HelpKINode Title="RegionAdapterBase.Contains Method " Url="html/946B42E3.htm" />
+    <HelpKINode Title="WpfRegionAdapter.Contains Method " Url="html/140FD7F1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Control enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Convert enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Convert method">
+    <HelpKINode Title="InvertedBoolVisibilityConverter.Convert Method " Url="html/F21C6F0B.htm" />
+    <HelpKINode Title="InvertedObjectBoolConverter.Convert Method " Url="html/B58D1333.htm" />
+    <HelpKINode Title="InvertedObjectVisibilityConverter.Convert Method " Url="html/A9DF7A1B.htm" />
+    <HelpKINode Title="NormalBoolVisibilityConverter.Convert Method " Url="html/D76EC24A.htm" />
+    <HelpKINode Title="NormalObjectBoolConverter.Convert Method " Url="html/F11122C.htm" />
+    <HelpKINode Title="NormalObjectVisibilityConverter.Convert Method " Url="html/9AC8A14A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ConvertBack method">
+    <HelpKINode Title="InvertedBoolVisibilityConverter.ConvertBack Method " Url="html/7F13E134.htm" />
+    <HelpKINode Title="InvertedObjectBoolConverter.ConvertBack Method " Url="html/A78A037E.htm" />
+    <HelpKINode Title="InvertedObjectVisibilityConverter.ConvertBack Method " Url="html/AF80634.htm" />
+    <HelpKINode Title="NormalBoolVisibilityConverter.ConvertBack Method " Url="html/45957560.htm" />
+    <HelpKINode Title="NormalObjectBoolConverter.ConvertBack Method " Url="html/9A243199.htm" />
+    <HelpKINode Title="NormalObjectVisibilityConverter.ConvertBack Method " Url="html/A9FC2EF.htm" />
+  </HelpKINode>
+  <HelpKINode Title="CreateInstanceCore method" Url="html/5E814DEA.htm" />
+  <HelpKINode Title="CreateLogonToken method" Url="html/BB6AA936.htm" />
+  <HelpKINode Title="CreateSerialPort method" Url="html/7431FBD8.htm" />
+  <HelpKINode Title="Deactivate method">
+    <HelpKINode Title="IRegionAdapter.Deactivate Method " Url="html/3C9FF7B2.htm" />
+    <HelpKINode Title="RegionAdapterBase.Deactivate Method " Url="html/FBBFEE2D.htm" />
+    <HelpKINode Title="WpfRegionAdapterBase.Deactivate Method " Url="html/71598DE0.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DeactivateAllElements method">
+    <HelpKINode Title="IRegionService.DeactivateAllElements Method " Url="html/F835EBED.htm" />
+    <HelpKINode Title="RegionService.DeactivateAllElements Method " Url="html/ED91C167.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Deactivated method" Url="html/67EC7791.htm" />
+  <HelpKINode Title="DeactivateElement method">
+    <HelpKINode Title="IRegionService.DeactivateElement Method " Url="html/7CDDD891.htm" />
+    <HelpKINode Title="RegionService.DeactivateElement Method " Url="html/5C7BFCF9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Decimal enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Decrypt method" Url="html/4FD7069C.htm" />
+  <HelpKINode Title="DefaultPath property" Url="html/B020430F.htm" />
+  <HelpKINode Title="DefaultRegionService property" Url="html/5F31E136.htm" />
+  <HelpKINode Title="Delete enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="DispatcherExtensions class">
+    <HelpKINode Title="DispatcherExtensions Class" Url="html/212E1493.htm" />
+    <HelpKINode Title="methods" Url="html/D1E5FB6E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DispatcherExtensions.DoAllEvents method" Url="html/29E2E5D8.htm" />
+  <HelpKINode Title="DispatcherExtensions.DoAllEventsAsync method" Url="html/9BFED972.htm" />
+  <HelpKINode Title="DispatcherExtensions.DoEvents method" Url="html/2D48ED3E.htm" />
+  <HelpKINode Title="DispatcherExtensions.DoEventsAsync method" Url="html/882C4FED.htm" />
+  <HelpKINode Title="Divide enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="DoAllEvents method">
+    <HelpKINode Title="ApplicationExtensions.DoAllEvents Method " Url="html/EE066089.htm" />
+    <HelpKINode Title="DispatcherExtensions.DoAllEvents Method " Url="html/29E2E5D8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoAllEventsAsync method">
+    <HelpKINode Title="ApplicationExtensions.DoAllEventsAsync Method " Url="html/ED37F450.htm" />
+    <HelpKINode Title="DispatcherExtensions.DoAllEventsAsync Method " Url="html/9BFED972.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoEvents method">
+    <HelpKINode Title="ApplicationExtensions.DoEvents Method " Url="html/18271FB7.htm" />
+    <HelpKINode Title="DispatcherExtensions.DoEvents Method " Url="html/2D48ED3E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DoEventsAsync method">
+    <HelpKINode Title="ApplicationExtensions.DoEventsAsync Method " Url="html/78D80E2.htm" />
+    <HelpKINode Title="DispatcherExtensions.DoEventsAsync Method " Url="html/882C4FED.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Down enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="DriverName property" Url="html/BBAD242.htm" />
+  <HelpKINode Title="EnableWindow method">
+    <HelpKINode Title="WindowExtensions.EnableWindow Method " Url="html/62C201BF.htm" />
+    <HelpKINode Title="WindowsWindow.EnableWindow Method " Url="html/31A54166.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Encrypt method" Url="html/8D03FEA1.htm" />
+  <HelpKINode Title="End enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Equals method" Url="html/183BA21.htm" />
+  <HelpKINode Title="Error property" Url="html/54B9DAE8.htm" />
+  <HelpKINode Title="Escape enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="EventBinding class">
+    <HelpKINode Title="EventBinding Class" Url="html/65C02376.htm" />
+    <HelpKINode Title="constructor" Url="html/646F33E.htm" />
+    <HelpKINode Title="events" Url="html/65DEBA66.htm" />
+    <HelpKINode Title="fields" Url="html/4D615B38.htm" />
+    <HelpKINode Title="methods" Url="html/A4AE0754.htm" />
+    <HelpKINode Title="properties" Url="html/362B537C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventBinding.Command property" Url="html/BD17F787.htm" />
+  <HelpKINode Title="EventBinding.CommandProperty field" Url="html/859799D2.htm" />
+  <HelpKINode Title="EventBinding.CreateInstanceCore method" Url="html/5E814DEA.htm" />
+  <HelpKINode Title="EventBinding.EventBinding constructor" Url="html/646F33E.htm" />
+  <HelpKINode Title="EventBinding.EventName property" Url="html/D9788793.htm" />
+  <HelpKINode Title="EventBinding.EventNameProperty field" Url="html/8774DF3E.htm" />
+  <HelpKINode Title="EventBindings attached property" Url="html/2FEB3617.htm" />
+  <HelpKINode Title="EventBindings class">
+    <HelpKINode Title="EventBindings Class" Url="html/48419D8E.htm" />
+    <HelpKINode Title="events" Url="html/43DBA66.htm" />
+    <HelpKINode Title="methods" Url="html/AAEF2D85.htm" />
+    <HelpKINode Title="properties" Url="html/77E0537C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventBindingsProperty field" Url="html/7E90E7B1.htm" />
+  <HelpKINode Title="EventName property" Url="html/D9788793.htm" />
+  <HelpKINode Title="EventNameProperty field" Url="html/8774DF3E.htm" />
+  <HelpKINode Title="EventToCommandBinder class">
+    <HelpKINode Title="EventToCommandBinder Class" Url="html/3A502615.htm" />
+    <HelpKINode Title="attached properties" Url="html/ED74A403.htm" />
+    <HelpKINode Title="fields" Url="html/787C4CE1.htm" />
+    <HelpKINode Title="methods" Url="html/B64F0FB4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="EventToCommandBinder.EventBindings attached property" Url="html/2FEB3617.htm" />
+  <HelpKINode Title="EventToCommandBinder.EventBindingsProperty field" Url="html/7E90E7B1.htm" />
+  <HelpKINode Title="EventToCommandBinder.GetEventBindings method" Url="html/EB35D063.htm" />
+  <HelpKINode Title="Execute enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="ExtractDomainAndUser method" Url="html/D76E1BBD.htm" />
+  <HelpKINode Title="F1 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F10 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F11 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F12 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F13 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F14 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F15 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F16 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F17 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F18 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F19 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F2 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F20 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F21 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F22 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F23 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F24 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F3 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F4 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F5 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F6 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F7 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F8 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="F9 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Final enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Finalize method">
+    <HelpKINode Title="RawPrinterAccess.Finalize Method " Url="html/114F5C87.htm" />
+    <HelpKINode Title="TemporaryCursor.Finalize Method " Url="html/5717B0B.htm" />
+    <HelpKINode Title="WindowsNetworkConnection.Finalize Method " Url="html/CFE7908B.htm" />
+  </HelpKINode>
+  <HelpKINode Title="FindChildWindows method" Url="html/705303BA.htm" />
+  <HelpKINode Title="FindTopWindows method" Url="html/A96A7BB.htm" />
+  <HelpKINode Title="Get method">
+    <HelpKINode Title="IRegionAdapter.Get Method " Url="html/294E0152.htm" />
+    <HelpKINode Title="RegionAdapterBase.Get Method " Url="html/B44E4E90.htm" />
+    <HelpKINode Title="WpfRegionAdapter.Get Method " Url="html/3666EA27.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAdapters method">
+    <HelpKINode Title="IRegionService.GetAdapters Method " Url="html/9D2EBBF6.htm" />
+    <HelpKINode Title="RegionService.GetAdapters Method " Url="html/88A62900.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetAvailablePorts method" Url="html/CA474C0D.htm" />
+  <HelpKINode Title="GetContainerOfRegion method">
+    <HelpKINode Title="IRegionService.GetContainerOfRegion Method " Url="html/5297058C.htm" />
+    <HelpKINode Title="RegionService.GetContainerOfRegion Method " Url="html/3E96BF1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetCurrentDefaultCulture method" Url="html/775DDD87.htm" />
+  <HelpKINode Title="GetCurrentDomain method" Url="html/CD9D005.htm" />
+  <HelpKINode Title="GetCurrentToken method" Url="html/501C48A5.htm" />
+  <HelpKINode Title="GetCurrentUser method" Url="html/3B311AFE.htm" />
+  <HelpKINode Title="GetDomainId method" Url="html/D092BD45.htm" />
+  <HelpKINode Title="GetElementsOfRegion method">
+    <HelpKINode Title="IRegionService.GetElementsOfRegion Method " Url="html/F64205FE.htm" />
+    <HelpKINode Title="RegionService.GetElementsOfRegion Method " Url="html/7C3D2F7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetErrorMessage method" Url="html/B729DD42.htm" />
+  <HelpKINode Title="GetEventBindings method" Url="html/EB35D063.htm" />
+  <HelpKINode Title="GetEveryoneUserName method" Url="html/7A58A3AA.htm" />
+  <HelpKINode Title="GetHashCode method" Url="html/118A2A5C.htm" />
+  <HelpKINode Title="GetInstance method" Url="html/4FC6868E.htm" />
+  <HelpKINode Title="GetLastErrorCode method" Url="html/602BB84F.htm" />
+  <HelpKINode Title="GetLastInput method" Url="html/C6AF5B86.htm" />
+  <HelpKINode Title="GetLocalDomain method" Url="html/307D24EE.htm" />
+  <HelpKINode Title="GetMachineId method" Url="html/CA62CD89.htm" />
+  <HelpKINode Title="GetNetworkDomain method" Url="html/80E2D89.htm" />
+  <HelpKINode Title="GetOwnerHandle method" Url="html/5A263AB7.htm" />
+  <HelpKINode Title="GetPresentPorts method" Url="html/A8A72DBE.htm" />
+  <HelpKINode Title="GetPrinters method" Url="html/9B9175E5.htm" />
+  <HelpKINode Title="GetProcess method" Url="html/3512EA41.htm" />
+  <HelpKINode Title="GetRegionName method">
+    <HelpKINode Title="IRegionService.GetRegionName Method " Url="html/19AE4403.htm" />
+    <HelpKINode Title="RegionBinder.GetRegionName Method " Url="html/99EFAFC5.htm" />
+    <HelpKINode Title="RegionService.GetRegionName Method " Url="html/C711391F.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetRegionNames method">
+    <HelpKINode Title="IRegionService.GetRegionNames Method " Url="html/A71E49C5.htm" />
+    <HelpKINode Title="RegionService.GetRegionNames Method " Url="html/57515CDE.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetRegionService method" Url="html/ED7D70BA.htm" />
+  <HelpKINode Title="GetScreen method" Url="html/7A19B235.htm" />
+  <HelpKINode Title="GetScreenIndex method" Url="html/1E2F4176.htm" />
+  <HelpKINode Title="GetSerialPortInstance method" Url="html/1942F091.htm" />
+  <HelpKINode Title="GetSortedElements method" Url="html/9843107A.htm" />
+  <HelpKINode Title="GetSortIndex method" Url="html/C9AF7F1A.htm" />
+  <HelpKINode Title="GetSupportedTypes method">
+    <HelpKINode Title="RegionAdapterBase.GetSupportedTypes Method " Url="html/37161EC2.htm" />
+    <HelpKINode Title="WpfRegionAdapter.GetSupportedTypes Method " Url="html/E9E505BB.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GetUserFromSid method" Url="html/E7BA4AD3.htm" />
+  <HelpKINode Title="GetUserId method" Url="html/CDAA2231.htm" />
+  <HelpKINode Title="GetWindowHandle method" Url="html/A396411B.htm" />
+  <HelpKINode Title="GetWindows method" Url="html/CFFF4373.htm" />
+  <HelpKINode Title="GetWindowTitle method" Url="html/32939732.htm" />
+  <HelpKINode Title="Hangeul enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Hangul enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Hanja enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="HasElement method">
+    <HelpKINode Title="IRegionService.HasElement Method " Url="html/239B15E4.htm" />
+    <HelpKINode Title="RegionService.HasElement Method " Url="html/613528CB.htm" />
+  </HelpKINode>
+  <HelpKINode Title="HasRegion method">
+    <HelpKINode Title="IRegionService.HasRegion Method " Url="html/9809E925.htm" />
+    <HelpKINode Title="RegionService.HasRegion Method " Url="html/22749932.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Help enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Hide method" Url="html/3B7C65D0.htm" />
+  <HelpKINode Title="HideWindow method">
+    <HelpKINode Title="WindowExtensions.HideWindow Method " Url="html/82EB62AA.htm" />
+    <HelpKINode Title="WindowsWindow.HideWindow Method " Url="html/6D2BC766.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Home enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="IconExtensions class">
+    <HelpKINode Title="IconExtensions Class" Url="html/FF205C86.htm" />
+    <HelpKINode Title="methods" Url="html/669176A2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IconExtensions.ToByteArray method" Url="html/7FDCBE1E.htm" />
+  <HelpKINode Title="IconExtensions.ToIcon method" Url="html/8974E599.htm" />
+  <HelpKINode Title="IDisposable.Dispose explicitly implemented method">
+    <HelpKINode Title="RawPrinterAccess.IDisposable.Dispose Method " Url="html/855F88D.htm" />
+    <HelpKINode Title="TemporaryCursor.IDisposable.Dispose Method " Url="html/3B307BAB.htm" />
+    <HelpKINode Title="WindowsNetworkConnection.IDisposable.Dispose Method " Url="html/8B586C45.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ImpersonatedAction delegate" Url="html/9F16723F.htm" />
+  <HelpKINode Title="ImpersonatedActionAsync delegate" Url="html/9B884FCB.htm" />
+  <HelpKINode Title="ImpersonatedFunc(Of TResult) delegate" Url="html/616DE228.htm" />
+  <HelpKINode Title="ImpersonatedFunc&lt;TResult&gt; delegate" Url="html/616DE228.htm" />
+  <HelpKINode Title="ImpersonatedFuncAsync(Of TResult) delegate" Url="html/CB5A2457.htm" />
+  <HelpKINode Title="ImpersonatedFuncAsync&lt;TResult&gt; delegate" Url="html/CB5A2457.htm" />
+  <HelpKINode Title="Index property" Url="html/5DF69BD5.htm" />
+  <HelpKINode Title="Insert enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="InstanceLocator class">
+    <HelpKINode Title="InstanceLocator Class" Url="html/A42769EE.htm" />
+    <HelpKINode Title="constructor" Url="html/9F04AD38.htm" />
+    <HelpKINode Title="methods" Url="html/87208464.htm" />
+    <HelpKINode Title="properties" Url="html/2CC2E921.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InstanceLocator.GetInstance method" Url="html/4FC6868E.htm" />
+  <HelpKINode Title="InstanceLocator.InstanceLocator constructor" Url="html/9F04AD38.htm" />
+  <HelpKINode Title="InstanceLocator.Name property" Url="html/7EED75ED.htm" />
+  <HelpKINode Title="InstanceLocator.ProvideValue method" Url="html/75E9FF03.htm" />
+  <HelpKINode Title="InstanceLocator.Resolver property" Url="html/BD531330.htm" />
+  <HelpKINode Title="InstanceLocator.ServiceProvider property" Url="html/239D9FCA.htm" />
+  <HelpKINode Title="InstanceLocator.Type property" Url="html/3C548A28.htm" />
+  <HelpKINode Title="Interactive property" Url="html/5FFF98C1.htm" />
+  <HelpKINode Title="InvalidParameters enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="InvalidPassword enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="InvertedBoolVisibilityConverter class">
+    <HelpKINode Title="InvertedBoolVisibilityConverter Class" Url="html/9B1847A3.htm" />
+    <HelpKINode Title="constructor" Url="html/A31C5B1B.htm" />
+    <HelpKINode Title="methods" Url="html/B19C44D8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvertedBoolVisibilityConverter.Convert method" Url="html/F21C6F0B.htm" />
+  <HelpKINode Title="InvertedBoolVisibilityConverter.ConvertBack method" Url="html/7F13E134.htm" />
+  <HelpKINode Title="InvertedBoolVisibilityConverter.InvertedBoolVisibilityConverter constructor" Url="html/A31C5B1B.htm" />
+  <HelpKINode Title="InvertedObjectBoolConverter class">
+    <HelpKINode Title="InvertedObjectBoolConverter Class" Url="html/1BBF9534.htm" />
+    <HelpKINode Title="constructor" Url="html/12CD17D2.htm" />
+    <HelpKINode Title="methods" Url="html/689A6526.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvertedObjectBoolConverter.Convert method" Url="html/B58D1333.htm" />
+  <HelpKINode Title="InvertedObjectBoolConverter.ConvertBack method" Url="html/A78A037E.htm" />
+  <HelpKINode Title="InvertedObjectBoolConverter.InvertedObjectBoolConverter constructor" Url="html/12CD17D2.htm" />
+  <HelpKINode Title="InvertedObjectVisibilityConverter class">
+    <HelpKINode Title="InvertedObjectVisibilityConverter Class" Url="html/9B8BB819.htm" />
+    <HelpKINode Title="constructor" Url="html/10140785.htm" />
+    <HelpKINode Title="methods" Url="html/426F3F4F.htm" />
+  </HelpKINode>
+  <HelpKINode Title="InvertedObjectVisibilityConverter.Convert method" Url="html/A9DF7A1B.htm" />
+  <HelpKINode Title="InvertedObjectVisibilityConverter.ConvertBack method" Url="html/AF80634.htm" />
+  <HelpKINode Title="InvertedObjectVisibilityConverter.InvertedObjectVisibilityConverter constructor" Url="html/10140785.htm" />
+  <HelpKINode Title="IRegionAdapter interface">
+    <HelpKINode Title="IRegionAdapter Interface" Url="html/65074835.htm" />
+    <HelpKINode Title="methods" Url="html/538835CD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IRegionAdapter.Activate method" Url="html/A5F9A100.htm" />
+  <HelpKINode Title="IRegionAdapter.Add method" Url="html/53C44AFC.htm" />
+  <HelpKINode Title="IRegionAdapter.CanNavigate method" Url="html/C8235466.htm" />
+  <HelpKINode Title="IRegionAdapter.Clear method" Url="html/A8BFD795.htm" />
+  <HelpKINode Title="IRegionAdapter.Contains method" Url="html/F4C5031.htm" />
+  <HelpKINode Title="IRegionAdapter.Deactivate method" Url="html/3C9FF7B2.htm" />
+  <HelpKINode Title="IRegionAdapter.Get method" Url="html/294E0152.htm" />
+  <HelpKINode Title="IRegionAdapter.IsCompatibleContainer method" Url="html/88E54297.htm" />
+  <HelpKINode Title="IRegionAdapter.Navigate method" Url="html/788CE774.htm" />
+  <HelpKINode Title="IRegionAdapter.Remove method" Url="html/F33A348A.htm" />
+  <HelpKINode Title="IRegionAdapter.Sort method" Url="html/6402EA94.htm" />
+  <HelpKINode Title="IRegionElement interface">
+    <HelpKINode Title="IRegionElement Interface" Url="html/1A61BD6C.htm" />
+    <HelpKINode Title="methods" Url="html/83356D0E.htm" />
+    <HelpKINode Title="properties" Url="html/91F2711C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IRegionElement.Activated method" Url="html/36A0C309.htm" />
+  <HelpKINode Title="IRegionElement.CanNavigateFrom method" Url="html/BFB1161.htm" />
+  <HelpKINode Title="IRegionElement.CanNavigateTo method" Url="html/350FACAA.htm" />
+  <HelpKINode Title="IRegionElement.Deactivated method" Url="html/67EC7791.htm" />
+  <HelpKINode Title="IRegionElement.NavigatedFrom method" Url="html/D1D4BEA0.htm" />
+  <HelpKINode Title="IRegionElement.NavigatedTo method" Url="html/BF8EF515.htm" />
+  <HelpKINode Title="IRegionElement.SortIndex property" Url="html/FE29A8ED.htm" />
+  <HelpKINode Title="IRegionService interface">
+    <HelpKINode Title="IRegionService Interface" Url="html/D0D63A40.htm" />
+    <HelpKINode Title="methods" Url="html/D4DBFD82.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IRegionService.ActivateAllElements method" Url="html/8EEBA09E.htm" />
+  <HelpKINode Title="IRegionService.ActivateElement method" Url="html/F411DD97.htm" />
+  <HelpKINode Title="IRegionService.AddAdapter method" Url="html/793F11D6.htm" />
+  <HelpKINode Title="IRegionService.AddElement method" Url="html/8050A18E.htm" />
+  <HelpKINode Title="IRegionService.AddRegion method" Url="html/F4C37515.htm" />
+  <HelpKINode Title="IRegionService.CanNavigate method" Url="html/4A370674.htm" />
+  <HelpKINode Title="IRegionService.ClearElements method" Url="html/106E984B.htm" />
+  <HelpKINode Title="IRegionService.DeactivateAllElements method" Url="html/F835EBED.htm" />
+  <HelpKINode Title="IRegionService.DeactivateElement method" Url="html/7CDDD891.htm" />
+  <HelpKINode Title="IRegionService.GetAdapters method" Url="html/9D2EBBF6.htm" />
+  <HelpKINode Title="IRegionService.GetContainerOfRegion method" Url="html/5297058C.htm" />
+  <HelpKINode Title="IRegionService.GetElementsOfRegion method" Url="html/F64205FE.htm" />
+  <HelpKINode Title="IRegionService.GetRegionName method" Url="html/19AE4403.htm" />
+  <HelpKINode Title="IRegionService.GetRegionNames method" Url="html/A71E49C5.htm" />
+  <HelpKINode Title="IRegionService.HasElement method" Url="html/239B15E4.htm" />
+  <HelpKINode Title="IRegionService.HasRegion method" Url="html/9809E925.htm" />
+  <HelpKINode Title="IRegionService.Navigate method" Url="html/B24FEE10.htm" />
+  <HelpKINode Title="IRegionService.RemoveAdapter method" Url="html/AA4F064D.htm" />
+  <HelpKINode Title="IRegionService.RemoveElement method" Url="html/298083BC.htm" />
+  <HelpKINode Title="IRegionService.RemoveRegion method" Url="html/F770659A.htm" />
+  <HelpKINode Title="IsAvailable method">
+    <HelpKINode Title="OnScreenKeyboard.IsAvailable Method " Url="html/E7D408C9.htm" />
+    <HelpKINode Title="SerialPortInstance.IsAvailable Method " Url="html/95EFBCC4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsCompatibleContainer method">
+    <HelpKINode Title="IRegionAdapter.IsCompatibleContainer Method " Url="html/88E54297.htm" />
+    <HelpKINode Title="RegionAdapterBase.IsCompatibleContainer Method " Url="html/32605A7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IsCurrentAdministrator method" Url="html/6DB0FA08.htm" />
+  <HelpKINode Title="IsCurrentSystem method" Url="html/5F3763E1.htm" />
+  <HelpKINode Title="IsKeyPressed method" Url="html/EAE6C336.htm" />
+  <HelpKINode Title="IsKeystrokePressed method" Url="html/25B12F90.htm" />
+  <HelpKINode Title="IsKeystrokeToggledOn method" Url="html/D5046E54.htm" />
+  <HelpKINode Title="IsKeyToggledOn method" Url="html/87D668FA.htm" />
+  <HelpKINode Title="IsOpen property">
+    <HelpKINode Title="RawPrinterAccess.IsOpen Property " Url="html/949BBCB6.htm" />
+    <HelpKINode Title="WindowsNetworkConnection.IsOpen Property " Url="html/B6A174FC.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Junja enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Kana enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Kanji enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LaunchApp1 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LaunchApp2 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LaunchMail enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LaunchMediaSelect enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LButton enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LControl enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Left enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LMenu enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Local enumeration member" Url="html/219EAA9A.htm" />
+  <HelpKINode Title="LocalEncryption class">
+    <HelpKINode Title="LocalEncryption Class" Url="html/4E5C768.htm" />
+    <HelpKINode Title="methods" Url="html/B57D76A9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="LocalEncryption.Decrypt method" Url="html/4FD7069C.htm" />
+  <HelpKINode Title="LocalEncryption.Encrypt method" Url="html/8D03FEA1.htm" />
+  <HelpKINode Title="Location property" Url="html/B4C020C6.htm" />
+  <HelpKINode Title="Logoff method" Url="html/1EA4A70D.htm" />
+  <HelpKINode Title="LShift enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="LWin enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MapCharactersToKey method" Url="html/58A0697.htm" />
+  <HelpKINode Title="MaximizeWindow method">
+    <HelpKINode Title="WindowExtensions.MaximizeWindow Method " Url="html/DCE7FF9F.htm" />
+    <HelpKINode Title="WindowsWindow.MaximizeWindow Method " Url="html/41CD18BE.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MButton enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MediaNextTrack enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MediaPlayPause enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MediaPrevTrack enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MediaStop enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Menu enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MinimizeWindow method">
+    <HelpKINode Title="WindowExtensions.MinimizeWindow Method " Url="html/F52771F9.htm" />
+    <HelpKINode Title="WindowsWindow.MinimizeWindow Method " Url="html/EF3A192F.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ModeChange enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MoveWindowToBackground method">
+    <HelpKINode Title="WindowExtensions.MoveWindowToBackground Method " Url="html/29D5B957.htm" />
+    <HelpKINode Title="WindowsWindow.MoveWindowToBackground Method " Url="html/4AD8960A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MoveWindowToForeground method">
+    <HelpKINode Title="WindowExtensions.MoveWindowToForeground Method " Url="html/59F939D4.htm" />
+    <HelpKINode Title="WindowsWindow.MoveWindowToForeground Method " Url="html/85DB6EB7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MoveWindowToPrimaryScreen method">
+    <HelpKINode Title="WindowExtensions.MoveWindowToPrimaryScreen Method " Url="html/59CC1374.htm" />
+    <HelpKINode Title="WindowsWindow.MoveWindowToPrimaryScreen Method " Url="html/1D7DFF59.htm" />
+  </HelpKINode>
+  <HelpKINode Title="MoveWindowToScreen method">
+    <HelpKINode Title="WindowExtensions.MoveWindowToScreen Method " Url="html/93BF80F1.htm" />
+    <HelpKINode Title="WindowsWindow.MoveWindowToScreen Method " Url="html/13BE97C8.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Multiply enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Name property" Url="html/7EED75ED.htm" />
+  <HelpKINode Title="Navigate method">
+    <HelpKINode Title="IRegionAdapter.Navigate Method " Url="html/788CE774.htm" />
+    <HelpKINode Title="IRegionService.Navigate Method " Url="html/B24FEE10.htm" />
+    <HelpKINode Title="RegionAdapterBase.Navigate Method " Url="html/460921CC.htm" />
+    <HelpKINode Title="RegionService.Navigate Method " Url="html/9D606A87.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NavigatedFrom method">
+    <HelpKINode Title="IRegionElement.NavigatedFrom Method " Url="html/D1D4BEA0.htm" />
+    <HelpKINode Title="RegionAdapterBase.NavigatedFrom Method " Url="html/F1439A90.htm" />
+    <HelpKINode Title="WpfRegionAdapterBase.NavigatedFrom Method " Url="html/DF030331.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NavigatedTo method">
+    <HelpKINode Title="IRegionElement.NavigatedTo Method " Url="html/BF8EF515.htm" />
+    <HelpKINode Title="RegionAdapterBase.NavigatedTo Method " Url="html/8673B4F6.htm" />
+    <HelpKINode Title="WpfRegionAdapterBase.NavigatedTo Method " Url="html/930243F5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Next enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NonConvert enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="None enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="NormalBoolVisibilityConverter class">
+    <HelpKINode Title="NormalBoolVisibilityConverter Class" Url="html/7BDEF97F.htm" />
+    <HelpKINode Title="constructor" Url="html/19790BE3.htm" />
+    <HelpKINode Title="methods" Url="html/6DD9DBC6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NormalBoolVisibilityConverter.Convert method" Url="html/D76EC24A.htm" />
+  <HelpKINode Title="NormalBoolVisibilityConverter.ConvertBack method" Url="html/45957560.htm" />
+  <HelpKINode Title="NormalBoolVisibilityConverter.NormalBoolVisibilityConverter constructor" Url="html/19790BE3.htm" />
+  <HelpKINode Title="NormalizeWindow method">
+    <HelpKINode Title="WindowExtensions.NormalizeWindow Method " Url="html/EC6EECC3.htm" />
+    <HelpKINode Title="WindowsWindow.NormalizeWindow Method " Url="html/DFC2433.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NormalObjectBoolConverter class">
+    <HelpKINode Title="NormalObjectBoolConverter Class" Url="html/663F91A7.htm" />
+    <HelpKINode Title="constructor" Url="html/20D8FC9F.htm" />
+    <HelpKINode Title="methods" Url="html/D282E2A9.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NormalObjectBoolConverter.Convert method" Url="html/F11122C.htm" />
+  <HelpKINode Title="NormalObjectBoolConverter.ConvertBack method" Url="html/9A243199.htm" />
+  <HelpKINode Title="NormalObjectBoolConverter.NormalObjectBoolConverter constructor" Url="html/20D8FC9F.htm" />
+  <HelpKINode Title="NormalObjectVisibilityConverter class">
+    <HelpKINode Title="NormalObjectVisibilityConverter Class" Url="html/627FD288.htm" />
+    <HelpKINode Title="constructor" Url="html/F06D43C2.htm" />
+    <HelpKINode Title="methods" Url="html/BCE467CC.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NormalObjectVisibilityConverter.Convert method" Url="html/9AC8A14A.htm" />
+  <HelpKINode Title="NormalObjectVisibilityConverter.ConvertBack method" Url="html/A9FC2EF.htm" />
+  <HelpKINode Title="NormalObjectVisibilityConverter.NormalObjectVisibilityConverter constructor" Url="html/F06D43C2.htm" />
+  <HelpKINode Title="NumLock enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad0 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad1 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad2 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad3 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad4 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad5 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad6 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad7 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad8 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="NumPad9 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="OemComma enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="OemMinus enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="OemNECEqual enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="OemPeriod enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="OemPlus enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="OnChecked method" Url="html/47367D3.htm" />
+  <HelpKINode Title="OnScreenKeyboard class">
+    <HelpKINode Title="OnScreenKeyboard Class" Url="html/EF77C48.htm" />
+    <HelpKINode Title="methods" Url="html/8FC425D.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OnScreenKeyboard.Hide method" Url="html/3B7C65D0.htm" />
+  <HelpKINode Title="OnScreenKeyboard.IsAvailable method" Url="html/E7D408C9.htm" />
+  <HelpKINode Title="OnScreenKeyboard.Show method" Url="html/F8264C52.htm" />
+  <HelpKINode Title="OnUnchecked method" Url="html/1CF17C99.htm" />
+  <HelpKINode Title="Open method" Url="html/91A0EFCF.htm" />
+  <HelpKINode Title="OpenCommandPrompt method" Url="html/2BF53D52.htm" />
+  <HelpKINode Title="OpenConnection method" Url="html/97C92BEC.htm" />
+  <HelpKINode Title="OpenExplorer method" Url="html/C91AAFC8.htm" />
+  <HelpKINode Title="OpenFile method" Url="html/A72BB906.htm" />
+  <HelpKINode Title="OpenFolder method" Url="html/715EE9D.htm" />
+  <HelpKINode Title="OpenSystemInfo method" Url="html/2B8CBF43.htm" />
+  <HelpKINode Title="OpenTaskManager method" Url="html/9A46D35B.htm" />
+  <HelpKINode Title="OpenUrl method" Url="html/35B790AD.htm" />
+  <HelpKINode Title="Packet enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Parse method" Url="html/15BDEA05.htm" />
+  <HelpKINode Title="Password property" Url="html/B5DBBE49.htm" />
+  <HelpKINode Title="Pause enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Play enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="PortName property">
+    <HelpKINode Title="PrinterDevice.PortName Property " Url="html/693C53E3.htm" />
+    <HelpKINode Title="SerialPortInstance.PortName Property " Url="html/2E58C566.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PortNumber property" Url="html/17DBBC1D.htm" />
+  <HelpKINode Title="Print enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="PrinterDevice class">
+    <HelpKINode Title="PrinterDevice Class" Url="html/B72B5ECD.htm" />
+    <HelpKINode Title="methods" Url="html/340E8019.htm" />
+    <HelpKINode Title="properties" Url="html/46D7C697.htm" />
+  </HelpKINode>
+  <HelpKINode Title="PrinterDevice property" Url="html/78796D88.htm" />
+  <HelpKINode Title="PrinterDevice.Comment property" Url="html/B0628FB9.htm" />
+  <HelpKINode Title="PrinterDevice.DriverName property" Url="html/BBAD242.htm" />
+  <HelpKINode Title="PrinterDevice.GetPrinters method" Url="html/9B9175E5.htm" />
+  <HelpKINode Title="PrinterDevice.Location property" Url="html/B4C020C6.htm" />
+  <HelpKINode Title="PrinterDevice.PortName property" Url="html/693C53E3.htm" />
+  <HelpKINode Title="PrinterDevice.PrinterName property" Url="html/3417F6B0.htm" />
+  <HelpKINode Title="PrinterDevice.ProcessorName property" Url="html/CC0F9B16.htm" />
+  <HelpKINode Title="PrinterDevice.ServerName property" Url="html/E84CD82E.htm" />
+  <HelpKINode Title="PrinterDevice.ShareName property" Url="html/DDA47EE4.htm" />
+  <HelpKINode Title="PrinterName property" Url="html/3417F6B0.htm" />
+  <HelpKINode Title="PrinterTypes enumeration" Url="html/219EAA9A.htm" />
+  <HelpKINode Title="Prior enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="ProcessKey enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="ProcessorName property" Url="html/CC0F9B16.htm" />
+  <HelpKINode Title="ProfilePath property" Url="html/44B5842.htm" />
+  <HelpKINode Title="ProvideValue method" Url="html/75E9FF03.htm" />
+  <HelpKINode Title="RawPrinterAccess class">
+    <HelpKINode Title="RawPrinterAccess Class" Url="html/95793CDE.htm" />
+    <HelpKINode Title="constructor" Url="html/CAADBAD.htm" />
+    <HelpKINode Title="methods" Url="html/F2D62759.htm" />
+    <HelpKINode Title="properties" Url="html/C983DC1D.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RawPrinterAccess.Close method" Url="html/EBE6B0DE.htm" />
+  <HelpKINode Title="RawPrinterAccess.Finalize method" Url="html/114F5C87.htm" />
+  <HelpKINode Title="RawPrinterAccess.IDisposable.Dispose explicitly implemented method" Url="html/855F88D.htm" />
+  <HelpKINode Title="RawPrinterAccess.IsOpen property" Url="html/949BBCB6.htm" />
+  <HelpKINode Title="RawPrinterAccess.Open method" Url="html/91A0EFCF.htm" />
+  <HelpKINode Title="RawPrinterAccess.PrinterDevice property" Url="html/78796D88.htm" />
+  <HelpKINode Title="RawPrinterAccess.RawPrinterAccess constructor" Url="html/CAADBAD.htm" />
+  <HelpKINode Title="RawPrinterAccess.WriteBytes method" Url="html/723E4200.htm" />
+  <HelpKINode Title="RawPrinterAccess.WriteString method" Url="html/5BBDAE06.htm" />
+  <HelpKINode Title="RButton enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RControl enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RegionAdapterBase class">
+    <HelpKINode Title="RegionAdapterBase Class" Url="html/7093ABEE.htm" />
+    <HelpKINode Title="constructor" Url="html/CB3BA91.htm" />
+    <HelpKINode Title="methods" Url="html/3966F41A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegionAdapterBase.Activate method" Url="html/9ED5220A.htm" />
+  <HelpKINode Title="RegionAdapterBase.Add method" Url="html/CB084E8F.htm" />
+  <HelpKINode Title="RegionAdapterBase.CanNavigate method" Url="html/89C31FA8.htm" />
+  <HelpKINode Title="RegionAdapterBase.CanNavigateFrom method" Url="html/1DAC40.htm" />
+  <HelpKINode Title="RegionAdapterBase.CanNavigateTo method" Url="html/788E1BF9.htm" />
+  <HelpKINode Title="RegionAdapterBase.Clear method" Url="html/8C0F48A4.htm" />
+  <HelpKINode Title="RegionAdapterBase.Contains method" Url="html/946B42E3.htm" />
+  <HelpKINode Title="RegionAdapterBase.Deactivate method" Url="html/FBBFEE2D.htm" />
+  <HelpKINode Title="RegionAdapterBase.Get method" Url="html/B44E4E90.htm" />
+  <HelpKINode Title="RegionAdapterBase.GetSortedElements method" Url="html/9843107A.htm" />
+  <HelpKINode Title="RegionAdapterBase.GetSortIndex method" Url="html/C9AF7F1A.htm" />
+  <HelpKINode Title="RegionAdapterBase.GetSupportedTypes method" Url="html/37161EC2.htm" />
+  <HelpKINode Title="RegionAdapterBase.IsCompatibleContainer method" Url="html/32605A7.htm" />
+  <HelpKINode Title="RegionAdapterBase.Navigate method" Url="html/460921CC.htm" />
+  <HelpKINode Title="RegionAdapterBase.NavigatedFrom method" Url="html/F1439A90.htm" />
+  <HelpKINode Title="RegionAdapterBase.NavigatedTo method" Url="html/8673B4F6.htm" />
+  <HelpKINode Title="RegionAdapterBase.RegionAdapterBase constructor" Url="html/CB3BA91.htm" />
+  <HelpKINode Title="RegionAdapterBase.Remove method" Url="html/CBEEBE7C.htm" />
+  <HelpKINode Title="RegionAdapterBase.Sort method" Url="html/81C44B4C.htm" />
+  <HelpKINode Title="RegionBinder class">
+    <HelpKINode Title="RegionBinder Class" Url="html/BC5D9F51.htm" />
+    <HelpKINode Title="attached properties" Url="html/CA5E340E.htm" />
+    <HelpKINode Title="fields" Url="html/DD569E91.htm" />
+    <HelpKINode Title="methods" Url="html/88341F92.htm" />
+    <HelpKINode Title="properties" Url="html/B3233940.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegionBinder.DefaultRegionService property" Url="html/5F31E136.htm" />
+  <HelpKINode Title="RegionBinder.GetRegionName method" Url="html/99EFAFC5.htm" />
+  <HelpKINode Title="RegionBinder.GetRegionService method" Url="html/ED7D70BA.htm" />
+  <HelpKINode Title="RegionBinder.RegionName attached property" Url="html/9BFB6500.htm" />
+  <HelpKINode Title="RegionBinder.RegionNameProperty field" Url="html/6FB0F836.htm" />
+  <HelpKINode Title="RegionBinder.RegionService attached property" Url="html/ECC49E10.htm" />
+  <HelpKINode Title="RegionBinder.RegionServiceProperty field" Url="html/164F5C8A.htm" />
+  <HelpKINode Title="RegionBinder.SetRegionName method" Url="html/6C9BAFB7.htm" />
+  <HelpKINode Title="RegionBinder.SetRegionService method" Url="html/11897202.htm" />
+  <HelpKINode Title="RegionElementSortHintAttribute class">
+    <HelpKINode Title="RegionElementSortHintAttribute Class" Url="html/3D71D0FD.htm" />
+    <HelpKINode Title="constructor" Url="html/4F5D1D6D.htm" />
+    <HelpKINode Title="methods" Url="html/40AC9647.htm" />
+    <HelpKINode Title="properties" Url="html/BDE40804.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegionElementSortHintAttribute.Index property" Url="html/5DF69BD5.htm" />
+  <HelpKINode Title="RegionElementSortHintAttribute.RegionElementSortHintAttribute constructor" Url="html/4F5D1D6D.htm" />
+  <HelpKINode Title="RegionName attached property" Url="html/9BFB6500.htm" />
+  <HelpKINode Title="RegionNameComparer field" Url="html/41C36D42.htm" />
+  <HelpKINode Title="RegionNameProperty field" Url="html/6FB0F836.htm" />
+  <HelpKINode Title="RegionNotFoundException class">
+    <HelpKINode Title="RegionNotFoundException Class" Url="html/ABCA870A.htm" />
+    <HelpKINode Title="constructor" Url="html/8F25DC19.htm" />
+    <HelpKINode Title="events" Url="html/A8CB1F46.htm" />
+    <HelpKINode Title="methods" Url="html/F70E7215.htm" />
+    <HelpKINode Title="properties" Url="html/73E7117E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegionNotFoundException.RegionNotFoundException constructor" Url="html/8F25DC19.htm" />
+  <HelpKINode Title="RegionService attached property" Url="html/ECC49E10.htm" />
+  <HelpKINode Title="RegionService class">
+    <HelpKINode Title="RegionService Class" Url="html/395441C3.htm" />
+    <HelpKINode Title="constructor" Url="html/7BEF1BBC.htm" />
+    <HelpKINode Title="fields" Url="html/B683B5C7.htm" />
+    <HelpKINode Title="methods" Url="html/DE6A81E3.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RegionService.ActivateAllElements method" Url="html/BB2D7693.htm" />
+  <HelpKINode Title="RegionService.ActivateElement method" Url="html/DEEDAD6A.htm" />
+  <HelpKINode Title="RegionService.AddAdapter method" Url="html/8F9D2CC1.htm" />
+  <HelpKINode Title="RegionService.AddElement method" Url="html/B73F3C90.htm" />
+  <HelpKINode Title="RegionService.AddRegion method" Url="html/66E099CF.htm" />
+  <HelpKINode Title="RegionService.CanNavigate method" Url="html/B5C3FA6B.htm" />
+  <HelpKINode Title="RegionService.ClearElements method" Url="html/81E8A1DA.htm" />
+  <HelpKINode Title="RegionService.DeactivateAllElements method" Url="html/ED91C167.htm" />
+  <HelpKINode Title="RegionService.DeactivateElement method" Url="html/5C7BFCF9.htm" />
+  <HelpKINode Title="RegionService.GetAdapters method" Url="html/88A62900.htm" />
+  <HelpKINode Title="RegionService.GetContainerOfRegion method" Url="html/3E96BF1.htm" />
+  <HelpKINode Title="RegionService.GetElementsOfRegion method" Url="html/7C3D2F7.htm" />
+  <HelpKINode Title="RegionService.GetRegionName method" Url="html/C711391F.htm" />
+  <HelpKINode Title="RegionService.GetRegionNames method" Url="html/57515CDE.htm" />
+  <HelpKINode Title="RegionService.HasElement method" Url="html/613528CB.htm" />
+  <HelpKINode Title="RegionService.HasRegion method" Url="html/22749932.htm" />
+  <HelpKINode Title="RegionService.Navigate method" Url="html/9D606A87.htm" />
+  <HelpKINode Title="RegionService.RegionNameComparer field" Url="html/41C36D42.htm" />
+  <HelpKINode Title="RegionService.RegionService constructor" Url="html/7BEF1BBC.htm" />
+  <HelpKINode Title="RegionService.RemoveAdapter method" Url="html/283C0E1F.htm" />
+  <HelpKINode Title="RegionService.RemoveElement method" Url="html/E301DBC5.htm" />
+  <HelpKINode Title="RegionService.RemoveRegion method" Url="html/32535A34.htm" />
+  <HelpKINode Title="RegionServiceProperty field" Url="html/164F5C8A.htm" />
+  <HelpKINode Title="RelocateWindow method">
+    <HelpKINode Title="WindowExtensions.RelocateWindow Method " Url="html/B0149E26.htm" />
+    <HelpKINode Title="WindowsWindow.RelocateWindow Method " Url="html/22961F00.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Remote enumeration member" Url="html/219EAA9A.htm" />
+  <HelpKINode Title="Remove method">
+    <HelpKINode Title="IRegionAdapter.Remove Method " Url="html/F33A348A.htm" />
+    <HelpKINode Title="RegionAdapterBase.Remove Method " Url="html/CBEEBE7C.htm" />
+    <HelpKINode Title="WpfRegionAdapter.Remove Method " Url="html/78A98B87.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RemoveAdapter method">
+    <HelpKINode Title="IRegionService.RemoveAdapter Method " Url="html/AA4F064D.htm" />
+    <HelpKINode Title="RegionService.RemoveAdapter Method " Url="html/283C0E1F.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RemoveElement method">
+    <HelpKINode Title="IRegionService.RemoveElement Method " Url="html/298083BC.htm" />
+    <HelpKINode Title="RegionService.RemoveElement Method " Url="html/E301DBC5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="RemoveRegion method">
+    <HelpKINode Title="IRegionService.RemoveRegion Method " Url="html/F770659A.htm" />
+    <HelpKINode Title="RegionService.RemoveRegion Method " Url="html/32535A34.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ResolveDomain method" Url="html/E85731F9.htm" />
+  <HelpKINode Title="Resolver property" Url="html/BD531330.htm" />
+  <HelpKINode Title="ResolveUser method" Url="html/A0F4468E.htm" />
+  <HelpKINode Title="Resource property" Url="html/847F6616.htm" />
+  <HelpKINode Title="Restart method" Url="html/2C31357D.htm" />
+  <HelpKINode Title="Restore method" Url="html/620E102F.htm" />
+  <HelpKINode Title="Return enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer namespace" Url="html/53D7B88D.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.Adapters namespace" Url="html/7838CCB8.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.Adapters.WpfRegionAdapter class" Url="html/8D11529A.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.Adapters.WpfRegionAdapterBase class" Url="html/A3C67F5A.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.IRegionAdapter interface" Url="html/65074835.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.IRegionElement interface" Url="html/1A61BD6C.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.IRegionService interface" Url="html/D0D63A40.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.RegionAdapterBase class" Url="html/7093ABEE.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.RegionElementSortHintAttribute class" Url="html/3D71D0FD.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.RegionNotFoundException class" Url="html/ABCA870A.htm" />
+  <HelpKINode Title="RI.DesktopServices.UiContainer.RegionService class" Url="html/395441C3.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Cryptography namespace" Url="html/B8E1B582.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Cryptography.LocalEncryption class" Url="html/4E5C768.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Cryptography.UniqueIdentification class" Url="html/B8D2D922.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Imaging namespace" Url="html/936451BE.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Imaging.BitmapExtensions class" Url="html/2D148D8B.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Imaging.IconExtensions class" Url="html/FF205C86.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Keyboard namespace" Url="html/72914EB3.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Keyboard.OnScreenKeyboard class" Url="html/EF77C48.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Keyboard.SystemKeyboard class" Url="html/BB1E9408.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Keyboard.SystemKeyboardKey enumeration" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Printer namespace" Url="html/63425F43.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Printer.PrinterDevice class" Url="html/B72B5ECD.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Printer.PrinterTypes enumeration" Url="html/219EAA9A.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Printer.RawPrinterAccess class" Url="html/95793CDE.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Serial namespace" Url="html/BE7CF0B7.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Serial.SerialPortExtensions class" Url="html/65567BE2.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.IO.Serial.SerialPortInstance class" Url="html/88994D5.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Network namespace" Url="html/8C1808CA.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Network.WindowsNetwork class" Url="html/DA83AF76.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Network.WindowsNetworkConnection class" Url="html/22196697.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Network.WindowsNetworkError enumeration" Url="html/576AA674.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Runtime namespace" Url="html/380252EC.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Runtime.WindowsApi class" Url="html/B9B0F2DE.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Shell namespace" Url="html/FF87C994.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Shell.WindowsSession class" Url="html/DEC549A0.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Shell.WindowsShell class" Url="html/D9DED238.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.UI namespace" Url="html/312A664E.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.UI.WindowsWindow class" Url="html/20604E4A.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users namespace" Url="html/E2172C99.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.ImpersonatedAction delegate" Url="html/9F16723F.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.ImpersonatedActionAsync delegate" Url="html/9B884FCB.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.ImpersonatedFunc(Of TResult) delegate" Url="html/616DE228.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.ImpersonatedFunc&lt;TResult&gt; delegate" Url="html/616DE228.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.ImpersonatedFuncAsync(Of TResult) delegate" Url="html/CB5A2457.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.ImpersonatedFuncAsync&lt;TResult&gt; delegate" Url="html/CB5A2457.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.WindowsUser class" Url="html/CB7BE6ED.htm" />
+  <HelpKINode Title="RI.DesktopServices.Windows.Users.WindowsUserProfile class" Url="html/6E92DDB9.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf namespace" Url="html/B25CF516.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.ApplicationExtensions class" Url="html/2FC379DF.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Controls namespace" Url="html/4DD859B5.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Controls.ComboBoxChecker class" Url="html/6ACC58C9.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters namespace" Url="html/F6F0197B.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters.InvertedBoolVisibilityConverter class" Url="html/9B1847A3.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters.InvertedObjectBoolConverter class" Url="html/1BBF9534.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters.InvertedObjectVisibilityConverter class" Url="html/9B8BB819.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters.NormalBoolVisibilityConverter class" Url="html/7BDEF97F.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters.NormalObjectBoolConverter class" Url="html/663F91A7.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Converters.NormalObjectVisibilityConverter class" Url="html/627FD288.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.DispatcherExtensions class" Url="html/212E1493.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Imaging namespace" Url="html/E8C0B298.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Imaging.BitmapFrameExtensions class" Url="html/5218900.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Imaging.BitmapSourceExtensions class" Url="html/ED1F4D89.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Input namespace" Url="html/55BAE0A0.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Input.TemporaryCursor class" Url="html/F1D50F03.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Markup namespace" Url="html/47D6C59E.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Markup.EventBinding class" Url="html/65C02376.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Markup.EventBindings class" Url="html/48419D8E.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Markup.EventToCommandBinder class" Url="html/3A502615.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Markup.InstanceLocator class" Url="html/A42769EE.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.Markup.RegionBinder class" Url="html/BC5D9F51.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.WindowExtensions class" Url="html/611C5C86.htm" />
+  <HelpKINode Title="Right enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RMenu enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RShift enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RunImpersonated method" Url="html/4A6D880.htm" />
+  <HelpKINode Title="RunImpersonatedAsync method" Url="html/FF95EC83.htm" />
+  <HelpKINode Title="RWin enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Scroll enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Select enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Separator enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="SerialPortExtensions class">
+    <HelpKINode Title="SerialPortExtensions Class" Url="html/65567BE2.htm" />
+    <HelpKINode Title="methods" Url="html/84DA5284.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SerialPortExtensions.GetSerialPortInstance method" Url="html/1942F091.htm" />
+  <HelpKINode Title="SerialPortInstance class">
+    <HelpKINode Title="SerialPortInstance Class" Url="html/88994D5.htm" />
+    <HelpKINode Title="constructor" Url="html/B58AFC2.htm" />
+    <HelpKINode Title="methods" Url="html/6AEF48B6.htm" />
+    <HelpKINode Title="properties" Url="html/18631971.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SerialPortInstance.CompareTo method" Url="html/F278CA24.htm" />
+  <HelpKINode Title="SerialPortInstance.CreateSerialPort method" Url="html/7431FBD8.htm" />
+  <HelpKINode Title="SerialPortInstance.Equals method" Url="html/183BA21.htm" />
+  <HelpKINode Title="SerialPortInstance.GetAvailablePorts method" Url="html/CA474C0D.htm" />
+  <HelpKINode Title="SerialPortInstance.GetHashCode method" Url="html/118A2A5C.htm" />
+  <HelpKINode Title="SerialPortInstance.GetPresentPorts method" Url="html/A8A72DBE.htm" />
+  <HelpKINode Title="SerialPortInstance.IsAvailable method" Url="html/95EFBCC4.htm" />
+  <HelpKINode Title="SerialPortInstance.Parse method" Url="html/15BDEA05.htm" />
+  <HelpKINode Title="SerialPortInstance.PortName property" Url="html/2E58C566.htm" />
+  <HelpKINode Title="SerialPortInstance.PortNumber property" Url="html/17DBBC1D.htm" />
+  <HelpKINode Title="SerialPortInstance.SerialPortInstance constructor" Url="html/B58AFC2.htm" />
+  <HelpKINode Title="SerialPortInstance.ToString method" Url="html/ECC57738.htm" />
+  <HelpKINode Title="SerialPortInstance.TryParse method" Url="html/ED89235A.htm" />
+  <HelpKINode Title="ServerName property">
+    <HelpKINode Title="PrinterDevice.ServerName Property " Url="html/E84CD82E.htm" />
+    <HelpKINode Title="WindowsUserProfile.ServerName Property " Url="html/72F3A4FF.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ServiceProvider property" Url="html/239D9FCA.htm" />
+  <HelpKINode Title="SetRegionName method" Url="html/6C9BAFB7.htm" />
+  <HelpKINode Title="SetRegionService method" Url="html/11897202.htm" />
+  <HelpKINode Title="ShareName property" Url="html/DDA47EE4.htm" />
+  <HelpKINode Title="Shift enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Show method" Url="html/F8264C52.htm" />
+  <HelpKINode Title="ShowWindow method">
+    <HelpKINode Title="WindowExtensions.ShowWindow Method " Url="html/8FC50700.htm" />
+    <HelpKINode Title="WindowsWindow.ShowWindow Method " Url="html/6E400330.htm" />
+  </HelpKINode>
+  <HelpKINode Title="Shutdown method" Url="html/CA68CF74.htm" />
+  <HelpKINode Title="Sleep enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Snapshot enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Sort method">
+    <HelpKINode Title="IRegionAdapter.Sort Method " Url="html/6402EA94.htm" />
+    <HelpKINode Title="RegionAdapterBase.Sort Method " Url="html/81C44B4C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SortIndex property" Url="html/FE29A8ED.htm" />
+  <HelpKINode Title="Space enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Subtract enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="SystemKeyboard class">
+    <HelpKINode Title="SystemKeyboard Class" Url="html/BB1E9408.htm" />
+    <HelpKINode Title="methods" Url="html/BF270392.htm" />
+  </HelpKINode>
+  <HelpKINode Title="SystemKeyboard.IsKeyPressed method" Url="html/EAE6C336.htm" />
+  <HelpKINode Title="SystemKeyboard.IsKeystrokePressed method" Url="html/25B12F90.htm" />
+  <HelpKINode Title="SystemKeyboard.IsKeystrokeToggledOn method" Url="html/D5046E54.htm" />
+  <HelpKINode Title="SystemKeyboard.IsKeyToggledOn method" Url="html/87D668FA.htm" />
+  <HelpKINode Title="SystemKeyboard.MapCharactersToKey method" Url="html/58A0697.htm" />
+  <HelpKINode Title="SystemKeyboardKey enumeration" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Tab enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="TemporaryCursor class">
+    <HelpKINode Title="TemporaryCursor Class" Url="html/F1D50F03.htm" />
+    <HelpKINode Title="methods" Url="html/DF2AECE6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="TemporaryCursor.AppStarting method" Url="html/B360C53D.htm" />
+  <HelpKINode Title="TemporaryCursor.Finalize method" Url="html/5717B0B.htm" />
+  <HelpKINode Title="TemporaryCursor.IDisposable.Dispose explicitly implemented method" Url="html/3B307BAB.htm" />
+  <HelpKINode Title="TemporaryCursor.Restore method" Url="html/620E102F.htm" />
+  <HelpKINode Title="TemporaryCursor.Wait method" Url="html/8BB0C7DE.htm" />
+  <HelpKINode Title="ToBitmap method">
+    <HelpKINode Title="BitmapExtensions.ToBitmap Method " Url="html/E36FA0A5.htm" />
+    <HelpKINode Title="BitmapSourceExtensions.ToBitmap Method " Url="html/531B3FB1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToBitmapFrame method" Url="html/BADAFE22.htm" />
+  <HelpKINode Title="ToBitmapSource method" Url="html/5F425AA0.htm" />
+  <HelpKINode Title="ToBmpByteArray method">
+    <HelpKINode Title="BitmapExtensions.ToBmpByteArray Method " Url="html/5989BF1.htm" />
+    <HelpKINode Title="BitmapSourceExtensions.ToBmpByteArray Method " Url="html/7860D0C6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToByteArray method">
+    <HelpKINode Title="BitmapExtensions.ToByteArray Method " Url="html/7D8A80A2.htm" />
+    <HelpKINode Title="BitmapSourceExtensions.ToByteArray Method " Url="html/9F766B32.htm" />
+    <HelpKINode Title="IconExtensions.ToByteArray Method " Url="html/7FDCBE1E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToIcon method">
+    <HelpKINode Title="BitmapExtensions.ToIcon Method " Url="html/66677197.htm" />
+    <HelpKINode Title="BitmapSourceExtensions.ToIcon Method " Url="html/999BFFC7.htm" />
+    <HelpKINode Title="IconExtensions.ToIcon Method " Url="html/8974E599.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToJpegByteArray method">
+    <HelpKINode Title="BitmapExtensions.ToJpegByteArray Method " Url="html/F4650207.htm" />
+    <HelpKINode Title="BitmapSourceExtensions.ToJpegByteArray Method " Url="html/F58E128.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToPngByteArray method">
+    <HelpKINode Title="BitmapExtensions.ToPngByteArray Method " Url="html/C14A42DC.htm" />
+    <HelpKINode Title="BitmapSourceExtensions.ToPngByteArray Method " Url="html/1DEE9D52.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ToString method" Url="html/ECC57738.htm" />
+  <HelpKINode Title="TryParse method" Url="html/ED89235A.htm" />
+  <HelpKINode Title="Type property" Url="html/3C548A28.htm" />
+  <HelpKINode Title="Unavailable enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="UniqueIdentification class">
+    <HelpKINode Title="UniqueIdentification Class" Url="html/B8D2D922.htm" />
+    <HelpKINode Title="methods" Url="html/1A7AE1AC.htm" />
+  </HelpKINode>
+  <HelpKINode Title="UniqueIdentification.GetDomainId method" Url="html/D092BD45.htm" />
+  <HelpKINode Title="UniqueIdentification.GetMachineId method" Url="html/CA62CD89.htm" />
+  <HelpKINode Title="UniqueIdentification.GetUserId method" Url="html/CDAA2231.htm" />
+  <HelpKINode Title="Up enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Username property" Url="html/52151AFC.htm" />
+  <HelpKINode Title="UserName property" Url="html/352F5DD6.htm" />
+  <HelpKINode Title="VolumeDown enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="VolumeMute enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="VolumeUp enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Wait method" Url="html/8BB0C7DE.htm" />
+  <HelpKINode Title="WindowExtensions class">
+    <HelpKINode Title="WindowExtensions Class" Url="html/611C5C86.htm" />
+    <HelpKINode Title="methods" Url="html/CBE6495E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowExtensions.EnableWindow method" Url="html/62C201BF.htm" />
+  <HelpKINode Title="WindowExtensions.GetOwnerHandle method" Url="html/5A263AB7.htm" />
+  <HelpKINode Title="WindowExtensions.GetScreen method" Url="html/7A19B235.htm" />
+  <HelpKINode Title="WindowExtensions.GetScreenIndex method" Url="html/1E2F4176.htm" />
+  <HelpKINode Title="WindowExtensions.GetWindowHandle method" Url="html/A396411B.htm" />
+  <HelpKINode Title="WindowExtensions.HideWindow method" Url="html/82EB62AA.htm" />
+  <HelpKINode Title="WindowExtensions.MaximizeWindow method" Url="html/DCE7FF9F.htm" />
+  <HelpKINode Title="WindowExtensions.MinimizeWindow method" Url="html/F52771F9.htm" />
+  <HelpKINode Title="WindowExtensions.MoveWindowToBackground method" Url="html/29D5B957.htm" />
+  <HelpKINode Title="WindowExtensions.MoveWindowToForeground method" Url="html/59F939D4.htm" />
+  <HelpKINode Title="WindowExtensions.MoveWindowToPrimaryScreen method" Url="html/59CC1374.htm" />
+  <HelpKINode Title="WindowExtensions.MoveWindowToScreen method" Url="html/93BF80F1.htm" />
+  <HelpKINode Title="WindowExtensions.NormalizeWindow method" Url="html/EC6EECC3.htm" />
+  <HelpKINode Title="WindowExtensions.RelocateWindow method" Url="html/B0149E26.htm" />
+  <HelpKINode Title="WindowExtensions.ShowWindow method" Url="html/8FC50700.htm" />
+  <HelpKINode Title="WindowsApi class">
+    <HelpKINode Title="WindowsApi Class" Url="html/B9B0F2DE.htm" />
+    <HelpKINode Title="methods" Url="html/3E012D28.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsApi.GetErrorMessage method" Url="html/B729DD42.htm" />
+  <HelpKINode Title="WindowsApi.GetLastErrorCode method" Url="html/602BB84F.htm" />
+  <HelpKINode Title="WindowsNetwork class">
+    <HelpKINode Title="WindowsNetwork Class" Url="html/DA83AF76.htm" />
+    <HelpKINode Title="methods" Url="html/9922AFB6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsNetwork.CloseConnection method" Url="html/7AC67905.htm" />
+  <HelpKINode Title="WindowsNetwork.OpenConnection method" Url="html/97C92BEC.htm" />
+  <HelpKINode Title="WindowsNetworkConnection class">
+    <HelpKINode Title="WindowsNetworkConnection Class" Url="html/22196697.htm" />
+    <HelpKINode Title="constructor" Url="html/6D5BD4E5.htm" />
+    <HelpKINode Title="methods" Url="html/556E1DED.htm" />
+    <HelpKINode Title="properties" Url="html/642C819A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsNetworkConnection.Close method" Url="html/A5EC5781.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.Error property" Url="html/54B9DAE8.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.Finalize method" Url="html/CFE7908B.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.IDisposable.Dispose explicitly implemented method" Url="html/8B586C45.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.Interactive property" Url="html/5FFF98C1.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.IsOpen property" Url="html/B6A174FC.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.Password property" Url="html/B5DBBE49.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.Resource property" Url="html/847F6616.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.Username property" Url="html/52151AFC.htm" />
+  <HelpKINode Title="WindowsNetworkConnection.WindowsNetworkConnection constructor" Url="html/6D5BD4E5.htm" />
+  <HelpKINode Title="WindowsNetworkError enumeration" Url="html/576AA674.htm" />
+  <HelpKINode Title="WindowsSession class">
+    <HelpKINode Title="WindowsSession Class" Url="html/DEC549A0.htm" />
+    <HelpKINode Title="methods" Url="html/16096265.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsSession.Logoff method" Url="html/1EA4A70D.htm" />
+  <HelpKINode Title="WindowsSession.Restart method" Url="html/2C31357D.htm" />
+  <HelpKINode Title="WindowsSession.Shutdown method" Url="html/CA68CF74.htm" />
+  <HelpKINode Title="WindowsShell class">
+    <HelpKINode Title="WindowsShell Class" Url="html/D9DED238.htm" />
+    <HelpKINode Title="methods" Url="html/D3A3F5B.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsShell.OpenCommandPrompt method" Url="html/2BF53D52.htm" />
+  <HelpKINode Title="WindowsShell.OpenExplorer method" Url="html/C91AAFC8.htm" />
+  <HelpKINode Title="WindowsShell.OpenFile method" Url="html/A72BB906.htm" />
+  <HelpKINode Title="WindowsShell.OpenFolder method" Url="html/715EE9D.htm" />
+  <HelpKINode Title="WindowsShell.OpenSystemInfo method" Url="html/2B8CBF43.htm" />
+  <HelpKINode Title="WindowsShell.OpenTaskManager method" Url="html/9A46D35B.htm" />
+  <HelpKINode Title="WindowsShell.OpenUrl method" Url="html/35B790AD.htm" />
+  <HelpKINode Title="WindowsUser class">
+    <HelpKINode Title="WindowsUser Class" Url="html/CB7BE6ED.htm" />
+    <HelpKINode Title="methods" Url="html/2073D957.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsUser.CloseLogonToken method" Url="html/5649C0DC.htm" />
+  <HelpKINode Title="WindowsUser.CreateLogonToken method" Url="html/BB6AA936.htm" />
+  <HelpKINode Title="WindowsUser.ExtractDomainAndUser method" Url="html/D76E1BBD.htm" />
+  <HelpKINode Title="WindowsUser.GetCurrentDefaultCulture method" Url="html/775DDD87.htm" />
+  <HelpKINode Title="WindowsUser.GetCurrentDomain method" Url="html/CD9D005.htm" />
+  <HelpKINode Title="WindowsUser.GetCurrentToken method" Url="html/501C48A5.htm" />
+  <HelpKINode Title="WindowsUser.GetCurrentUser method" Url="html/3B311AFE.htm" />
+  <HelpKINode Title="WindowsUser.GetEveryoneUserName method" Url="html/7A58A3AA.htm" />
+  <HelpKINode Title="WindowsUser.GetLocalDomain method" Url="html/307D24EE.htm" />
+  <HelpKINode Title="WindowsUser.GetNetworkDomain method" Url="html/80E2D89.htm" />
+  <HelpKINode Title="WindowsUser.GetUserFromSid method" Url="html/E7BA4AD3.htm" />
+  <HelpKINode Title="WindowsUser.IsCurrentAdministrator method" Url="html/6DB0FA08.htm" />
+  <HelpKINode Title="WindowsUser.IsCurrentSystem method" Url="html/5F3763E1.htm" />
+  <HelpKINode Title="WindowsUser.ResolveDomain method" Url="html/E85731F9.htm" />
+  <HelpKINode Title="WindowsUser.ResolveUser method" Url="html/A0F4468E.htm" />
+  <HelpKINode Title="WindowsUser.RunImpersonated method" Url="html/4A6D880.htm" />
+  <HelpKINode Title="WindowsUser.RunImpersonatedAsync method" Url="html/FF95EC83.htm" />
+  <HelpKINode Title="WindowsUserProfile class">
+    <HelpKINode Title="WindowsUserProfile Class" Url="html/6E92DDB9.htm" />
+    <HelpKINode Title="methods" Url="html/54834E71.htm" />
+    <HelpKINode Title="properties" Url="html/F4B65DA5.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsUserProfile.DefaultPath property" Url="html/B020430F.htm" />
+  <HelpKINode Title="WindowsUserProfile.ProfilePath property" Url="html/44B5842.htm" />
+  <HelpKINode Title="WindowsUserProfile.ServerName property" Url="html/72F3A4FF.htm" />
+  <HelpKINode Title="WindowsUserProfile.UserName property" Url="html/352F5DD6.htm" />
+  <HelpKINode Title="WindowsWindow class">
+    <HelpKINode Title="WindowsWindow Class" Url="html/20604E4A.htm" />
+    <HelpKINode Title="methods" Url="html/BB472D4B.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowsWindow.EnableWindow method" Url="html/31A54166.htm" />
+  <HelpKINode Title="WindowsWindow.FindChildWindows method" Url="html/705303BA.htm" />
+  <HelpKINode Title="WindowsWindow.FindTopWindows method" Url="html/A96A7BB.htm" />
+  <HelpKINode Title="WindowsWindow.GetLastInput method" Url="html/C6AF5B86.htm" />
+  <HelpKINode Title="WindowsWindow.GetProcess method" Url="html/3512EA41.htm" />
+  <HelpKINode Title="WindowsWindow.GetWindows method" Url="html/CFFF4373.htm" />
+  <HelpKINode Title="WindowsWindow.GetWindowTitle method" Url="html/32939732.htm" />
+  <HelpKINode Title="WindowsWindow.HideWindow method" Url="html/6D2BC766.htm" />
+  <HelpKINode Title="WindowsWindow.MaximizeWindow method" Url="html/41CD18BE.htm" />
+  <HelpKINode Title="WindowsWindow.MinimizeWindow method" Url="html/EF3A192F.htm" />
+  <HelpKINode Title="WindowsWindow.MoveWindowToBackground method" Url="html/4AD8960A.htm" />
+  <HelpKINode Title="WindowsWindow.MoveWindowToForeground method" Url="html/85DB6EB7.htm" />
+  <HelpKINode Title="WindowsWindow.MoveWindowToPrimaryScreen method" Url="html/1D7DFF59.htm" />
+  <HelpKINode Title="WindowsWindow.MoveWindowToScreen method" Url="html/13BE97C8.htm" />
+  <HelpKINode Title="WindowsWindow.NormalizeWindow method" Url="html/DFC2433.htm" />
+  <HelpKINode Title="WindowsWindow.RelocateWindow method" Url="html/22961F00.htm" />
+  <HelpKINode Title="WindowsWindow.ShowWindow method" Url="html/6E400330.htm" />
+  <HelpKINode Title="WpfRegionAdapter class">
+    <HelpKINode Title="WpfRegionAdapter Class" Url="html/8D11529A.htm" />
+    <HelpKINode Title="constructor" Url="html/310818D4.htm" />
+    <HelpKINode Title="methods" Url="html/96ED97CF.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WpfRegionAdapter.Add method" Url="html/4D40EA28.htm" />
+  <HelpKINode Title="WpfRegionAdapter.Clear method" Url="html/8AE3D481.htm" />
+  <HelpKINode Title="WpfRegionAdapter.Contains method" Url="html/140FD7F1.htm" />
+  <HelpKINode Title="WpfRegionAdapter.Get method" Url="html/3666EA27.htm" />
+  <HelpKINode Title="WpfRegionAdapter.GetSupportedTypes method" Url="html/E9E505BB.htm" />
+  <HelpKINode Title="WpfRegionAdapter.Remove method" Url="html/78A98B87.htm" />
+  <HelpKINode Title="WpfRegionAdapter.WpfRegionAdapter constructor" Url="html/310818D4.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase class">
+    <HelpKINode Title="WpfRegionAdapterBase Class" Url="html/A3C67F5A.htm" />
+    <HelpKINode Title="constructor" Url="html/6AE4F1CC.htm" />
+    <HelpKINode Title="methods" Url="html/32EAFCD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WpfRegionAdapterBase.Activate method" Url="html/8BA520B7.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase.CanNavigateFrom method" Url="html/4A18805.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase.CanNavigateTo method" Url="html/1DB0723.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase.Deactivate method" Url="html/71598DE0.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase.NavigatedFrom method" Url="html/DF030331.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase.NavigatedTo method" Url="html/930243F5.htm" />
+  <HelpKINode Title="WpfRegionAdapterBase.WpfRegionAdapterBase constructor" Url="html/6AE4F1CC.htm" />
+  <HelpKINode Title="WriteBytes method" Url="html/723E4200.htm" />
+  <HelpKINode Title="WriteString method" Url="html/5BBDAE06.htm" />
+  <HelpKINode Title="XButton1 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="XButton2 enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Zoom enumeration member" Url="html/270DCDF5.htm" />
+</HelpKI>
