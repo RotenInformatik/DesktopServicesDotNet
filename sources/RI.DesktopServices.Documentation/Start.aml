@@ -5,49 +5,49 @@
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <introduction>
       <para>
-        Infrastructure and cross-cutting-concern abstractions for .NET.
+        Infrastructure for desktop applications for .NET.
       </para>
       <para>
         Based on .NET Standard 2.0, with minimal dependencies.
       </para>
       <para>
         <markup>
-          <a href='https://www.nuget.org/packages/RI.Abstractions.Common/'>
-            <img src="https://img.shields.io/nuget/v/RI.Abstractions.Common" referrerpolicy="no-referrer" alt="Nuget"/>
+          <a href='https://www.nuget.org/packages/RI.DesktopServices.Common/'>
+            <img src="https://img.shields.io/nuget/v/RI.DesktopServices.Common" referrerpolicy="no-referrer" alt="Nuget"/>
           </a>
         </markup>
       </para>
       <para>
         <markup>
-          <a href='https://github.com/RotenInformatik/AbstractionsDotNet/blob/master/LICENSE'>
-            <img src="https://img.shields.io/github/license/RotenInformatik/AbstractionsDotNet" referrerpolicy="no-referrer" alt="License"/>
+          <a href='https://github.com/RotenInformatik/DesktopServicesDotNet/blob/master/LICENSE'>
+            <img src="https://img.shields.io/github/license/RotenInformatik/DesktopServicesDotNet" referrerpolicy="no-referrer" alt="License"/>
           </a>
         </markup>
       </para>
       <para>
         <markup>
-          <a href='https://github.com/RotenInformatik/AbstractionsDotNet'>
-            <img src="https://img.shields.io/badge/repo-AbstractionsDotNet-lightgrey" referrerpolicy="no-referrer" alt="Repository"/>
+          <a href='https://github.com/RotenInformatik/DesktopServicesDotNet'>
+            <img src="https://img.shields.io/badge/repo-DesktopServicesDotNet-lightgrey" referrerpolicy="no-referrer" alt="Repository"/>
           </a>
         </markup>
       </para>
       <para>
         <markup>
-          <a href='https://github.com/RotenInformatik/AbstractionsDotNet/blob/master/README.md'>
+          <a href='https://github.com/RotenInformatik/DesktopServicesDotNet/blob/master/README.md'>
             <img src="https://img.shields.io/badge/docs-Readme-yellowgreen" referrerpolicy="no-referrer" alt="Readme"/>
           </a>
         </markup>
       </para>
       <para>
         <markup>
-          <a href='https://github.com/RotenInformatik/AbstractionsDotNet/blob/master/HISTORY.md'>
+          <a href='https://github.com/RotenInformatik/DesktopServicesDotNet/blob/master/HISTORY.md'>
             <img src="https://img.shields.io/badge/docs-History-yellowgreen" referrerpolicy="no-referrer" alt="History"/>
           </a>
         </markup>
       </para>
       <para>
         <markup>
-          <a href='https://roteninformatik.github.io/AbstractionsDotNet/api/'>
+          <a href='https://roteninformatik.github.io/DesktopServicesDotNet/api/'>
             <img src="https://img.shields.io/badge/docs-API-yellowgreen" referrerpolicy="no-referrer" alt="Documentation"/>
           </a>
         </markup>

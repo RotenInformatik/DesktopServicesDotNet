@@ -26,7 +26,7 @@
         </tableHeader>
         <row>
           <entry>
-            <para>RI.Abstractions.Common.dll</para>
+            <para>RI.DesktopServices.Common.dll</para>
           </entry>
           <entry>
             <para>.NET Standard 2.0</para>
@@ -42,8 +42,8 @@
           <entry>
             <para>
               <externalLink>
-                <linkText>RI.Abstractions.Common</linkText>
-                <linkUri>https://www.nuget.org/packages/RI.Abstractions.Common/</linkUri>
+                <linkText>RI.DesktopServices.Common</linkText>
+                <linkUri>https://www.nuget.org/packages/RI.DesktopServices.Common/</linkUri>
                 <linkTarget>_self</linkTarget>
               </externalLink>
             </para>
@@ -51,23 +51,22 @@
         </row>
         <row>
           <entry>
-            <para>RI.Abstractions.Microsoft.DependencyInjection.dll</para>
+            <para>RI.DesktopServices.Windows.dll</para>
           </entry>
           <entry>
-            <para>.NET Standard 2.0</para>
+            <para>.NET Core 3.1</para>
           </entry>
           <entry>
             <para>AnyCpu</para>
           </entry>
           <entry>
-            <para>RI.Abstractions.Common</para>
-            <para>Microsoft.Extensions.DependencyInjection</para>
+            <para>RI.DesktopServices.Common</para>
           </entry>
           <entry>
             <para>
               <externalLink>
-                <linkText>RI.Abstractions.Microsoft.DependencyInjection</linkText>
-                <linkUri>https://www.nuget.org/packages/RI.Abstractions.Microsoft.DependencyInjection/</linkUri>
+                <linkText>RI.DesktopServices.Windows</linkText>
+                <linkUri>https://www.nuget.org/packages/RI.DesktopServices.Windows/</linkUri>
                 <linkTarget>_self</linkTarget>
               </externalLink>
             </para>
@@ -75,23 +74,23 @@
         </row>
         <row>
           <entry>
-            <para>RI.Abstractions.Microsoft.Logging.dll</para>
+            <para>RI.DesktopServices.Wpf.dll</para>
           </entry>
           <entry>
-            <para>.NET Standard 2.0</para>
+            <para>.NET Core 3.1</para>
           </entry>
           <entry>
             <para>AnyCpu</para>
           </entry>
           <entry>
-            <para>RI.Abstractions.Common</para>
-            <para>Microsoft.Extensions.Logging.Abstractions</para>
+            <para>RI.DesktopServices.Common</para>
+            <para>RI.DesktopServices.Windows</para>
           </entry>
           <entry>
             <para>
               <externalLink>
-                <linkText>RI.Abstractions.Microsoft.Logging</linkText>
-                <linkUri>https://www.nuget.org/packages/RI.Abstractions.Microsoft.Logging/</linkUri>
+                <linkText>RI.DesktopServices.Wpf</linkText>
+                <linkUri>https://www.nuget.org/packages/RI.DesktopServices.Wpf/</linkUri>
                 <linkTarget>_self</linkTarget>
               </externalLink>
             </para>
