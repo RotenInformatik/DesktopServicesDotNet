@@ -3,10 +3,10 @@
 
   <HelpTOCNode Title="Start" Url="html/ccefe60f-e9ae-412d-88f8-5c9cd2c98a0a.htm" />
   <HelpTOCNode Title="Assemblies" Url="html/b63e72a8-f17e-48cb-be8f-5f34333c9c26.htm" />
-  <HelpTOCNode Id="002c87f1-5617-4dae-93bf-242bedb954a8" Title="Namespaces" Url="html/586AFA02.htm">
-    <HelpTOCNode Id="6a329d02-7976-4f0d-afe4-67d09cd28dc0" Title="RI.DesktopServices.UiContainer" Url="html/53D7B88D.htm">
-      <HelpTOCNode Id="26db6753-a495-432e-8df1-87f04e67b6f9" Title="IRegionAdapter Interface" Url="html/65074835.htm">
-        <HelpTOCNode Id="e43b2621-c91b-4716-9107-97807b3fa1c6" Title="IRegionAdapter Methods" Url="html/538835CD.htm">
+  <HelpTOCNode Id="d1670573-3f53-4e1c-a8f6-8b02afa6f382" Title="Namespaces" Url="html/586AFA02.htm">
+    <HelpTOCNode Id="6944158d-c682-4bc5-b7ed-32e22b897ef5" Title="RI.DesktopServices.UiContainer" Url="html/53D7B88D.htm">
+      <HelpTOCNode Id="d52d4dca-211f-4cec-a61a-a79caa5334d3" Title="IRegionAdapter Interface" Url="html/65074835.htm">
+        <HelpTOCNode Id="0e480687-0811-498a-9209-257bc5385212" Title="IRegionAdapter Methods" Url="html/538835CD.htm">
           <HelpTOCNode Title="Activate Method " Url="html/A5F9A100.htm" />
           <HelpTOCNode Title="Add Method " Url="html/53C44AFC.htm" />
           <HelpTOCNode Title="CanNavigate Method " Url="html/C8235466.htm" />
@@ -20,11 +20,11 @@
           <HelpTOCNode Title="Sort Method " Url="html/6402EA94.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="d5dea0e8-7909-4c4a-aa41-7de23a5c4e78" Title="IRegionElement Interface" Url="html/1A61BD6C.htm">
-        <HelpTOCNode Id="457ccfd6-7b60-46b6-9567-6cb1b2faaa61" Title="IRegionElement Properties" Url="html/91F2711C.htm">
+      <HelpTOCNode Id="67d865e4-83e3-4ade-9518-4ff65357c64c" Title="IRegionElement Interface" Url="html/1A61BD6C.htm">
+        <HelpTOCNode Id="1abe968f-99fa-41dd-89c3-09f1b103889e" Title="IRegionElement Properties" Url="html/91F2711C.htm">
           <HelpTOCNode Title="SortIndex Property " Url="html/FE29A8ED.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="c786e047-a6d8-4e8c-8e1a-fdd9744936c7" Title="IRegionElement Methods" Url="html/83356D0E.htm">
+        <HelpTOCNode Id="44ea0304-372e-4d93-8122-bee106fc5ef9" Title="IRegionElement Methods" Url="html/83356D0E.htm">
           <HelpTOCNode Title="Activated Method " Url="html/36A0C309.htm" />
           <HelpTOCNode Title="CanNavigateFrom Method " Url="html/BFB1161.htm" />
           <HelpTOCNode Title="CanNavigateTo Method " Url="html/350FACAA.htm" />
@@ -33,8 +33,8 @@
           <HelpTOCNode Title="NavigatedTo Method " Url="html/BF8EF515.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5b37c956-cedf-4967-ae57-4211694d17ea" Title="IRegionService Interface" Url="html/D0D63A40.htm">
-        <HelpTOCNode Id="06a8e8f5-790d-4441-bdd1-11ef52636b42" Title="IRegionService Methods" Url="html/D4DBFD82.htm">
+      <HelpTOCNode Id="63720eea-b9a5-4728-aa49-f2d08905fee5" Title="IRegionService Interface" Url="html/D0D63A40.htm">
+        <HelpTOCNode Id="72af9b04-de7a-4d52-91a7-c42dcf88b1ec" Title="IRegionService Methods" Url="html/D4DBFD82.htm">
           <HelpTOCNode Title="ActivateAllElements Method " Url="html/8EEBA09E.htm" />
           <HelpTOCNode Title="ActivateElement Method " Url="html/F411DD97.htm" />
           <HelpTOCNode Title="AddAdapter Method " Url="html/793F11D6.htm" />
@@ -48,7 +48,7 @@
           <HelpTOCNode Title="GetContainerOfRegion Method " Url="html/5297058C.htm" />
           <HelpTOCNode Title="GetElementsOfRegion Method " Url="html/F64205FE.htm" />
           <HelpTOCNode Title="GetRegionName Method " Url="html/19AE4403.htm" />
-          <HelpTOCNode Id="5dda40ba-8b7e-457d-8ae7-43c7aa2e0f3f" Title="GetRegionNames Method " Url="html/A71E49C5.htm">
+          <HelpTOCNode Id="9ed99082-8647-44a7-865f-c4079d60473a" Title="GetRegionNames Method " Url="html/A71E49C5.htm">
             <HelpTOCNode Title="GetRegionNames Method " Url="html/19C14403.htm" />
             <HelpTOCNode Title="GetRegionNames Method (Object)" Url="html/283CB890.htm" />
           </HelpTOCNode>
@@ -60,9 +60,9 @@
           <HelpTOCNode Title="RemoveRegion Method " Url="html/F770659A.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f879244d-258d-4c28-bca0-d21c826b5dbb" Title="RegionAdapterBase Class" Url="html/7093ABEE.htm">
+      <HelpTOCNode Id="ea7bc0fa-1b39-4cde-a3f6-76d6015ffc50" Title="RegionAdapterBase Class" Url="html/7093ABEE.htm">
         <HelpTOCNode Title="RegionAdapterBase Constructor " Url="html/CB3BA91.htm" />
-        <HelpTOCNode Id="2b89a036-f909-418e-a8f8-b0366f06ece6" Title="RegionAdapterBase Methods" Url="html/3966F41A.htm">
+        <HelpTOCNode Id="33b998f2-1a59-494f-a8cc-ed7c2b05786c" Title="RegionAdapterBase Methods" Url="html/3966F41A.htm">
           <HelpTOCNode Title="Activate Method " Url="html/9ED5220A.htm" />
           <HelpTOCNode Title="Add Method " Url="html/CB084E8F.htm" />
           <HelpTOCNode Title="CanNavigate Method " Url="html/89C31FA8.htm" />
@@ -83,15 +83,15 @@
           <HelpTOCNode Title="Sort Method " Url="html/81C44B4C.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="5d419f34-e299-46f3-8f5a-7ae49f913c27" Title="RegionElementSortHintAttribute Class" Url="html/3D71D0FD.htm">
+      <HelpTOCNode Id="93738874-74f5-461c-a5db-892ddd5693c2" Title="RegionElementSortHintAttribute Class" Url="html/3D71D0FD.htm">
         <HelpTOCNode Title="RegionElementSortHintAttribute Constructor " Url="html/4F5D1D6D.htm" />
-        <HelpTOCNode Id="5305068a-1645-47fd-b7b6-7f0a0c1fb72b" Title="RegionElementSortHintAttribute Properties" Url="html/BDE40804.htm">
+        <HelpTOCNode Id="d7705eba-d428-4221-8e21-b5f56db3a5d4" Title="RegionElementSortHintAttribute Properties" Url="html/BDE40804.htm">
           <HelpTOCNode Title="Index Property " Url="html/5DF69BD5.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="RegionElementSortHintAttribute Methods" Url="html/40AC9647.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="7c6f183a-fbd5-4b8f-b3fa-27c17566c6fe" Title="RegionNotFoundException Class" Url="html/ABCA870A.htm">
-        <HelpTOCNode Id="da916169-ca66-4f12-b39d-762086b7fdcd" Title="RegionNotFoundException Constructor " Url="html/8F25DC19.htm">
+      <HelpTOCNode Id="466b7049-7227-44e7-9e5b-0176f4dc78b2" Title="RegionNotFoundException Class" Url="html/ABCA870A.htm">
+        <HelpTOCNode Id="29b1b40c-3be8-431a-bcd0-83969420e8ad" Title="RegionNotFoundException Constructor " Url="html/8F25DC19.htm">
           <HelpTOCNode Title="RegionNotFoundException Constructor (String)" Url="html/8688CB39.htm" />
           <HelpTOCNode Title="RegionNotFoundException Constructor (SerializationInfo, StreamingContext)" Url="html/C06EDED4.htm" />
           <HelpTOCNode Title="RegionNotFoundException Constructor (String, Exception)" Url="html/E459CB39.htm" />
@@ -100,9 +100,9 @@
         <HelpTOCNode Title="RegionNotFoundException Methods" Url="html/F70E7215.htm" />
         <HelpTOCNode Title="RegionNotFoundException Events" Url="html/A8CB1F46.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="af045a09-55a0-461a-b754-63fb085dcef1" Title="RegionService Class" Url="html/395441C3.htm">
+      <HelpTOCNode Id="1ea49539-62c8-4935-94b6-4739a6d7eb8e" Title="RegionService Class" Url="html/395441C3.htm">
         <HelpTOCNode Title="RegionService Constructor " Url="html/7BEF1BBC.htm" />
-        <HelpTOCNode Id="27a745bc-5ba6-4f5f-a93b-5d18c2778461" Title="RegionService Methods" Url="html/DE6A81E3.htm">
+        <HelpTOCNode Id="27f24f43-fa22-41d6-9df5-85ad12ae5f0c" Title="RegionService Methods" Url="html/DE6A81E3.htm">
           <HelpTOCNode Title="ActivateAllElements Method " Url="html/BB2D7693.htm" />
           <HelpTOCNode Title="ActivateElement Method " Url="html/DEEDAD6A.htm" />
           <HelpTOCNode Title="AddAdapter Method " Url="html/8F9D2CC1.htm" />
@@ -116,7 +116,7 @@
           <HelpTOCNode Title="GetContainerOfRegion Method " Url="html/3E96BF1.htm" />
           <HelpTOCNode Title="GetElementsOfRegion Method " Url="html/7C3D2F7.htm" />
           <HelpTOCNode Title="GetRegionName Method " Url="html/C711391F.htm" />
-          <HelpTOCNode Id="e3d6a818-d106-4632-a3d6-123c12963eb1" Title="GetRegionNames Method " Url="html/57515CDE.htm">
+          <HelpTOCNode Id="04bb3aec-b794-4a97-a268-8e179864ac66" Title="GetRegionNames Method " Url="html/57515CDE.htm">
             <HelpTOCNode Title="GetRegionNames Method " Url="html/8E123CD5.htm" />
             <HelpTOCNode Title="GetRegionNames Method (Object)" Url="html/641673FF.htm" />
           </HelpTOCNode>
@@ -127,15 +127,15 @@
           <HelpTOCNode Title="RemoveElement Method " Url="html/E301DBC5.htm" />
           <HelpTOCNode Title="RemoveRegion Method " Url="html/32535A34.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="84504665-9480-4c01-af0a-02f538014f9c" Title="RegionService Fields" Url="html/B683B5C7.htm">
+        <HelpTOCNode Id="88e2a929-407e-4100-9034-c8e487c5f7b0" Title="RegionService Fields" Url="html/B683B5C7.htm">
           <HelpTOCNode Title="RegionNameComparer Field" Url="html/41C36D42.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="dab2edbb-995c-452d-98e3-2ebc6b0ab5b9" Title="RI.DesktopServices.UiContainer.Adapters" Url="html/7838CCB8.htm">
-      <HelpTOCNode Id="d2bad2e6-7fdd-452f-9b87-18addd1f3828" Title="WpfRegionAdapter Class" Url="html/8D11529A.htm">
+    <HelpTOCNode Id="a48cfb64-8db5-4fc9-9eb6-a9059b9a428a" Title="RI.DesktopServices.UiContainer.Adapters" Url="html/7838CCB8.htm">
+      <HelpTOCNode Id="30eb2c56-e15c-403e-808a-99e6198170d5" Title="WpfRegionAdapter Class" Url="html/8D11529A.htm">
         <HelpTOCNode Title="WpfRegionAdapter Constructor " Url="html/310818D4.htm" />
-        <HelpTOCNode Id="0a2c9d4f-3ac3-47ea-92d0-226cc89e7f61" Title="WpfRegionAdapter Methods" Url="html/96ED97CF.htm">
+        <HelpTOCNode Id="1d91f31e-9308-42b3-ba1e-f9c1732518dc" Title="WpfRegionAdapter Methods" Url="html/96ED97CF.htm">
           <HelpTOCNode Title="Add Method " Url="html/4D40EA28.htm" />
           <HelpTOCNode Title="Clear Method " Url="html/8AE3D481.htm" />
           <HelpTOCNode Title="Contains Method " Url="html/140FD7F1.htm" />
@@ -144,9 +144,9 @@
           <HelpTOCNode Title="Remove Method " Url="html/78A98B87.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="a63435af-5baf-4d97-9cb5-98e8d7891410" Title="WpfRegionAdapterBase Class" Url="html/A3C67F5A.htm">
+      <HelpTOCNode Id="e5d5a1d2-590a-4d08-bee6-790cd74f4a95" Title="WpfRegionAdapterBase Class" Url="html/A3C67F5A.htm">
         <HelpTOCNode Title="WpfRegionAdapterBase Constructor " Url="html/6AE4F1CC.htm" />
-        <HelpTOCNode Id="740718ea-417a-4f3a-bf98-82c2207958c2" Title="WpfRegionAdapterBase Methods" Url="html/32EAFCD.htm">
+        <HelpTOCNode Id="93bcba47-fda0-4cfe-b280-13c42ded2c4d" Title="WpfRegionAdapterBase Methods" Url="html/32EAFCD.htm">
           <HelpTOCNode Title="Activate Method " Url="html/8BA520B7.htm" />
           <HelpTOCNode Title="CanNavigateFrom Method " Url="html/4A18805.htm" />
           <HelpTOCNode Title="CanNavigateTo Method " Url="html/1DB0723.htm" />
@@ -156,24 +156,24 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="1bf6de48-754e-4644-85a2-cbdab2380827" Title="RI.DesktopServices.Windows.Cryptography" Url="html/B8E1B582.htm">
-      <HelpTOCNode Id="bb05b5b1-4fd9-4802-b13c-3d3edd6ce536" Title="LocalEncryption Class" Url="html/4E5C768.htm">
-        <HelpTOCNode Id="844b9d26-6980-4a04-a0d7-6cb37bf7aef6" Title="LocalEncryption Methods" Url="html/B57D76A9.htm">
+    <HelpTOCNode Id="fcb4fd62-4a5d-46ba-a526-6621c2310fb3" Title="RI.DesktopServices.Windows.Cryptography" Url="html/B8E1B582.htm">
+      <HelpTOCNode Id="260f8fc8-7234-4122-9bfc-c640d61d7f67" Title="LocalEncryption Class" Url="html/4E5C768.htm">
+        <HelpTOCNode Id="03268d51-ac97-48ad-8d8f-f4b0e29f6cee" Title="LocalEncryption Methods" Url="html/B57D76A9.htm">
           <HelpTOCNode Title="Decrypt Method " Url="html/4FD7069C.htm" />
           <HelpTOCNode Title="Encrypt Method " Url="html/8D03FEA1.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="720cf1fc-6d2e-415f-a70c-a67d3314ea67" Title="UniqueIdentification Class" Url="html/B8D2D922.htm">
-        <HelpTOCNode Id="39bff05a-8a6b-43a6-8127-7639ad198989" Title="UniqueIdentification Methods" Url="html/1A7AE1AC.htm">
+      <HelpTOCNode Id="198cbb7a-b3a6-4c8c-925b-a6692edbd130" Title="UniqueIdentification Class" Url="html/B8D2D922.htm">
+        <HelpTOCNode Id="cccc2f5e-46da-4c4a-bce1-2001fad64276" Title="UniqueIdentification Methods" Url="html/1A7AE1AC.htm">
           <HelpTOCNode Title="GetDomainId Method " Url="html/D092BD45.htm" />
           <HelpTOCNode Title="GetMachineId Method " Url="html/CA62CD89.htm" />
           <HelpTOCNode Title="GetUserId Method " Url="html/CDAA2231.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2462f65f-d964-4057-b48b-bb1f4d6d70e8" Title="RI.DesktopServices.Windows.Imaging" Url="html/936451BE.htm">
-      <HelpTOCNode Id="116f875c-bafb-4d1d-9861-fcd15623dc12" Title="BitmapExtensions Class" Url="html/2D148D8B.htm">
-        <HelpTOCNode Id="3c77531d-8f7c-4115-b42c-8d5e9bc583d8" Title="BitmapExtensions Methods" Url="html/C5BEAA9A.htm">
+    <HelpTOCNode Id="2e3ecc0f-30b1-422a-9d25-538e9e7e80b5" Title="RI.DesktopServices.Windows.Imaging" Url="html/936451BE.htm">
+      <HelpTOCNode Id="9ef6f424-c913-4af5-b7c9-d0d745233852" Title="BitmapExtensions Class" Url="html/2D148D8B.htm">
+        <HelpTOCNode Id="aa9e26e4-fd23-46fa-89f8-c5a857cc3ed7" Title="BitmapExtensions Methods" Url="html/C5BEAA9A.htm">
           <HelpTOCNode Title="ToBitmap Method " Url="html/E36FA0A5.htm" />
           <HelpTOCNode Title="ToBmpByteArray Method " Url="html/5989BF1.htm" />
           <HelpTOCNode Title="ToByteArray Method " Url="html/7D8A80A2.htm" />
@@ -182,34 +182,34 @@
           <HelpTOCNode Title="ToPngByteArray Method " Url="html/C14A42DC.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2d87e0ff-9ab9-4ba7-8456-eae9f726aa18" Title="IconExtensions Class" Url="html/FF205C86.htm">
-        <HelpTOCNode Id="87363336-30de-4b94-a5fd-8d95eff6ce94" Title="IconExtensions Methods" Url="html/669176A2.htm">
+      <HelpTOCNode Id="13cdd3dc-ea3d-48a6-84c2-06dbd85f37e1" Title="IconExtensions Class" Url="html/FF205C86.htm">
+        <HelpTOCNode Id="38048926-a96e-444a-987f-6638ce4469ac" Title="IconExtensions Methods" Url="html/669176A2.htm">
           <HelpTOCNode Title="ToByteArray Method " Url="html/7FDCBE1E.htm" />
           <HelpTOCNode Title="ToIcon Method " Url="html/8974E599.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="5be81d4d-e27a-4075-ac9a-1e58691723b1" Title="RI.DesktopServices.Windows.IO.Keyboard" Url="html/72914EB3.htm">
-      <HelpTOCNode Id="f6b3b3c1-6f8e-44f9-a7e5-3a82cf559e47" Title="OnScreenKeyboard Class" Url="html/EF77C48.htm">
-        <HelpTOCNode Id="c6cde7bb-3cdf-433f-a0de-754088780dc2" Title="OnScreenKeyboard Methods" Url="html/8FC425D.htm">
+    <HelpTOCNode Id="a09a3094-d73f-4888-ad06-3d1720e8f04e" Title="RI.DesktopServices.Windows.IO.Keyboard" Url="html/72914EB3.htm">
+      <HelpTOCNode Id="f04a9ce2-9c3a-4c0c-ae24-4fe9c08cdfff" Title="OnScreenKeyboard Class" Url="html/EF77C48.htm">
+        <HelpTOCNode Id="42c7b1cb-9d72-496d-b2b7-37844d4534bc" Title="OnScreenKeyboard Methods" Url="html/8FC425D.htm">
           <HelpTOCNode Title="Hide Method " Url="html/3B7C65D0.htm" />
           <HelpTOCNode Title="IsAvailable Method " Url="html/E7D408C9.htm" />
           <HelpTOCNode Title="Show Method " Url="html/F8264C52.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="2d1b9a7c-a7c7-43b7-8e30-d1b6bee4d87a" Title="SystemKeyboard Class" Url="html/BB1E9408.htm">
-        <HelpTOCNode Id="45dfdd64-9dcc-41cc-9594-0f3fddeb646b" Title="SystemKeyboard Methods" Url="html/BF270392.htm">
+      <HelpTOCNode Id="7abe179e-07f7-4935-b5ed-dfd5fd94df06" Title="SystemKeyboard Class" Url="html/BB1E9408.htm">
+        <HelpTOCNode Id="4105c260-7f6c-4ebe-963d-2dc4f46c3b61" Title="SystemKeyboard Methods" Url="html/BF270392.htm">
           <HelpTOCNode Title="IsKeyPressed Method " Url="html/EAE6C336.htm" />
-          <HelpTOCNode Id="1a713c69-d8d7-43bc-bb20-a0883b1e05e4" Title="IsKeystrokePressed Method " Url="html/25B12F90.htm">
+          <HelpTOCNode Id="d0ce9a0a-e32b-44a4-85a0-7c99d8c0b35a" Title="IsKeystrokePressed Method " Url="html/25B12F90.htm">
             <HelpTOCNode Title="IsKeystrokePressed Method (SystemKeyboardKey[])" Url="html/7010CE0A.htm" />
             <HelpTOCNode Title="IsKeystrokePressed Method (IEnumerable(SystemKeyboardKey))" Url="html/5724BC98.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="55fc3fad-e46b-45f8-8bfa-db2e5dc7539f" Title="IsKeystrokeToggledOn Method " Url="html/D5046E54.htm">
+          <HelpTOCNode Id="55a48cdb-e7c9-4c65-951e-d1c6290515e4" Title="IsKeystrokeToggledOn Method " Url="html/D5046E54.htm">
             <HelpTOCNode Title="IsKeystrokeToggledOn Method (SystemKeyboardKey[])" Url="html/3C46FD8B.htm" />
             <HelpTOCNode Title="IsKeystrokeToggledOn Method (IEnumerable(SystemKeyboardKey))" Url="html/CE1549.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="IsKeyToggledOn Method " Url="html/87D668FA.htm" />
-          <HelpTOCNode Id="1a4e788f-5302-431b-922c-802aa4da7a55" Title="MapCharactersToKey Method " Url="html/58A0697.htm">
+          <HelpTOCNode Id="f3f9fbde-a1ce-4265-bdb7-383cf976ef63" Title="MapCharactersToKey Method " Url="html/58A0697.htm">
             <HelpTOCNode Title="MapCharactersToKey Method (Char[])" Url="html/A09C5871.htm" />
             <HelpTOCNode Title="MapCharactersToKey Method (IEnumerable(Char))" Url="html/209214CA.htm" />
             <HelpTOCNode Title="MapCharactersToKey Method (String)" Url="html/ABF714CA.htm" />
@@ -218,9 +218,9 @@
       </HelpTOCNode>
       <HelpTOCNode Title="SystemKeyboardKey Enumeration" Url="html/270DCDF5.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="26c42598-aa17-4d07-b0c7-94fb9ff14e90" Title="RI.DesktopServices.Windows.IO.Printer" Url="html/63425F43.htm">
-      <HelpTOCNode Id="68afae66-ff9f-48ad-b061-5004c69dd5c7" Title="PrinterDevice Class" Url="html/B72B5ECD.htm">
-        <HelpTOCNode Id="4a5e4425-24cc-4dcb-813e-17facc755074" Title="PrinterDevice Properties" Url="html/46D7C697.htm">
+    <HelpTOCNode Id="ea0af499-4b88-42b3-b829-19769db7febd" Title="RI.DesktopServices.Windows.IO.Printer" Url="html/63425F43.htm">
+      <HelpTOCNode Id="24149879-d526-44e5-93ae-5cd0515e1ecb" Title="PrinterDevice Class" Url="html/B72B5ECD.htm">
+        <HelpTOCNode Id="5b863d3c-aaf7-4cff-ae99-a4a0388a1977" Title="PrinterDevice Properties" Url="html/46D7C697.htm">
           <HelpTOCNode Title="Comment Property " Url="html/B0628FB9.htm" />
           <HelpTOCNode Title="DriverName Property " Url="html/BBAD242.htm" />
           <HelpTOCNode Title="Location Property " Url="html/B4C020C6.htm" />
@@ -230,52 +230,52 @@
           <HelpTOCNode Title="ServerName Property " Url="html/E84CD82E.htm" />
           <HelpTOCNode Title="ShareName Property " Url="html/DDA47EE4.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="650e1cf2-76a2-4760-98d5-f5bafe9ed6d1" Title="PrinterDevice Methods" Url="html/340E8019.htm">
+        <HelpTOCNode Id="d1097bfb-2c9a-422a-8937-930f71a2a8c0" Title="PrinterDevice Methods" Url="html/340E8019.htm">
           <HelpTOCNode Title="GetPrinters Method " Url="html/9B9175E5.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="PrinterTypes Enumeration" Url="html/219EAA9A.htm" />
-      <HelpTOCNode Id="a38425ca-2641-4a6d-bcf6-b101020de455" Title="RawPrinterAccess Class" Url="html/95793CDE.htm">
+      <HelpTOCNode Id="d6553b1a-3f27-4bf5-9879-1abed75427b9" Title="RawPrinterAccess Class" Url="html/95793CDE.htm">
         <HelpTOCNode Title="RawPrinterAccess Constructor " Url="html/CAADBAD.htm" />
-        <HelpTOCNode Id="b9b826e2-4219-406f-a420-3569cc77b413" Title="RawPrinterAccess Properties" Url="html/C983DC1D.htm">
+        <HelpTOCNode Id="3251e031-f0f8-47f2-a86d-e73fc4924e34" Title="RawPrinterAccess Properties" Url="html/C983DC1D.htm">
           <HelpTOCNode Title="IsOpen Property " Url="html/949BBCB6.htm" />
           <HelpTOCNode Title="PrinterDevice Property " Url="html/78796D88.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="09b64199-632f-4224-a093-3bf2262a8b7d" Title="RawPrinterAccess Methods" Url="html/F2D62759.htm">
+        <HelpTOCNode Id="208a668f-a753-4c8b-b9c2-18ac3dadd3cd" Title="RawPrinterAccess Methods" Url="html/F2D62759.htm">
           <HelpTOCNode Title="IDisposable.Dispose Method " Url="html/855F88D.htm" />
           <HelpTOCNode Title="Close Method " Url="html/EBE6B0DE.htm" />
           <HelpTOCNode Title="Finalize Method " Url="html/114F5C87.htm" />
           <HelpTOCNode Title="Open Method " Url="html/91A0EFCF.htm" />
           <HelpTOCNode Title="WriteBytes Method " Url="html/723E4200.htm" />
-          <HelpTOCNode Id="2472dbf2-82de-4cbb-a7eb-82b5f575669f" Title="WriteString Method " Url="html/5BBDAE06.htm">
+          <HelpTOCNode Id="778d3702-fce0-42cd-82e4-0fd1e1ecb72a" Title="WriteString Method " Url="html/5BBDAE06.htm">
             <HelpTOCNode Title="WriteString Method (String)" Url="html/CDADCCEE.htm" />
             <HelpTOCNode Title="WriteString Method (String, Encoding)" Url="html/49A756CD.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="15aad97f-e636-4c92-8a62-09aaeebb813e" Title="RI.DesktopServices.Windows.IO.Serial" Url="html/BE7CF0B7.htm">
-      <HelpTOCNode Id="20981314-f400-456e-9287-52f753dd14ca" Title="SerialPortExtensions Class" Url="html/65567BE2.htm">
-        <HelpTOCNode Id="7755942f-1cd9-4367-838c-0aae92cb5f8d" Title="SerialPortExtensions Methods" Url="html/84DA5284.htm">
+    <HelpTOCNode Id="e742f3b6-d0b2-4669-b3db-ca07ab926759" Title="RI.DesktopServices.Windows.IO.Serial" Url="html/BE7CF0B7.htm">
+      <HelpTOCNode Id="213e202f-d414-48db-bac9-5156e96901ef" Title="SerialPortExtensions Class" Url="html/65567BE2.htm">
+        <HelpTOCNode Id="5cd07d7e-8b0c-4d6d-ba34-31c6b857c027" Title="SerialPortExtensions Methods" Url="html/84DA5284.htm">
           <HelpTOCNode Title="GetSerialPortInstance Method " Url="html/1942F091.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="644eb3c5-8efd-4c1d-801a-5258cc2e74c6" Title="SerialPortInstance Class" Url="html/88994D5.htm">
-        <HelpTOCNode Id="e6a781bc-e73f-43d5-991b-7a2bf75f1f7b" Title="SerialPortInstance Constructor " Url="html/B58AFC2.htm">
+      <HelpTOCNode Id="d1e7bb59-a400-430a-9fe5-f18305c42e0a" Title="SerialPortInstance Class" Url="html/88994D5.htm">
+        <HelpTOCNode Id="625a138e-3862-4999-b7ef-0f013c386322" Title="SerialPortInstance Constructor " Url="html/B58AFC2.htm">
           <HelpTOCNode Title="SerialPortInstance Constructor (Byte)" Url="html/144EF4F7.htm" />
           <HelpTOCNode Title="SerialPortInstance Constructor (String)" Url="html/61807BE3.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="68bd3d13-d908-4ee5-b29f-83172e9cc72d" Title="SerialPortInstance Properties" Url="html/18631971.htm">
+        <HelpTOCNode Id="0f6f32c2-f10f-44d0-abb3-db988d7c40dd" Title="SerialPortInstance Properties" Url="html/18631971.htm">
           <HelpTOCNode Title="PortName Property " Url="html/2E58C566.htm" />
           <HelpTOCNode Title="PortNumber Property " Url="html/17DBBC1D.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5d1cc84a-9355-4c80-92d9-19f2dc54514d" Title="SerialPortInstance Methods" Url="html/6AEF48B6.htm">
-          <HelpTOCNode Id="4802aca0-0655-405c-b215-c68dd04dbc5b" Title="CompareTo Method " Url="html/F278CA24.htm">
+        <HelpTOCNode Id="cb088ad2-a427-4b27-ad9d-eea8424d26d3" Title="SerialPortInstance Methods" Url="html/6AEF48B6.htm">
+          <HelpTOCNode Id="c9dbbb38-c860-45b2-885a-e3e88963ce0a" Title="CompareTo Method " Url="html/F278CA24.htm">
             <HelpTOCNode Title="CompareTo Method (Object)" Url="html/451B634E.htm" />
             <HelpTOCNode Title="CompareTo Method (SerialPortInstance)" Url="html/8DE131A8.htm" />
           </HelpTOCNode>
           <HelpTOCNode Title="CreateSerialPort Method " Url="html/7431FBD8.htm" />
-          <HelpTOCNode Id="381f56c8-3f18-456c-9c18-9dd0bd6f4425" Title="Equals Method " Url="html/183BA21.htm">
+          <HelpTOCNode Id="1b500edb-01b3-441d-9025-9d12b6556e3a" Title="Equals Method " Url="html/183BA21.htm">
             <HelpTOCNode Title="Equals Method (Object)" Url="html/45E13D86.htm" />
             <HelpTOCNode Title="Equals Method (SerialPortInstance)" Url="html/6A39B70E.htm" />
           </HelpTOCNode>
@@ -289,16 +289,16 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="3296e524-b35b-4ad0-afd6-123e45cdb625" Title="RI.DesktopServices.Windows.Network" Url="html/8C1808CA.htm">
-      <HelpTOCNode Id="a85a6f4f-5a6c-40c5-81fd-ed2cf20bfcd6" Title="WindowsNetwork Class" Url="html/DA83AF76.htm">
-        <HelpTOCNode Id="6dc61773-d1d7-4f94-8cb7-c688ae248771" Title="WindowsNetwork Methods" Url="html/9922AFB6.htm">
+    <HelpTOCNode Id="a2ddd6e9-8c9c-4e0a-b466-6cc754b4ff14" Title="RI.DesktopServices.Windows.Network" Url="html/8C1808CA.htm">
+      <HelpTOCNode Id="ddc101a1-feeb-4ab4-b778-72a68eff538c" Title="WindowsNetwork Class" Url="html/DA83AF76.htm">
+        <HelpTOCNode Id="f4ad508a-b8bd-4a9f-95a8-54645af9e5c7" Title="WindowsNetwork Methods" Url="html/9922AFB6.htm">
           <HelpTOCNode Title="CloseConnection Method " Url="html/7AC67905.htm" />
           <HelpTOCNode Title="OpenConnection Method " Url="html/97C92BEC.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="19039c2c-2de9-4969-a76f-00e8b7dee981" Title="WindowsNetworkConnection Class" Url="html/22196697.htm">
+      <HelpTOCNode Id="249901ec-c2b8-4d5c-953a-0d8a8457bf05" Title="WindowsNetworkConnection Class" Url="html/22196697.htm">
         <HelpTOCNode Title="WindowsNetworkConnection Constructor " Url="html/6D5BD4E5.htm" />
-        <HelpTOCNode Id="33febb4e-17a7-4575-8318-95177e14d9bf" Title="WindowsNetworkConnection Properties" Url="html/642C819A.htm">
+        <HelpTOCNode Id="00387485-d995-40da-96f8-1292b4cfc73f" Title="WindowsNetworkConnection Properties" Url="html/642C819A.htm">
           <HelpTOCNode Title="Error Property " Url="html/54B9DAE8.htm" />
           <HelpTOCNode Title="Interactive Property " Url="html/5FFF98C1.htm" />
           <HelpTOCNode Title="IsOpen Property " Url="html/B6A174FC.htm" />
@@ -306,7 +306,7 @@
           <HelpTOCNode Title="Resource Property " Url="html/847F6616.htm" />
           <HelpTOCNode Title="Username Property " Url="html/52151AFC.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="aad50325-51fd-4637-8133-0f3280352eda" Title="WindowsNetworkConnection Methods" Url="html/556E1DED.htm">
+        <HelpTOCNode Id="cc055a5e-bfa7-4d47-9726-080d796565ae" Title="WindowsNetworkConnection Methods" Url="html/556E1DED.htm">
           <HelpTOCNode Title="IDisposable.Dispose Method " Url="html/8B586C45.htm" />
           <HelpTOCNode Title="Close Method " Url="html/A5EC5781.htm" />
           <HelpTOCNode Title="Finalize Method " Url="html/CFE7908B.htm" />
@@ -314,10 +314,10 @@
       </HelpTOCNode>
       <HelpTOCNode Title="WindowsNetworkError Enumeration" Url="html/576AA674.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="9959d723-8d59-4882-b2a4-7837efae7caa" Title="RI.DesktopServices.Windows.Runtime" Url="html/380252EC.htm">
-      <HelpTOCNode Id="54766058-3d3b-439d-8dce-21f0d87eecae" Title="WindowsApi Class" Url="html/B9B0F2DE.htm">
-        <HelpTOCNode Id="b72d5bd7-1975-424a-8bb1-c45f1f610747" Title="WindowsApi Methods" Url="html/3E012D28.htm">
-          <HelpTOCNode Id="7702f419-6c37-473b-bb55-95a812d01d7a" Title="GetErrorMessage Method " Url="html/B729DD42.htm">
+    <HelpTOCNode Id="a42cb1bc-629b-436b-a96b-06e896a20634" Title="RI.DesktopServices.Windows.Runtime" Url="html/380252EC.htm">
+      <HelpTOCNode Id="b72b84b0-1d79-4f5d-9038-c4119b0a2055" Title="WindowsApi Class" Url="html/B9B0F2DE.htm">
+        <HelpTOCNode Id="32712371-8ca7-4102-bf97-633c7f50c87c" Title="WindowsApi Methods" Url="html/3E012D28.htm">
+          <HelpTOCNode Id="2150dedd-d9b9-492e-8fbe-097e6611cfc6" Title="GetErrorMessage Method " Url="html/B729DD42.htm">
             <HelpTOCNode Title="GetErrorMessage Method (Int32)" Url="html/64308868.htm" />
             <HelpTOCNode Title="GetErrorMessage Method (Int32, CultureInfo)" Url="html/EC45F499.htm" />
           </HelpTOCNode>
@@ -325,41 +325,41 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="2fb8d1ef-859c-404c-adce-c60a31a38d4c" Title="RI.DesktopServices.Windows.Shell" Url="html/FF87C994.htm">
-      <HelpTOCNode Id="5eb43fb8-fa46-48f2-b54a-037e428152b6" Title="WindowsSession Class" Url="html/DEC549A0.htm">
-        <HelpTOCNode Id="595280e9-24f9-40ff-9a79-791a4deaa29f" Title="WindowsSession Methods" Url="html/16096265.htm">
+    <HelpTOCNode Id="fbfdf985-b986-4452-b058-c25bec250844" Title="RI.DesktopServices.Windows.Shell" Url="html/FF87C994.htm">
+      <HelpTOCNode Id="63e967eb-380d-413e-b938-82bf6b096a00" Title="WindowsSession Class" Url="html/DEC549A0.htm">
+        <HelpTOCNode Id="5c830892-b36b-4f71-bbf5-0c0356d3e3b9" Title="WindowsSession Methods" Url="html/16096265.htm">
           <HelpTOCNode Title="Logoff Method " Url="html/1EA4A70D.htm" />
           <HelpTOCNode Title="Restart Method " Url="html/2C31357D.htm" />
           <HelpTOCNode Title="Shutdown Method " Url="html/CA68CF74.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="939657a9-9173-4a9b-a67e-c369bd402b8e" Title="WindowsShell Class" Url="html/D9DED238.htm">
-        <HelpTOCNode Id="aa8d6315-f80a-40d0-8278-735d00bec7fb" Title="WindowsShell Methods" Url="html/D3A3F5B.htm">
-          <HelpTOCNode Id="35d9ed9e-c91f-44ff-add9-78bcfd02c2a5" Title="OpenCommandPrompt Method " Url="html/2BF53D52.htm">
+      <HelpTOCNode Id="0be1ebaa-b2de-4b47-948c-4a614e93ad32" Title="WindowsShell Class" Url="html/D9DED238.htm">
+        <HelpTOCNode Id="ca02b34a-1eed-46e2-912a-eb8a9e0d580a" Title="WindowsShell Methods" Url="html/D3A3F5B.htm">
+          <HelpTOCNode Id="a5dcd5c5-d087-4c3d-81a5-9bfb06b729a8" Title="OpenCommandPrompt Method " Url="html/2BF53D52.htm">
             <HelpTOCNode Title="OpenCommandPrompt Method " Url="html/20DC133E.htm" />
             <HelpTOCNode Title="OpenCommandPrompt Method (String, Boolean)" Url="html/AA5E6AD5.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="53f53e06-d644-46b8-b61c-d047a911c06f" Title="OpenExplorer Method " Url="html/C91AAFC8.htm">
+          <HelpTOCNode Id="d2cffe67-9b68-450c-9a5a-995a477c5723" Title="OpenExplorer Method " Url="html/C91AAFC8.htm">
             <HelpTOCNode Title="OpenExplorer Method " Url="html/7C4D4154.htm" />
             <HelpTOCNode Title="OpenExplorer Method (ProcessWindowStyle, Boolean)" Url="html/66E194CB.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="9b97ba02-32e3-48a6-b593-250b9feb5bd6" Title="OpenFile Method " Url="html/A72BB906.htm">
+          <HelpTOCNode Id="88198bad-a7a3-4fc1-b304-ecd5dabf366c" Title="OpenFile Method " Url="html/A72BB906.htm">
             <HelpTOCNode Title="OpenFile Method (String)" Url="html/E5DDA3DA.htm" />
             <HelpTOCNode Title="OpenFile Method (String, ProcessWindowStyle, Boolean)" Url="html/34CCCDD8.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="6db5c47c-ca6d-4dd0-976d-4a5aca51729c" Title="OpenFolder Method " Url="html/715EE9D.htm">
+          <HelpTOCNode Id="8ca89a24-30ba-4828-a65e-b3a4249468fd" Title="OpenFolder Method " Url="html/715EE9D.htm">
             <HelpTOCNode Title="OpenFolder Method (String)" Url="html/BFAECE02.htm" />
             <HelpTOCNode Title="OpenFolder Method (String, ProcessWindowStyle, Boolean)" Url="html/CB36959F.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="0de988da-a427-458a-bb1a-5a4726356066" Title="OpenSystemInfo Method " Url="html/2B8CBF43.htm">
+          <HelpTOCNode Id="32d821a6-0c86-43bc-b045-af56f373c525" Title="OpenSystemInfo Method " Url="html/2B8CBF43.htm">
             <HelpTOCNode Title="OpenSystemInfo Method " Url="html/338A12CD.htm" />
             <HelpTOCNode Title="OpenSystemInfo Method (ProcessWindowStyle, Boolean)" Url="html/E9D16614.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="d12a4656-763c-4812-8d1f-d8a29fb6a270" Title="OpenTaskManager Method " Url="html/9A46D35B.htm">
+          <HelpTOCNode Id="46211cab-bc17-48f0-a642-b511181bb65f" Title="OpenTaskManager Method " Url="html/9A46D35B.htm">
             <HelpTOCNode Title="OpenTaskManager Method " Url="html/622F2BBA.htm" />
             <HelpTOCNode Title="OpenTaskManager Method (ProcessWindowStyle, Boolean)" Url="html/2E467743.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="2f4816f4-040b-4c7e-87d2-30c3db6895b3" Title="OpenUrl Method " Url="html/35B790AD.htm">
+          <HelpTOCNode Id="879e1e01-5592-486f-9068-ae41cf6e006a" Title="OpenUrl Method " Url="html/35B790AD.htm">
             <HelpTOCNode Title="OpenUrl Method (String)" Url="html/B043A3E9.htm" />
             <HelpTOCNode Title="OpenUrl Method (Uri)" Url="html/54C0CFBC.htm" />
             <HelpTOCNode Title="OpenUrl Method (String, ProcessWindowStyle, Boolean)" Url="html/54C0CFBF.htm" />
@@ -368,9 +368,9 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="9c68e8d8-afaf-4ec0-a141-7e57356989bb" Title="RI.DesktopServices.Windows.UI" Url="html/312A664E.htm">
-      <HelpTOCNode Id="f209b984-6619-408a-bb41-861bdd9f90fe" Title="WindowsWindow Class" Url="html/20604E4A.htm">
-        <HelpTOCNode Id="43bc2a97-85b5-4096-8863-86b3520565a4" Title="WindowsWindow Methods" Url="html/BB472D4B.htm">
+    <HelpTOCNode Id="b3b42d1f-2a56-41b7-b178-6d3ca159ce59" Title="RI.DesktopServices.Windows.UI" Url="html/312A664E.htm">
+      <HelpTOCNode Id="150a7c21-bf9b-4988-84db-3218bb3cf374" Title="WindowsWindow Class" Url="html/20604E4A.htm">
+        <HelpTOCNode Id="0cd37a25-c1a3-43a7-ac51-3a5d0a8b9fc9" Title="WindowsWindow Methods" Url="html/BB472D4B.htm">
           <HelpTOCNode Title="EnableWindow Method " Url="html/31A54166.htm" />
           <HelpTOCNode Title="FindChildWindows Method " Url="html/705303BA.htm" />
           <HelpTOCNode Title="FindTopWindows Method " Url="html/A96A7BB.htm" />
@@ -384,7 +384,7 @@
           <HelpTOCNode Title="MoveWindowToBackground Method " Url="html/4AD8960A.htm" />
           <HelpTOCNode Title="MoveWindowToForeground Method " Url="html/85DB6EB7.htm" />
           <HelpTOCNode Title="MoveWindowToPrimaryScreen Method " Url="html/1D7DFF59.htm" />
-          <HelpTOCNode Id="31078f85-2eba-48be-bc17-addb2b8492f6" Title="MoveWindowToScreen Method " Url="html/13BE97C8.htm">
+          <HelpTOCNode Id="5610711a-c4ec-4b07-a994-d6a481c56963" Title="MoveWindowToScreen Method " Url="html/13BE97C8.htm">
             <HelpTOCNode Title="MoveWindowToScreen Method (IntPtr, Int32)" Url="html/56661D39.htm" />
             <HelpTOCNode Title="MoveWindowToScreen Method (IntPtr, Screen)" Url="html/F4F29DD4.htm" />
           </HelpTOCNode>
@@ -394,13 +394,13 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="fd0b14f2-a171-47c8-a414-fd153ed7ea7c" Title="RI.DesktopServices.Windows.Users" Url="html/E2172C99.htm">
+    <HelpTOCNode Id="6b10544f-db45-46c1-8fad-26b28d280245" Title="RI.DesktopServices.Windows.Users" Url="html/E2172C99.htm">
       <HelpTOCNode Title="ImpersonatedAction Delegate" Url="html/9F16723F.htm" />
       <HelpTOCNode Title="ImpersonatedActionAsync Delegate" Url="html/9B884FCB.htm" />
       <HelpTOCNode Title="ImpersonatedFunc(TResult) Delegate" Url="html/616DE228.htm" />
       <HelpTOCNode Title="ImpersonatedFuncAsync(TResult) Delegate" Url="html/CB5A2457.htm" />
-      <HelpTOCNode Id="a9ca6729-aba4-4bdd-b1ae-0485078df3e0" Title="WindowsUser Class" Url="html/CB7BE6ED.htm">
-        <HelpTOCNode Id="8025c9b9-c96e-465b-a6ed-61cdaf5e7014" Title="WindowsUser Methods" Url="html/2073D957.htm">
+      <HelpTOCNode Id="c98a931c-1cef-4fa7-bc78-3036c82ce08d" Title="WindowsUser Class" Url="html/CB7BE6ED.htm">
+        <HelpTOCNode Id="5fd51daf-ff0d-4986-a1c9-a8c9f81f0fb1" Title="WindowsUser Methods" Url="html/2073D957.htm">
           <HelpTOCNode Title="CloseLogonToken Method " Url="html/5649C0DC.htm" />
           <HelpTOCNode Title="CreateLogonToken Method " Url="html/BB6AA936.htm" />
           <HelpTOCNode Title="ExtractDomainAndUser Method " Url="html/D76E1BBD.htm" />
@@ -416,18 +416,18 @@
           <HelpTOCNode Title="IsCurrentSystem Method " Url="html/5F3763E1.htm" />
           <HelpTOCNode Title="ResolveDomain Method " Url="html/E85731F9.htm" />
           <HelpTOCNode Title="ResolveUser Method " Url="html/A0F4468E.htm" />
-          <HelpTOCNode Id="f6cd0d1f-8046-46ac-8cd0-31a0dea929bf" Title="RunImpersonated Method " Url="html/4A6D880.htm">
+          <HelpTOCNode Id="983b48a9-46b6-4666-9ea7-f3ae1a1813ad" Title="RunImpersonated Method " Url="html/4A6D880.htm">
             <HelpTOCNode Title="RunImpersonated Method (IntPtr, Boolean, ImpersonatedAction)" Url="html/20470B11.htm" />
             <HelpTOCNode Title="RunImpersonated(TResult) Method (IntPtr, Boolean, ImpersonatedFunc(TResult))" Url="html/86D92DEE.htm" />
           </HelpTOCNode>
-          <HelpTOCNode Id="0ddcb996-cd7c-4457-ae21-17ccbdb131ea" Title="RunImpersonatedAsync Method " Url="html/FF95EC83.htm">
+          <HelpTOCNode Id="164380f8-f3b4-4fb5-ba94-8afddaf46158" Title="RunImpersonatedAsync Method " Url="html/FF95EC83.htm">
             <HelpTOCNode Title="RunImpersonatedAsync Method (IntPtr, Boolean, ImpersonatedActionAsync)" Url="html/B7BA39C7.htm" />
             <HelpTOCNode Title="RunImpersonatedAsync(TResult) Method (IntPtr, Boolean, ImpersonatedFuncAsync(TResult))" Url="html/E0291B3C.htm" />
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="734edcf1-a083-4040-8879-d29dedf8090e" Title="WindowsUserProfile Class" Url="html/6E92DDB9.htm">
-        <HelpTOCNode Id="5b0e6a47-ff86-4635-99b6-809bd70fba8d" Title="WindowsUserProfile Properties" Url="html/F4B65DA5.htm">
+      <HelpTOCNode Id="601bb2ce-ca7a-46be-b267-d2c2b7df1f9a" Title="WindowsUserProfile Class" Url="html/6E92DDB9.htm">
+        <HelpTOCNode Id="f1fe893b-f289-4cfb-b248-e87d37612b44" Title="WindowsUserProfile Properties" Url="html/F4B65DA5.htm">
           <HelpTOCNode Title="DefaultPath Property " Url="html/B020430F.htm" />
           <HelpTOCNode Title="ProfilePath Property " Url="html/44B5842.htm" />
           <HelpTOCNode Title="ServerName Property " Url="html/72F3A4FF.htm" />
@@ -436,25 +436,25 @@
         <HelpTOCNode Title="WindowsUserProfile Methods" Url="html/54834E71.htm" />
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="40c39091-f1a4-49fb-b338-a6cb792b2471" Title="RI.DesktopServices.Wpf" Url="html/B25CF516.htm">
-      <HelpTOCNode Id="9842fb17-713e-45d6-b19c-6ee156029baa" Title="ApplicationExtensions Class" Url="html/2FC379DF.htm">
-        <HelpTOCNode Id="5c595fc2-0ed3-44e1-a558-c8a71787c662" Title="ApplicationExtensions Methods" Url="html/E6266761.htm">
+    <HelpTOCNode Id="363334fd-de48-4658-85b5-f2342bf83826" Title="RI.DesktopServices.Wpf" Url="html/B25CF516.htm">
+      <HelpTOCNode Id="a5d71d43-e897-4487-b93d-534f859560a1" Title="ApplicationExtensions Class" Url="html/2FC379DF.htm">
+        <HelpTOCNode Id="471e387d-88e6-41ef-a7a6-f0ff1b0a0c1f" Title="ApplicationExtensions Methods" Url="html/E6266761.htm">
           <HelpTOCNode Title="DoAllEvents Method " Url="html/EE066089.htm" />
           <HelpTOCNode Title="DoAllEventsAsync Method " Url="html/ED37F450.htm" />
           <HelpTOCNode Title="DoEvents Method " Url="html/18271FB7.htm" />
           <HelpTOCNode Title="DoEventsAsync Method " Url="html/78D80E2.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="f8686b35-2bf2-4b7f-93ff-7cbcade39a6e" Title="DispatcherExtensions Class" Url="html/212E1493.htm">
-        <HelpTOCNode Id="01558d3d-4a6d-4edd-a104-01f3f316ba47" Title="DispatcherExtensions Methods" Url="html/D1E5FB6E.htm">
+      <HelpTOCNode Id="0a0e4853-dc78-4bfe-b8f2-5938431c45ea" Title="DispatcherExtensions Class" Url="html/212E1493.htm">
+        <HelpTOCNode Id="464e0315-fcf0-48c1-ae96-5e5885a1cf5f" Title="DispatcherExtensions Methods" Url="html/D1E5FB6E.htm">
           <HelpTOCNode Title="DoAllEvents Method " Url="html/29E2E5D8.htm" />
           <HelpTOCNode Title="DoAllEventsAsync Method " Url="html/9BFED972.htm" />
           <HelpTOCNode Title="DoEvents Method " Url="html/2D48ED3E.htm" />
           <HelpTOCNode Title="DoEventsAsync Method " Url="html/882C4FED.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="3d2c5630-0f82-4cee-863d-4b045ea97fe9" Title="WindowExtensions Class" Url="html/611C5C86.htm">
-        <HelpTOCNode Id="672c74e7-76f0-4b4c-911f-24a76159a0f9" Title="WindowExtensions Methods" Url="html/CBE6495E.htm">
+      <HelpTOCNode Id="131dd0b4-d3da-4bef-a9ff-757d4fc99449" Title="WindowExtensions Class" Url="html/611C5C86.htm">
+        <HelpTOCNode Id="52633f9f-65ae-4afb-aaa4-8becda306468" Title="WindowExtensions Methods" Url="html/CBE6495E.htm">
           <HelpTOCNode Title="EnableWindow Method " Url="html/62C201BF.htm" />
           <HelpTOCNode Title="GetOwnerHandle Method " Url="html/5A263AB7.htm" />
           <HelpTOCNode Title="GetScreen Method " Url="html/7A19B235.htm" />
@@ -466,7 +466,7 @@
           <HelpTOCNode Title="MoveWindowToBackground Method " Url="html/29D5B957.htm" />
           <HelpTOCNode Title="MoveWindowToForeground Method " Url="html/59F939D4.htm" />
           <HelpTOCNode Title="MoveWindowToPrimaryScreen Method " Url="html/59CC1374.htm" />
-          <HelpTOCNode Id="b4fbd3a6-f095-42d2-9254-72cb77745ff9" Title="MoveWindowToScreen Method " Url="html/93BF80F1.htm">
+          <HelpTOCNode Id="11f9eb54-4e96-45da-9dcc-36dda83fe103" Title="MoveWindowToScreen Method " Url="html/93BF80F1.htm">
             <HelpTOCNode Title="MoveWindowToScreen Method (Window, Int32)" Url="html/5CB01EE5.htm" />
             <HelpTOCNode Title="MoveWindowToScreen Method (Window, Screen)" Url="html/E52360AE.htm" />
           </HelpTOCNode>
@@ -476,70 +476,70 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="eaa3d23d-032d-4870-a66d-e2ab4c914bd2" Title="RI.DesktopServices.Wpf.Controls" Url="html/4DD859B5.htm">
-      <HelpTOCNode Id="c0131794-f7e2-4bc5-9850-7eaefec34950" Title="ComboBoxChecker Class" Url="html/6ACC58C9.htm">
+    <HelpTOCNode Id="d75612a1-7882-4c09-a082-98f9c5ed2e39" Title="RI.DesktopServices.Wpf.Controls" Url="html/4DD859B5.htm">
+      <HelpTOCNode Id="6838660a-7425-451d-8d41-053c41ffde89" Title="ComboBoxChecker Class" Url="html/6ACC58C9.htm">
         <HelpTOCNode Title="ComboBoxChecker Constructor " Url="html/33A9B0C7.htm" />
-        <HelpTOCNode Id="0d36d03c-cca0-47f5-be97-11ede70b9055" Title="ComboBoxChecker Properties" Url="html/DA18AD8C.htm">
+        <HelpTOCNode Id="5fa14ab8-a6ef-4e0a-aadb-49d332734c73" Title="ComboBoxChecker Properties" Url="html/DA18AD8C.htm">
           <HelpTOCNode Title="ComboBox Property " Url="html/616A9EE6.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="6c042e52-421f-4a8e-b92f-86361b6955f3" Title="ComboBoxChecker Methods" Url="html/EA4A3D64.htm">
+        <HelpTOCNode Id="75c41cd6-fef9-416c-9d44-1c790078fd03" Title="ComboBoxChecker Methods" Url="html/EA4A3D64.htm">
           <HelpTOCNode Title="OnChecked Method " Url="html/47367D3.htm" />
           <HelpTOCNode Title="OnUnchecked Method " Url="html/1CF17C99.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="ComboBoxChecker Events" Url="html/47C62045.htm" />
-        <HelpTOCNode Id="8ad0d229-e4d5-4733-af22-bee938f659c7" Title="ComboBoxChecker Fields" Url="html/34FBB8E5.htm">
+        <HelpTOCNode Id="6207e3b1-072a-4b58-8e0b-1cc785999311" Title="ComboBoxChecker Fields" Url="html/34FBB8E5.htm">
           <HelpTOCNode Title="ComboBoxProperty Field" Url="html/A2273163.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="e590e151-c8bb-4f7f-8ce1-f4448b9699aa" Title="RI.DesktopServices.Wpf.Converters" Url="html/F6F0197B.htm">
-      <HelpTOCNode Id="b8a15659-646b-4c7d-8727-7aa6d9a32bdb" Title="InvertedBoolVisibilityConverter Class" Url="html/9B1847A3.htm">
+    <HelpTOCNode Id="508eabc7-ac1a-4d12-99ae-875d027be478" Title="RI.DesktopServices.Wpf.Converters" Url="html/F6F0197B.htm">
+      <HelpTOCNode Id="37035e46-a067-4b74-9d4a-9d7c1662f5f2" Title="InvertedBoolVisibilityConverter Class" Url="html/9B1847A3.htm">
         <HelpTOCNode Title="InvertedBoolVisibilityConverter Constructor " Url="html/A31C5B1B.htm" />
-        <HelpTOCNode Id="ee1d7ee5-fd1a-4f5b-96c5-acc23a5d489d" Title="InvertedBoolVisibilityConverter Methods" Url="html/B19C44D8.htm">
+        <HelpTOCNode Id="4f4c612e-e130-40db-b9bd-61d2031d158a" Title="InvertedBoolVisibilityConverter Methods" Url="html/B19C44D8.htm">
           <HelpTOCNode Title="Convert Method " Url="html/F21C6F0B.htm" />
           <HelpTOCNode Title="ConvertBack Method " Url="html/7F13E134.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="26307fff-57d2-4170-8c8a-72278243dbc5" Title="InvertedObjectBoolConverter Class" Url="html/1BBF9534.htm">
+      <HelpTOCNode Id="e1812777-603f-41c3-bc48-20bd7ceda745" Title="InvertedObjectBoolConverter Class" Url="html/1BBF9534.htm">
         <HelpTOCNode Title="InvertedObjectBoolConverter Constructor " Url="html/12CD17D2.htm" />
-        <HelpTOCNode Id="2f749422-01f8-444b-ab43-86e879e2f934" Title="InvertedObjectBoolConverter Methods" Url="html/689A6526.htm">
+        <HelpTOCNode Id="3ec2ca6d-96d2-4c6e-aca7-3340688044f9" Title="InvertedObjectBoolConverter Methods" Url="html/689A6526.htm">
           <HelpTOCNode Title="Convert Method " Url="html/B58D1333.htm" />
           <HelpTOCNode Title="ConvertBack Method " Url="html/A78A037E.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="9b8d3799-419c-4e7d-8b41-187da96b303e" Title="InvertedObjectVisibilityConverter Class" Url="html/9B8BB819.htm">
+      <HelpTOCNode Id="295d30f9-9873-44f2-89e8-33cb48cc7e00" Title="InvertedObjectVisibilityConverter Class" Url="html/9B8BB819.htm">
         <HelpTOCNode Title="InvertedObjectVisibilityConverter Constructor " Url="html/10140785.htm" />
-        <HelpTOCNode Id="4a5ec407-d70d-4b95-803f-3f180bce1d26" Title="InvertedObjectVisibilityConverter Methods" Url="html/426F3F4F.htm">
+        <HelpTOCNode Id="6dd66c67-aa4f-4567-b71a-2802912fef2f" Title="InvertedObjectVisibilityConverter Methods" Url="html/426F3F4F.htm">
           <HelpTOCNode Title="Convert Method " Url="html/A9DF7A1B.htm" />
           <HelpTOCNode Title="ConvertBack Method " Url="html/AF80634.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="3ffa45af-e060-4f51-882d-9a9edf4142c7" Title="NormalBoolVisibilityConverter Class" Url="html/7BDEF97F.htm">
+      <HelpTOCNode Id="c5c5a734-3ba6-4e7c-afb7-620bbe981c3a" Title="NormalBoolVisibilityConverter Class" Url="html/7BDEF97F.htm">
         <HelpTOCNode Title="NormalBoolVisibilityConverter Constructor " Url="html/19790BE3.htm" />
-        <HelpTOCNode Id="5e144080-70ac-4474-ae50-efe7d3c85026" Title="NormalBoolVisibilityConverter Methods" Url="html/6DD9DBC6.htm">
+        <HelpTOCNode Id="0b0f1a0e-e548-4c1e-965e-2571d10e3bdd" Title="NormalBoolVisibilityConverter Methods" Url="html/6DD9DBC6.htm">
           <HelpTOCNode Title="Convert Method " Url="html/D76EC24A.htm" />
           <HelpTOCNode Title="ConvertBack Method " Url="html/45957560.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="c70d0cbf-edc4-4c64-a69a-579409f1c9b3" Title="NormalObjectBoolConverter Class" Url="html/663F91A7.htm">
+      <HelpTOCNode Id="7ba2ea1f-4f6c-450d-af47-de980c858789" Title="NormalObjectBoolConverter Class" Url="html/663F91A7.htm">
         <HelpTOCNode Title="NormalObjectBoolConverter Constructor " Url="html/20D8FC9F.htm" />
-        <HelpTOCNode Id="067f242c-698b-422d-b2ae-eba58dcb7758" Title="NormalObjectBoolConverter Methods" Url="html/D282E2A9.htm">
+        <HelpTOCNode Id="758894cb-cfb0-4838-ad4a-f215e6e17600" Title="NormalObjectBoolConverter Methods" Url="html/D282E2A9.htm">
           <HelpTOCNode Title="Convert Method " Url="html/F11122C.htm" />
           <HelpTOCNode Title="ConvertBack Method " Url="html/9A243199.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="b3d3bcc6-8365-4fd9-81e1-e92e1a66d1a7" Title="NormalObjectVisibilityConverter Class" Url="html/627FD288.htm">
+      <HelpTOCNode Id="424a9fd4-f80a-417e-a2be-b538f38a2577" Title="NormalObjectVisibilityConverter Class" Url="html/627FD288.htm">
         <HelpTOCNode Title="NormalObjectVisibilityConverter Constructor " Url="html/F06D43C2.htm" />
-        <HelpTOCNode Id="1aac1cc3-6654-4094-97f8-cfc88f694b45" Title="NormalObjectVisibilityConverter Methods" Url="html/BCE467CC.htm">
+        <HelpTOCNode Id="8d062853-17f7-43f5-ae08-9a3c5df328ec" Title="NormalObjectVisibilityConverter Methods" Url="html/BCE467CC.htm">
           <HelpTOCNode Title="Convert Method " Url="html/9AC8A14A.htm" />
           <HelpTOCNode Title="ConvertBack Method " Url="html/A9FC2EF.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="4a9a171a-c552-4c4f-acd0-507beae2a9a7" Title="RI.DesktopServices.Wpf.Imaging" Url="html/E8C0B298.htm">
-      <HelpTOCNode Id="cd4112e6-320e-4179-a4d5-051710eb6ea4" Title="BitmapFrameExtensions Class" Url="html/5218900.htm">
-        <HelpTOCNode Id="73066494-65c5-4aa2-a2be-efa6e876304b" Title="BitmapFrameExtensions Methods" Url="html/1F7DE34C.htm">
-          <HelpTOCNode Id="42831cf2-4af6-4807-899a-5dd8de9062ff" Title="ToBitmapFrame Method " Url="html/BADAFE22.htm">
+    <HelpTOCNode Id="96ca14e2-b81f-4233-bd6b-98576223562c" Title="RI.DesktopServices.Wpf.Imaging" Url="html/E8C0B298.htm">
+      <HelpTOCNode Id="2cc80f15-9595-4944-b7ea-8a20e05c6297" Title="BitmapFrameExtensions Class" Url="html/5218900.htm">
+        <HelpTOCNode Id="d69b5c56-ca43-4206-acce-9bc851a3a593" Title="BitmapFrameExtensions Methods" Url="html/1F7DE34C.htm">
+          <HelpTOCNode Id="d80c5243-1464-4bc5-ae1b-5ab079fef432" Title="ToBitmapFrame Method " Url="html/BADAFE22.htm">
             <HelpTOCNode Title="ToBitmapFrame Method (Byte[])" Url="html/D9DD0C3F.htm" />
             <HelpTOCNode Title="ToBitmapFrame Method (Bitmap)" Url="html/132DE981.htm" />
             <HelpTOCNode Title="ToBitmapFrame Method (Icon)" Url="html/132AE981.htm" />
@@ -547,10 +547,10 @@
           </HelpTOCNode>
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="e82d257d-83c9-4d67-8ec7-9b29e4466d8b" Title="BitmapSourceExtensions Class" Url="html/ED1F4D89.htm">
-        <HelpTOCNode Id="250c3c2b-d213-423c-916d-66d74a756cf2" Title="BitmapSourceExtensions Methods" Url="html/A26DC889.htm">
+      <HelpTOCNode Id="4bac9dc3-5326-4dd5-b74b-f7ac5f5c8ff4" Title="BitmapSourceExtensions Class" Url="html/ED1F4D89.htm">
+        <HelpTOCNode Id="d54c3ac3-fdf2-4d2a-b66f-d9362af85150" Title="BitmapSourceExtensions Methods" Url="html/A26DC889.htm">
           <HelpTOCNode Title="ToBitmap Method " Url="html/531B3FB1.htm" />
-          <HelpTOCNode Id="fd42451d-1c63-4db8-9f35-f236a443eeef" Title="ToBitmapSource Method " Url="html/5F425AA0.htm">
+          <HelpTOCNode Id="cceb7a3a-ff3c-4172-8bbb-169a9d39806d" Title="ToBitmapSource Method " Url="html/5F425AA0.htm">
             <HelpTOCNode Title="ToBitmapSource Method (Byte[])" Url="html/20555382.htm" />
             <HelpTOCNode Title="ToBitmapSource Method (Bitmap)" Url="html/B2B30298.htm" />
             <HelpTOCNode Title="ToBitmapSource Method (Icon)" Url="html/10840298.htm" />
@@ -563,9 +563,9 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="067e4732-97a2-4773-b4bd-b08354e65c2a" Title="RI.DesktopServices.Wpf.Input" Url="html/55BAE0A0.htm">
-      <HelpTOCNode Id="e088fc62-72a0-46f0-b62c-cf8ba054faa2" Title="TemporaryCursor Class" Url="html/F1D50F03.htm">
-        <HelpTOCNode Id="adb7b967-5671-466f-8347-3ed4faaa5b6f" Title="TemporaryCursor Methods" Url="html/DF2AECE6.htm">
+    <HelpTOCNode Id="dc4f5cea-74d4-4a01-b1dc-50705700782b" Title="RI.DesktopServices.Wpf.Input" Url="html/55BAE0A0.htm">
+      <HelpTOCNode Id="0dbbbecd-5136-4e87-bd14-195af8f12263" Title="TemporaryCursor Class" Url="html/F1D50F03.htm">
+        <HelpTOCNode Id="8badfd82-98ce-44e1-acde-e5c5e75da98a" Title="TemporaryCursor Methods" Url="html/DF2AECE6.htm">
           <HelpTOCNode Title="IDisposable.Dispose Method " Url="html/3B307BAB.htm" />
           <HelpTOCNode Title="AppStarting Method " Url="html/B360C53D.htm" />
           <HelpTOCNode Title="Finalize Method " Url="html/5717B0B.htm" />
@@ -574,48 +574,48 @@
         </HelpTOCNode>
       </HelpTOCNode>
     </HelpTOCNode>
-    <HelpTOCNode Id="49cabcbf-bac5-48b1-985d-fad12c470341" Title="RI.DesktopServices.Wpf.Markup" Url="html/47D6C59E.htm">
-      <HelpTOCNode Id="81b86ee3-92f8-4114-a67a-5046c97f9c7f" Title="EventBinding Class" Url="html/65C02376.htm">
+    <HelpTOCNode Id="3c7f4d58-27f6-46e3-8006-43bbe3751510" Title="RI.DesktopServices.Wpf.Markup" Url="html/47D6C59E.htm">
+      <HelpTOCNode Id="fede2187-a890-4147-b960-1b877b0977a7" Title="EventBinding Class" Url="html/65C02376.htm">
         <HelpTOCNode Title="EventBinding Constructor " Url="html/646F33E.htm" />
-        <HelpTOCNode Id="5bcd8756-7251-4c51-a8e0-ea3019599730" Title="EventBinding Properties" Url="html/362B537C.htm">
+        <HelpTOCNode Id="c99b8a68-d6fb-4a02-8439-736705e0c1b3" Title="EventBinding Properties" Url="html/362B537C.htm">
           <HelpTOCNode Title="Command Property " Url="html/BD17F787.htm" />
           <HelpTOCNode Title="EventName Property " Url="html/D9788793.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="bf4d24e5-cd41-4ded-8e2e-c9ac1c3dd177" Title="EventBinding Methods" Url="html/A4AE0754.htm">
+        <HelpTOCNode Id="22cf6cec-b0e7-4595-9720-9017dd61de68" Title="EventBinding Methods" Url="html/A4AE0754.htm">
           <HelpTOCNode Title="CreateInstanceCore Method " Url="html/5E814DEA.htm" />
         </HelpTOCNode>
         <HelpTOCNode Title="EventBinding Events" Url="html/65DEBA66.htm" />
-        <HelpTOCNode Id="d9ef26bd-b458-441d-bc3a-5cd5c66b844d" Title="EventBinding Fields" Url="html/4D615B38.htm">
+        <HelpTOCNode Id="ed6875df-1d0f-4e9f-9cf6-4f8737de14aa" Title="EventBinding Fields" Url="html/4D615B38.htm">
           <HelpTOCNode Title="CommandProperty Field" Url="html/859799D2.htm" />
           <HelpTOCNode Title="EventNameProperty Field" Url="html/8774DF3E.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="3e020131-9e03-4c06-997c-17c44d6e061f" Title="EventBindings Class" Url="html/48419D8E.htm">
+      <HelpTOCNode Id="e70473d3-e151-47f7-853b-eea38425a5a2" Title="EventBindings Class" Url="html/48419D8E.htm">
         <HelpTOCNode Title="EventBindings Properties" Url="html/77E0537C.htm" />
         <HelpTOCNode Title="EventBindings Methods" Url="html/AAEF2D85.htm" />
         <HelpTOCNode Title="EventBindings Events" Url="html/43DBA66.htm" />
       </HelpTOCNode>
-      <HelpTOCNode Id="98f90648-b274-4329-b4d0-ec9004cfe39d" Title="EventToCommandBinder Class" Url="html/3A502615.htm">
-        <HelpTOCNode Id="412d8a06-6ef4-45d5-8c80-b62edd1b07ab" Title="EventToCommandBinder Methods" Url="html/B64F0FB4.htm">
+      <HelpTOCNode Id="cfa8062c-d99a-4509-b514-9b00eedf0d49" Title="EventToCommandBinder Class" Url="html/3A502615.htm">
+        <HelpTOCNode Id="0b87f22c-e137-4ea6-81fe-b0754d9ec284" Title="EventToCommandBinder Methods" Url="html/B64F0FB4.htm">
           <HelpTOCNode Title="GetEventBindings Method " Url="html/EB35D063.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="7df11dba-cfc5-44f4-a43d-8635e5251951" Title="EventToCommandBinder Fields" Url="html/787C4CE1.htm">
+        <HelpTOCNode Id="73cc7bcb-255b-48d0-8953-67be57c647e8" Title="EventToCommandBinder Fields" Url="html/787C4CE1.htm">
           <HelpTOCNode Title="EventBindingsProperty Field" Url="html/7E90E7B1.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="f71de87c-fb74-433c-81a5-b2b7f2ddcca8" Title="EventToCommandBinder Attached Properties" Url="html/ED74A403.htm">
+        <HelpTOCNode Id="017287ed-f53c-43db-a101-49d0d709219c" Title="EventToCommandBinder Attached Properties" Url="html/ED74A403.htm">
           <HelpTOCNode Title="EventBindings Attached Property" Url="html/2FEB3617.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="d4f78cd3-ed5f-4f03-b73c-5e736aa35c93" Title="InstanceLocator Class" Url="html/A42769EE.htm">
+      <HelpTOCNode Id="d892919e-0af7-4c5a-92d7-e1f06ab14d64" Title="InstanceLocator Class" Url="html/A42769EE.htm">
         <HelpTOCNode Title="InstanceLocator Constructor " Url="html/9F04AD38.htm" />
-        <HelpTOCNode Id="d0fd21c2-220a-43f4-a4d0-c3a777b724ec" Title="InstanceLocator Properties" Url="html/2CC2E921.htm">
+        <HelpTOCNode Id="5616ec0e-0938-4bf7-8450-120b7a704938" Title="InstanceLocator Properties" Url="html/2CC2E921.htm">
           <HelpTOCNode Title="Name Property " Url="html/7EED75ED.htm" />
           <HelpTOCNode Title="Resolver Property " Url="html/BD531330.htm" />
           <HelpTOCNode Title="ServiceProvider Property " Url="html/239D9FCA.htm" />
           <HelpTOCNode Title="Type Property " Url="html/3C548A28.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="9a02e01d-a1ba-499c-b629-a1d04f0dc7d3" Title="InstanceLocator Methods" Url="html/87208464.htm">
-          <HelpTOCNode Id="2dc271fc-cfbb-48b4-8df8-66eb692950e8" Title="GetInstance Method " Url="html/4FC6868E.htm">
+        <HelpTOCNode Id="8e78c479-ddc7-4485-af38-d06543c7ee44" Title="InstanceLocator Methods" Url="html/87208464.htm">
+          <HelpTOCNode Id="769efd27-f6b9-432c-9f57-5d88f8a8eed9" Title="GetInstance Method " Url="html/4FC6868E.htm">
             <HelpTOCNode Title="GetInstance(T) Method " Url="html/87990867.htm" />
             <HelpTOCNode Title="GetInstance Method (String)" Url="html/866D064D.htm" />
             <HelpTOCNode Title="GetInstance(T) Method (String)" Url="html/841245E4.htm" />
@@ -624,21 +624,21 @@
           <HelpTOCNode Title="ProvideValue Method " Url="html/75E9FF03.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
-      <HelpTOCNode Id="e6315e8b-de86-4aeb-917d-9c5d242c1ccd" Title="RegionBinder Class" Url="html/BC5D9F51.htm">
-        <HelpTOCNode Id="6d6dddd5-8601-4376-8b39-065ecb91906d" Title="RegionBinder Properties" Url="html/B3233940.htm">
+      <HelpTOCNode Id="4d473834-f130-4037-b19e-6878ecefb65e" Title="RegionBinder Class" Url="html/BC5D9F51.htm">
+        <HelpTOCNode Id="7c0fd832-c6c7-475f-8516-9292ec28e97f" Title="RegionBinder Properties" Url="html/B3233940.htm">
           <HelpTOCNode Title="DefaultRegionService Property " Url="html/5F31E136.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="5d0beeac-d470-4e1b-a776-0f9291d48413" Title="RegionBinder Methods" Url="html/88341F92.htm">
+        <HelpTOCNode Id="0fc12f2e-ce38-4180-a687-e7e1ff091444" Title="RegionBinder Methods" Url="html/88341F92.htm">
           <HelpTOCNode Title="GetRegionName Method " Url="html/99EFAFC5.htm" />
           <HelpTOCNode Title="GetRegionService Method " Url="html/ED7D70BA.htm" />
           <HelpTOCNode Title="SetRegionName Method " Url="html/6C9BAFB7.htm" />
           <HelpTOCNode Title="SetRegionService Method " Url="html/11897202.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="3770a3b3-cbe6-4e76-9d41-f1977c2a34ae" Title="RegionBinder Fields" Url="html/DD569E91.htm">
+        <HelpTOCNode Id="161963a8-df9d-4860-b1f4-d91f4463ca0d" Title="RegionBinder Fields" Url="html/DD569E91.htm">
           <HelpTOCNode Title="RegionNameProperty Field" Url="html/6FB0F836.htm" />
           <HelpTOCNode Title="RegionServiceProperty Field" Url="html/164F5C8A.htm" />
         </HelpTOCNode>
-        <HelpTOCNode Id="14639251-0f18-4030-81b6-51a659fe03d5" Title="RegionBinder Attached Properties" Url="html/CA5E340E.htm">
+        <HelpTOCNode Id="d1a48159-a76d-4509-80e4-73f38821d4ed" Title="RegionBinder Attached Properties" Url="html/CA5E340E.htm">
           <HelpTOCNode Title="RegionName Attached Property" Url="html/9BFB6500.htm" />
           <HelpTOCNode Title="RegionService Attached Property" Url="html/ECC49E10.htm" />
         </HelpTOCNode>
