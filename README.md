@@ -12,4 +12,32 @@ Based on .NET Standard 2.0, with minimal dependencies.
 
 The [API documentation](https://roteninformatik.github.io/DesktopServicesDotNet/api/) provides a complete list of all available functionality.
 
-[TBD]
+The following lists show a rough overview of some of functionality.
+
+## Windows (general)
+
+* General Windows API helpers
+* Windows shell helpers
+* Cryptography helpers
+* Serial port helpers
+* On-screen keyboard
+* Keyboard access
+* Raw printer access
+* Remote resource access with credentials (e.g. windows file share)
+* Windows session control
+* Native window control
+* User impersonation
+* Extension methods
+  * Imaging
+
+## WPF
+
+* Region service (UI modularization)
+* Cursor helper
+* Converters
+* Markup extensions
+* Extension methods
+  * Application
+  * Dispatcher
+  * Window
+  * Imaging
