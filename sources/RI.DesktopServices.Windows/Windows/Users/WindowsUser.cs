@@ -386,7 +386,7 @@ namespace RI.DesktopServices.Windows.Users
             if (string.IsNullOrWhiteSpace(user) ||
                 string.Equals(user.Trim(), ".", StringComparison.InvariantCultureIgnoreCase))
             {
-                //TODO: Do not use CurrentUser because it would call ResolveUser again
+                //TODO #24: Do not use CurrentUser because it would call ResolveUser again
                 return WindowsUser.GetCurrentUser();
             }
 
