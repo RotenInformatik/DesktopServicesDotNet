@@ -29,13 +29,10 @@ namespace RI.DesktopServices.UiContainer.Adapters
 
             base.Activate(container, element);
 
-            if (element is FrameworkElement)
+            if (element is FrameworkElement frameworkElement)
             {
-                FrameworkElement frameworkElement = (FrameworkElement)element;
-
-                if (frameworkElement.DataContext is IRegionElement)
+                if (frameworkElement.DataContext is IRegionElement regionElement)
                 {
-                    IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
                     regionElement.Activated();
                 }
             }
@@ -54,18 +51,15 @@ namespace RI.DesktopServices.UiContainer.Adapters
                 throw new ArgumentNullException(nameof(element));
             }
 
-            base.Deactivate(container, element);
-
-            if (element is FrameworkElement)
+            if (element is FrameworkElement frameworkElement)
             {
-                FrameworkElement frameworkElement = (FrameworkElement)element;
-
-                if (frameworkElement.DataContext is IRegionElement)
+                if (frameworkElement.DataContext is IRegionElement regionElement)
                 {
-                    IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
                     regionElement.Deactivated();
                 }
             }
+
+            base.Deactivate(container, element);
         }
 
         /// <inheritdoc />
@@ -74,13 +68,10 @@ namespace RI.DesktopServices.UiContainer.Adapters
             bool fromBase = base.CanNavigateFrom(container, element);
             bool fromDataContext = true;
 
-            if (element is FrameworkElement)
+            if (element is FrameworkElement frameworkElement)
             {
-                FrameworkElement frameworkElement = (FrameworkElement)element;
-
-                if (frameworkElement.DataContext is IRegionElement)
+                if (frameworkElement.DataContext is IRegionElement regionElement)
                 {
-                    IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
                     fromDataContext = regionElement.CanNavigateFrom();
                 }
             }
@@ -94,13 +85,10 @@ namespace RI.DesktopServices.UiContainer.Adapters
             bool fromBase = base.CanNavigateTo(container, element);
             bool fromDataContext = true;
 
-            if (element is FrameworkElement)
+            if (element is FrameworkElement frameworkElement)
             {
-                FrameworkElement frameworkElement = (FrameworkElement)element;
-
-                if (frameworkElement.DataContext is IRegionElement)
+                if (frameworkElement.DataContext is IRegionElement regionElement)
                 {
-                    IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
                     fromDataContext = regionElement.CanNavigateTo();
                 }
             }
@@ -111,18 +99,15 @@ namespace RI.DesktopServices.UiContainer.Adapters
         /// <inheritdoc />
         protected override void NavigatedFrom (object container, object element)
         {
-            base.NavigatedFrom(container, element);
-
-            if (element is FrameworkElement)
+            if (element is FrameworkElement frameworkElement)
             {
-                FrameworkElement frameworkElement = (FrameworkElement)element;
-
-                if (frameworkElement.DataContext is IRegionElement)
+                if (frameworkElement.DataContext is IRegionElement regionElement)
                 {
-                    IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
                     regionElement.NavigatedFrom();
                 }
             }
+
+            base.NavigatedFrom(container, element);
         }
 
         /// <inheritdoc />
@@ -130,13 +115,10 @@ namespace RI.DesktopServices.UiContainer.Adapters
         {
             base.NavigatedTo(container, element);
 
-            if (element is FrameworkElement)
+            if (element is FrameworkElement frameworkElement)
             {
-                FrameworkElement frameworkElement = (FrameworkElement)element;
-
-                if (frameworkElement.DataContext is IRegionElement)
+                if (frameworkElement.DataContext is IRegionElement regionElement)
                 {
-                    IRegionElement regionElement = (IRegionElement)frameworkElement.DataContext;
                     regionElement.NavigatedTo();
                 }
             }

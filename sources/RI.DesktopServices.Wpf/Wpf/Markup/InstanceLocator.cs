@@ -2,6 +2,8 @@
 using System.Windows;
 using System.Windows.Markup;
 
+using RI.DesktopServices.Mvvm.View;
+using RI.DesktopServices.Mvvm.ViewModel;
 using RI.DesktopServices.UiContainer;
 
 
@@ -194,6 +196,58 @@ namespace RI.DesktopServices.Wpf.Markup
             where T : class =>
             this.GetInstance(name) as T;
 
+        private void ProcessValue (object value)
+        {
+            if (value == null)
+            {
+                return;
+            }
+
+            if (value is IViewModel {IsInitialized: false,} model)
+            {
+                model.Initialize();
+            }
+
+            if (value is IView {IsInitialized: false,} view1)
+            {
+                view1.Initialize();
+            }
+
+            switch (value)
+            {
+                case FrameworkElement frameworkElement:
+                {
+                    if (frameworkElement.DataContext != null)
+                    {
+                        switch (frameworkElement.DataContext)
+                        {
+                            case IViewModel viewModel:
+                            {
+                                if (!viewModel.IsInitialized)
+                                {
+                                    viewModel.Initialize();
+                                }
+
+                                break;
+                            }
+
+                            case IView view2:
+                            {
+                                if (!view2.IsInitialized)
+                                {
+                                    view2.Initialize();
+                                }
+
+                                break;
+                            }
+                        }
+                    }
+
+                    break;
+                }
+            }
+        }
+
         private Type ResolveTypeFromName (string name)
         {
             if (name == null)
@@ -214,9 +268,16 @@ namespace RI.DesktopServices.Wpf.Markup
         /// <inheritdoc />
         public override object ProvideValue (IServiceProvider serviceProvider)
         {
-            serviceProvider.GetService(typeof(IProvideValueTarget));
+            if (serviceProvider.GetService(typeof(IProvideValueTarget)) is IProvideValueTarget targetProvider)
+            {
+                object target = targetProvider.TargetObject;
+                this.ProcessValue(target);
+            }
 
-            return this.GetInstance(this.Name) ?? this.GetInstance(this.Type);
+            object value = this.GetInstance(this.Name) ?? this.GetInstance(this.Type);
+            this.ProcessValue(value);
+
+            return value;
         }
 
         #endregion

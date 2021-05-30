@@ -36,29 +36,24 @@ namespace RI.DesktopServices.UiContainer.Adapters
                 throw new ArgumentNullException(nameof(element));
             }
 
-            if (container is ContentControl)
+            if (container is ContentControl contentControl)
             {
-                ContentControl contentControl = (ContentControl)container;
-
                 if (contentControl.Content != null)
                 {
-                    throw new NotSupportedException("The container of type" + container.GetType()
+                    throw new NotSupportedException("The container of type" + contentControl.GetType()
                                                         .Name +
                                                     " already has an element and does not support multiple elements.");
                 }
 
                 contentControl.Content = element;
             }
-            else if (container is ItemsControl)
+            else if (container is ItemsControl itemsControl)
             {
-                ItemsControl itemsControl = (ItemsControl)container;
                 itemsControl.Items.Remove(element);
                 itemsControl.Items.Add(element);
             }
-            else if ((container is Panel) && (element is UIElement))
+            else if ((container is Panel panel) && (element is UIElement uiElement))
             {
-                Panel panel = (Panel)container;
-                UIElement uiElement = (UIElement)element;
                 panel.Children.Remove(uiElement);
                 panel.Children.Add(uiElement);
             }
@@ -72,19 +67,16 @@ namespace RI.DesktopServices.UiContainer.Adapters
                 throw new ArgumentNullException(nameof(container));
             }
 
-            if (container is ContentControl)
+            if (container is ContentControl contentControl)
             {
-                ContentControl contentControl = (ContentControl)container;
                 contentControl.Content = null;
             }
-            else if (container is ItemsControl)
+            else if (container is ItemsControl itemsControl)
             {
-                ItemsControl itemsControl = (ItemsControl)container;
                 itemsControl.Items.Clear();
             }
-            else if (container is Panel)
+            else if (container is Panel panel)
             {
-                Panel panel = (Panel)container;
                 panel.Children.Clear();
             }
         }
@@ -104,20 +96,16 @@ namespace RI.DesktopServices.UiContainer.Adapters
 
             bool contains = false;
 
-            if (container is ContentControl)
+            if (container is ContentControl contentControl)
             {
-                ContentControl contentControl = (ContentControl)container;
-                contains = object.ReferenceEquals(contentControl.Content, element);
+                contains = ReferenceEquals(contentControl.Content, element);
             }
-            else if (container is ItemsControl)
+            else if (container is ItemsControl itemsControl)
             {
-                ItemsControl itemsControl = (ItemsControl)container;
                 contains = itemsControl.Items.Contains(element);
             }
-            else if ((container is Panel) && (element is UIElement))
+            else if ((container is Panel panel) && (element is UIElement uiElement))
             {
-                Panel panel = (Panel)container;
-                UIElement uiElement = (UIElement)element;
                 contains = panel.Children.Contains(uiElement);
             }
 
@@ -134,24 +122,19 @@ namespace RI.DesktopServices.UiContainer.Adapters
 
             List<object> elements = new List<object>();
 
-            if (container is ContentControl)
+            if (container is ContentControl contentControl)
             {
-                ContentControl contentControl = (ContentControl)container;
                 elements.Add(contentControl.Content);
             }
-            else if (container is ItemsControl)
+            else if (container is ItemsControl itemsControl)
             {
-                ItemsControl itemsControl = (ItemsControl)container;
-
                 foreach (object element in itemsControl.Items)
                 {
                     elements.Add(element);
                 }
             }
-            else if (container is Panel)
+            else if (container is Panel panel)
             {
-                Panel panel = (Panel)container;
-
                 foreach (object element in panel.Children)
                 {
                     elements.Add(element);
@@ -174,24 +157,19 @@ namespace RI.DesktopServices.UiContainer.Adapters
                 throw new ArgumentNullException(nameof(element));
             }
 
-            if (container is ContentControl)
+            if (container is ContentControl contentControl)
             {
-                ContentControl contentControl = (ContentControl)container;
-
-                if (object.ReferenceEquals(contentControl.Content, element))
+                if (ReferenceEquals(contentControl.Content, element))
                 {
                     contentControl.Content = null;
                 }
             }
-            else if (container is ItemsControl)
+            else if (container is ItemsControl itemsControl)
             {
-                ItemsControl itemsControl = (ItemsControl)container;
                 itemsControl.Items.Remove(element);
             }
-            else if ((container is Panel) && (element is UIElement))
+            else if ((container is Panel panel) && (element is UIElement uiElement))
             {
-                Panel panel = (Panel)container;
-                UIElement uiElement = (UIElement)element;
                 panel.Children.Remove(uiElement);
             }
         }

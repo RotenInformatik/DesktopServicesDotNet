@@ -218,6 +218,11 @@ namespace RI.DesktopServices.UiContainer
 
             List<object> currentElements = this.Get(container);
 
+            if (currentElements.Any(x => ReferenceEquals(x, element)))
+            {
+                return true;
+            }
+
             foreach (object currentElement in currentElements)
             {
                 if (!this.CanNavigateFrom(container, currentElement))
