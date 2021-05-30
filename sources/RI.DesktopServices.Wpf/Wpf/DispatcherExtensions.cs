@@ -95,6 +95,46 @@ namespace RI.DesktopServices.Wpf
             return operation.Task;
         }
 
+        /// <summary>
+        ///     Moves the execution of the code which follows the <c> await </c> to a <see cref="Dispatcher" />.
+        /// </summary>
+        /// <param name="dispatcher"> The dispatcher. </param>
+        /// <param name="priority">
+        ///     The optional priority after which the execution is moved to the dispatcher. Default value is
+        ///     <see cref="DispatcherPriority.Normal" />
+        /// </param>
+        /// <returns>
+        ///     The <see cref="DispatcherAwaiter" /> which can be awaited to move the execution of the code which follows the
+        ///     <c> await </c> to <paramref name="dispatcher" />.
+        /// </returns>
+        /// <exception cref="ArgumentNullException"> <paramref name="dispatcher" /> is null. </exception>
+        /// <example>
+        ///     <para>
+        ///         The following example shows how <see cref="MoveExecutionTo" /> is used:
+        ///     </para>
+        ///     <code language="cs">
+        ///   <![CDATA[
+        /// 
+        ///   // Code which is executed on any thread
+        ///  
+        ///   await dispatcher.MoveExecutionTo();
+        /// 
+        ///   // Code which is executed by the dispatcher ("is moved to the thread the dispatcher is running in")
+        /// 
+        ///   ]]>
+        ///   </code>
+        /// </example>
+        public static DispatcherAwaiter MoveExecutionTo (this Dispatcher dispatcher,
+                                                         DispatcherPriority priority = DispatcherPriority.Normal)
+        {
+            if (dispatcher == null)
+            {
+                throw new ArgumentNullException(nameof(dispatcher));
+            }
+
+            return new DispatcherAwaiter(dispatcher, priority);
+        }
+
         #endregion
     }
 }

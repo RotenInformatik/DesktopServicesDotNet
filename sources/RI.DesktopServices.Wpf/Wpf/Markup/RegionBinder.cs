@@ -194,7 +194,7 @@ namespace RI.DesktopServices.Wpf.Markup
             IRegionService newServiceResolved =
                 newService ?? RegionBinder.DefaultRegionService ?? InstanceLocator.GetInstanceForRegionBinder();
 
-            if (object.ReferenceEquals(oldServiceResolved, newServiceResolved))
+            if (ReferenceEquals(oldServiceResolved, newServiceResolved))
             {
                 return;
             }

@@ -94,8 +94,8 @@ namespace RI.DesktopServices.Mvvm.ViewModel
             this.CommandPrivate = command;
             this.CanExecutePrivate = canExecute;
 
-            this.CommandAction = x => this.CommandPrivate();
-            this.CanExecuteFunction = y => this.CanExecutePrivate?.Invoke() ?? true;
+            this.CommandAction = _ => this.CommandPrivate();
+            this.CanExecuteFunction = _ => this.CanExecutePrivate?.Invoke() ?? true;
         }
 
         #endregion

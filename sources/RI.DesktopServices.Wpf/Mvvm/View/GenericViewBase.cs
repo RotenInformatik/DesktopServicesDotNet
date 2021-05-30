@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Windows.Controls;
 
-using RI.DesktopServices.Mvvm.View;
 using RI.DesktopServices.Mvvm.ViewModel;
 
 
 
 
-namespace RI.Framework.Mvvm.View
+namespace RI.DesktopServices.Mvvm.View
 {
     /// <summary>
     ///     Implements a base class for <see cref="UserControl" />-based views.
