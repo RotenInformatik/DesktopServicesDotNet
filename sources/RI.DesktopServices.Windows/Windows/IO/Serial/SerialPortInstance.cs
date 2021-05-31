@@ -23,7 +23,6 @@ namespace RI.DesktopServices.Windows.IO.Serial
     ///     </note>
     /// </remarks>
     /// <threadsafety static="false" instance="false" />
-    /// TODO: Create SerialPortStream
     public sealed class SerialPortInstance : IEquatable<SerialPortInstance>, IComparable<SerialPortInstance>,
                                              IComparable
     {

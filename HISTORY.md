@@ -4,6 +4,12 @@
 
 ---
 
+## 1.1.0
+
+* [#13: Reimplement DispatcherAwaiter](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/13)
+* [#21: Reimplement MVVM abstraction](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/21)
+* [#22: Reimplement DelegateCommand](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/22)
+
 ## 1.0.0
 
 First version.

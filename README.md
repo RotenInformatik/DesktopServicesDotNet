@@ -35,6 +35,8 @@ The following lists show a rough overview of some of functionality.
 * Region service (UI modularization)
 * Cursor helper
 * Converters
+* MVVM boilerplate
+* DelegateCommand
 * Markup extensions
 * Extension methods
   * Application
