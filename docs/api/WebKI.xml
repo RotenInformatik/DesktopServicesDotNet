@@ -10,7 +10,10 @@
     <HelpKINode Title="IRegionService.ActivateAllElements Method " Url="html/8EEBA09E.htm" />
     <HelpKINode Title="RegionService.ActivateAllElements Method " Url="html/BB2D7693.htm" />
   </HelpKINode>
-  <HelpKINode Title="Activated method" Url="html/36A0C309.htm" />
+  <HelpKINode Title="Activated method">
+    <HelpKINode Title="IRegionElement.Activated Method " Url="html/36A0C309.htm" />
+    <HelpKINode Title="ViewModelBase.Activated Method " Url="html/B210C930.htm" />
+  </HelpKINode>
   <HelpKINode Title="ActivateElement method">
     <HelpKINode Title="IRegionService.ActivateElement Method " Url="html/F411DD97.htm" />
     <HelpKINode Title="RegionService.ActivateElement Method " Url="html/DEEDAD6A.htm" />
@@ -117,6 +120,9 @@
   <HelpKINode Title="Busy enumeration member" Url="html/576AA674.htm" />
   <HelpKINode Title="Cancel enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="CanceledByUser enumeration member" Url="html/576AA674.htm" />
+  <HelpKINode Title="CanExecute method" Url="html/69E31600.htm" />
+  <HelpKINode Title="CanExecuteChanged event" Url="html/2E68E51E.htm" />
+  <HelpKINode Title="CanExecuteFunction property" Url="html/1A69F543.htm" />
   <HelpKINode Title="CanNavigate method">
     <HelpKINode Title="IRegionAdapter.CanNavigate Method " Url="html/C8235466.htm" />
     <HelpKINode Title="IRegionService.CanNavigate Method " Url="html/4A370674.htm" />
@@ -126,11 +132,13 @@
   <HelpKINode Title="CanNavigateFrom method">
     <HelpKINode Title="IRegionElement.CanNavigateFrom Method " Url="html/BFB1161.htm" />
     <HelpKINode Title="RegionAdapterBase.CanNavigateFrom Method " Url="html/1DAC40.htm" />
+    <HelpKINode Title="ViewModelBase.CanNavigateFrom Method " Url="html/97F81DD3.htm" />
     <HelpKINode Title="WpfRegionAdapterBase.CanNavigateFrom Method " Url="html/4A18805.htm" />
   </HelpKINode>
   <HelpKINode Title="CanNavigateTo method">
     <HelpKINode Title="IRegionElement.CanNavigateTo Method " Url="html/350FACAA.htm" />
     <HelpKINode Title="RegionAdapterBase.CanNavigateTo Method " Url="html/788E1BF9.htm" />
+    <HelpKINode Title="ViewModelBase.CanNavigateTo Method " Url="html/457ABF47.htm" />
     <HelpKINode Title="WpfRegionAdapterBase.CanNavigateTo Method " Url="html/1DB0723.htm" />
   </HelpKINode>
   <HelpKINode Title="Capital enumeration member" Url="html/270DCDF5.htm" />
@@ -166,6 +174,7 @@
   <HelpKINode Title="ComboBoxChecker.OnUnchecked method" Url="html/1CF17C99.htm" />
   <HelpKINode Title="ComboBoxProperty field" Url="html/A2273163.htm" />
   <HelpKINode Title="Command property" Url="html/BD17F787.htm" />
+  <HelpKINode Title="CommandAction property" Url="html/C0874309.htm" />
   <HelpKINode Title="CommandProperty field" Url="html/859799D2.htm" />
   <HelpKINode Title="Comment property" Url="html/B0628FB9.htm" />
   <HelpKINode Title="CompareTo method" Url="html/F278CA24.htm" />
@@ -204,7 +213,10 @@
     <HelpKINode Title="IRegionService.DeactivateAllElements Method " Url="html/F835EBED.htm" />
     <HelpKINode Title="RegionService.DeactivateAllElements Method " Url="html/ED91C167.htm" />
   </HelpKINode>
-  <HelpKINode Title="Deactivated method" Url="html/67EC7791.htm" />
+  <HelpKINode Title="Deactivated method">
+    <HelpKINode Title="IRegionElement.Deactivated Method " Url="html/67EC7791.htm" />
+    <HelpKINode Title="ViewModelBase.Deactivated Method " Url="html/BF773341.htm" />
+  </HelpKINode>
   <HelpKINode Title="DeactivateElement method">
     <HelpKINode Title="IRegionService.DeactivateElement Method " Url="html/7CDDD891.htm" />
     <HelpKINode Title="RegionService.DeactivateElement Method " Url="html/5C7BFCF9.htm" />
@@ -213,7 +225,60 @@
   <HelpKINode Title="Decrypt method" Url="html/4FD7069C.htm" />
   <HelpKINode Title="DefaultPath property" Url="html/B020430F.htm" />
   <HelpKINode Title="DefaultRegionService property" Url="html/5F31E136.htm" />
+  <HelpKINode Title="DelegateCommand class">
+    <HelpKINode Title="DelegateCommand Class" Url="html/8B0629EC.htm" />
+    <HelpKINode Title="constructor" Url="html/CD933C9E.htm" />
+    <HelpKINode Title="events" Url="html/F751E5C6.htm" />
+    <HelpKINode Title="methods" Url="html/8C4D3CE.htm" />
+    <HelpKINode Title="properties" Url="html/D0F421F4.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DelegateCommand(Of T) class">
+    <HelpKINode Title="DelegateCommand(T) Class" Url="html/3FFD7076.htm" />
+    <HelpKINode Title="constructor" Url="html/79E24947.htm" />
+    <HelpKINode Title="events" Url="html/8E74E682.htm" />
+    <HelpKINode Title="methods" Url="html/5C83D43D.htm" />
+    <HelpKINode Title="properties" Url="html/7AB1143E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DelegateCommand(Of T).DelegateCommand constructor" Url="html/79E24947.htm" />
+  <HelpKINode Title="DelegateCommand.DelegateCommand constructor" Url="html/CD933C9E.htm" />
+  <HelpKINode Title="DelegateCommand&lt;T&gt; class">
+    <HelpKINode Title="DelegateCommand(T) Class" Url="html/3FFD7076.htm" />
+    <HelpKINode Title="constructor" Url="html/79E24947.htm" />
+    <HelpKINode Title="events" Url="html/8E74E682.htm" />
+    <HelpKINode Title="methods" Url="html/5C83D43D.htm" />
+    <HelpKINode Title="properties" Url="html/7AB1143E.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DelegateCommand&lt;T&gt;.DelegateCommand constructor" Url="html/79E24947.htm" />
+  <HelpKINode Title="DelegateCommandBase class">
+    <HelpKINode Title="DelegateCommandBase Class" Url="html/8D8E3420.htm" />
+    <HelpKINode Title="constructor" Url="html/C583D53A.htm" />
+    <HelpKINode Title="events" Url="html/AEC8E998.htm" />
+    <HelpKINode Title="methods" Url="html/34B19C6F.htm" />
+    <HelpKINode Title="properties" Url="html/DEB5879C.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DelegateCommandBase.CanExecute method" Url="html/69E31600.htm" />
+  <HelpKINode Title="DelegateCommandBase.CanExecuteChanged event" Url="html/2E68E51E.htm" />
+  <HelpKINode Title="DelegateCommandBase.CanExecuteFunction property" Url="html/1A69F543.htm" />
+  <HelpKINode Title="DelegateCommandBase.CommandAction property" Url="html/C0874309.htm" />
+  <HelpKINode Title="DelegateCommandBase.DelegateCommandBase constructor" Url="html/C583D53A.htm" />
+  <HelpKINode Title="DelegateCommandBase.Execute method" Url="html/45D2FEA5.htm" />
+  <HelpKINode Title="DelegateCommandBase.RaiseCanExecuteChanged method" Url="html/81BFBC49.htm" />
   <HelpKINode Title="Delete enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Dispatcher property" Url="html/BFBE037F.htm" />
+  <HelpKINode Title="DispatcherAwaiter class">
+    <HelpKINode Title="DispatcherAwaiter Class" Url="html/F52216E9.htm" />
+    <HelpKINode Title="constructor" Url="html/171D843B.htm" />
+    <HelpKINode Title="methods" Url="html/36917C.htm" />
+    <HelpKINode Title="properties" Url="html/17108006.htm" />
+  </HelpKINode>
+  <HelpKINode Title="DispatcherAwaiter.Dispatcher property" Url="html/BFBE037F.htm" />
+  <HelpKINode Title="DispatcherAwaiter.DispatcherAwaiter constructor" Url="html/171D843B.htm" />
+  <HelpKINode Title="DispatcherAwaiter.GetAwaiter method" Url="html/C4E35F51.htm" />
+  <HelpKINode Title="DispatcherAwaiter.GetResult method" Url="html/38F4B1AA.htm" />
+  <HelpKINode Title="DispatcherAwaiter.IsCompleted property" Url="html/B29EA284.htm" />
+  <HelpKINode Title="DispatcherAwaiter.OnCompleted method" Url="html/226C09D7.htm" />
+  <HelpKINode Title="DispatcherAwaiter.Priority property" Url="html/CB934F18.htm" />
+  <HelpKINode Title="DispatcherAwaiter.UnsafeOnCompleted method" Url="html/D00C7D07.htm" />
   <HelpKINode Title="DispatcherExtensions class">
     <HelpKINode Title="DispatcherExtensions Class" Url="html/212E1493.htm" />
     <HelpKINode Title="methods" Url="html/D1E5FB6E.htm" />
@@ -222,6 +287,7 @@
   <HelpKINode Title="DispatcherExtensions.DoAllEventsAsync method" Url="html/9BFED972.htm" />
   <HelpKINode Title="DispatcherExtensions.DoEvents method" Url="html/2D48ED3E.htm" />
   <HelpKINode Title="DispatcherExtensions.DoEventsAsync method" Url="html/882C4FED.htm" />
+  <HelpKINode Title="DispatcherExtensions.MoveExecutionTo method" Url="html/95BEC53C.htm" />
   <HelpKINode Title="Divide enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="DoAllEvents method">
     <HelpKINode Title="ApplicationExtensions.DoAllEvents Method " Url="html/EE066089.htm" />
@@ -284,6 +350,7 @@
   <HelpKINode Title="EventToCommandBinder.EventBindingsProperty field" Url="html/7E90E7B1.htm" />
   <HelpKINode Title="EventToCommandBinder.GetEventBindings method" Url="html/EB35D063.htm" />
   <HelpKINode Title="Execute enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Execute method" Url="html/45D2FEA5.htm" />
   <HelpKINode Title="ExtractDomainAndUser method" Url="html/D76E1BBD.htm" />
   <HelpKINode Title="F1 enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="F10 enumeration member" Url="html/270DCDF5.htm" />
@@ -317,6 +384,21 @@
   </HelpKINode>
   <HelpKINode Title="FindChildWindows method" Url="html/705303BA.htm" />
   <HelpKINode Title="FindTopWindows method" Url="html/A96A7BB.htm" />
+  <HelpKINode Title="GenericViewBase class">
+    <HelpKINode Title="GenericViewBase Class" Url="html/9800FC3.htm" />
+    <HelpKINode Title="constructor" Url="html/6BD9E031.htm" />
+    <HelpKINode Title="events" Url="html/BEBFD4F3.htm" />
+    <HelpKINode Title="methods" Url="html/A514AA32.htm" />
+    <HelpKINode Title="properties" Url="html/EB0503D6.htm" />
+  </HelpKINode>
+  <HelpKINode Title="GenericViewBase.GenericViewBase constructor" Url="html/6BD9E031.htm" />
+  <HelpKINode Title="GenericViewBase.Initialize method" Url="html/235E397D.htm" />
+  <HelpKINode Title="GenericViewBase.IsInitialized property" Url="html/50D43BA2.htm" />
+  <HelpKINode Title="GenericViewBase.IView.Initialize explicitly implemented method" Url="html/D801A50C.htm" />
+  <HelpKINode Title="GenericViewBase.IView.IsInitialized explicitly implemented property" Url="html/4DD8E9BD.htm" />
+  <HelpKINode Title="GenericViewBase.IView.ViewModel explicitly implemented property" Url="html/70AE2F26.htm" />
+  <HelpKINode Title="GenericViewBase.OnInitialized method" Url="html/74DDC66E.htm" />
+  <HelpKINode Title="GenericViewBase.PerformInitializationIfNotAlreadyDone method" Url="html/BCF813EE.htm" />
   <HelpKINode Title="Get method">
     <HelpKINode Title="IRegionAdapter.Get Method " Url="html/294E0152.htm" />
     <HelpKINode Title="RegionAdapterBase.Get Method " Url="html/B44E4E90.htm" />
@@ -327,6 +409,7 @@
     <HelpKINode Title="RegionService.GetAdapters Method " Url="html/88A62900.htm" />
   </HelpKINode>
   <HelpKINode Title="GetAvailablePorts method" Url="html/CA474C0D.htm" />
+  <HelpKINode Title="GetAwaiter method" Url="html/C4E35F51.htm" />
   <HelpKINode Title="GetContainerOfRegion method">
     <HelpKINode Title="IRegionService.GetContainerOfRegion Method " Url="html/5297058C.htm" />
     <HelpKINode Title="RegionService.GetContainerOfRegion Method " Url="html/3E96BF1.htm" />
@@ -364,6 +447,7 @@
     <HelpKINode Title="RegionService.GetRegionNames Method " Url="html/57515CDE.htm" />
   </HelpKINode>
   <HelpKINode Title="GetRegionService method" Url="html/ED7D70BA.htm" />
+  <HelpKINode Title="GetResult method" Url="html/38F4B1AA.htm" />
   <HelpKINode Title="GetScreen method" Url="html/7A19B235.htm" />
   <HelpKINode Title="GetScreenIndex method" Url="html/1E2F4176.htm" />
   <HelpKINode Title="GetSerialPortInstance method" Url="html/1942F091.htm" />
@@ -414,6 +498,13 @@
   <HelpKINode Title="ImpersonatedFuncAsync(Of TResult) delegate" Url="html/CB5A2457.htm" />
   <HelpKINode Title="ImpersonatedFuncAsync&lt;TResult&gt; delegate" Url="html/CB5A2457.htm" />
   <HelpKINode Title="Index property" Url="html/5DF69BD5.htm" />
+  <HelpKINode Title="Initialize method">
+    <HelpKINode Title="GenericViewBase.Initialize Method " Url="html/235E397D.htm" />
+    <HelpKINode Title="IView.Initialize Method " Url="html/7954ABD1.htm" />
+    <HelpKINode Title="IViewModel.Initialize Method " Url="html/7BFE3CBE.htm" />
+    <HelpKINode Title="ViewModelBase.Initialize Method " Url="html/CF3C8248.htm" />
+    <HelpKINode Title="WindowViewBase.Initialize Method " Url="html/D0057603.htm" />
+  </HelpKINode>
   <HelpKINode Title="Insert enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="InstanceLocator class">
     <HelpKINode Title="InstanceLocator Class" Url="html/A42769EE.htm" />
@@ -514,8 +605,16 @@
     <HelpKINode Title="IRegionAdapter.IsCompatibleContainer Method " Url="html/88E54297.htm" />
     <HelpKINode Title="RegionAdapterBase.IsCompatibleContainer Method " Url="html/32605A7.htm" />
   </HelpKINode>
+  <HelpKINode Title="IsCompleted property" Url="html/B29EA284.htm" />
   <HelpKINode Title="IsCurrentAdministrator method" Url="html/6DB0FA08.htm" />
   <HelpKINode Title="IsCurrentSystem method" Url="html/5F3763E1.htm" />
+  <HelpKINode Title="IsInitialized property">
+    <HelpKINode Title="GenericViewBase.IsInitialized Property " Url="html/50D43BA2.htm" />
+    <HelpKINode Title="IView.IsInitialized Property " Url="html/56175284.htm" />
+    <HelpKINode Title="IViewModel.IsInitialized Property " Url="html/1BAE0BE4.htm" />
+    <HelpKINode Title="ViewModelBase.IsInitialized Property " Url="html/4F8A6E07.htm" />
+    <HelpKINode Title="WindowViewBase.IsInitialized Property " Url="html/787710C0.htm" />
+  </HelpKINode>
   <HelpKINode Title="IsKeyPressed method" Url="html/EAE6C336.htm" />
   <HelpKINode Title="IsKeystrokePressed method" Url="html/25B12F90.htm" />
   <HelpKINode Title="IsKeystrokeToggledOn method" Url="html/D5046E54.htm" />
@@ -524,6 +623,35 @@
     <HelpKINode Title="RawPrinterAccess.IsOpen Property " Url="html/949BBCB6.htm" />
     <HelpKINode Title="WindowsNetworkConnection.IsOpen Property " Url="html/B6A174FC.htm" />
   </HelpKINode>
+  <HelpKINode Title="IView interface">
+    <HelpKINode Title="IView Interface" Url="html/51A56333.htm" />
+    <HelpKINode Title="methods" Url="html/D8C3E2B7.htm" />
+    <HelpKINode Title="properties" Url="html/6E71F8E7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IView.Initialize explicitly implemented method">
+    <HelpKINode Title="GenericViewBase.IView.Initialize Method " Url="html/D801A50C.htm" />
+    <HelpKINode Title="WindowViewBase.IView.Initialize Method " Url="html/60D77C7F.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IView.Initialize method" Url="html/7954ABD1.htm" />
+  <HelpKINode Title="IView.IsInitialized explicitly implemented property">
+    <HelpKINode Title="GenericViewBase.IView.IsInitialized Property " Url="html/4DD8E9BD.htm" />
+    <HelpKINode Title="WindowViewBase.IView.IsInitialized Property " Url="html/CFE28DFD.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IView.IsInitialized property" Url="html/56175284.htm" />
+  <HelpKINode Title="IView.ViewModel explicitly implemented property">
+    <HelpKINode Title="GenericViewBase.IView.ViewModel Property " Url="html/70AE2F26.htm" />
+    <HelpKINode Title="WindowViewBase.IView.ViewModel Property " Url="html/75A1BEF7.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IView.ViewModel property" Url="html/16577D8B.htm" />
+  <HelpKINode Title="IViewModel interface">
+    <HelpKINode Title="IViewModel Interface" Url="html/4C103E5E.htm" />
+    <HelpKINode Title="events" Url="html/2E405BF2.htm" />
+    <HelpKINode Title="methods" Url="html/F9AC509A.htm" />
+    <HelpKINode Title="properties" Url="html/70817F7A.htm" />
+  </HelpKINode>
+  <HelpKINode Title="IViewModel.Initialize explicitly implemented method" Url="html/96C997E0.htm" />
+  <HelpKINode Title="IViewModel.Initialize method" Url="html/7BFE3CBE.htm" />
+  <HelpKINode Title="IViewModel.IsInitialized property" Url="html/1BAE0BE4.htm" />
   <HelpKINode Title="Junja enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="Kana enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="Kanji enumeration member" Url="html/270DCDF5.htm" />
@@ -562,6 +690,7 @@
     <HelpKINode Title="WindowsWindow.MinimizeWindow Method " Url="html/EF3A192F.htm" />
   </HelpKINode>
   <HelpKINode Title="ModeChange enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="MoveExecutionTo method" Url="html/95BEC53C.htm" />
   <HelpKINode Title="MoveWindowToBackground method">
     <HelpKINode Title="WindowExtensions.MoveWindowToBackground Method " Url="html/29D5B957.htm" />
     <HelpKINode Title="WindowsWindow.MoveWindowToBackground Method " Url="html/4AD8960A.htm" />
@@ -589,11 +718,13 @@
   <HelpKINode Title="NavigatedFrom method">
     <HelpKINode Title="IRegionElement.NavigatedFrom Method " Url="html/D1D4BEA0.htm" />
     <HelpKINode Title="RegionAdapterBase.NavigatedFrom Method " Url="html/F1439A90.htm" />
+    <HelpKINode Title="ViewModelBase.NavigatedFrom Method " Url="html/726813BC.htm" />
     <HelpKINode Title="WpfRegionAdapterBase.NavigatedFrom Method " Url="html/DF030331.htm" />
   </HelpKINode>
   <HelpKINode Title="NavigatedTo method">
     <HelpKINode Title="IRegionElement.NavigatedTo Method " Url="html/BF8EF515.htm" />
     <HelpKINode Title="RegionAdapterBase.NavigatedTo Method " Url="html/8673B4F6.htm" />
+    <HelpKINode Title="ViewModelBase.NavigatedTo Method " Url="html/2EE1EFC0.htm" />
     <HelpKINode Title="WpfRegionAdapterBase.NavigatedTo Method " Url="html/930243F5.htm" />
   </HelpKINode>
   <HelpKINode Title="Next enumeration member" Url="html/270DCDF5.htm" />
@@ -627,6 +758,17 @@
   <HelpKINode Title="NormalObjectVisibilityConverter.Convert method" Url="html/9AC8A14A.htm" />
   <HelpKINode Title="NormalObjectVisibilityConverter.ConvertBack method" Url="html/A9FC2EF.htm" />
   <HelpKINode Title="NormalObjectVisibilityConverter.NormalObjectVisibilityConverter constructor" Url="html/F06D43C2.htm" />
+  <HelpKINode Title="NotificationObject class">
+    <HelpKINode Title="NotificationObject Class" Url="html/21153FCF.htm" />
+    <HelpKINode Title="constructor" Url="html/BA5D8E6A.htm" />
+    <HelpKINode Title="events" Url="html/544A9DC4.htm" />
+    <HelpKINode Title="methods" Url="html/5100FA2B.htm" />
+  </HelpKINode>
+  <HelpKINode Title="NotificationObject.NotificationObject constructor" Url="html/BA5D8E6A.htm" />
+  <HelpKINode Title="NotificationObject.OnPropertyChanged method" Url="html/9317A3C7.htm" />
+  <HelpKINode Title="NotificationObject.OnPropertyChanging method" Url="html/420D5142.htm" />
+  <HelpKINode Title="NotificationObject.PropertyChanged event" Url="html/DF851DB1.htm" />
+  <HelpKINode Title="NotificationObject.PropertyChanging event" Url="html/DC5CD231.htm" />
   <HelpKINode Title="NumLock enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="NumPad0 enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="NumPad1 enumeration member" Url="html/270DCDF5.htm" />
@@ -644,6 +786,13 @@
   <HelpKINode Title="OemPeriod enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="OemPlus enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="OnChecked method" Url="html/47367D3.htm" />
+  <HelpKINode Title="OnCompleted method" Url="html/226C09D7.htm" />
+  <HelpKINode Title="OnInitialized method">
+    <HelpKINode Title="GenericViewBase.OnInitialized Method " Url="html/74DDC66E.htm" />
+    <HelpKINode Title="WindowViewBase.OnInitialized Method " Url="html/A0156D14.htm" />
+  </HelpKINode>
+  <HelpKINode Title="OnPropertyChanged method" Url="html/9317A3C7.htm" />
+  <HelpKINode Title="OnPropertyChanging method" Url="html/420D5142.htm" />
   <HelpKINode Title="OnScreenKeyboard class">
     <HelpKINode Title="OnScreenKeyboard Class" Url="html/EF77C48.htm" />
     <HelpKINode Title="methods" Url="html/8FC425D.htm" />
@@ -665,6 +814,10 @@
   <HelpKINode Title="Parse method" Url="html/15BDEA05.htm" />
   <HelpKINode Title="Password property" Url="html/B5DBBE49.htm" />
   <HelpKINode Title="Pause enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="PerformInitializationIfNotAlreadyDone method">
+    <HelpKINode Title="GenericViewBase.PerformInitializationIfNotAlreadyDone Method " Url="html/BCF813EE.htm" />
+    <HelpKINode Title="WindowViewBase.PerformInitializationIfNotAlreadyDone Method " Url="html/C0BB8D89.htm" />
+  </HelpKINode>
   <HelpKINode Title="Play enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="PortName property">
     <HelpKINode Title="PrinterDevice.PortName Property " Url="html/693C53E3.htm" />
@@ -690,10 +843,14 @@
   <HelpKINode Title="PrinterName property" Url="html/3417F6B0.htm" />
   <HelpKINode Title="PrinterTypes enumeration" Url="html/219EAA9A.htm" />
   <HelpKINode Title="Prior enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="Priority property" Url="html/CB934F18.htm" />
   <HelpKINode Title="ProcessKey enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="ProcessorName property" Url="html/CC0F9B16.htm" />
   <HelpKINode Title="ProfilePath property" Url="html/44B5842.htm" />
+  <HelpKINode Title="PropertyChanged event" Url="html/DF851DB1.htm" />
+  <HelpKINode Title="PropertyChanging event" Url="html/DC5CD231.htm" />
   <HelpKINode Title="ProvideValue method" Url="html/75E9FF03.htm" />
+  <HelpKINode Title="RaiseCanExecuteChanged method" Url="html/81BFBC49.htm" />
   <HelpKINode Title="RawPrinterAccess class">
     <HelpKINode Title="RawPrinterAccess Class" Url="html/95793CDE.htm" />
     <HelpKINode Title="constructor" Url="html/CAADBAD.htm" />
@@ -829,6 +986,19 @@
   <HelpKINode Title="Restart method" Url="html/2C31357D.htm" />
   <HelpKINode Title="Restore method" Url="html/620E102F.htm" />
   <HelpKINode Title="Return enumeration member" Url="html/270DCDF5.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm namespace" Url="html/12A376D1.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.NotificationObject class" Url="html/21153FCF.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.View namespace" Url="html/DB9F49B7.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.View.GenericViewBase class" Url="html/9800FC3.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.View.IView interface" Url="html/51A56333.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.View.WindowViewBase class" Url="html/72D18EBF.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel namespace" Url="html/CA4305F4.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel.DelegateCommand class" Url="html/8B0629EC.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel.DelegateCommand(Of T) class" Url="html/3FFD7076.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel.DelegateCommand&lt;T&gt; class" Url="html/3FFD7076.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel.DelegateCommandBase class" Url="html/8D8E3420.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel.IViewModel interface" Url="html/4C103E5E.htm" />
+  <HelpKINode Title="RI.DesktopServices.Mvvm.ViewModel.ViewModelBase class" Url="html/EB58C897.htm" />
   <HelpKINode Title="RI.DesktopServices.UiContainer namespace" Url="html/53D7B88D.htm" />
   <HelpKINode Title="RI.DesktopServices.UiContainer.Adapters namespace" Url="html/7838CCB8.htm" />
   <HelpKINode Title="RI.DesktopServices.UiContainer.Adapters.WpfRegionAdapter class" Url="html/8D11529A.htm" />
@@ -888,6 +1058,7 @@
   <HelpKINode Title="RI.DesktopServices.Wpf.Converters.NormalBoolVisibilityConverter class" Url="html/7BDEF97F.htm" />
   <HelpKINode Title="RI.DesktopServices.Wpf.Converters.NormalObjectBoolConverter class" Url="html/663F91A7.htm" />
   <HelpKINode Title="RI.DesktopServices.Wpf.Converters.NormalObjectVisibilityConverter class" Url="html/627FD288.htm" />
+  <HelpKINode Title="RI.DesktopServices.Wpf.DispatcherAwaiter class" Url="html/F52216E9.htm" />
   <HelpKINode Title="RI.DesktopServices.Wpf.DispatcherExtensions class" Url="html/212E1493.htm" />
   <HelpKINode Title="RI.DesktopServices.Wpf.Imaging namespace" Url="html/E8C0B298.htm" />
   <HelpKINode Title="RI.DesktopServices.Wpf.Imaging.BitmapFrameExtensions class" Url="html/5218900.htm" />
@@ -955,7 +1126,10 @@
     <HelpKINode Title="IRegionAdapter.Sort Method " Url="html/6402EA94.htm" />
     <HelpKINode Title="RegionAdapterBase.Sort Method " Url="html/81C44B4C.htm" />
   </HelpKINode>
-  <HelpKINode Title="SortIndex property" Url="html/FE29A8ED.htm" />
+  <HelpKINode Title="SortIndex property">
+    <HelpKINode Title="IRegionElement.SortIndex Property " Url="html/FE29A8ED.htm" />
+    <HelpKINode Title="ViewModelBase.SortIndex Property " Url="html/D5905EEE.htm" />
+  </HelpKINode>
   <HelpKINode Title="Space enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="Subtract enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="SystemKeyboard class">
@@ -1017,9 +1191,29 @@
   <HelpKINode Title="UniqueIdentification.GetDomainId method" Url="html/D092BD45.htm" />
   <HelpKINode Title="UniqueIdentification.GetMachineId method" Url="html/CA62CD89.htm" />
   <HelpKINode Title="UniqueIdentification.GetUserId method" Url="html/CDAA2231.htm" />
+  <HelpKINode Title="UnsafeOnCompleted method" Url="html/D00C7D07.htm" />
   <HelpKINode Title="Up enumeration member" Url="html/270DCDF5.htm" />
-  <HelpKINode Title="UserName property" Url="html/352F5DD6.htm" />
   <HelpKINode Title="Username property" Url="html/52151AFC.htm" />
+  <HelpKINode Title="UserName property" Url="html/352F5DD6.htm" />
+  <HelpKINode Title="ViewModel property" Url="html/16577D8B.htm" />
+  <HelpKINode Title="ViewModelBase class">
+    <HelpKINode Title="ViewModelBase Class" Url="html/EB58C897.htm" />
+    <HelpKINode Title="constructor" Url="html/4F41D13D.htm" />
+    <HelpKINode Title="events" Url="html/CF67732B.htm" />
+    <HelpKINode Title="methods" Url="html/70C9EA67.htm" />
+    <HelpKINode Title="properties" Url="html/49CB5AE2.htm" />
+  </HelpKINode>
+  <HelpKINode Title="ViewModelBase.Activated method" Url="html/B210C930.htm" />
+  <HelpKINode Title="ViewModelBase.CanNavigateFrom method" Url="html/97F81DD3.htm" />
+  <HelpKINode Title="ViewModelBase.CanNavigateTo method" Url="html/457ABF47.htm" />
+  <HelpKINode Title="ViewModelBase.Deactivated method" Url="html/BF773341.htm" />
+  <HelpKINode Title="ViewModelBase.Initialize method" Url="html/CF3C8248.htm" />
+  <HelpKINode Title="ViewModelBase.IsInitialized property" Url="html/4F8A6E07.htm" />
+  <HelpKINode Title="ViewModelBase.IViewModel.Initialize explicitly implemented method" Url="html/96C997E0.htm" />
+  <HelpKINode Title="ViewModelBase.NavigatedFrom method" Url="html/726813BC.htm" />
+  <HelpKINode Title="ViewModelBase.NavigatedTo method" Url="html/2EE1EFC0.htm" />
+  <HelpKINode Title="ViewModelBase.SortIndex property" Url="html/D5905EEE.htm" />
+  <HelpKINode Title="ViewModelBase.ViewModelBase constructor" Url="html/4F41D13D.htm" />
   <HelpKINode Title="VolumeDown enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="VolumeMute enumeration member" Url="html/270DCDF5.htm" />
   <HelpKINode Title="VolumeUp enumeration member" Url="html/270DCDF5.htm" />
@@ -1141,6 +1335,21 @@
   <HelpKINode Title="WindowsWindow.NormalizeWindow method" Url="html/DFC2433.htm" />
   <HelpKINode Title="WindowsWindow.RelocateWindow method" Url="html/22961F00.htm" />
   <HelpKINode Title="WindowsWindow.ShowWindow method" Url="html/6E400330.htm" />
+  <HelpKINode Title="WindowViewBase class">
+    <HelpKINode Title="WindowViewBase Class" Url="html/72D18EBF.htm" />
+    <HelpKINode Title="constructor" Url="html/CABAF07.htm" />
+    <HelpKINode Title="events" Url="html/9144DE06.htm" />
+    <HelpKINode Title="methods" Url="html/C78756E9.htm" />
+    <HelpKINode Title="properties" Url="html/A032E3B1.htm" />
+  </HelpKINode>
+  <HelpKINode Title="WindowViewBase.Initialize method" Url="html/D0057603.htm" />
+  <HelpKINode Title="WindowViewBase.IsInitialized property" Url="html/787710C0.htm" />
+  <HelpKINode Title="WindowViewBase.IView.Initialize explicitly implemented method" Url="html/60D77C7F.htm" />
+  <HelpKINode Title="WindowViewBase.IView.IsInitialized explicitly implemented property" Url="html/CFE28DFD.htm" />
+  <HelpKINode Title="WindowViewBase.IView.ViewModel explicitly implemented property" Url="html/75A1BEF7.htm" />
+  <HelpKINode Title="WindowViewBase.OnInitialized method" Url="html/A0156D14.htm" />
+  <HelpKINode Title="WindowViewBase.PerformInitializationIfNotAlreadyDone method" Url="html/C0BB8D89.htm" />
+  <HelpKINode Title="WindowViewBase.WindowViewBase constructor" Url="html/CABAF07.htm" />
   <HelpKINode Title="WpfRegionAdapter class">
     <HelpKINode Title="WpfRegionAdapter Class" Url="html/8D11529A.htm" />
     <HelpKINode Title="constructor" Url="html/310818D4.htm" />
