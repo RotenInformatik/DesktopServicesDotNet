@@ -87,18 +87,13 @@ namespace RI.DesktopServices.Windows.Users
         ///     Extracts domain and user name from logon information.
         /// </summary>
         /// <param name="logon"> The logon information (either user or domain\user). </param>
-        /// <param name="resolve"> Specifies whether the extracted domain and user should be resolved. </param>
+        /// <param name="resolveDomain"> Specifies whether the extracted domain should be resolved. </param>
+        /// <param name="resolveUser"> Specifies whether the extracted user should be resolved. </param>
         /// <param name="domain"> The extracted domain. Null if no domain information is available. </param>
         /// <param name="user"> The extracted user name. Null if no user information is available. </param>
-        /// <remarks>
-        ///     <para>
-        ///         If <paramref name="resolve" /> is true, <paramref name="domain" /> and <paramref name="user" /> are first
-        ///         processed by <see cref="ResolveDomain" /> and <see cref="ResolveUser" /> respectively before being returned.
-        ///     </para>
-        /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="logon" /> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="logon" /> is an empty string. </exception>
-        public static void ExtractDomainAndUser (string logon, bool resolve, out string domain, out string user)
+        public static void ExtractDomainAndUser (string logon, bool resolveDomain, bool resolveUser, out string domain, out string user)
         {
             if (logon == null)
             {
@@ -141,10 +136,22 @@ namespace RI.DesktopServices.Windows.Users
             user ??= string.Empty;
             domain ??= string.Empty;
 
-            if (resolve)
+            if (resolveUser)
             {
-                user = WindowsUser.ResolveUser(user);
-                domain = WindowsUser.ResolveDomain(domain);
+                if (string.IsNullOrWhiteSpace(user) ||
+                        string.Equals(user.Trim(), ".", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    user = WindowsUser.GetCurrentUser();
+                }
+            }
+
+            if (resolveDomain)
+            {
+                if (string.IsNullOrWhiteSpace(domain) ||
+                    string.Equals(domain.Trim(), ".", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    domain = WindowsUser.GetLocalDomain();
+                }
             }
         }
 
@@ -177,7 +184,7 @@ namespace RI.DesktopServices.Windows.Users
         {
             using (WindowsIdentity identity = WindowsIdentity.GetCurrent(false))
             {
-                WindowsUser.ExtractDomainAndUser(identity.Name, true, out string domain, out _);
+                WindowsUser.ExtractDomainAndUser(identity.Name, false, false, out string domain, out _);
                 return domain;
             }
         }
@@ -206,7 +213,7 @@ namespace RI.DesktopServices.Windows.Users
         {
             using (WindowsIdentity identity = WindowsIdentity.GetCurrent(false))
             {
-                WindowsUser.ExtractDomainAndUser(identity.Name, true, out _, out string username);
+                WindowsUser.ExtractDomainAndUser(identity.Name, false, false, out _, out string username);
                 return username;
             }
         }
@@ -250,7 +257,11 @@ namespace RI.DesktopServices.Windows.Users
                 string networkDomain = mgmtObj["domain"]
                     .ToString();
 
-                networkDomain = WindowsUser.ResolveDomain(networkDomain ?? string.Empty);
+                if (string.IsNullOrWhiteSpace(networkDomain) ||
+                    string.Equals(networkDomain.Trim(), ".", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    networkDomain = WindowsUser.GetLocalDomain();
+                }
 
                 return networkDomain;
             }
@@ -386,7 +397,6 @@ namespace RI.DesktopServices.Windows.Users
             if (string.IsNullOrWhiteSpace(user) ||
                 string.Equals(user.Trim(), ".", StringComparison.InvariantCultureIgnoreCase))
             {
-                //TODO #24: Do not use CurrentUser because it would call ResolveUser again
                 return WindowsUser.GetCurrentUser();
             }
 

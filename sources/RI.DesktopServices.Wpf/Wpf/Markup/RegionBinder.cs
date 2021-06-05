@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 
 using RI.DesktopServices.UiContainer;
@@ -9,212 +10,69 @@ using RI.DesktopServices.UiContainer;
 namespace RI.DesktopServices.Wpf.Markup
 {
     /// <summary>
-    ///     Provides attached properties to associate a WPF control with a region of a <see cref="IRegionService" />.
+    /// The dependency property to assign a region to a control.
     /// </summary>
-    /// <remarks>
-    ///     <para>
-    ///         <see cref="RegionBinder" /> is a convenience utility to work with regions (<see cref="IRegionService" />) in
-    ///         MVVM scenarios.
-    ///         It defines an attached property (<see cref="RegionNameProperty" />) which can be used to associate a container
-    ///         with a region (using the region services <see cref="IRegionService.AddRegion" /> method).
-    ///         It also defines an attached property (<see cref="RegionServiceProperty" />) to specify the used
-    ///         <see cref="IRegionService" />.
-    ///     </para>
-    ///     <para>
-    ///         The used <see cref="IRegionService" /> is determined in the following order:
-    ///         If <see cref="RegionServiceProperty" /> is not null, that instance is used.
-    ///         If <see cref="DefaultRegionService" /> is not null, that instance is used.
-    ///         <see cref="InstanceLocator" /> is used to obtain an instance of <see cref="IRegionService" />.
-    ///     </para>
-    /// </remarks>
     /// <threadsafety static="false" instance="false" />
     public static class RegionBinder
     {
-        #region Static Fields
-
         /// <summary>
-        ///     Associates a container with a region by specifying its region name.
-        /// </summary>
-        public static readonly DependencyProperty RegionNameProperty =
-            DependencyProperty.RegisterAttached("RegionName", typeof(string), typeof(RegionBinder),
-                                                new UIPropertyMetadata(null, RegionBinder.OnRegionNameChange));
-
-        /// <summary>
-        ///     Associates a container with a region service.
-        /// </summary>
-        public static readonly DependencyProperty RegionServiceProperty =
-            DependencyProperty.RegisterAttached("RegionService", typeof(IRegionService), typeof(RegionBinder),
-                                                new UIPropertyMetadata(null, RegionBinder.OnRegionServiceChange));
-
-        #endregion
-
-
-
-
-        #region Static Properties/Indexer
-
-        /// <summary>
-        ///     Gets or sets the default region service to use.
+        /// The dependency property.
         /// </summary>
         /// <value>
-        ///     The default region service to use.
+        /// Gets dependency property
         /// </value>
-        /// <remarks>
-        ///     <para>
-        ///         The default value is null.
-        ///     </para>
-        /// </remarks>
-        public static IRegionService DefaultRegionService { get; set; }
-
-        #endregion
-
-
-
-
-        #region Static Methods
+        public static readonly DependencyProperty NameProperty = DependencyProperty.Register("Name", typeof(string),
+            typeof(DependencyObject),
+            new FrameworkPropertyMetadata(defaultValue: null, propertyChangedCallback: RegionBinder.NameChanged,
+                                          flags: FrameworkPropertyMetadataOptions.AffectsRender));
 
         /// <summary>
-        ///     Gets the region name of the specified container.
+        /// Gets the value of the dependency property.
         /// </summary>
-        /// <param name="obj"> The container. </param>
-        /// <returns>
-        ///     The region name associated with the container or null if the container has no region name associated.
-        /// </returns>
-        /// <remarks>
-        ///     <note type="note">
-        ///         This method is for supporting the XAML designer and not intended to be used by your code.
-        ///     </note>
-        /// </remarks>
-        public static string GetRegionName (DependencyObject obj)
+        /// <param name="obj">The object the dependency property is attached to.</param>
+        /// <returns>The current value of the dependency property.</returns>
+        public static string GetName (DependencyObject obj)
         {
-            return obj?.GetValue(RegionBinder.RegionNameProperty) as string;
+            return (string)obj?.GetValue(RegionBinder.NameProperty);
         }
 
         /// <summary>
-        ///     Gets the region service of the specified container.
+        /// Gets the value of the dependency property.
         /// </summary>
-        /// <param name="obj"> The container. </param>
-        /// <returns>
-        ///     The region service associated with the container or null if <see cref="DefaultRegionService" /> is used.
-        /// </returns>
-        /// <remarks>
-        ///     <note type="note">
-        ///         This method is for supporting the XAML designer and not intended to be used by your code.
-        ///     </note>
-        /// </remarks>
-        public static IRegionService GetRegionService (DependencyObject obj)
+        /// <param name="obj">The object the dependency property is attached to.</param>
+        /// <param name="value">The new value of the dependency property.</param>
+        public static void SetName (DependencyObject obj, string value)
         {
-            return obj?.GetValue(RegionBinder.RegionServiceProperty) as IRegionService;
+            obj?.SetValue(RegionBinder.NameProperty, value);
         }
 
         /// <summary>
-        ///     Sets the region name of the specified container.
+        /// Gets or sets the service provider used to resolve the region service.
         /// </summary>
-        /// <param name="obj"> The container. </param>
-        /// <param name="value">
-        ///     The region name to associate with the container. Can be null to unassociate the container from a
-        ///     region.
-        /// </param>
-        /// <remarks>
-        ///     <note type="note">
-        ///         This method is for supporting the XAML designer and not intended to be used by your code.
-        ///     </note>
-        /// </remarks>
-        public static void SetRegionName (DependencyObject obj, string value)
+        /// <value>
+        /// The service provider used to resolve the region service.
+        /// </value>
+        public static IServiceProvider ServiceProvider { get; set; }
+
+        private static void NameChanged (DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            obj?.SetValue(RegionBinder.RegionNameProperty, value);
-        }
-
-        /// <summary>
-        ///     Sets the region service of the specified container.
-        /// </summary>
-        /// <param name="obj"> The container. </param>
-        /// <param name="value">
-        ///     The region service to associate with the container. Can be null to use
-        ///     <see cref="DefaultRegionService" />.
-        /// </param>
-        /// <remarks>
-        ///     <note type="note">
-        ///         This method is for supporting the XAML designer and not intended to be used by your code.
-        ///     </note>
-        /// </remarks>
-        public static void SetRegionService (DependencyObject obj, IRegionService value)
-        {
-            obj?.SetValue(RegionBinder.RegionServiceProperty, value);
-        }
-
-        private static void OnRegionNameChange (DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            string oldRegion = e.OldValue as string;
-            string newRegion = e.NewValue as string;
-
-            if (RegionService.RegionNameComparer.Equals(oldRegion, newRegion))
+            if (!DesignerProperties.GetIsInDesignMode(d))
             {
-                return;
-            }
+                string oldRegion = e.OldValue as string;
+                string newRegion = e.NewValue as string;
 
-            IRegionService regionService = RegionBinder.GetRegionService(obj) ??
-                                           RegionBinder.DefaultRegionService ??
-                                           InstanceLocator.GetInstanceForRegionBinder();
+                if (string.Equals(oldRegion, newRegion, StringComparison.InvariantCulture))
+                {
+                    return;
+                }
 
-            if (regionService == null)
-            {
-                Trace.TraceWarning("No region service available while trying to assign region name: Object={0}, OldRegion={1}, NewRegion={2}",
-                                   obj?.GetType()
-                                      .Name ?? "[null]", oldRegion ?? "[null]", newRegion ?? "[null]");
-
-                return;
-            }
-
-            Trace.TraceInformation("Assigning region name: Object={0}, OldRegion={1}, NewRegion={2}, RegionService={3}",
-                                   obj?.GetType()
-                                      .Name ?? "[null]", oldRegion ?? "[null]", newRegion ?? "[null]", regionService
-                                       .GetType()
-                                       .Name);
-
-            if (oldRegion != null)
-            {
-                regionService.RemoveRegion(oldRegion);
-            }
-
-            if (newRegion != null)
-            {
-                regionService.AddRegion(newRegion, obj);
+                if (!string.IsNullOrWhiteSpace(newRegion))
+                {
+                    IRegionService regionService = (IRegionService)RegionBinder.ServiceProvider?.GetService(typeof(IRegionService));
+                    regionService?.RemoveRegion(oldRegion);
+                    regionService?.AddRegion(newRegion, d);
+                }
             }
         }
-
-        private static void OnRegionServiceChange (DependencyObject obj, DependencyPropertyChangedEventArgs e)
-        {
-            IRegionService oldService = e.OldValue as IRegionService;
-            IRegionService newService = e.NewValue as IRegionService;
-
-            IRegionService oldServiceResolved =
-                oldService ?? RegionBinder.DefaultRegionService ?? InstanceLocator.GetInstanceForRegionBinder();
-
-            IRegionService newServiceResolved =
-                newService ?? RegionBinder.DefaultRegionService ?? InstanceLocator.GetInstanceForRegionBinder();
-
-            if (ReferenceEquals(oldServiceResolved, newServiceResolved))
-            {
-                return;
-            }
-
-            string regionName = RegionBinder.GetRegionName(obj);
-
-            Trace.TraceInformation("Assigning region service: Object={0}, OldService={1}, NewService={2}, RegionName={3}",
-                                   obj?.GetType()
-                                      .Name ?? "[null]", oldServiceResolved?.GetType()
-                                                                           .Name ?? "[null]",
-                                   newServiceResolved?.GetType()
-                                                     .Name ?? "[null]", regionName ?? "[null]");
-
-            if (regionName != null)
-            {
-                oldServiceResolved?.RemoveRegion(regionName);
-                newServiceResolved?.AddRegion(regionName, obj);
-            }
-        }
-
-        #endregion
     }
 }
