@@ -9,12 +9,6 @@ namespace RI.DesktopServices.Settings
     /// <summary>
     ///     Defines the interface for a setting storage used by a setting service.
     /// </summary>
-    /// <remarks>
-    ///     <para>
-    ///         A setting storage is used by a <see cref="ISettingService" /> to retrieve and/or store the values as their string representations.
-    ///         Values are stored as name/value pairs.
-    ///     </para>
-    /// </remarks>
     public interface ISettingStorage
     {
         /// <summary>
@@ -23,6 +17,11 @@ namespace RI.DesktopServices.Settings
         /// <value>
         ///     true if this setting storage only supports loading and retrieving.
         /// </value>
+        /// <remarks>
+        ///     <note type="implement">
+        ///         The default value should be false.
+        ///     </note>
+        /// </remarks>
         bool IsReadOnly { get; }
 
         /// <summary>
@@ -50,7 +49,7 @@ namespace RI.DesktopServices.Settings
         ///         Only values whose name starts with one of the specified prefixes are written/saved by this storage.
         ///     </para>
         /// </remarks>
-        IReadOnlyCollection<string> WritePrefixAffinities { get; }
+        IReadOnlyList<string> WritePrefixAffinities { get; }
 
         /// <summary>
         ///     Deletes all values of a specified name.
@@ -62,7 +61,7 @@ namespace RI.DesktopServices.Settings
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="name" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="name" /> is an empty string. </exception>
         void DeleteValues (string name);
 
         /// <summary>
@@ -78,7 +77,7 @@ namespace RI.DesktopServices.Settings
         void DeleteValues (Predicate<string> predicate);
 
         /// <summary>
-        ///     Reads the values of a specifed name.
+        ///     Reads the values of a specified name.
         /// </summary>
         /// <param name="name"> The name of the values. </param>
         /// <returns>
@@ -91,7 +90,7 @@ namespace RI.DesktopServices.Settings
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="name" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="name" /> is an empty string. </exception>
         List<string> GetValues (string name);
 
         /// <summary>
@@ -123,7 +122,7 @@ namespace RI.DesktopServices.Settings
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="name" /> is an empty string. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="name" /> is an empty string. </exception>
         bool HasValue (string name);
 
         /// <summary>
@@ -177,8 +176,8 @@ namespace RI.DesktopServices.Settings
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="name" /> is an empty string. </exception>
-        /// <exception cref="NotSupportedException"> The setting stoarge is read-only. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="name" /> is an empty string. </exception>
+        /// <exception cref="NotSupportedException"> The setting storage is read-only. </exception>
         void SetValues (string name, IEnumerable<string> values);
     }
 }

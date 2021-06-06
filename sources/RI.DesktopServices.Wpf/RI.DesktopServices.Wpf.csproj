@@ -39,7 +39,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="RI.Abstractions.Common" Version="1.4.0" />
     <PackageReference Include="System.Windows.Extensions" Version="5.0.0" />
   </ItemGroup>
 

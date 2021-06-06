@@ -32,8 +32,4 @@
     <Folder Include="Utilities\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="RI.Abstractions.Common" Version="1.4.0" />
-  </ItemGroup>
-
 </Project>

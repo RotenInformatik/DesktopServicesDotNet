@@ -19,7 +19,7 @@ namespace RI.DesktopServices.Settings
 
 		/// <summary>
 		///     The converter uses serialization to/from strings using some defined format (JSON, XML, etc.).
-		///     Therefore, any serializable object can be converted by the converter (where serializability is defined by the converter).
+		///     Therefore, any serializable object can be converted by the converter (where serializability is defined by the converter itself).
 		/// </summary>
 		SerializationAsString = 1,
 	}
