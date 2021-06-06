@@ -82,12 +82,13 @@ namespace RI.DesktopServices.Windows.IO.Keyboard
         /// </returns>
         public static bool Show ()
         {
-            if (!OnScreenKeyboard.IsAvailable())
+            string executablePath = OnScreenKeyboard.GetExecutablePath();
+
+            if (executablePath == null)
             {
+                Trace.TraceWarning($"On-screen keyboard not available");
                 return false;
             }
-
-            string executablePath = OnScreenKeyboard.GetExecutablePath();
 
             ProcessStartInfo startInfo = new ProcessStartInfo(executablePath);
             startInfo.ErrorDialog = false;
@@ -95,6 +96,11 @@ namespace RI.DesktopServices.Windows.IO.Keyboard
 
             using (Process process = Process.Start(startInfo))
             {
+                if (process == null)
+                {
+                    Trace.TraceWarning($"On-screen keyboard failed to start: {executablePath}");
+                }
+
                 return process != null;
             }
         }

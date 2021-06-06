@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 
 using RI.DesktopServices.UiContainer;
@@ -68,6 +69,8 @@ namespace RI.DesktopServices.Wpf.Markup
 
                 if (!string.IsNullOrWhiteSpace(newRegion))
                 {
+                    Trace.TraceInformation($"Change region binding for element {d?.GetType().Name ?? "[null]"}: {oldRegion ?? "[null]"} -> {newRegion ?? "[null]"}");
+
                     IRegionService regionService = (IRegionService)RegionBinder.ServiceProvider?.GetService(typeof(IRegionService));
                     regionService?.RemoveRegion(oldRegion);
                     regionService?.AddRegion(newRegion, d);

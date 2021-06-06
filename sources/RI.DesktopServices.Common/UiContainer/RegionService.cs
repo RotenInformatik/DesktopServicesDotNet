@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 
 
@@ -140,6 +141,8 @@ namespace RI.DesktopServices.UiContainer
                 return;
             }
 
+            Trace.TraceInformation($"Adding region adapter: {regionAdapter.GetType().Name}");
+
             this.Adapters.Add(regionAdapter);
         }
 
@@ -199,6 +202,8 @@ namespace RI.DesktopServices.UiContainer
                 throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
 
+            Trace.TraceInformation($"Adding region {region} to: {container.GetType().Name}");
+
             List<Tuple<int, IRegionAdapter>> adapters = new List<Tuple<int, IRegionAdapter>>();
             Type containerType = container.GetType();
 
@@ -219,6 +224,8 @@ namespace RI.DesktopServices.UiContainer
 
             IRegionAdapter adapter = adapters[0]
                 .Item2;
+
+            Trace.TraceInformation($"Used region adapter for region{region} at {container.GetType().Name}: {adapter.GetType().Name}");
 
             if (this.RegionDictionary.ContainsKey(region))
             {
@@ -546,6 +553,8 @@ namespace RI.DesktopServices.UiContainer
                 throw new ArgumentNullException(nameof(regionAdapter));
             }
 
+            Trace.TraceInformation($"Removing region adapter: {regionAdapter.GetType().Name}");
+
             foreach (KeyValuePair<string, Tuple<object, IRegionAdapter>> region in this.RegionDictionary)
             {
                 if (ReferenceEquals(regionAdapter, region.Value.Item2))
@@ -607,6 +616,8 @@ namespace RI.DesktopServices.UiContainer
             {
                 throw new ArgumentException("Parameter is an empty string.", nameof(region));
             }
+
+            Trace.TraceInformation($"Removing region: {region}");
 
             this.RegionDictionary.Remove(region);
         }

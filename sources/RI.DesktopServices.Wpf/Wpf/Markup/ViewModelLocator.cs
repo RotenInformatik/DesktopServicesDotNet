@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Windows;
 
@@ -105,20 +106,38 @@ namespace RI.DesktopServices.Wpf.Markup
             string viewModelLocation = viewName?.Replace(".Views.", ".ViewModels.");
             string suffix = (viewModelLocation?.EndsWith("View")).GetValueOrDefault() ? "Model" : "ViewModel";
 
+            Trace.TraceInformation($"Resolving view model location for view: {viewType.Name} at {viewModelLocation ?? "[null]"} with suffix {suffix ?? "[null]"}");
+
             if (viewModelLocation == null)
             {
+                Trace.TraceWarning($"No view model location found for view: {viewType.Name}");
                 return null;
             }
 
             string viewModelName = string.Format(CultureInfo.InvariantCulture, "{0}{1}, {2}", viewModelLocation, suffix, viewAssemblyName);
+
+            Trace.TraceInformation($"Resolving view model type for view: {viewType.Name} in {viewModelName ?? "[null]"}");
+
             Type viewModelType = Type.GetType(viewModelName);
 
             if (viewModelType == null)
             {
+                Trace.TraceWarning($"No view model type found for view: {viewType.Name}");
                 return null;
             }
 
+            Trace.TraceInformation($"Resolving view model instance for view: {viewType.Name} as {viewModelType.GetType().Name}");
+
             object viewModel = ViewModelLocator.ServiceProvider.GetService(viewModelType);
+
+            if (viewModel == null)
+            {
+                Trace.TraceWarning($"No view model instance found for view: {viewType.Name}");
+            }
+            else
+            {
+                Trace.TraceInformation($"Resolved view model for view: {viewType.Name} <-> {viewModel.GetType().Name}");
+            }
 
             return viewModel;
         }
@@ -132,19 +151,25 @@ namespace RI.DesktopServices.Wpf.Markup
 
             if (value is IViewModel { IsInitialized: false, } model)
             {
+                Trace.TraceInformation($"Initializing view model {model.GetType().Name} while locating view model");
                 model.Initialize();
+                Trace.TraceInformation($"Initialized view model {model.GetType().Name} while locating view model");
             }
 
             if (value is IView { IsInitialized: false, } view)
             {
+                Trace.TraceInformation($"Initializing view {view.GetType().Name} while locating view model");
                 view.Initialize();
+                Trace.TraceInformation($"Initialized view {view.GetType().Name} while locating view model");
             }
 
             if (value is FrameworkElement { IsInitialized: false, } frameworkElement)
             {
                 if (frameworkElement.DataContext is IViewModel {IsInitialized: false,} dataContext)
                 {
+                    Trace.TraceInformation($"Initializing data context {dataContext.GetType().Name} while locating view model");
                     dataContext.Initialize();
+                    Trace.TraceInformation($"Initialized data context {dataContext.GetType().Name} while locating view model");
                 }
             }
         }

@@ -1,4 +1,9 @@
-﻿namespace RI.DesktopServices.Mvvm.ViewModel
+﻿using System.Diagnostics;
+
+
+
+
+namespace RI.DesktopServices.Mvvm.ViewModel
 {
     /// <summary>
     ///     Implements a base class for view models.
@@ -99,8 +104,10 @@
         {
             if (!this.IsInitialized)
             {
+                Trace.TraceInformation($"Initializing view model: {this.GetType().Name}");
                 this.Initialize();
                 this.IsInitialized = true;
+                Trace.TraceInformation($"View model initialized: {this.GetType().Name}");
             }
         }
 

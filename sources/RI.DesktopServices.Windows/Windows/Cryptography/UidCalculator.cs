@@ -325,8 +325,22 @@ namespace RI.DesktopServices.Windows.Cryptography
 
         private static string GetRegistryValue (string path, string key)
         {
-            object value = Registry.GetValue(path, key, null);
-            return value?.ToString() ?? string.Empty;
+            try
+            {
+                object value = Registry.GetValue(path, key, null);
+
+                if (value == null)
+                {
+                    Trace.TraceWarning($"Retrieving of registry value failed in {nameof(UidCalculator)}: Path={path}; Key={key}; No value");
+                }
+
+                return value?.ToString() ?? string.Empty;
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceWarning($"Retrieving of registry value failed in {nameof(UidCalculator)}: Path={path}; Key={key}; {ex}");
+                return string.Empty;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
@@ -54,6 +55,8 @@ namespace RI.DesktopServices.Windows.Runtime
         /// <exception cref="Win32Exception"> The error message could not be retrieved. </exception>
         public static string GetErrorMessage (int errorCode, CultureInfo language)
         {
+            Trace.TraceWarning($"WIN32 error code: {errorCode}");
+
             IntPtr messageBuffer = IntPtr.Zero;
 
             try
@@ -66,10 +69,12 @@ namespace RI.DesktopServices.Windows.Runtime
 
                 if (chars == 0)
                 {
-                    throw new Win32Exception(WindowsApi.GetLastErrorCode());
+                    throw new Win32Exception(errorCode);
                 }
 
                 string message = Marshal.PtrToStringUni(messageBuffer);
+
+                Trace.TraceWarning($"WIN32 error message: {message ?? "[null]"}");
 
                 return message;
             }

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 using RI.DesktopServices.Windows.Interop;
@@ -47,6 +48,8 @@ namespace RI.DesktopServices.Windows.Shell
         /// <exception cref="InvalidOperationException"> The necessary privilege adjustments failed. </exception>
         public static void Logoff (bool force)
         {
+            Trace.TraceInformation($"Windows session: Logoff (force: {force})");
+
             WindowsSession.AdjustPrivileges();
 
             if (force)
@@ -73,6 +76,8 @@ namespace RI.DesktopServices.Windows.Shell
         /// <exception cref="InvalidOperationException"> The necessary privilege adjustments failed. </exception>
         public static void Restart (bool force)
         {
+            Trace.TraceInformation($"Windows session: Restart (force: {force})");
+
             WindowsSession.AdjustPrivileges();
 
             if (force)
@@ -99,6 +104,8 @@ namespace RI.DesktopServices.Windows.Shell
         /// <exception cref="InvalidOperationException"> The necessary privilege adjustments failed. </exception>
         public static void Shutdown (bool force)
         {
+            Trace.TraceInformation($"Windows session: Shutdown (force: {force})");
+
             WindowsSession.AdjustPrivileges();
 
             if (force)
