@@ -21,10 +21,39 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Settings\Converters\DefaultSettingConverter.cs" />
+    <Compile Remove="Settings\Converters\_NamespaceDoc.cs" />
+    <Compile Remove="Settings\ISettingConverter.cs" />
+    <Compile Remove="Settings\ISettingService.cs" />
+    <Compile Remove="Settings\ISettingStorage.cs" />
+    <Compile Remove="Settings\SettingConversionMode.cs" />
+    <Compile Remove="Settings\SettingItem.cs" />
+    <Compile Remove="Settings\SettingService.cs" />
+    <Compile Remove="Settings\Storages\CommandLineSettingStorage.cs" />
+    <Compile Remove="Settings\Storages\EnvironmentVariableSettingStorage.cs" />
+    <Compile Remove="Settings\Storages\IniFileSettingStorage.cs" />
+    <Compile Remove="Settings\Storages\_NamespaceDoc.cs" />
+    <Compile Remove="Settings\_NamespaceDoc.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\ICON.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="Settings\Converters\DefaultSettingConverter.cs" />
+    <None Include="Settings\Converters\_NamespaceDoc.cs" />
+    <None Include="Settings\ISettingConverter.cs" />
+    <None Include="Settings\ISettingService.cs" />
+    <None Include="Settings\ISettingStorage.cs" />
+    <None Include="Settings\SettingConversionMode.cs" />
+    <None Include="Settings\SettingItem.cs" />
+    <None Include="Settings\SettingService.cs" />
+    <None Include="Settings\Storages\CommandLineSettingStorage.cs" />
+    <None Include="Settings\Storages\EnvironmentVariableSettingStorage.cs" />
+    <None Include="Settings\Storages\IniFileSettingStorage.cs" />
+    <None Include="Settings\Storages\_NamespaceDoc.cs" />
+    <None Include="Settings\_NamespaceDoc.cs" />
   </ItemGroup>
 
   <ItemGroup>
