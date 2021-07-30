@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace RI.DesktopServices.UiContainer
 {
     /// <summary>
-    ///     Region adapter which mapps between containers (associated with aregion) and its elements.
+    ///     Region adapter which maps between containers (associated with a region) and its elements.
     /// </summary>
     public interface IRegionAdapter
     {

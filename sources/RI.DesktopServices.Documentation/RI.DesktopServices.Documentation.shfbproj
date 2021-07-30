@@ -123,7 +123,7 @@
     </ComponentConfigurations>
     <PlugInConfigurations />
     <HelpTitle>RI.DesktopServices</HelpTitle>
-    <HelpFileVersion>1.1.0.0</HelpFileVersion>
+    <HelpFileVersion>1.2.0.0</HelpFileVersion>
     <NamingMethod>HashedMemberName</NamingMethod>
     <ContentPlacement>AboveNamespaces</ContentPlacement>
     <RootNamespaceContainer>True</RootNamespaceContainer>

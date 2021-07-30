@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>RI.DesktopServices.Windows</id>
-    <version>1.1.0.0</version>
+    <version>1.2.0.0</version>
     <authors>RotenInformatik</authors>
     <owners>RotenInformatik</owners>
     <title>RI.DesktopServices.Windows</title>
@@ -16,7 +16,7 @@
     <projectUrl>https://github.com/RotenInformatik/DesktopServicesDotNet</projectUrl>
     <dependencies>
       <group targetFramework="netcoreapp3.1">
-        <dependency id="RI.DesktopServices.Common" version="1.1.0" />
+        <dependency id="RI.DesktopServices.Common" version="1.2.0" />
         <dependency id="System.Windows.Extensions" version="5.0.0" />
         <dependency id="System.IO.Ports" version="5.0.1" />
         <dependency id="System.Management" version="5.0.0" />

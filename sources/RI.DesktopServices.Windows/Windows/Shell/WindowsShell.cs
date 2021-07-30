@@ -92,8 +92,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening command prompt failed: {ex}");
                 return false;
             }
 
@@ -135,8 +136,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening Windows Explorer failed: {ex}");
                 return false;
             }
 
@@ -213,8 +215,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening file ({filePath}) failed: {ex}");
                 return false;
             }
 
@@ -285,8 +288,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening folder ({folderPath}) failed: {ex}");
                 return false;
             }
 
@@ -328,8 +332,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening System Info failed: {ex}");
                 return false;
             }
 
@@ -371,8 +376,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening Task Manager failed: {ex}");
                 return false;
             }
 
@@ -473,8 +479,9 @@ namespace RI.DesktopServices.Windows.Shell
             {
                 Process.Start(startInfo);
             }
-            catch
+            catch (Exception ex)
             {
+                Trace.TraceWarning($"Opening URL ({url}) failed: {ex}");
                 return false;
             }
 
