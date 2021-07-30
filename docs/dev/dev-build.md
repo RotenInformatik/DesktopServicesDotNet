@@ -10,16 +10,18 @@
    1. AssemblyInfo.cs
    2. package.nuspec
    3. *.shfbproj
-3. Update documentation
+3. Update version dependencies
+   1. package.nuspec
+4. Update documentation
    1. Synchronize Start.aml and README.md
    2. Update Assemblies.aml
    3. Update HISTORY.md
-4. Build
+5. Build
    1. Build all code projects
    2. Build all documentation projects
    3. Create API documentation ZIP file (documentation-api.zip)
    4. Create binary ZIP files ([assembly name].zip)
-5. Release
+6. Release
    1. Upload NuGet packages
    2. Commit and push
    3. Merge and delete branch

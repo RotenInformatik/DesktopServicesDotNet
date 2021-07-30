@@ -27,6 +27,7 @@ The following lists show a rough overview of some of functionality.
 * Windows session control
 * Native window control
 * User impersonation
+* Setting service
 * Extension methods
   * Imaging
 

@@ -4,6 +4,16 @@
 
 ---
 
+## 1.2.0
+
+* [#17: Reimplement settings service](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/17)
+* [#24: Do not use GetCurrentUser() in ResolveUser() because it would call ResolveUser() again](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/24)
+* [#26: Convert InstanceLocator to ViewModelLocator as dependency property](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/26)
+* [#27: Convert RegionBinder to dependency property](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/27)
+* [#28: Add trace output](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/28)
+* [#29: Add unique identification functionality](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/29)
+* [#32: Fix RegionBinder and ViewModelLocator](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/32)
+
 ## 1.1.0
 
 * [#13: Reimplement DispatcherAwaiter](https://github.com/RotenInformatik/DesktopServicesDotNet/issues/13)
