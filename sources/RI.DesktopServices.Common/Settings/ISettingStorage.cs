@@ -28,7 +28,8 @@ namespace RI.DesktopServices.Settings
         ///     Gets whether the setting storage only writes/saves values for names it already has a value for.
         /// </summary>
         /// <value>
-        ///     true if the setting storage only writes/saves values for names it already has a value for, false otherwise or if this storage does not support writing/saving.
+        ///     true if the setting storage only writes/saves values for names it already has a value for, false otherwise or if
+        ///     this storage does not support writing/saving.
         /// </value>
         /// <remarks>
         ///     <note type="implement">
@@ -41,7 +42,10 @@ namespace RI.DesktopServices.Settings
         ///     Gets the sequence which contains the prefix affinities of values when writing/saving.
         /// </summary>
         /// <value>
-        ///     The sequence which contains the prefix affinities of values when writing/saving or null if this storage does not support writing/saving.
+        ///     The sequence which contains the prefix affinities of values when writing/saving or null if this storage does not
+        ///     support writing/saving.
+        ///     The sequence is empty if prefix affinities are not used so all values of all names are written/saved (if
+        ///     supported).
         /// </value>
         /// <remarks>
         ///     <para>
@@ -57,7 +61,8 @@ namespace RI.DesktopServices.Settings
         /// <param name="name"> The name of the value to delete. </param>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
@@ -70,7 +75,8 @@ namespace RI.DesktopServices.Settings
         /// <param name="predicate"> The predicate used to test the names. </param>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="predicate" /> is null. </exception>
@@ -86,7 +92,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
@@ -98,12 +105,14 @@ namespace RI.DesktopServices.Settings
         /// </summary>
         /// <param name="predicate"> The predicate used to test the names. </param>
         /// <returns>
-        ///     The values, arranged as a dictionary where the key is the name and the value is a list of actual setting values belonging to the name.
+        ///     The values, arranged as a dictionary where the key is the name and the value is a list of actual setting values
+        ///     belonging to the name.
         ///     An empty dictionary is returned if no values are found.
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="predicate" /> is null. </exception>
@@ -118,7 +127,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
@@ -134,7 +144,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="predicate" /> is null. </exception>
@@ -145,7 +156,8 @@ namespace RI.DesktopServices.Settings
         /// </summary>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         void Load ();
@@ -155,7 +167,8 @@ namespace RI.DesktopServices.Settings
         /// </summary>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="NotSupportedException"> The setting stoarge is read-only. </exception>
@@ -169,10 +182,12 @@ namespace RI.DesktopServices.Settings
         /// <remarks>
         ///     <note type="important">
         ///         Any value of any name passed to <see cref="SetValues" /> must be written/saved by the storage!
-        ///         Filtering based on <see cref="WriteOnlyKnown" /> and <see cref="WritePrefixAffinities" /> is done by <see cref="ISettingService" /> and not the storage!
+        ///         Filtering based on <see cref="WriteOnlyKnown" /> and <see cref="WritePrefixAffinities" /> is done by
+        ///         <see cref="ISettingService" /> and not the storage!
         ///     </note>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>

@@ -14,6 +14,22 @@ namespace RI.DesktopServices.Settings
     /// <threadsafety static="false" instance="false" />
     public sealed class SettingItem <T>
     {
+        #region Static Properties/Indexer
+
+        /// <summary>
+        ///     Gets or sets the service provider used to resolve the settings service.
+        /// </summary>
+        /// <value>
+        ///     The service provider used to resolve the settings service.
+        /// </value>
+        [SuppressMessage("ReSharper", "StaticMemberInGenericType")]
+        public static IServiceProvider ServiceProvider { get; set; }
+
+        #endregion
+
+
+
+
         #region Instance Constructor/Destructor
 
         /// <summary>
@@ -23,9 +39,7 @@ namespace RI.DesktopServices.Settings
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="name" /> is an empty string. </exception>
         public SettingItem (string name)
-            : this(name, (IEnumerable<T>)null)
-        {
-        }
+            : this(name, (IEnumerable<T>)null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="SettingItem{T}" />.
@@ -35,9 +49,7 @@ namespace RI.DesktopServices.Settings
         /// <exception cref="ArgumentNullException"> <paramref name="name" /> is null. </exception>
         /// <exception cref="ArgumentException"> <paramref name="name" /> is an empty string. </exception>
         public SettingItem (string name, params T[] defaultValues)
-            : this(name, (IEnumerable<T>)defaultValues)
-        {
-        }
+            : this(name, (IEnumerable<T>)defaultValues) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="SettingItem{T}" />.
@@ -81,7 +93,7 @@ namespace RI.DesktopServices.Settings
         ///     The list of default values.
         ///     An empty list is provided if no default values were specified.
         /// </value>
-        public List<T> DefaultValues { get; }
+        public IReadOnlyList<T> DefaultValues { get; }
 
         /// <summary>
         ///     Gets the setting name.
@@ -90,15 +102,6 @@ namespace RI.DesktopServices.Settings
         ///     The setting name.
         /// </value>
         public string Name { get; }
-
-        /// <summary>
-        /// Gets or sets the service provider used to resolve the settings service.
-        /// </summary>
-        /// <value>
-        /// The service provider used to resolve the settings service.
-        /// </value>
-        [SuppressMessage("ReSharper", "StaticMemberInGenericType")]
-        public static IServiceProvider ServiceProvider { get; set; }
 
         #endregion
 
@@ -115,7 +118,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Before the setting value is retrieved, the setting is initialized with the default values if the value does not yet exist.
+        ///         Before the setting value is retrieved, the setting is initialized with the default values if the value does not
+        ///         yet exist.
         ///     </note>
         /// </remarks>
         /// <exception cref="InvalidOperationException"> No setting service could be resolved or is available respectively. </exception>
@@ -130,7 +134,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Before the setting value is retrieved, the setting is initialized with the default values if the value does not yet exist.
+        ///         Before the setting value is retrieved, the setting is initialized with the default values if the value does not
+        ///         yet exist.
         ///     </note>
         /// </remarks>
         /// <exception cref="InvalidOperationException"> No setting service could be resolved or is available respectively. </exception>
@@ -155,7 +160,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Before the setting values are retrieved, the setting is initialized with the default values if the values do not yet exist.
+        ///         Before the setting values are retrieved, the setting is initialized with the default values if the values do
+        ///         not yet exist.
         ///     </note>
         /// </remarks>
         /// <exception cref="InvalidOperationException"> No setting service could be resolved or is available respectively. </exception>
@@ -170,7 +176,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Before the setting values are retrieved, the setting is initialized with the default values if the values do not yet exist.
+        ///         Before the setting values are retrieved, the setting is initialized with the default values if the values do
+        ///         not yet exist.
         ///     </note>
         /// </remarks>
         /// <exception cref="InvalidOperationException"> No setting service could be resolved or is available respectively. </exception>
@@ -260,7 +267,8 @@ namespace RI.DesktopServices.Settings
         /// <param name="service"> The setting service to use. Can be null to use <see cref="ServiceProvider" />. </param>
         /// <param name="values"> The setting values. </param>
         /// <exception cref="InvalidOperationException"> No setting service could be resolved or is available respectively. </exception>
-        public void SetValues (ISettingService service, params T[] values) => this.SetValues(null, (IEnumerable<T>)values);
+        public void SetValues (ISettingService service, params T[] values) =>
+            this.SetValues(null, (IEnumerable<T>)values);
 
         /// <summary>
         ///     Sets the setting values.
@@ -285,7 +293,8 @@ namespace RI.DesktopServices.Settings
             service.SetValues(this.Name, values);
         }
 
-        private ISettingService ResolveService (ISettingService service) => service ?? ((ISettingService)ServiceProvider?.GetService(typeof(ISettingService)));
+        private ISettingService ResolveService (ISettingService service) =>
+            service ?? ((ISettingService)SettingItem<T>.ServiceProvider?.GetService(typeof(ISettingService)));
 
         #endregion
     }

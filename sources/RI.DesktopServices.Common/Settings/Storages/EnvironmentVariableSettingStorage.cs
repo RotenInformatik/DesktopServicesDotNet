@@ -15,21 +15,16 @@ namespace RI.DesktopServices.Settings.Storages
     ///         This setting store is read-only.
     ///     </para>
     ///     <para>
-    ///         This setting store internally uses <see cref="Environment" />.<see cref="Environment.GetEnvironmentVariable(string)" /> to read from the current processes environment variables.
+    ///         This setting store internally uses <see cref="Environment.GetEnvironmentVariables()" /> to read from the
+    ///         current processes environment variables.
     ///     </para>
     ///     <para>
-    ///         Because environment variables can be global and their names might be ambiguous, a prefix can be specified which is then always appended in front of any name when searching for environment variables.
+    ///         Because environment variables can be global and their names might be ambiguous, a prefix can be specified which
+    ///         is then always appended in front of any name when searching for environment variables.
     ///     </para>
-    ///     <para>
-    ///         See <see cref="ISettingStorage" /> for more details.
-    ///     </para>
-    ///     <note type="important">
-    ///         <see cref="EnvironmentVariableSettingStorage" /> does not support multiple values for the same setting!
-    ///     </note>
     /// </remarks>
-    /// <threadsafety static="true" instance="true" />
-    [Export]
-    public sealed class EnvironmentVariableSettingStorage : ISettingStorage
+    /// <threadsafety static="false" instance="false" />
+    public sealed class EnvironmentVariableSettingStorage : DictionaryReadOnlySettingStorageBase
     {
         #region Instance Constructor/Destructor
 
@@ -42,9 +37,7 @@ namespace RI.DesktopServices.Settings.Storages
         ///     </para>
         /// </remarks>
         public EnvironmentVariableSettingStorage ()
-            : this(null)
-        {
-        }
+            : this(null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="EnvironmentVariableSettingStorage" />.
@@ -52,10 +45,8 @@ namespace RI.DesktopServices.Settings.Storages
         /// <param name="prefix"> The prefix to be used. </param>
         public EnvironmentVariableSettingStorage (string prefix)
         {
-            this.SyncRoot = new object();
-
-            this.Prefix = prefix ?? string.Empty;
-            this.Prefix = this.Prefix.IsEmptyOrWhitespace() ? null : this.Prefix.Trim();
+            prefix ??= string.Empty;
+            this.Prefix = string.IsNullOrWhiteSpace(prefix) ? null : this.Prefix.Trim();
         }
 
         #endregion
@@ -71,149 +62,41 @@ namespace RI.DesktopServices.Settings.Storages
         /// <value>
         ///     The used prefix or null if no prefix is used.
         /// </value>
-        public string Prefix { get; private set; }
+        public string Prefix { get; }
 
         #endregion
 
 
 
 
-        #region Interface: ISettingStorage
+        #region Overrides
 
         /// <inheritdoc />
-        bool ISettingStorage.IsReadOnly => true;
-
-        /// <inheritdoc />
-        bool ISynchronizable.IsSynchronized => true;
-
-        /// <inheritdoc />
-        public object SyncRoot { get; }
-
-        /// <inheritdoc />
-        bool ISettingStorage.WriteOnlyKnown => false;
-
-        /// <inheritdoc />
-        IReadOnlyCollection<string> ISettingStorage.WritePrefixAffinities => null;
-
-        /// <inheritdoc />
-        public void DeleteValues (string name)
+        protected override void ExtractValues (Dictionary<string, List<string>> dictionary)
         {
-            throw new NotSupportedException("Deleting a value from environment variables is not supported.");
-        }
+            IDictionary vars = Environment.GetEnvironmentVariables();
 
-        /// <inheritdoc />
-        public void DeleteValues (Predicate<string> predicate)
-        {
-            throw new NotSupportedException("Deleting a value from environment variables is not supported.");
-        }
-
-        /// <inheritdoc />
-        public List<string> GetValues (string name)
-        {
-            if (name == null)
+            foreach (DictionaryEntry vr in vars)
             {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (name.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(name));
-            }
-
-            List<string> values = new List<string>();
-            string value = Environment.GetEnvironmentVariable((this.Prefix ?? string.Empty) + name);
-            if (value != null)
-            {
-                values.Add(value);
-            }
-
-            return values;
-        }
-
-        /// <inheritdoc />
-        public Dictionary<string, List<string>> GetValues (Predicate<string> predicate)
-        {
-            if (predicate == null)
-            {
-                throw new ArgumentNullException(nameof(predicate));
-            }
-
-            Dictionary<string, List<string>> values = new Dictionary<string, List<string>>(SettingService.NameComparer);
-            IDictionary variables = Environment.GetEnvironmentVariables();
-            foreach (DictionaryEntry entry in variables)
-            {
-                string name = (string)entry.Key;
-                string value = (string)entry.Value;
-                if (predicate(name))
+                if (vr.Key is string key and not null)
                 {
-                    if (!values.ContainsKey(name))
+                    if (vr.Value is string value and not null)
                     {
-                        values.Add(name, new List<string>());
-                    }
+                        if ((key.Length > 0) && (value.Length > 0) &&
+                            ((this.Prefix == null) || key.StartsWith(this.Prefix,
+                                                                     StringComparison.InvariantCultureIgnoreCase)))
+                        {
+                            if (!dictionary.ContainsKey(key))
+                            {
+                                dictionary.Add(key, new List<string>());
+                            }
 
-                    values[name].Add(value);
-                }
-            }
-
-            return values;
-        }
-
-        /// <inheritdoc />
-        public bool HasValue (Predicate<string> predicate)
-        {
-            IDictionary variables = Environment.GetEnvironmentVariables();
-            foreach (DictionaryEntry entry in variables)
-            {
-                string name = (string)entry.Key;
-
-                if (!this.Prefix.IsNullOrEmpty())
-                {
-                    if (name.StartsWith(this.Prefix, StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        name = name.Substring(this.Prefix.Length);
+                            dictionary[key]
+                                .Add(value);
+                        }
                     }
                 }
-
-                if (predicate(name))
-                {
-                    return true;
-                }
             }
-
-            return false;
-        }
-
-        /// <inheritdoc />
-        public bool HasValue (string name)
-        {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (name.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(name));
-            }
-
-            return Environment.GetEnvironmentVariable((this.Prefix ?? string.Empty) + name) != null;
-        }
-
-        /// <inheritdoc />
-        public void Load ()
-        {
-        }
-
-        /// <inheritdoc />
-        public void Save ()
-        {
-            throw new NotSupportedException("Saving to environment variables is not supported.");
-        }
-
-        /// <inheritdoc />
-        public void SetValues (string name, IEnumerable<string> values)
-        {
-            throw new NotSupportedException("Setting a value to environment variables is not supported.");
         }
 
         #endregion

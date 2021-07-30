@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Xml;
@@ -15,34 +17,45 @@ namespace RI.DesktopServices.Settings.Converters
     /// <remarks>
     ///     <para>
     ///         The types supported by this setting converter are:
-    ///         <see cref="bool" />, <see cref="char" />, <see cref="string" />, <see cref="sbyte" />, <see cref="byte" />, <see cref="short" />, <see cref="ushort" />, <see cref="int" />, <see cref="uint" />, <see cref="long" />, <see cref="ulong" />, <see cref="float" />, <see cref="double" />, <see cref="decimal" />, <see cref="DateTime" />, <see cref="TimeSpan" />, <see cref="Guid" />, <see cref="Version" />, enumerations (<see cref="Enum" />), arrays of <see cref="byte" />, <see cref="XDocument" />, <see cref="XmlDocument" />, <see cref="IniDocument" />, <see cref="CsvDocument" />, and <see cref="Schedule" />.
-    ///     </para>
-    ///     <para>
-    ///         See <see cref="ISettingConverter" /> for more details.
+    ///         <see cref="bool" />, <see cref="char" />, <see cref="string" />, <see cref="sbyte" />, <see cref="byte" />,
+    ///         <see cref="short" />, <see cref="ushort" />, <see cref="int" />, <see cref="uint" />, <see cref="long" />,
+    ///         <see cref="ulong" />, <see cref="float" />, <see cref="double" />, <see cref="decimal" />,
+    ///         <see cref="DateTime" />, <see cref="DateTimeOffset" />, <see cref="TimeSpan" />, <see cref="Guid" />,
+    ///         <see cref="Version" />, enumerations (<see cref="Enum" />), arrays of <see cref="byte" />,
+    ///         <see cref="XDocument" />, <see cref="XmlDocument" />.
     ///     </para>
     /// </remarks>
-    /// <threadsafety static="true" instance="true" />
-    [Export]
+    /// <threadsafety static="fale" instance="false" />
     public sealed class DefaultSettingConverter : ISettingConverter
     {
-        #region Instance Constructor/Destructor
+        #region Instance Properties/Indexer
 
-        /// <summary>
-        ///     Creates a new instance of <see cref="DefaultSettingConverter" />.
-        /// </summary>
-        public DefaultSettingConverter ()
+        private List<Type> SupportedTypes { get; } = new List<Type>()
         {
-            this.SyncRoot = new object();
-        }
-
-        #endregion
-
-
-
-
-        #region Instance Fields
-
-        private readonly Type[] _supportedTypes = {typeof(bool), typeof(char), typeof(string), typeof(sbyte), typeof(byte), typeof(short), typeof(ushort), typeof(int), typeof(uint), typeof(long), typeof(ulong), typeof(float), typeof(double), typeof(decimal), typeof(DateTime), typeof(TimeSpan), typeof(Guid), typeof(Version), typeof(Enum), typeof(byte[]), typeof(XDocument), typeof(XmlDocument), typeof(IniDocument), typeof(CsvDocument), typeof(Schedule)};
+            typeof(bool),
+            typeof(char),
+            typeof(string),
+            typeof(sbyte),
+            typeof(byte),
+            typeof(short),
+            typeof(ushort),
+            typeof(int),
+            typeof(uint),
+            typeof(long),
+            typeof(ulong),
+            typeof(float),
+            typeof(double),
+            typeof(decimal),
+            typeof(DateTime),
+            typeof(DateTimeOffset),
+            typeof(TimeSpan),
+            typeof(Guid),
+            typeof(Version),
+            typeof(Enum),
+            typeof(byte[]),
+            typeof(XDocument),
+            typeof(XmlDocument),
+        };
 
         #endregion
 
@@ -53,12 +66,6 @@ namespace RI.DesktopServices.Settings.Converters
 
         /// <inheritdoc />
         public SettingConversionMode ConversionMode => SettingConversionMode.StringConversion;
-
-        /// <inheritdoc />
-        bool ISynchronizable.IsSynchronized => true;
-
-        /// <inheritdoc />
-        public object SyncRoot { get; }
 
         /// <inheritdoc />
         public bool CanConvert (Type type)
@@ -73,7 +80,7 @@ namespace RI.DesktopServices.Settings.Converters
                 return true;
             }
 
-            return this._supportedTypes.Contains(type);
+            return this.SupportedTypes.Contains(type);
         }
 
         /// <inheritdoc />
@@ -89,14 +96,18 @@ namespace RI.DesktopServices.Settings.Converters
                 throw new ArgumentNullException(nameof(value));
             }
 
-            if ((type != value.GetType()) && (type.IsEnum && (!value.GetType().IsEnum)))
+            if ((type != value.GetType()) && (type.IsEnum && (!value.GetType()
+                                                                    .IsEnum)))
             {
-                throw new InvalidTypeArgumentException(nameof(value));
+                throw new
+                    NotSupportedException($"Cannot convert {value.GetType().Name} as {type.Name} to string by {this.GetType().Name}.");
             }
 
             if (type.IsEnum)
             {
-                return Convert.ToInt32(value).ToString("D", CultureInfo.InvariantCulture);
+                //TODO: string representation
+                return Convert.ToInt32(value)
+                              .ToString("D", CultureInfo.InvariantCulture);
             }
 
             if (type == typeof(bool))
@@ -171,17 +182,23 @@ namespace RI.DesktopServices.Settings.Converters
 
             if (type == typeof(DateTime))
             {
-                return ((DateTime)value).ToSortableString('-');
+                return ((DateTime)value).ToString("O", CultureInfo.InvariantCulture);
+            }
+
+            if (type == typeof(DateTimeOffset))
+            {
+                return ((DateTimeOffset)value).ToString("O", CultureInfo.InvariantCulture);
             }
 
             if (type == typeof(TimeSpan))
             {
-                return ((TimeSpan)value).ToSortableString('-');
+                return ((TimeSpan)value).ToString("G", CultureInfo.InvariantCulture);
             }
 
             if (type == typeof(Guid))
             {
-                return ((Guid)value).ToString("N", CultureInfo.InvariantCulture).ToUpperInvariant();
+                return ((Guid)value).ToString("N", CultureInfo.InvariantCulture)
+                                    .ToUpperInvariant();
             }
 
             if (type == typeof(Version))
@@ -196,46 +213,28 @@ namespace RI.DesktopServices.Settings.Converters
 
             if (type == typeof(XDocument))
             {
-                //TODO: Add possibility to specify options
-                XmlDocument doc = ((XDocument)value).ToXmlDocument();
-                using (StringWriter sw = new StringWriter(CultureInfo.InvariantCulture))
-                {
-                    doc.Save(sw);
-                    sw.Flush();
-                    return sw.ToString();
-                }
+                using XmlReader xr = ((XDocument)value).CreateReader();
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xr);
+                using StringWriter sw = new StringWriter(CultureInfo.InvariantCulture);
+                doc.Save(sw);
+                sw.Flush();
+                return sw.ToString();
             }
 
             if (type == typeof(XmlDocument))
             {
-                //TODO: Add possibility to specify options
                 XmlDocument doc = (XmlDocument)value;
-                using (StringWriter sw = new StringWriter(CultureInfo.InvariantCulture))
-                {
-                    doc.Save(sw);
-                    sw.Flush();
-                    return sw.ToString();
-                }
+                using StringWriter sw = new StringWriter(CultureInfo.InvariantCulture);
+                using XmlWriter xw = new XmlTextWriter(sw);
+                doc.Save(xw);
+                xw.Flush();
+                sw.Flush();
+                return sw.ToString();
             }
 
-            if (type == typeof(IniDocument))
-            {
-                //TODO: Add possibility to specify options
-                return ((IniDocument)value).AsString();
-            }
-
-            if (type == typeof(CsvDocument))
-            {
-                //TODO: Add possibility to specify options
-                return ((CsvDocument)value).AsString();
-            }
-
-            if (type == typeof(Schedule))
-            {
-                return ((Schedule)value).ToString(null, CultureInfo.InvariantCulture);
-            }
-
-            throw new InvalidTypeArgumentException(nameof(type));
+            throw new
+                NotSupportedException($"Cannot convert {value.GetType().Name} as {type.Name} to string by {this.GetType().Name}.");
         }
 
         /// <inheritdoc />
@@ -251,20 +250,56 @@ namespace RI.DesktopServices.Settings.Converters
                 throw new ArgumentNullException(nameof(value));
             }
 
-            object finalValue;
+            object finalValue = null;
 
             if (type.IsEnum)
             {
-                finalValue = value.ToEnum(type);
+                try
+                {
+                    finalValue = Enum.Parse(type, value, true);
+                }
+                catch (Exception ex) when (ex is ArgumentException or OverflowException)
+                {
+                    Trace.TraceWarning($"Invalid enum value for {type.Name} ({ex.Message})");
+                    finalValue = null;
+                }
             }
             else if (type == typeof(bool))
             {
-                bool? tempValue = value.ToBoolean();
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                bool found = false;
+
+                if (!bool.TryParse(value, out bool boolValue))
+                {
+                    boolValue = false;
+
+                    switch (value.ToLowerInvariant())
+                    {
+                        case "true":
+                        case "yes":
+                        case "on":
+                        case "enabled":
+                            boolValue = true;
+                            found = true;
+                            break;
+
+                        case "false":
+                        case "no":
+                        case "off":
+                        case "disabled":
+                            found = true;
+                            break;
+                    }
+                }
+                else
+                {
+                    found = true;
+                }
+
+                finalValue = found ? boolValue : null;
             }
             else if (type == typeof(char))
             {
-                finalValue = value.Length == 1 ? value[0] : (object)null;
+                finalValue = value.Length == 1 ? value[0] : null;
             }
             else if (type == typeof(string))
             {
@@ -272,77 +307,118 @@ namespace RI.DesktopServices.Settings.Converters
             }
             else if (type == typeof(sbyte))
             {
-                sbyte? tempValue = value.ToSByte(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (sbyte.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out sbyte result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(byte))
             {
-                byte? tempValue = value.ToByte(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (byte.TryParse(value, NumberStyles.None, CultureInfo.InvariantCulture, out byte result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(short))
             {
-                short? tempValue = value.ToInt16(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (short.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out short result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(ushort))
             {
-                ushort? tempValue = value.ToUInt16(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (ushort.TryParse(value, NumberStyles.None, CultureInfo.InvariantCulture, out ushort result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(int))
             {
-                int? tempValue = value.ToInt32(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (int.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out int result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(uint))
             {
-                uint? tempValue = value.ToUInt32(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (uint.TryParse(value, NumberStyles.None, CultureInfo.InvariantCulture, out uint result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(long))
             {
-                long? tempValue = value.ToInt64(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (long.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out long result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(ulong))
             {
-                ulong? tempValue = value.ToUInt64(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (ulong.TryParse(value, NumberStyles.None, CultureInfo.InvariantCulture, out ulong result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(float))
             {
-                float? tempValue = value.ToFloat(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out float result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(double))
             {
-                double? tempValue = value.ToDouble(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (double.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out double result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(decimal))
             {
-                decimal? tempValue = value.ToDecimal(NumberStyles.Any, CultureInfo.InvariantCulture);
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (decimal.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out decimal result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(DateTime))
             {
-                DateTime? tempValue = value.ToDateTimeFromSortable('-');
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (DateTime.TryParseExact(value, "O", CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind,
+                                           out DateTime result))
+                {
+                    finalValue = result;
+                }
+            }
+            else if (type == typeof(DateTimeOffset))
+            {
+                if (DateTimeOffset.TryParseExact(value, "O", CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind,
+                                                 out DateTimeOffset result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(TimeSpan))
             {
-                TimeSpan? tempValue = value.ToTimeSpanFromSortable('-');
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (TimeSpan.TryParseExact(value, "G", CultureInfo.InvariantCulture,
+                                           out TimeSpan result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(Guid))
             {
-                Guid? tempValue = value.ToGuid();
-                finalValue = tempValue.HasValue ? tempValue.Value : (object)null;
+                if (Guid.TryParse(value, out Guid result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(Version))
             {
-                finalValue = value.ToVersion();
+                if (Version.TryParse(value, out Version result))
+                {
+                    finalValue = result;
+                }
             }
             else if (type == typeof(byte[]))
             {
@@ -350,75 +426,46 @@ namespace RI.DesktopServices.Settings.Converters
                 {
                     finalValue = Convert.FromBase64String(value);
                 }
-                catch (FormatException)
+                catch (FormatException ex)
                 {
+                    Trace.TraceWarning($"Invalid Base64 value for {type.Name} ({ex.Message})");
                     finalValue = null;
                 }
             }
             else if (type == typeof(XDocument))
             {
-                XmlDocument doc = new XmlDocument();
-                using (StringReader sr = new StringReader(value))
+                try
                 {
-                    try
-                    {
-                        //TODO: Add possibility to specify options
-                        doc.Load(sr);
-                        finalValue = doc.ToXDocument();
-                    }
-                    catch (Exception)
-                    {
-                        finalValue = null;
-                    }
+                    finalValue = XDocument.Parse(value, LoadOptions.None);
+                }
+                catch (Exception ex)
+                {
+                    Trace.TraceWarning($"Invalid XML value for {type.Name} ({ex.Message})");
+                    finalValue = null;
                 }
             }
             else if (type == typeof(XmlDocument))
             {
-                XmlDocument doc = new XmlDocument();
-                using (StringReader sr = new StringReader(value))
+                try
                 {
-                    try
-                    {
-                        //TODO: Add possibility to specify options
-                        doc.Load(sr);
-                        finalValue = doc;
-                    }
-                    catch (Exception)
-                    {
-                        finalValue = null;
-                    }
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(value);
+                    finalValue = doc;
                 }
-            }
-            else if (type == typeof(IniDocument))
-            {
-                //TODO: Add possibility to specify options
-                IniDocument doc = new IniDocument();
-                doc.Load(value);
-                return doc;
-            }
-            else if (type == typeof(CsvDocument))
-            {
-                //TODO: Add possibility to specify options
-                CsvDocument doc = new CsvDocument();
-                doc.Load(value);
-                return doc;
-            }
-            else if (type == typeof(Schedule))
-            {
-                finalValue = null;
-                if (Schedule.TryParse(value, CultureInfo.InvariantCulture, out Schedule candidate))
+                catch (Exception ex)
                 {
-                    finalValue = candidate;
+                    Trace.TraceWarning($"Invalid XML value for {type.Name} ({ex.Message})");
+                    finalValue = null;
                 }
             }
             else
             {
-                throw new InvalidTypeArgumentException(nameof(type));
+                throw new NotSupportedException($"Cannot convert from string to {value.GetType().Name}.");
             }
 
             if (finalValue == null)
             {
-                throw new FormatException("The string representation is invalid and cannot be converted to the type " + type.Name + ".");
+                throw new FormatException($"Cannot convert value from string to {value.GetType().Name}.");
             }
 
             return finalValue;

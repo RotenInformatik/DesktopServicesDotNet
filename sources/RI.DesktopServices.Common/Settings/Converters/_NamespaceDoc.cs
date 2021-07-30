@@ -5,11 +5,9 @@
 
 namespace RI.DesktopServices.Settings.Converters
 {
-	/// <summary>
-	///     Contains specialized setting converters.
-	/// </summary>
-	[CompilerGenerated]
-	public sealed class NamespaceDoc
-	{
-	}
+    /// <summary>
+    ///     Contains specialized setting converters.
+    /// </summary>
+    [CompilerGenerated]
+    public sealed class NamespaceDoc { }
 }

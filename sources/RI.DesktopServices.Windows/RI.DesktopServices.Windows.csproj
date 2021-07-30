@@ -22,7 +22,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Settings\SettingItemExtensions.cs" />
     <Compile Remove="Windows\Messages\WindowsMessage.cs" />
     <Compile Remove="Windows\Messages\WindowsMessageLoop.cs" />
     <Compile Remove="Windows\Messages\WindowsMessageLoopOperation.cs" />
@@ -36,7 +35,6 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="Settings\SettingItemExtensions.cs" />
     <None Include="Windows\Messages\WindowsMessage.cs" />
     <None Include="Windows\Messages\WindowsMessageLoop.cs" />
     <None Include="Windows\Messages\WindowsMessageLoopOperation.cs" />

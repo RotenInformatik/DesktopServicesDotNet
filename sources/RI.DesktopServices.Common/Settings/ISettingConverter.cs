@@ -10,7 +10,8 @@ namespace RI.DesktopServices.Settings
     /// </summary>
     /// <remarks>
     ///     <note type="implement">
-    ///         A setting converter must always support symmetrical conversion, meaning that conversion must always be possible in both directions.
+    ///         A setting converter must always support symmetrical conversion, meaning that conversion must always be possible
+    ///         in both directions.
     ///     </note>
     /// </remarks>
     public interface ISettingConverter
@@ -32,7 +33,8 @@ namespace RI.DesktopServices.Settings
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="type" /> is null. </exception>
@@ -44,15 +46,21 @@ namespace RI.DesktopServices.Settings
         /// <param name="type"> The setting type. </param>
         /// <param name="value"> The setting value. </param>
         /// <returns>
-        ///     The string representation of the setting value as converted by this converter or null if <paramref name="value" /> is null.
+        ///     The string representation of the setting value as converted by this converter or null if <paramref name="value" />
+        ///     is null.
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="type" /> or <paramref name="value" /> is null. </exception>
-        /// <exception cref="NotSupportedException"> The specified <paramref name="type" /> or the type of <paramref name="value" /> is not supported by this converter or <paramref name="type" /> and <paramref name="value" /> do not match. </exception>
+        /// <exception cref="NotSupportedException">
+        ///     The specified <paramref name="type" /> or the type of
+        ///     <paramref name="value" /> is not supported by this converter or <paramref name="type" /> and
+        ///     <paramref name="value" /> do not match.
+        /// </exception>
         string ConvertFrom (Type type, object value);
 
         /// <summary>
@@ -61,16 +69,21 @@ namespace RI.DesktopServices.Settings
         /// <param name="type"> The setting type. </param>
         /// <param name="value"> The string representation of the setting value. </param>
         /// <returns>
-        ///     The setting value in the specified type as converted by this converter or null if <paramref name="value" /> is null.
+        ///     The setting value in the specified type as converted by this converter or null if <paramref name="value" /> is
+        ///     null.
         /// </returns>
         /// <remarks>
         ///     <note type="note">
-        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" /> implementation.
+        ///         Do not call this method directly, it is intended to be called from an <see cref="ISettingService" />
+        ///         implementation.
         ///     </note>
         /// </remarks>
         /// <exception cref="ArgumentNullException"> <paramref name="type" /> is null. </exception>
         /// <exception cref="NotSupportedException"> The specified <paramref name="type" /> is not supported by this converter. </exception>
-        /// <exception cref="FormatException"> The string representation of <paramref name="value" /> is invalid and cannot be converted to <paramref name="type" />. </exception>
+        /// <exception cref="FormatException">
+        ///     The string representation of <paramref name="value" /> is invalid and cannot be
+        ///     converted to <paramref name="type" />.
+        /// </exception>
         object ConvertTo (Type type, string value);
     }
 }

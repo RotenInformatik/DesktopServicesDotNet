@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Text;
 
 
@@ -8,22 +10,26 @@ using System.Text;
 namespace RI.DesktopServices.Settings.Storages
 {
     /// <summary>
-    ///     Implements a setting storage which reads/writes from/to a specified INI file.
+    ///     Implements a setting storage which reads/writes from/to INI files.
     /// </summary>
     /// <remarks>
     ///     <para>
-    ///         This setting store internally uses <see cref="IniDocument" /> to process the INI file.
-    ///         See <see cref="IniDocument" /> for more details about INI files.
+    ///         This setting store is not read-only.
     ///     </para>
     ///     <para>
-    ///         See <see cref="ISettingStorage" /> for more details.
+    ///         Sections in INI files are not supported. When reading, section headers are ignored. When writing, the file is
+    ///         emptied before the values are written without any sections (except <see cref="WriteOnlyKnown" /> is set, in
+    ///         which cases the structure of the file is preserved).
+    ///     </para>
+    ///     <para>
+    ///         If the specified INI file does not exist, it will be created and no values will be read from it (because its
+    ///         empty after creation...).
     ///     </para>
     /// </remarks>
-    /// <threadsafety static="true" instance="true" />
-    [Export]
-    public sealed class IniFileSettingStorage : LogSource, ISettingStorage
+    /// <threadsafety static="false" instance="false" />
+    public sealed class IniFileSettingStorage : DictionaryStorageBase
     {
-        #region Constants
+        #region Static Fields
 
         /// <summary>
         ///     The default text encoding which is used for INI files.
@@ -34,16 +40,6 @@ namespace RI.DesktopServices.Settings.Storages
         ///     </para>
         /// </remarks>
         public static readonly Encoding DefaultEncoding = Encoding.UTF8;
-
-        /// <summary>
-        ///     The default INI section name for reading/writing values.
-        /// </summary>
-        /// <remarks>
-        ///     <para>
-        ///         The default file name is null, which searches and places all values outside any section.
-        ///     </para>
-        /// </remarks>
-        public static readonly string DefaultSectionName = null;
 
         #endregion
 
@@ -57,13 +53,10 @@ namespace RI.DesktopServices.Settings.Storages
         /// </summary>
         /// <param name="filePath"> The path to the INI file. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="filePath" /> contains wildcards. </exception>
+        /// <exception cref="ArgumentException"> <paramref name="filePath" /> is an empty string or contains an invalid path. </exception>
         /// <remarks>
         ///     <para>
         ///         The default encoding <see cref="DefaultEncoding" /> is used as the text encoding for the INI file.
-        ///     </para>
-        ///     <para>
-        ///         The default section name <see cref="DefaultSectionName" /> is used as the INI section name.
         ///     </para>
         ///     <para>
         ///         All values will be written, not only those known (see <see cref="WriteOnlyKnown" />).
@@ -72,49 +65,41 @@ namespace RI.DesktopServices.Settings.Storages
         ///         No write prefix affinities will be used (see <see cref="WritePrefixAffinities" />).
         ///     </para>
         /// </remarks>
-        public IniFileSettingStorage (FilePath filePath)
-            : this(filePath, null, null, false, (IEnumerable<string>)null)
-        {
-        }
+        public IniFileSettingStorage (string filePath)
+            : this(filePath, null, false, (IEnumerable<string>)null) { }
 
         /// <summary>
         ///     Creates a new instance of <see cref="IniFileSettingStorage" />.
         /// </summary>
         /// <param name="filePath"> The path to the INI file. </param>
         /// <param name="fileEncoding"> The text encoding of the INI file (can be null to use <see cref="DefaultEncoding" />). </param>
-        /// <param name="sectionName"> The INI section name where all the values are read/written from/to (can be null to use <see cref="DefaultSectionName" />). </param>
-        /// <param name="writeOnlyKnown"> Specifies whether the setting storage only writes/saves values for names it already has a value for. </param>
-        /// <param name="writePrefixAffinities"> A sequence of prefix affinities of values when writing/saving or null if this storage should not use any. </param>
+        /// <param name="writeOnlyKnown">
+        ///     Specifies whether the setting storage only writes/saves values for names it already has a
+        ///     value for.
+        /// </param>
+        /// <param name="writePrefixAffinities">
+        ///     A sequence of prefix affinities of values when writing/saving or null if this
+        ///     storage should not use any.
+        /// </param>
         /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="filePath" /> contains wildcards. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="sectionName" /> is an empty string. </exception>
-        public IniFileSettingStorage (FilePath filePath, Encoding fileEncoding, string sectionName, bool writeOnlyKnown, IEnumerable<string> writePrefixAffinities)
+        /// <exception cref="ArgumentException"> <paramref name="filePath" /> is an empty string or contains an invalid path. </exception>
+        public IniFileSettingStorage (string filePath, Encoding fileEncoding, bool writeOnlyKnown,
+                                      IEnumerable<string> writePrefixAffinities)
         {
             if (filePath == null)
             {
                 throw new ArgumentNullException(nameof(filePath));
             }
 
-            if (filePath.HasWildcards)
+            if (string.IsNullOrWhiteSpace(filePath))
             {
-                throw new InvalidPathArgumentException(nameof(filePath));
+                throw new ArgumentException("The string is empty.", nameof(filePath));
             }
 
-            if (sectionName != null)
-            {
-                if (sectionName.IsEmptyOrWhitespace())
-                {
-                    throw new EmptyStringArgumentException(nameof(sectionName));
-                }
-            }
-
-            this.SyncRoot = new object();
             this.FilePath = filePath;
             this.FileEncoding = fileEncoding ?? IniFileSettingStorage.DefaultEncoding;
-            this.SectionName = sectionName ?? IniFileSettingStorage.DefaultSectionName;
-            this.WriteOnlyKnown = writeOnlyKnown;
-            this.WritePrefixAffinities = new HashSet<string>(writePrefixAffinities ?? new string[0], SettingService.NameComparer);
-            this.Document = new IniDocument(StringComparerEx.InvariantCultureIgnoreCase);
+            this.WriteOnlyKnownInternal = writeOnlyKnown;
+            this.WritePrefixAffinitiesInternal = new List<string>(writePrefixAffinities ?? new string[0]);
         }
 
         /// <summary>
@@ -122,16 +107,19 @@ namespace RI.DesktopServices.Settings.Storages
         /// </summary>
         /// <param name="filePath"> The path to the INI file. </param>
         /// <param name="fileEncoding"> The text encoding of the INI file (can be null to use <see cref="DefaultEncoding" />). </param>
-        /// <param name="sectionName"> The INI section name where all the values are read/written from/to (can be null to use <see cref="DefaultSectionName" />). </param>
-        /// <param name="writeOnlyKnown"> Specifies whether the setting storage only writes/saves values for names it already has a value for. </param>
-        /// <param name="writePrefixAffinities"> An array of prefix affinities of values when writing/saving or null if this storage should not use any. </param>
+        /// <param name="writeOnlyKnown">
+        ///     Specifies whether the setting storage only writes/saves values for names it already has a
+        ///     value for.
+        /// </param>
+        /// <param name="writePrefixAffinities">
+        ///     A sequence of prefix affinities of values when writing/saving or none/null if this
+        ///     storage should not use any.
+        /// </param>
         /// <exception cref="ArgumentNullException"> <paramref name="filePath" /> is null. </exception>
-        /// <exception cref="InvalidPathArgumentException"> <paramref name="filePath" /> contains wildcards. </exception>
-        /// <exception cref="EmptyStringArgumentException"> <paramref name="sectionName" /> is an empty string. </exception>
-        public IniFileSettingStorage (FilePath filePath, Encoding fileEncoding, string sectionName, bool writeOnlyKnown, params string[] writePrefixAffinities)
-            : this(filePath, fileEncoding, sectionName, writeOnlyKnown, (IEnumerable<string>)writePrefixAffinities)
-        {
-        }
+        /// <exception cref="ArgumentException"> <paramref name="filePath" /> is an empty string or contains an invalid path. </exception>
+        public IniFileSettingStorage (string filePath, Encoding fileEncoding, bool writeOnlyKnown,
+                                      params string[] writePrefixAffinities)
+            : this(filePath, fileEncoding, writeOnlyKnown, (IEnumerable<string>)writePrefixAffinities) { }
 
         #endregion
 
@@ -154,176 +142,174 @@ namespace RI.DesktopServices.Settings.Storages
         /// <value>
         ///     The path to the used INI file.
         /// </value>
-        public FilePath FilePath { get; }
+        public string FilePath { get; }
 
-        /// <summary>
-        ///     Gets the INI section name where all the values are read/written from/to in the INI file.
-        /// </summary>
-        /// <value>
-        ///     The INI section name where all the values are read/written from/to in the INI file.
-        /// </value>
-        public string SectionName { get; }
+        private bool WriteOnlyKnownInternal { get; }
 
-        private IniDocument Document { get; set; }
+        private IReadOnlyList<string> WritePrefixAffinitiesInternal { get; }
 
         #endregion
 
 
 
 
-        #region Interface: ISettingStorage
+        #region Instance Methods
 
-        /// <inheritdoc />
-        bool ISettingStorage.IsReadOnly => false;
-
-        /// <inheritdoc />
-        bool ISynchronizable.IsSynchronized => true;
-
-        /// <inheritdoc />
-        public object SyncRoot { get; }
-
-        /// <inheritdoc />
-        public bool WriteOnlyKnown { get; }
-
-        /// <inheritdoc />
-        public IReadOnlyCollection<string> WritePrefixAffinities { get; }
-
-        /// <inheritdoc />
-        public void DeleteValues (string name) => this.SetValues(name, null);
-
-        /// <inheritdoc />
-        public void DeleteValues (Predicate<string> predicate)
+        private List<(string key, string value)> ExtractPairsFromLines (StreamReader reader)
         {
-            if (predicate == null)
+            List<(string key, string value)> pairs = new List<(string key, string value)>();
+
+            while (true)
             {
-                throw new ArgumentNullException(nameof(predicate));
-            }
+                string line = reader.ReadLine();
 
-            Dictionary<string, string> section = this.Document.GetSection(this.SectionName);
-            List<string> namesToRemove = section.Select(x => x.Key).Where(x => predicate(x));
-            namesToRemove.ForEach(this.DeleteValues);
-        }
-
-        /// <inheritdoc />
-        public List<string> GetValues (string name)
-        {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (name.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(name));
-            }
-
-            List<string> values = this.Document.GetValueAll(this.SectionName, name).Where(x => x != null);
-            return values;
-        }
-
-        /// <inheritdoc />
-        public Dictionary<string, List<string>> GetValues (Predicate<string> predicate)
-        {
-            if (predicate == null)
-            {
-                throw new ArgumentNullException(nameof(predicate));
-            }
-
-            Dictionary<string, List<string>> values = new Dictionary<string, List<string>>(SettingService.NameComparer);
-            Dictionary<string, List<string>> section = this.Document.GetSectionAll(this.SectionName);
-            foreach (KeyValuePair<string, List<string>> value in section)
-            {
-                if (predicate(value.Key))
+                if (line == null)
                 {
-                    if (!values.ContainsKey(value.Key))
-                    {
-                        values.Add(value.Key, new List<string>());
-                    }
+                    break;
+                }
 
-                    values[value.Key].AddRange(value.Value);
+                int index = line.IndexOf('=');
+
+                bool useWholeLine = true;
+
+                if (index > 0)
+                {
+                    string key = line.Substring(0, index);
+                    string value = line.Substring(index + 1);
+
+                    if ((key.Length > 0) && (value.Length > 0))
+                    {
+                        pairs.Add((key, value));
+                        useWholeLine = false;
+                    }
+                }
+
+                if (useWholeLine)
+                {
+                    pairs.Add((null, line));
                 }
             }
 
-            return values;
+            return pairs;
+        }
+
+        private string MakeLineFromPair ((string key, string value) pair)
+        {
+            if (pair.key == null)
+            {
+                return pair.value;
+            }
+
+            return $"{pair.key}={pair.value}";
+        }
+
+        #endregion
+
+
+
+
+        #region Overrides
+
+        /// <inheritdoc />
+        public override bool WriteOnlyKnown => this.WriteOnlyKnownInternal;
+
+        /// <inheritdoc />
+        public override IReadOnlyList<string> WritePrefixAffinities => this.WritePrefixAffinitiesInternal;
+
+        /// <inheritdoc />
+        protected override void LoadValues (Dictionary<string, List<string>> dictionary)
+        {
+            if (!File.Exists(this.FilePath))
+            {
+                Trace.TraceWarning($"INI settings file does not exist, an empty file will be created: {this.FilePath}.");
+            }
+
+            Trace.TraceInformation($"Loading INI settings file: {this.FilePath}.");
+
+            using FileStream fs = File.Open(this.FilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+            using StreamReader sr = new StreamReader(fs, this.FileEncoding);
+
+            List<(string key, string value)> pairs = this.ExtractPairsFromLines(sr);
+
+            foreach ((string key, string value) pair in pairs)
+            {
+                if (string.IsNullOrWhiteSpace(pair.key))
+                {
+                    continue;
+                }
+
+                if (!dictionary.ContainsKey(pair.key))
+                {
+                    dictionary.Add(pair.key, new List<string>());
+                }
+
+                dictionary[pair.key]
+                    .Add(pair.value);
+            }
         }
 
         /// <inheritdoc />
-        public bool HasValue (string name)
+        protected override void SaveValues (Dictionary<string, List<string>> dictionary)
         {
-            if (name == null)
+            if (!File.Exists(this.FilePath))
             {
-                throw new ArgumentNullException(nameof(name));
+                Trace.TraceWarning($"INI settings file does not exist, an new file will be created: {this.FilePath}.");
             }
 
-            if (name.IsEmptyOrWhitespace())
+            Trace.TraceInformation($"Saving INI settings file: {this.FilePath}.");
+
+            List<(string key, string value)> newLines = new List<(string key, string value)>();
+
+            if (this.WriteOnlyKnown)
             {
-                throw new EmptyStringArgumentException(nameof(name));
+                using FileStream fsRead =
+                    File.Open(this.FilePath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.None);
+
+                using StreamReader sr = new StreamReader(fsRead, this.FileEncoding);
+
+                List<(string key, string value)> existingLines = this.ExtractPairsFromLines(sr);
+
+                sr.Close();
+                fsRead.Close();
+
+                for (int i1 = 0; i1 < existingLines.Count; i1++)
+                {
+                    (string key, string value) existingLine = existingLines[i1];
+
+                    if ((existingLine.key != null) && dictionary.ContainsKey(existingLine.key))
+                    {
+                        for (int i2 = 0; i2 < dictionary[existingLine.key]
+                                             .Count; i2++)
+                        {
+                            string value = dictionary[existingLine.key][i2];
+                            newLines.Add((existingLine.key, value));
+                        }
+                    }
+                    else
+                    {
+                        newLines.Add(existingLine);
+                    }
+                }
+            }
+            else
+            {
+                foreach (KeyValuePair<string, List<string>> setting in dictionary)
+                {
+                    foreach (string value in setting.Value)
+                    {
+                        string newLine = this.MakeLineFromPair((setting.Key, value));
+                        newLines.Add((setting.Key, newLine));
+                    }
+                }
             }
 
-            return this.Document.GetValue(this.SectionName, name) != null;
-        }
+            using FileStream fsWrite = File.Open(this.FilePath, FileMode.Create, FileAccess.ReadWrite, FileShare.None);
+            using StreamWriter sw = new StreamWriter(fsWrite, this.FileEncoding);
 
-        /// <inheritdoc />
-        public bool HasValue (Predicate<string> predicate)
-        {
-            if (predicate == null)
+            foreach ((string key, string value) pair in newLines)
             {
-                throw new ArgumentNullException(nameof(predicate));
+                sw.WriteLine(pair.value);
             }
-
-            Dictionary<string, string> section = this.Document.GetSection(this.SectionName);
-            return section.Any(x => predicate(x.Key));
-        }
-
-        /// <inheritdoc />
-        public void Load ()
-        {
-            if (!this.FilePath.Exists)
-            {
-                this.Log(LogLevel.Debug, "Creating INI settings file: {0}", this.FilePath);
-            }
-
-            this.FilePath.Directory.Create();
-            this.FilePath.CreateIfNotExist();
-
-            this.Log(LogLevel.Debug, "Loading INI settings file: {0}", this.FilePath);
-
-            this.Document.Clear();
-            this.Document.Load(this.FilePath, this.FileEncoding);
-        }
-
-        /// <inheritdoc />
-        public void Save ()
-        {
-            if (!this.FilePath.Exists)
-            {
-                this.Log(LogLevel.Debug, "Creating INI settings file: {0}", this.FilePath);
-            }
-
-            this.FilePath.Directory.Create();
-
-            this.Log(LogLevel.Debug, "Saving INI settings file: {0}", this.FilePath);
-
-            this.Document.SortElements(this.SectionName);
-            this.Document.Save(this.FilePath, this.FileEncoding);
-        }
-
-        /// <inheritdoc />
-        public void SetValues (string name, IEnumerable<string> value)
-        {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            if (name.IsEmptyOrWhitespace())
-            {
-                throw new EmptyStringArgumentException(nameof(name));
-            }
-
-            List<string> finalValues = value?.ToList() ?? new List<string>();
-
-            this.Document.SetValueAll(this.SectionName, name, finalValues);
         }
 
         #endregion
